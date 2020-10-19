@@ -1,1 +1,1 @@
-# Intranet-grupo-6
+# Proyecto Intranet-Grupo-VI
