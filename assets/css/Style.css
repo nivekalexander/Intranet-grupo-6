@@ -13,11 +13,13 @@
     height: 60px;
     margin-left: 6px;
 }
-.nom-usu{
+.navbar-fondo{
 
+    background-color: #01142D !important;
 
 }
 .img-news{
+    
     width: 14%;
     margin-right: 20px;
 }
@@ -26,8 +28,3 @@
     font-size: 20px;
 }
 
-#programa{
-  width: 70px;
-  height: 70px;
-  text-align: center;  
-}
