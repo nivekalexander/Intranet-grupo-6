@@ -5,7 +5,7 @@
 <div id="content">
 
   <!-- Topbar -->
-  <nav class="navbar navbar-expand navbar-light Color-Slidebar bg-white topbar mb-4 static-top shadow">
+  <nav class="navbar navbar-expand navbar-light Color-Slidebar bg-white topbar  static-top shadow">
 
     
 
