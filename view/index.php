@@ -14,7 +14,7 @@
   <link href="../assets/css/Style.css" rel="stylesheet">
 </head>
 <body>
-
+   <?php require_once('./frames/navbar.php');?>
    <?php require_once('./frames/slidebar.php');?>
     
 </body>
