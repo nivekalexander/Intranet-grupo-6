@@ -2,7 +2,7 @@
  <ul class="navbar-nav bg-gradient-primary Color-Slidebar sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Divider -->
-<hr class="sidebar-divider my-0">
+
 
 <!-- Nav Item - Noticias -->
 <li class="nav-item active">

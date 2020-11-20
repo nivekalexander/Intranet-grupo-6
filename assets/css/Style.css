@@ -2,10 +2,16 @@
     background-color: #01142D !important;
     background-image: none;
 }
-.navbar-logo{
+#logosena{
 
-    /*background-color: #01142D !important;*/
-
+    height:60px ;
+    width: 60px;
+}
+.separador{
+    background-color: white;
+    width: 1px;
+    height: 60px;
+    margin-left: 6px;
 }
 .nom-usu{
 

@@ -10,12 +10,23 @@
     
 
     <!-- Topbar logo -->
-    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-logo ">
+    <form class="d-none d-sm-inline-block form-inline   my-2 my-md-0 mw-100 navbar-logo ">
+    
     <div class="input-group ">
+        
+            <img id="logosena" src="../assets/img/logosena.svg" alt="logosena.svg">
+    </div>
+    </form>
+    <div class=" separador"></div>
+
+
+    <form class="d-none d-sm-inline-block form-inline mr-auto  my-2 my-md-0 mw-100 navbar-logo ">
+    
+    <div class="input-group ">
+        
             <img src="../assets/img/logo.svg" alt="logo.svg">
     </div>
     </form>
-
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
 
