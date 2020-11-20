@@ -2,3 +2,12 @@
     background-color: #01142D !important;
     background-image: none;
 }
+
+.img-news{
+    width: 14%;
+    margin-right: 20px;
+}
+
+.size-text{
+    font-size: 20px;
+}
