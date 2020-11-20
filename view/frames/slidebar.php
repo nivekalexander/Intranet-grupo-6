@@ -42,6 +42,47 @@
 </li>
 
 <!-- Divider -->
+<hr class="sidebar-divider my-0">
+
+<!-- Nav Item - Horario -->
+<li class="nav-item active">
+  <a class="nav-link" href="index.html">
+    <img src="../assets/img/horario.svg" class="img-news" alt="new">
+    <span class="size-text">Horario</span></a>
+</li>
+
+<!-- Divider -->
+<hr class="sidebar-divider my-0">
+
+<!-- Nav Item - Usuarios -->
+<li class="nav-item active">
+  <a class="nav-link" href="index.html">
+    <img src="../assets/img/usuarios.svg" class="img-news" alt="new">
+    <span class="size-text">Usuarios</span></a>
+</li>
+
+<!-- Divider -->
+<hr class="sidebar-divider my-0">
+
+<!-- Nav Item - Ficha -->
+<li class="nav-item active">
+  <a class="nav-link" href="index.html">
+    <img src="../assets/img/ficha.svg" class="img-news" alt="new">
+    <span class="size-text">Ficha</span></a>
+</li>
+
+
+<!-- Divider -->
+<hr class="sidebar-divider my-0">
+
+<!-- Nav Item - Programa de formación -->
+<li class="nav-item active">
+  <a class="nav-link" href="index.html">
+    <img src="../assets/img/programaformacion.svg" class="img-news" alt="new">
+    <span id="programa" >Programa de formación</span></a>
+</li>
+
+<!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
 
 <!-- Sidebar Toggler (Sidebar) -->
