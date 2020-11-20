@@ -6,6 +6,17 @@
 
     /*background-color: #01142D !important;*/
 }
+#logosena{
+
+    height:60px ;
+    width: 60px;
+}
+.separador{
+    background-color: white;
+    width: 1px;
+    height: 60px;
+    margin-left: 6px;
+}
 .nom-usu{
 
 
