@@ -19,3 +19,9 @@
 .size-text{
     font-size: 20px;
 }
+
+#programa{
+  width: 70px;
+  height: 70px;
+  text-align: center;  
+}
