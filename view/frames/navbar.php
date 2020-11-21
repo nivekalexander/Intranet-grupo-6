@@ -1,76 +1,79 @@
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
 
-<!-- Main Content -->
-<div id="content">
-
-  <!-- Topbar -->
-  <nav class="navbar navbar-expand navbar-light Color-Slidebar bg-white topbar  static-top shadow">
-
-    
-
-    <!-- Topbar logo -->
-
-    <form class="d-sm-inline-block form-inline   my-2 my-md-0 mw-100 navbar-logo ">
-    
-      <div class="input-group ">
-        
-      <a class="btn dropdown-text-color" data-toggle="collapse" href="#slidebar" role="button" aria-expanded="false" aria-controls="collapseExample">
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
-      Menu
-      </a>
-      </div>
-    </form>
-    
-    <form class=" d-sm-inline-block form-inline   my-2 my-md-0 mw-100 navbar-logo ">
-    <div class="input-group ">
-        
-            <img id="logosena" src="../assets/img/logosena.svg" alt="logosena.svg">
-    </div>
-    </form>
-    <div class=" separador"></div>
+  <!-- Main Content -->
+  <div id="content">
 
 
-    
-    <form class="d-none d-sm-inline-block form-inline mr-auto  my-2 my-md-0 mw-100 navbar-logo ">
-    
-    <div class="input-group ">
-        
-            <img src="../assets/img/logo.svg" alt="logo.svg">
-    </div>
-    </form>
-    <!-- Topbar Navbar -->
-    <ul class="navbar-nav ml-auto">
+    <!-- Topbar -->
+    <nav class="navbar navbar-expand navbar-light Color-Slidebar topbar  static-top shadow">
 
-     
+              <!-- Sidebar Toggle (Topbar) -->
+              <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars "></i>
+              </button>
 
-      
 
-      <!--<div class="topbar-divider d-none d-sm-block"></div>-->
 
-      <!-- Nav Item - User name -->
-      <li class="nav-item dropdown no-arrow navbar-fondo">
-        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <div class="nom-usu"><h4 class="mr-2 d-none d-lg-inline">Marcela de Saris</h4></div>
-          <img class="img-profile " src="https://www.flaticon.es/svg/static/icons/svg/599/599305.svg">
-        </a>
-        <!-- Dropdown - User logout -->
-        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in navbar-fondo" aria-labelledby="userDropdown">
-          <a class="dropdown-item navbar-fondo dropdown-text-color" href="#">
-            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-            Perfil
-          </a>
+              <!-- Topbar Navbar -->
+              <ul class="navbar-nav ">
 
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item navbar-fondo dropdown-text-color" href="#" data-toggle="modal" data-target="#logoutModal">
-            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-            Salir
-          </a>
-        </div>
+                
 
-      </li>
 
-    </ul>
+                <form class=" d-sm-inline-block form-inline   my-2 my-md-0 mw-100 navbar-logo ">
+                  <div class="input-group ">
+                      
+                          <img id="logosena" src="../assets/img/logosena.svg" alt="logosena.svg">
+                  </div>
+                  </form>
 
-  </nav>
-  <!-- End of Topbar -->
+
+                  <div class="d-none d-sm-none d-md-block separador"></div>
+
+
+                  
+                  <form class="d-none d-sm-inline-block form-inline mr-auto  my-2 my-md-0 mw-100 navbar-logo ">
+                  
+                  <div class="input-group ">
+                      
+                          <img src="../assets/img/logo.svg" alt="logo.svg">
+                  </div>
+                  </form>   
+                  </ul>
+                  <!-- Topbar Navbar -->
+
+                  <ul class="navbar-nav ml-auto">
+              
+                  
+              
+                    
+              
+                    <!--<div class="topbar-divider d-none d-sm-block"></div>-->
+              
+                    <!-- Nav Item - User name -->
+                    <li class="nav-item dropdown no-arrow navbar-fondo">
+                      <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="nom-usu"><h4 class="mr-2 d-none d-lg-inline">Marcela de Saris</h4></div>
+                        <img class="img-profile " src="https://www.flaticon.es/svg/static/icons/svg/599/599305.svg">
+                      </a>
+                      <!-- Dropdown - User logout -->
+                      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in navbar-fondo" aria-labelledby="userDropdown">
+                        <a class="dropdown-item navbar-fondo dropdown-text-color" href="#">
+                          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                          Perfil
+                        </a>
+              
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item navbar-fondo dropdown-text-color" href="#" data-toggle="modal" data-target="#logoutModal">
+                          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                          Salir
+                        </a>
+                      </div>
+              
+                    </li>
+              
+                  </ul>
+              
+    </nav>
+                <!-- End of Topbar -->
