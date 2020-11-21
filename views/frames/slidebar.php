@@ -7,7 +7,7 @@
 
       <!-- Nav Item - Noticias -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
           <img src="../assets/img/periodico.svg" class="slidebar-img" alt="new">
           <span>Noticias</span></a>
       </li>
@@ -17,7 +17,7 @@
 
       <!-- Nav Item - Anuncios -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="./anuncio/anuncioView.php">
           <img src="../assets/img/anuncios.svg" class="slidebar-img" alt="new">
           <span>Anuncios</span></a>
       </li>
@@ -27,7 +27,7 @@
 
       <!-- Nav Item - Material de Apoyo -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="">
           <img src="../assets/img/materialapoyo.svg" class="slidebar-img" alt="new">
           <span>Material de apoyo</span></a>
       </li>

@@ -20,5 +20,5 @@
 
     <div class="container espaciado">
         <h3 class="noti-tittle">Noticias</h3>
-        <a href="" class="btn-rounded btn float-right">Crear noticia</a>
+        <input type="file" class="btn-rounded btn float-right" value="Crear noticia"></input>
     </div>
