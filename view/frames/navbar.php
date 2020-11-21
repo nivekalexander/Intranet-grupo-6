@@ -10,8 +10,16 @@
     
 
     <!-- Topbar logo -->
-    <form class=" d-sm-inline-block form-inline   my-2 my-md-0 mw-100 navbar-logo ">
+
+    <form class="d-sm-inline-block form-inline mr-auto  my-2 my-md-0 mw-100 navbar-logo ">
     
+      <div class="input-group ">
+        
+      <a class="btn btn-primary" data-toggle="collapse" href="#slidebar" role="button" aria-expanded="false" aria-controls="collapseExample">Link with href</a>
+      </div>
+    </form>
+    
+    <form class=" d-sm-inline-block form-inline   my-2 my-md-0 mw-100 navbar-logo ">
     <div class="input-group ">
         
             <img id="logosena" src="../assets/img/logosena.svg" alt="logosena.svg">
@@ -20,6 +28,7 @@
     <div class=" separador"></div>
 
 
+    
     <form class="d-none d-sm-inline-block form-inline mr-auto  my-2 my-md-0 mw-100 navbar-logo ">
     
     <div class="input-group ">
