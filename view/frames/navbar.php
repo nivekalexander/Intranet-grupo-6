@@ -11,11 +11,14 @@
 
     <!-- Topbar logo -->
 
-    <form class="d-sm-inline-block form-inline mr-auto  my-2 my-md-0 mw-100 navbar-logo ">
+    <form class="d-sm-inline-block form-inline   my-2 my-md-0 mw-100 navbar-logo ">
     
       <div class="input-group ">
         
-      <a class="btn btn-primary" data-toggle="collapse" href="#slidebar" role="button" aria-expanded="false" aria-controls="collapseExample">Link with href</a>
+      <a class="btn dropdown-text-color" data-toggle="collapse" href="#slidebar" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+      Menu
+      </a>
       </div>
     </form>
     
