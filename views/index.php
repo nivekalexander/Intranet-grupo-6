@@ -1,9 +1,6 @@
 
      
-     <?php require_once('./frames/header.php');?>
-
-
-
+   <?php require_once('./frames/header.php');?>
    
    <?php require_once('./frames/navbar.php');?>
    
