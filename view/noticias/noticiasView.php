@@ -12,16 +12,13 @@
     }
 
     .espaciado{
-        height: 10%;
-        width: 100%;
-        padding: 30px;
+        padding: 40px;
     }
 
 </style>
 
-<div class="container hr">
-    <div class="espaciado">
+
+    <div class="container espaciado">
         <h3 class="noti-tittle">Noticias</h3>
         <a href="" class="btn-rounded btn float-right">Crear noticia</a>
     </div>
-</div>
