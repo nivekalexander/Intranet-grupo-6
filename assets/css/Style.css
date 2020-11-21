@@ -28,17 +28,28 @@
     background-color: #01142D !important;
 
 }
-.img-news{
+.slidebar-img{
     
     width: 14%;
     margin-right: 20px;
+    /*margin: 0 auto;*/
 }
 
-.size-text{
-    font-size: 20px;
+.slidebar-center{
+    margin: 0 auto;
+    width: 30%;
 }
 
 .dropdown-text-color{
     color : #ffffff !important;
 }
+
+.programa2{
+    font-size: 80% !important;
+}
+
+
+
+
+
 
