@@ -11,7 +11,7 @@
 
 </style>
 
-<div class="noti-up">
+<div class="noti-up container-fluid">
     <h3 class="noti-tittle">Noticias</h3>
     <a href="" class="btn-rounded btn">Crear noticia</a>
 </div>

@@ -1,7 +1,7 @@
  <div class="collapse" id="slidebar">
  
        <!-- Sidebar -->
-       <ul class="navbar-nav bg-gradient-primary Color-Slidebar sidebar sidebar-dark accordion" id="accordionSidebar">
+      <ul class="navbar-nav bg-gradient-primary Color-Slidebar sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Divider -->
 
@@ -93,5 +93,6 @@
       </div>
 
       </ul>
-      <!-- End of Sidebar -->      
+      <!-- End of Sidebar -->
+      
 </div>
