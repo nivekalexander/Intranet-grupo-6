@@ -14,11 +14,21 @@
     width:100%;
     height:100%;
 }
+.formlogin{
 
+    background-color: #01142db9 !important;
+    opacity:10;
+
+}
 .navbar-logo{
     margin-left: 10px;
 }
+.boton-login{
 
+    color: #fff;
+    background-color: #e6902e !important;
+
+}
 
 .Color-Slidebar{
     background-color: #01142D !important;
