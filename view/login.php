@@ -49,7 +49,7 @@
                                     <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña">
                                     </div>
                                     
-                                    <a href="index.html" class="btn  btn-user btn-block boton-login">
+                                    <a href="index.php" class="btn  btn-user btn-block boton-login">
                                     Iniciar Sesion
                                     </a>
                                     <hr>
