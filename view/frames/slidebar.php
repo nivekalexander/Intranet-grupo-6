@@ -1,10 +1,9 @@
- <div class="collapse" id="slidebar">
- 
-       <!-- Sidebar -->
-      <ul class="navbar-nav bg-gradient-primary Color-Slidebar sidebar sidebar-dark accordion" id="accordionSidebar">
 
-      <!-- Divider -->
+  <!-- Page Wrapper -->
+  <div id="wrapper">
 
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Nav Item - Noticias -->
       <li class="nav-item active">
@@ -83,16 +82,13 @@
           <img src="../assets/img/programaformacion.svg" class="slidebar-img" alt="new">
           <span id="programa" class="programa2">Programa de formación</span></a>
       </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+ 
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
 
-      </ul>
-      <!-- End of Sidebar -->
-      
-</div>
+    </ul>
+    
+    <!-- End of Sidebar -->
