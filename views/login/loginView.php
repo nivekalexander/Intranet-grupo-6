@@ -1,5 +1,5 @@
    
-     <?php require_once('./frames/header.php');?>
+     <?php require_once('../frames/header.php');?>
 
 
 <body id="login">
@@ -75,4 +75,4 @@
 
     </div>
     
-    <?php require_once('./frames/footer.php');?>
+    <?php require_once('../frames/footer.php');?>
