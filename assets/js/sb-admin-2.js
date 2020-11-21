@@ -7,6 +7,8 @@
     $(".sidebar").toggleClass("toggled");
     if ($(".sidebar").hasClass("toggled")) {
       $('.sidebar .collapse').collapse('hide');
+      $('.slidebar-img').toggleClass("slidebar-center");
+      alert("julio profe");
     };
   });
 
