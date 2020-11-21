@@ -4,7 +4,7 @@
 
 
 
-   <body id="page-top">
+   
    <?php require_once('./frames/navbar.php');?>
    
    <?php require_once('./frames/slidebar.php');?>
