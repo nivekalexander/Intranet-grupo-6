@@ -1,4 +1,11 @@
   
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
     <link  rel="icon"   href="../assets/img/favicon.png" type="image/png" />
     <title>Intranet - MaxLearning</title>
     
@@ -12,3 +19,4 @@
   <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="../assets/css/Style.css" rel="stylesheet">
   <link rel="icon" href="img/logo/icon.jpg">
+  </head>
