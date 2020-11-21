@@ -4,7 +4,6 @@
         font-weight: 700;
     }
    
-
     .btn-rounded{
         background-color: #F2994B;
         border-radius: 50rem !important;
@@ -22,6 +21,6 @@
 <div class="container hr">
     <div class="espaciado">
         <h3 class="noti-tittle">Noticias</h3>
-        <a href="" class="btn-rounded btn float-right">Crear noticia</a>
+        <a href="../" class="btn-rounded btn float-right">Crear noticia</a>
     </div>
 </div>
