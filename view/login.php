@@ -6,7 +6,10 @@
 
     <div id="contenedorLogin">
 
-                <div class="container  ">
+                
+    <div class="container  
+        " style="margin-bottom: 38px;margin-top: 38px;"
+    >
 
                     <div class="row justify-content-center ">
                     <div class="col-xl-5 col-lg-5 col-md-5 ">
