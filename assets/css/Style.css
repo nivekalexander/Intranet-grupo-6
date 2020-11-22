@@ -85,6 +85,10 @@
     color : #ffffff !important;
 }
 
+.espaciado{
+    padding: 40px;
+}
+
 .panel-perfil{
     height: 95%;
     width: 95%;
@@ -119,6 +123,8 @@
 }
 
 .form-perfil{
+
+    
     padding-top: 50px;;
 }
 .btn-gris{
@@ -138,7 +144,10 @@
 
 /*Fin Estilos Noticias*/
 
-
+.footer-estilo{
+    background-color: #01142D;
+    z-index: -1;
+}
 
 
 
