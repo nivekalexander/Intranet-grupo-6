@@ -1,5 +1,5 @@
    
-     <?php require_once('../frames/header.php');?>
+    
 
 
 <body id="login">
@@ -7,8 +7,8 @@
     <div id="contenedorLogin">
 
                 
-    <div class="container  
-        " style="margin-bottom: 38px;margin-top: 38px;"
+    <div class="container "  style="margin-bottom: 38px;margin-top: 38px;"
+       
     >
 
                     <div class="row justify-content-center ">
@@ -26,7 +26,7 @@
                                 <div class="p-6 center-login">
                                 <div class="text-center">
                                     
-                                <img src="../../assets/img/logo.svg" alt="logo.svg">
+                                <img src="../assets/img/logo.svg" alt="logo.svg">
 
                                 </div>
                                 <br>
@@ -49,7 +49,7 @@
                                     <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña">
                                     </div>
                                     
-                                    <a href="../index.php" class="btn  btn-user btn-block boton-login">
+                                    <a href="../views/main.php" class="btn  btn-user btn-block boton-login">
                                     Iniciar Sesion
                                     </a>
                                     <hr>
@@ -75,4 +75,4 @@
 
     </div>
     
-    <?php require_once('../frames/footer.php');?>
+    
