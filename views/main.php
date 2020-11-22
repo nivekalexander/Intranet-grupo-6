@@ -1,6 +1,6 @@
 <?php
 		require_once('../models/database.php');
-		$controller = 'noticia';
+		$controller = 'anuncio';
 
 		if ( !ISSET($_REQUEST['ctrl']) )
 		{
