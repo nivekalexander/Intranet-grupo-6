@@ -82,7 +82,7 @@
 .btn-rounded{
     background-color: #F2994B;
     border-radius: 50rem !important;
-    color : #ffffff !important;
+    color : #ffffff !important;    
 }
 
 .espaciado{
@@ -91,7 +91,7 @@
 
 .panel-perfil{
     height: 95%;
-    width: 95%;
+    width: 630px;
     background-color: rgb(237, 237, 237);
     padding-right: 2rem;
     padding-left: 2rem;
@@ -100,8 +100,10 @@
 }
 
 .panel-datos{
-    height: 78%;
-    width: 60%;
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: .2rem;
     background-color:  #01142D;
 }
 
@@ -143,6 +145,17 @@
 }
 
 /*Fin Estilos Noticias*/
+
+/* Botón ver contraseña - formulario perfil  */
+.ver-pass{
+    height: 37px;
+    width: 37px;
+    background-color: #F2994B;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;  
+}
+
 
 .footer-estilo{
     background-color: #01142D;
