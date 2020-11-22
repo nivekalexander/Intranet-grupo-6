@@ -5,9 +5,19 @@
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
+      <!-- Nav Item - Grupos -->
+      <li class="nav-item active">
+        <a class="nav-link" href="">
+          <img src="../assets/img/grupos.svg" class="slidebar-img" alt="new">
+          <span>Grupos</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
       <!-- Nav Item - Noticias -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="">
           <img src="../assets/img/periodico.svg" class="slidebar-img" alt="new">
           <span>Noticias</span></a>
       </li>
@@ -82,6 +92,37 @@
           <img src="../assets/img/programaformacion.svg" class="slidebar-img" alt="new">
           <span id="programa" class="programa2">Programa de formación</span></a>
       </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+
+       <!-- Heading -->
+
+       <div class="sidebar-heading">
+        Utilidades
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Base de datos</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Usuarios:</h6>
+            <a class="collapse-item" href="login.html">Estado</a>
+            <a class="collapse-item" href="register.html">Tipo identificación</a>
+            <a class="collapse-item" href="forgot-password.html">Rol</a>
+            <div class="collapse-divider"></div>
+            <h6 class="collapse-header">Other Pages:</h6>
+            <a class="collapse-item" href="404.html">404 Page</a>
+            <a class="collapse-item" href="blank.html">Blank Page</a>
+          </div>
+        </div>
+      </li>
+
  
 
       <!-- Sidebar Toggler (Sidebar) -->

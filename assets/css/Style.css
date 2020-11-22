@@ -75,6 +75,29 @@
     padding: 5%;
 }
 
+.noti-tittle{
+    color: #F2994B;
+    font-weight: 700;
+}
+
+
+.btn-rounded{
+    background-color: #F2994B;
+    border-radius: 50rem !important;
+    color : #ffffff !important;
+}
+
+.btn-gris{
+    background-color: #858796;
+    border-radius: 50rem !important;
+    color : #ffffff !important;
+}
+
+.espaciado{
+    padding: 40px;
+}
+
+
 
 
 
