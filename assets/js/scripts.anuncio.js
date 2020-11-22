@@ -12,28 +12,42 @@
 
 	function BorrarAnuncio(id)
 	{
-		var result = document.getElementById('tview');
+		$.confirm({
+			title: 'Confirmación!',
+			content: '¿Esta seguro que desea eliminar este anuncio?',
+			buttons: {
+				confirm: function () {
+					$.alert('Se ha eliminado correctamente');
+					
+						var result = document.getElementById('tview');
 
-		const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-		ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
-		ajax.onreadystatechange = function (){
-												if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
-												{
-													if( ajax.status == 200 ) // Estado 200 es SUCCESS = CORRECTO
-													{
-
-														result.innerHTML = ajax.responseText;
-
-													}
-													else
-													{
-														console.log("Ups, Me equivoque;");
-													}
-												}
-											 };
-
-		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-		ajax.send("ctrl=anuncio&acti=eliminar&id="+id);
+						const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
+						ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
+						ajax.onreadystatechange = function (){
+																if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
+																{
+																	if( ajax.status == 200 ) // Estado 200 es SUCCESS = CORRECTO
+																	{
+																	
+																		result.innerHTML = ajax.responseText;
+																	
+																	}
+																	else
+																	{
+																		console.log("Ups, Me equivoque;");
+																	}
+																}
+															 };
+														 
+						ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+						ajax.send("ctrl=anuncio&acti=eliminar&id="+id);
+				},
+				cancel: function () {
+					$.alert('Has cancelado la eliminación');
+				}
+			}
+		});
+		
 	}
 
 
@@ -129,5 +143,23 @@
 		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 		ajax.send("ctrl=anuncio&acti=actualizar&titulo="+titulo+"&descrp="+descrp+"&fchcre="+fchcre+"&fchfin="+fchfin+"&usuid="+usuid+"&ficid="+ficid+"&id="+id);
 	
-		document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");							 
+		document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");						 
 	}
+
+	(function() {
+		'use strict';
+		window.addEventListener('load', function() {
+		  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+		  var forms = document.getElementsByClassName('needs-validation');
+		  // Loop over them and prevent submission
+		  var validation = Array.prototype.filter.call(forms, function(form) {
+			form.addEventListener('submit', function(event) {
+			  if (form.checkValidity() === false) {
+				event.preventDefault();
+				event.stopPropagation();
+			  }
+			  form.classList.add('was-validated');
+			}, false);
+		  });
+		}, false);
+	  })();

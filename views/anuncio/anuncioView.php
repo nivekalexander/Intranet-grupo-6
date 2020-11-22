@@ -1,5 +1,3 @@
-<script src="../assets/js/scripts.anuncio.js"></script>	
-
 <div class="container">
 	<div id="main">
 			<div class="container espaciado">
