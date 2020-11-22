@@ -85,6 +85,10 @@
     color : #ffffff !important;    
 }
 
+.espaciado{
+    padding: 40px;
+}
+
 .panel-perfil{
     height: 95%;
     width: 630px;
@@ -121,6 +125,8 @@
 }
 
 .form-perfil{
+
+    
     padding-top: 50px;;
 }
 .btn-gris{
@@ -140,6 +146,7 @@
 
 /*Fin Estilos Noticias*/
 
+/* Botón ver contraseña - formulario perfil  */
 .ver-pass{
     height: 37px;
     width: 37px;
@@ -150,6 +157,10 @@
 }
 
 
+.footer-estilo{
+    background-color: #01142D;
+    z-index: -1;
+}
 
 
 

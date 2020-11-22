@@ -1,5 +1,5 @@
   
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,4 +21,5 @@
   <link href="../assets/css/Style.css" rel="stylesheet">
 
   <link rel="icon" href="img/logo/icon.jpg">
-  </head>
+</head>
+  

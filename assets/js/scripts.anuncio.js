@@ -129,6 +129,5 @@
 		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 		ajax.send("ctrl=anuncio&acti=actualizar&titulo="+titulo+"&descrp="+descrp+"&fchcre="+fchcre+"&fchfin="+fchfin+"&usuid="+usuid+"&ficid="+ficid+"&id="+id);
 	
-		document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");
-		document.getElementById('formanuncio').reset();								 
+		document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");							 
 	}
