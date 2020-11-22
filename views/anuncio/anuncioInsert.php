@@ -11,7 +11,7 @@
       </div>
       <div class="modal-body espaciado">
 
-		 <form name="formanuncio" id="formanuncio" onSubmit="event.preventDefault();">
+		 <form name="formanuncio" id="formanuncio" >
 
 				<input type="text" name="id" hidden>
 
@@ -34,7 +34,7 @@
 				<input class="form-control rounded-0" type="text" name="ficid" id="ficid"><br>
 
 				<div class="modal-footer">
-       				<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal">Cerrar</button>
+       				<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarAnuncio();">Cerrar</button>
        				<button id="btnguardar" data-dismiss="modal" type="button" class="btn btn-primary btn-rounded" onclick="InsertAnuncio();">Subir</button>
       			</div>
 
