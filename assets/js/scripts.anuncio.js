@@ -15,7 +15,7 @@
 		var result = document.getElementById('tview');
 
 		const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-		ajax.open("POST","views/main.php",true); // Se usa el Controlador General y su Accion
+		ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
 		ajax.onreadystatechange = function (){
 												if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
 												{
@@ -49,7 +49,7 @@
 		var ficid    = document.formanuncio.ficid.value;
 
 		const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-		ajax.open("POST","views/main.php",true); // Se usa el Controlador General y su Accion
+		ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
 		ajax.onreadystatechange = function (){
 												if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
 												{
@@ -110,7 +110,7 @@
 		document.getElementById('formanuncio').reset();
 
 		const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-		ajax.open("POST","views/main.php",true); // Se usa el Controlador General y su Accion
+		ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
 		ajax.onreadystatechange = function (){
 												if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
 												{
@@ -129,5 +129,6 @@
 		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 		ajax.send("ctrl=anuncio&acti=actualizar&titulo="+titulo+"&descrp="+descrp+"&fchcre="+fchcre+"&fchfin="+fchfin+"&usuid="+usuid+"&ficid="+ficid+"&id="+id);
 	
-		document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");									 
+		document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");
+		document.getElementById('formanuncio').reset();								 
 	}
