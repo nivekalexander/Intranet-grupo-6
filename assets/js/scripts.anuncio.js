@@ -12,28 +12,42 @@
 
 	function BorrarAnuncio(id)
 	{
-		var result = document.getElementById('tview');
+		$.confirm({
+			title: 'Confirmación!',
+			content: '¿Esta seguro que desea eliminar este anuncio?',
+			buttons: {
+				confirm: function () {
+					$.alert('Se ha eliminado correctamente');
 
-		const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-		ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
-		ajax.onreadystatechange = function (){
-												if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
-												{
-													if( ajax.status == 200 ) // Estado 200 es SUCCESS = CORRECTO
-													{
+						var result = document.getElementById('tview');
 
-														result.innerHTML = ajax.responseText;
-
-													}
-													else
-													{
-														console.log("Ups, Me equivoque;");
-													}
-												}
-											 };
-
-		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-		ajax.send("ctrl=anuncio&acti=eliminar&id="+id);
+						const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
+						ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
+						ajax.onreadystatechange = function (){
+																if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
+																{
+																	if( ajax.status == 200 ) // Estado 200 es SUCCESS = CORRECTO
+																	{
+																	
+																		result.innerHTML = ajax.responseText;
+																	
+																	}
+																	else
+																	{
+																		console.log("Ups, Me equivoque;");
+																	}
+																}
+															 };
+														 
+						ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+						ajax.send("ctrl=anuncio&acti=eliminar&id="+id);
+				},
+				cancel: function () {
+					$.alert('Has cancelado la eliminación');
+				}
+			}
+		});
+		
 	}
 
 
@@ -128,11 +142,11 @@
 											 };
 		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 		ajax.send("ctrl=anuncio&acti=actualizar&titulo="+titulo+"&descrp="+descrp+"&fchcre="+fchcre+"&fchfin="+fchfin+"&usuid="+usuid+"&ficid="+ficid+"&id="+id);
-	
+
 		document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");
 		document.getElementById('formanuncio').reset();								 
 	}
-
+								 
 	function CancelarAnuncio()
 	{
 		var result = document.getElementById('tview');
@@ -156,7 +170,5 @@
 													else { console.log("Ups, Me equivoque;"); }
 												}
 											 };
-		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-
-								 
+		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");							 
 	}
