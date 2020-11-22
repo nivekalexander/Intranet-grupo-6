@@ -1,4 +1,16 @@
   
+    <a class="scroll-to-top rounded" href="#page-top" style="display: inline;">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+  <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © MaxLearning Intranet 2020</span>
+          </div>
+        </div>
+  </footer>
+   
    </div>
     <!-- End of Content Wrapper -->
 
@@ -31,10 +43,10 @@
   <!-- Page level custom scripts -->
   <script src="../assets/js/demo/chart-area-demo.js"></script>
   <script src="../assets/js/demo/chart-pie-demo.js"></script>
-
   <script src="../assets/js/scripts.perfil.js"> </script>
 
   </body>
+
 </html>
 
  
