@@ -12,7 +12,12 @@
 
 		public function Index()
 								{
+									require_once('../views/frames/header.php');
+									require_once('../views/frames/navbar.php');
+									require_once('../views/frames/slidebar.php');
 									require_once('../views/sede/sedeView.php');
+									require_once('../views/frames/footer.php');
+
 								}
 
 		public function Eliminar()
