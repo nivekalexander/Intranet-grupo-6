@@ -17,9 +17,11 @@
 
       <!-- Nav Item - Anuncios -->
       <li class="nav-item active">
-        <a class="nav-link" href="./anuncio/anuncioView.php">
+        <a class="nav-link" href="../views/main.php">
+
           <img src="../assets/img/anuncios.svg" class="slidebar-img" alt="new">
           <span>Anuncios</span></a>
+
       </li>
 
       <!-- Divider -->
