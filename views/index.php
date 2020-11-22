@@ -6,9 +6,7 @@
    
    <?php require_once('./frames/slidebar.php');?>
    
-   <?php //require_once('./perfil/perfilView.php');?>
-
-   <?php require_once('./noticias/noticiasView.php');?>
+   <?php require_once('main.php');?>
    
    <?php require_once('./frames/footer.php');?>   
 

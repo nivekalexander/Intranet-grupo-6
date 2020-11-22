@@ -3,6 +3,16 @@
     <!-- End of Content Wrapper -->
 
   </div>
+
+  <!-- Scripts de los modulos -->
+  
+  <script src="assets/js/scripts.menu.js"></script>	
+  <script src="assets/js/scripts.tipoidentificacion.js"></script>
+  <script src="assets/js/scripts.anuncio.js"></script>
+  <script src="assets/js/scripts.estado.js"></script>
+  <script src="assets/js/scripts.usuario.js"></script>
+
+   <!--Fin Scripts de los modulos -->
   <!-- End of Page Wrapper -->
   <!-- Bootstrap core JavaScript-->
   <script src="../assets/vendor/jquery/jquery.min.js"></script>
