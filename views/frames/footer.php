@@ -48,6 +48,7 @@
     <!-- Custom scripts for all pages-->
     
     <script src="../assets/js/scripts-sidebarToggle.js"></script>
+    <script src="../assets/js/scripts-global.js"></script>
     <script src="../assets/js/jquery-confirm.js"></script>
 
     <!-- Page level plugins -->
@@ -59,7 +60,7 @@
     <script src="../assets/js/scripts.perfil.js"></script>
 
     <!--Bootstrap-->
-    
+
 	  <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 
     </body>

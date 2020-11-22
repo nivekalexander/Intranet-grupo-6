@@ -36,9 +36,9 @@
 				<input class="form-control rounded-0" type="text" name="ficid" id="ficid" required><br>
 
 				<div class="modal-footer">
-       				<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal">Cerrar</button>
+       				<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarAnuncio();">Cerrar</button>
        				<button type="submit" id="btnguardar" data-dismiss="modal" type="button" class="btn btn-primary btn-rounded" onclick="InsertAnuncio();">Crear</button>
-      			</div>
+				</div>
 
 		</form>
     </div>
