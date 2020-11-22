@@ -17,7 +17,7 @@
 
       <!-- Nav Item - Noticias -->
       <li class="nav-item active">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="./main.php?ctrl=noticia">
           <img src="../assets/img/periodico.svg" class="slidebar-img" alt="new">
           <span>Noticias</span></a>
       </li>
@@ -27,7 +27,7 @@
 
       <!-- Nav Item - Anuncios -->
       <li class="nav-item active">
-        <a class="nav-link" href="../views/main.php">
+        <a class="nav-link" href="./main.php?ctrl=anuncio">
 
           <img src="../assets/img/anuncios.svg" class="slidebar-img" alt="new">
           <span>Anuncios</span></a>
