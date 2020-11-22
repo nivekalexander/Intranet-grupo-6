@@ -75,8 +75,68 @@
     padding: 5%;
 }
 
+.noti-tittle{
+    color: #F2994B;
+    font-weight: 700;
+}
 
 
+.btn-rounded{
+    background-color: #F2994B;
+    border-radius: 50rem !important;
+    color : #ffffff !important;
+}
+
+.espaciado{
+    padding: 40px;
+}
+
+.panel-perfil{
+    height: 95%;
+    width: 95%;
+    background-color: rgb(237, 237, 237);
+    padding-right: 2rem;
+    padding-left: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.panel-datos{
+    height: 78%;
+    width: 100%;
+    background-color:  #01142D;
+}
+
+.panel-foto{
+    height: 90px;
+    width: 90px;
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid #858796;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;    
+}
+
+.img-profile{
+    height: 100%;
+    width: 100%;
+}
+
+.form-perfil{
+    padding-top: 50px;;
+}
+
+.col-form-label{
+    color: white;
+    font-weight: 700;    
+}
+
+.form-control{
+    margin-left: 60px;
+    width: 80%;
+}
 
 
 
