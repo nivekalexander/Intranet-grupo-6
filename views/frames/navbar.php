@@ -87,7 +87,7 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Presiona "Salir" para cerrar tu sesion.</div>
+        <div class="modal-body">Presiona "Salir" para cerrar tú sesion.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary btn-gris" type="button" data-dismiss="modal">Cancelar</button>
           <a class="btn btn-rounded btn-primary " href="../login/loginView.php">Salir</a>
