@@ -5,6 +5,7 @@
 
 
 <!-- Modal -->
+
 <div class="modal fade" style="padding-top: 187px;" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -20,10 +21,13 @@
                 <input type="file">
             </div>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary btn-rounded">Subir</button>
       </div>
+
     </div>
   </div>
+  
 </div>
