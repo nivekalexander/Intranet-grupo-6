@@ -7,7 +7,7 @@
 
     <!-- Nav Item - Grupos -->
     <li class="nav-item active">
-      <a class="nav-link" href="">
+      <a class="nav-link"  href="./main.php?ctrl=grupos">
         <img src="../assets/img/grupos.svg" class="slidebar-img" alt="new">
         <span>Grupos</span></a>
     </li>
@@ -39,7 +39,7 @@
 
     <!-- Nav Item - Material de Apoyo -->
     <li class="nav-item active">
-      <a class="nav-link" href="">
+      <a class="nav-link"  href="./main.php?ctrl=materialApollo">
         <img src="../assets/img/materialapoyo.svg" class="slidebar-img" alt="new">
         <span>Material de apoyo</span></a>
     </li>
@@ -49,7 +49,7 @@
 
     <!-- Nav Item - Foro -->
     <li class="nav-item active">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link"  href="./main.php?ctrl=foro">
         <img src="../assets/img/foro.svg" class="slidebar-img" alt="new">
         <span>Foro</span></a>
     </li>
@@ -59,7 +59,7 @@
 
     <!-- Nav Item - Horario -->
     <li class="nav-item active">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link"  href="./main.php?ctrl=horario">
         <img src="../assets/img/horario.svg" class="slidebar-img" alt="new">
         <span>Horario</span></a>
     </li>
@@ -69,7 +69,7 @@
 
     <!-- Nav Item - Usuarios -->
     <li class="nav-item active">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link"  href="./main.php?ctrl=usuario">
         <img src="../assets/img/usuarios.svg" class="slidebar-img" alt="new">
         <span>Usuarios</span></a>
     </li>
@@ -79,7 +79,7 @@
 
     <!-- Nav Item - Ficha -->
     <li class="nav-item active">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link"  href="./main.php?ctrl=filla">
         <img src="../assets/img/ficha.svg" class="slidebar-img" alt="new">
         <span>Ficha</span></a>
     </li>
@@ -90,7 +90,7 @@
 
     <!-- Nav Item - Programa de formación -->
     <li class="nav-item active">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link"  href="./main.php?ctrl=programaFormacion">
         <img src="../assets/img/programaformacion.svg" class="slidebar-img" alt="new">
         <span id="programa" class="programa2">Programa de formación</span></a>
     </li>
@@ -114,9 +114,9 @@
       <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Usuarios:</h6>
-          <a class="collapse-item" href="login.html">Estado</a>
-          <a class="collapse-item" href="register.html">Tipo identificación</a>
-          <a class="collapse-item" href="forgot-password.html">Rol</a>
+          <a class="collapse-item"  href="./main.php?ctrl=estado">Estado</a>
+          <a class="collapse-item"  href="./main.php?ctrl=tipoIdentificacion">Tipo identificación</a>
+          <a class="collapse-item"  href="./main.php?ctrl=rol"">Rol</a>
           <div class="collapse-divider"></div>
           <h6 class="collapse-header">Other Pages:</h6>
           <a class="collapse-item" href="404.html">404 Page</a>
