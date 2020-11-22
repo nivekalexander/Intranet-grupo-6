@@ -21,7 +21,7 @@
                 
 
 
-                <form class=" d-sm-inline-block form-inline   my-2 my-md-0 mw-100 navbar-logo ">
+                <form class=" d-sm-inline-block form-inline my-2 my-md-0 mw-100 navbar-logo d-none d-sm-none d-md-block">
                   <div class="input-group ">
                       
                           <img id="logosena" src="../assets/img/logosena.svg" alt="logosena.svg">
