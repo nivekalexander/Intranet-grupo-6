@@ -79,7 +79,7 @@
 
     <!-- Nav Item - Ficha -->
     <li class="nav-item active">
-      <a class="nav-link"  href="./main.php?ctrl=filla">
+      <a class="nav-link"  href="./main.php?ctrl=ficha">
         <img src="../assets/img/ficha.svg" class="slidebar-img" alt="new">
         <span>Ficha</span></a>
     </li>
@@ -90,7 +90,7 @@
 
     <!-- Nav Item - Programa de formación -->
     <li class="nav-item active">
-      <a class="nav-link"  href="./main.php?ctrl=programaFormacion">
+      <a class="nav-link"  href="./main.php?ctrl=programa">
         <img src="../assets/img/programaformacion.svg" class="slidebar-img" alt="new">
         <span id="programa" class="programa2">Programa de formación</span></a>
     </li>

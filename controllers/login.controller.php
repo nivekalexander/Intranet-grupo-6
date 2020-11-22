@@ -14,7 +14,8 @@
 								{ 
 									require_once('../views/frames/header.php');
 									
-									require_once('../views/login/loginView.php');
+                                    require_once('../views/login/loginView.php');
+                                    
 									require_once('../views/frames/footer.php');
 								}
 
