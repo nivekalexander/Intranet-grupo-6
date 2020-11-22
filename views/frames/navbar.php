@@ -59,7 +59,7 @@
                       </a>
                       <!-- Dropdown - User logout -->
                       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in navbar-fondo" aria-labelledby="userDropdown">
-                        <a class="dropdown-item navbar-fondo dropdown-text-color" href="#">
+                        <a class="dropdown-item navbar-fondo dropdown-text-color" href="./main.php?ctrl=perfil">
                           <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                           Perfil
                         </a>
