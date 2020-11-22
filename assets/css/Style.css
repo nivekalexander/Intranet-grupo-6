@@ -101,7 +101,7 @@
 
 .panel-datos{
     height: 78%;
-    width: 100%;
+    width: 60%;
     background-color:  #01142D;
 }
 
@@ -139,8 +139,6 @@
     color: white;
     font-weight: 700;    
 }
-
-
 
 /*Fin Estilos Noticias*/
 
