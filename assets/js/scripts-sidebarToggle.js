@@ -52,6 +52,6 @@
         scrollTop: ($($anchor.attr('href')).offset().top)
       }, 1000, 'easeInOutExpo');
       e.preventDefault();
-    });
+    });  
   
   })(jQuery); // End of use strict
