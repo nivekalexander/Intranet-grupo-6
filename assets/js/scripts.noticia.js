@@ -151,5 +151,6 @@ function CancelarNoticia()
                                                 else { console.log("Ups, Me equivoque;"); }
                                             }
                                          };
-    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");							 
+    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");		
+
 }

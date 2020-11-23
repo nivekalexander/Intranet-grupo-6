@@ -52,7 +52,7 @@
 				
 					<div class="modal-footer">
 					<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarAnuncio();">Cerrar</button>
-					<button type="submit" id="btnguardar" class="btn btn-primary btn-rounded" onclick="InsertAnuncio();">Crear</button>
+					<button type="submit" id="btnguardar" class="btn btn-primary btn-rounded">Crear</button>
 					</div>
 				</form>
 				
@@ -67,11 +67,15 @@
 							// Loop over them and prevent submission
 							var validation = Array.prototype.filter.call(forms, function(form) {
 								form.addEventListener('submit', function(event) {
+								if (form.checkValidity() === true) {
+									event.preventDefault();
+									event.stopPropagation();
+									InsertAnuncio();
+									$('#modalanuncios').modal('hide');
+								}
 								if (form.checkValidity() === false) {
 									event.preventDefault();
 									event.stopPropagation();
-
-									$('#modalanuncios').modal('hide');
 								}
 								form.classList.add('was-validated');
 								}, false);
