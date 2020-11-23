@@ -57,6 +57,8 @@
 				</form>
 				
 				<script>
+
+
 					(function() {
 						'use strict';
 						window.addEventListener('load', function() {
@@ -69,8 +71,7 @@
 									event.preventDefault();
 									event.stopPropagation();
 
-									//tal vez es acá donde tenes que llamar el jquery
-
+									$('#modalanuncios').modal('hide');
 								}
 								form.classList.add('was-validated');
 								}, false);

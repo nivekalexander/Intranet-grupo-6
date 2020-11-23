@@ -19,6 +19,8 @@
 									require_once('../views/frames/slidebar.php');
 
 									require_once('../views/tipoIdentificacion/tipoIdentificacionView.php');
+									
+									require_once('../views/frames/firtsfooter.php');
 
 									require_once('../views/frames/footer.php');
 								}

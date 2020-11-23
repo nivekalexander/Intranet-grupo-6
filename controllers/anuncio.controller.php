@@ -20,6 +20,8 @@
 									require_once('../views/frames/slidebar.php');
 									
 									require_once('../views/anuncio/anuncioView.php');
+									
+									require_once('../views/frames/firtsfooter.php');
 								
 									require_once('../views/frames/footer.php');
 								}

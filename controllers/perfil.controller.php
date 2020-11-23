@@ -16,7 +16,7 @@ class PerfilController
                                 
                                 require_once('../views/frames/slidebar.php');
                                 
-
+                                require_once('../views/frames/firtsfooter.php');
                                 require_once('../views/perfil/perfilView.php');
 
 
