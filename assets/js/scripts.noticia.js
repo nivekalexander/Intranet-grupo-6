@@ -71,7 +71,6 @@ function InsertNoticia(){
             alert('Algo anda mal');
         }
     });
-    $('#noticiaModal').modal('hide');
     document.formnoticia.reset();
 }
 

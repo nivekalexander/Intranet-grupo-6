@@ -49,7 +49,7 @@
 					<input class="form-control rounded" type="text" name="ficid" id="ficid" required>
 					<div class="invalid-feedback">Complete el campo.</div><br>
 				</div>
-
+				
 					<div class="modal-footer">
 					<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarAnuncio();">Cerrar</button>
 					<button type="submit" id="btnguardar" class="btn btn-primary btn-rounded" onclick="InsertAnuncio();">Crear</button>

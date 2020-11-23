@@ -10,18 +10,21 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form id="formnoticia" name="formnoticia" class="needs-validation" novalidate>
-      <div class="modal-body">        
-            <div class="form-group row justify-content-center">
+
+      <div class="modal-body">     
+
+      <form id="formnoticia" name="formnoticia" class="needs-validation" novalidate>   
+            <div class="form-group custom-file">
                 <input type="number" name="idnews" id="id-news" hidden>
-                <input type="file" class="form-control-file" name="file-news" id="file-news" accept="image/*" required>
-                <input type="text" class="form-control" id="validationCustom05" required>
+                <input type="file" class="form-control-file custom-file-input" name="file-news" id="file-news" accept="image/*" lang="es" required>
+                <label class="custom-file-label" for="file-news">Seleccionar Archivo</label>
+                <div class="invalid-feedback">No se a seleccionado ningun archivo</div>
             </div>              
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal">Cerrar</button>
-        <button type="submit" id="subir-news" type="button" class="btn btn-primary btn-rounded" onclick="InsertNoticia();">Subir</button>
+        <button type="submit" id="subir-news" class="btn btn-primary btn-rounded" onclick="InsertNoticia();">Subir</button>
       </div>
       </form>  
     </div>
@@ -42,6 +45,8 @@
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
+
+          $('#noticiaModal').modal('hide');
         }
         form.classList.add('was-validated');
       }, false);
