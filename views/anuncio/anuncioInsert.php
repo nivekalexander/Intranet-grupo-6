@@ -14,30 +14,45 @@
 				<form name="formanuncio" id="formanuncio" class="needs-validation"  novalidate>
 
 					<input type="text" name="id" hidden>
-					
+				<div>
 					<label for="titulo">Titulo</label><br>
-					<input class="form-control rounded-0 " type="text" name="titulo" id="titulo" placeholder="Titulo" required><br>
-					<div class="valid-feedback">¡Ok Válido!</div>
-					<div class="invalid-feedback">Complete el campo.</div>
-					
+					<input class="form-control rounded" type="text" name="titulo" id="titulo" placeholder="Titulo" required>
+					<div class="invalid-feedback">Complete el campo.</div><br>
+			    </div>
+
+				<div>
 					<label for="descrp">Descripcion</label><br>
-					<textarea class="form-control rounded-0" name="descrp" id="descrp" rows="3" required></textarea><br>
+					<textarea class="form-control rounded" name="descrp" id="descrp" rows="3" required></textarea>
+					<div class="invalid-feedback">Complete el campo.</div><br>
+				</div>
 
+				<div>
 					<label for="fchcre">Fecha Creacion</label><br>
-					<input class="form-control rounded-0" type="date" name="fchcre" id="fchcre" required><br>
+					<input class="form-control rounded" type="date" name="fchcre" id="fchcre" required>
+					<div class="invalid-feedback">Complete el campo.</div><br>
+				</div>
 
+				<div>
 					<label for="fchfin">Fecha Fin</label><br>
-					<input class="form-control rounded-0" type="date" name="fchfin" id="fchfin" required><br>
+					<input class="form-control rounded" type="date" name="fchfin" id="fchfin" required>
+					<div class="invalid-feedback">Complete el campo.</div><br>
+				</div>
 
+				<div>
 					<label for="usuid">id Usuario</label><br>
-					<input class="form-control rounded-0" type="text" name="usuid" id="usuid" required><br>
+					<input class="form-control rounded" type="text" name="usuid" id="usuid" required>
+					<div class="invalid-feedback">Complete el campo.</div><br>
+				</div>
 
+				<div>
 					<label for="ficid">Ficha id</label><br>
-					<input class="form-control rounded-0" type="text" name="ficid" id="ficid" required><br>
+					<input class="form-control rounded" type="text" name="ficid" id="ficid" required>
+					<div class="invalid-feedback">Complete el campo.</div><br>
+				</div>
 
 					<div class="modal-footer">
 					<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarAnuncio();">Cerrar</button>
-					<button type="submit" id="btnguardar" class="btn btn-primary btn-rounded" data-dismiss="modal" onclick="InsertAnuncio();">Crear</button>
+					<button type="submit" id="btnguardar" class="btn btn-primary btn-rounded" onclick="InsertAnuncio();">Crear</button>
 					</div>
 				</form>
 				
@@ -64,10 +79,6 @@
 					})();
 
 				</script>
-
-
-
-
 		   </div>
 		</div>   
 	</div>
