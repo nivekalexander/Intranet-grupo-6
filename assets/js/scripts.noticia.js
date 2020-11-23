@@ -10,7 +10,7 @@ function ObjAjax()
 }
 
 
-function BorrarNoticia(id)
+function BorrarNoticia(id,url)
 {
     $.confirm({
         title: 'Confirmación!',
@@ -40,7 +40,7 @@ function BorrarNoticia(id)
                                                          };
                                                      
                     ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-                    ajax.send("ctrl=noticia&acti=eliminar&id="+id);
+                    ajax.send("ctrl=noticia&acti=eliminar&id="+id+"&url="+url);
             },
             Cancelar: function () {
                 $.alert('Has cancelado la eliminación');
@@ -84,7 +84,7 @@ function EditarNoticia(id)
         buttons: {
             Confirmar: function () {
                 document.formnoticia.idnews.value = id;
-                document.getElementById("subir-news").value = "Actualizar";
+                document.getElementById("subir-news").innerHTML = "Actualizar";
                 document.getElementById("subir-news").setAttribute("onclick", "UpdateNoticia();");
                 $("#noticiaModal").modal("show");
             },
@@ -125,7 +125,7 @@ function UpdateNoticia()
     $('#noticiaModal').modal('hide');
     document.formnoticia.reset();
 
-    document.getElementById("subir-news").value = "Subir";
+    document.getElementById("subir-news").innerHTML = "Subir";
     document.getElementById("subir-news").setAttribute("onclick", "InsertNoticia();");
 }
                              
