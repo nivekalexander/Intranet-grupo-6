@@ -9,6 +9,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      
       <div class="modal-body">
         <form action=""></form>
             <div class="form-group row justify-content-center">

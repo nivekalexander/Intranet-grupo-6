@@ -19,6 +19,27 @@
 									require_once('../views/frames/footer.php');
 								}
 
+		public function Insertar()
+								{									
+																	
+									$this->noticia->Insert($_REQUEST['url']);
+
+									require_once('../views/noticia/noticiaSelect.php');
+								}
+
+		public function Eliminar()
+								{
+									$this->noticia->Delete($_REQUEST['id']);
+									require_once('../views/noticia/noticiaSelect.php');
+								}
+
+		public function Actualizar()
+									{										
+ 										$this->noticia->Update($_REQUEST['url']);
+
+ 										require_once('../views/noticia/noticiaSelect.php');
+									}						
+
 
     }
 ?>
