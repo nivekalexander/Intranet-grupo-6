@@ -16,7 +16,7 @@
 					<input type="text" name="id" hidden>
 				<div>
 					<label for="titulo">Titulo</label><br>
-					<input class="form-control rounded" type="text" name="titulo" id="titulo" placeholder="Titulo" required>
+					<input class="form-control rounded" type="text" name="titulo" id="titulo" required>
 					<div class="invalid-feedback">Complete el campo.</div><br>
 			    </div>
 
