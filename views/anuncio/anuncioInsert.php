@@ -11,7 +11,7 @@
       </div>
       <div class="modal-body espaciado">
 
-		 <form name="formanuncio" id="formanuncio" class="needs-validation" onSubmit="event.preventDefault();" novalidate>
+		 <form name="formanuncio" id="formanuncio" class="needs-validation" novalidate>
 
 				<input type="text" name="id" hidden>
 
@@ -37,7 +37,7 @@
 
 				<div class="modal-footer">
        				<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarAnuncio();">Cerrar</button>
-       				<button type="submit" id="btnguardar" data-dismiss="modal" type="button" class="btn btn-primary btn-rounded" onclick="InsertAnuncio();">Crear</button>
+       				<button type="submit" id="btnguardar" data-dismiss="modal" class="btn btn-primary btn-rounded" onclick="InsertAnuncio();">Crear</button>
 				</div>
 
 		</form>
