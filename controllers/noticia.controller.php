@@ -53,7 +53,10 @@
 								}
 
 		public function Actualizar()
-									{							
+									{					
+										$url = $_REQUEST['url'];
+										file_exists($url) ? unlink($url): "";		
+										
 										$datos = $this->noticia;																				
 
 										date_default_timezone_set('America/Bogota');
