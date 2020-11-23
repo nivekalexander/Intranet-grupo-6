@@ -44,8 +44,9 @@
 								}
 
 		public function Eliminar()
-								{
-									unlink($_REQUEST['url']);
+								{			
+									$url = $_REQUEST['url'];
+									file_exists($url) ? unlink($url): "";									
 
 									$this->noticia->Delete($_REQUEST['id']);
 									require_once('../views/noticia/noticiaSelect.php');
