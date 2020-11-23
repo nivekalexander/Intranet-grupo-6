@@ -14,15 +14,15 @@ function BorrarNoticia(id)
 {
     $.confirm({
         title: 'Confirmación!',
-        content: '¿Esta seguro que desea eliminar este noticia?',
+        content: '¿Esta seguro que desea eliminar esta noticia?',
         buttons: {
-            confirm: function () {
+            Confirmar: function () {
                 $.alert('Se ha eliminado correctamente');
 
                     var result = document.getElementById('tview');
 
-                    const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-                    ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
+                    const ajax = new XMLHttpRequest(); 
+                    ajax.open("POST","main.php",true); 
                     ajax.onreadystatechange = function (){
                                                             if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
                                                             {
@@ -42,7 +42,7 @@ function BorrarNoticia(id)
                     ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
                     ajax.send("ctrl=noticia&acti=eliminar&id="+id);
             },
-            cancel: function () {
+            Cancelar: function () {
                 $.alert('Has cancelado la eliminación');
             }
         }
@@ -51,103 +51,85 @@ function BorrarNoticia(id)
 }
 
 
-function Insertnoticia()
-{
-    var result = document.getElementById('tview');
+function InsertNoticia(){
+    
+    var paquete = new FormData();
+    paquete.append('archivo',$('#file-news')[0].files[0]);
 
-    var titulo   = document.formnoticia.titulo.value;
-    var descrp   = document.formnoticia.descrp.value;
-    var fchcre   = document.formnoticia.fchcre.value;
-    var fchfin   = document.formnoticia.fchfin.value;
-    var usuid    = document.formnoticia.usuid.value;
-    var ficid    = document.formnoticia.ficid.value;
-
-    const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-    ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
-    ajax.onreadystatechange = function (){
-                                            if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
-                                            {
-                                                if( ajax.status == 200 ) // Estado 200 es SUCCESS = CORRECTO
-                                                {
-
-                                                    result.innerHTML = ajax.responseText;
-
-                                                }
-                                                else
-                                                {
-                                                    console.log("Ups, Me equivoque;");
-                                                }
-                                            }
-                                         };
-
-    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    ajax.send("ctrl=noticia&acti=insertar&titulo="+titulo+"&descrp="+descrp+"&fchcre="+fchcre+"&fchfin="+fchfin+"&usuid="+usuid+"&ficid="+ficid);
-
-    document.getElementById('formnoticia').reset();
+    var destino = "main.php?ctrl=noticia&acti=insertar";
+    $.ajax({
+        url: destino,        
+        type: 'POST',
+        contentType: false,
+        data: paquete,
+        processData: false,
+        cache: false,
+        success: function(resultado){
+            document.getElementById('tview').innerHTML = resultado;
+        },
+        error: function(){
+            alert('Algo anda mal');
+        }
+    });
+    $('#noticiaModal').modal('hide');
+    document.formnoticia.reset();
 }
 
 
-
-
-
-function Editarnoticia(id,titulo,descrp,fchcre,fchfin,usuid,ficid)
+function EditarNoticia(id)
 {
+    $.confirm({
+        title: 'Confirmación!',
+        content: '¿Esta seguro que desea editar esta noticia?',
+        buttons: {
+            Confirmar: function () {
+                document.formnoticia.idnews.value = id;
+                document.getElementById("subir-news").value = "Actualizar";
+                document.getElementById("subir-news").setAttribute("onclick", "UpdateNoticia();");
+                $("#noticiaModal").modal("show");
+            },
+            Cancelar: function () {
+                $.alert('Has cancelado la edición');
+            }
+        }
+    });
 
-    document.formnoticia.id.value 	  = id;
-    document.formnoticia.titulo.value = titulo;
-    document.formnoticia.descrp.value = descrp;
-    document.formnoticia.fchcre.value = fchcre;
-     document.formnoticia.fchfin.value = fchfin;
-    document.formnoticia.usuid.value  = usuid;
-    document.formnoticia.ficid.value  = ficid;
-    
-    document.getElementById("btnguardar").value = "Actualizar";
-    document.getElementById("btnguardar").setAttribute("onclick", "Updatenoticia();");
-    
-    // Cambiar la propiedad DEL FORMULARIO desde javascript de ONSUBMIT() ONCLICK() CAMBIE  -> UPDATEUSUARIO() al boton guardar
+            
 }
 
 
-function Updatenoticia()
+function UpdateNoticia()
 {
 
     var result = document.getElementById('tview');
+    var id     = document.formnoticia.idnews.value;
 
-    var titulo  = document.formnoticia.titulo.value;
-    var descrp  = document.formnoticia.descrp.value;
-    var fchcre  = document.formnoticia.fchcre.value;
-    var fchfin  = document.formnoticia.fchfin.value;
-    var usuid   = document.formnoticia.usuid.value;
-    var ficid   = document.formnoticia.ficid.value;
-    var id   	= document.formnoticia.id.value;
+    var paquete = new FormData();
+    paquete.append('archivo',$('#file-news')[0].files[0]);
 
-    document.getElementById('formnoticia').reset();
+    var destino = "main.php?ctrl=noticia&acti=actualizar&id="+id;
+    $.ajax({
+        url: destino,        
+        type: 'POST',
+        contentType: false,
+        data: paquete,
+        processData: false,
+        cache: false,
+        success: function(resultado){
+            document.getElementById('tview').innerHTML = resultado;
+        },
+        error: function(){
+            alert('Algo anda mal');
+        }
+    });
+    $('#noticiaModal').modal('hide');
+    document.formnoticia.reset();
 
-    const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-    ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
-    ajax.onreadystatechange = function (){
-                                            if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
-                                            {
-                                                if( ajax.status == 200 ) // Estado 200 es SUCCESS = CORRECTO
-                                                {
-                                                    result.innerHTML = ajax.responseText;
-                                                    document.getElementById("btnguardar").value = "Guardar";
-
-                                                    // limpiar el formulario
-                                                    // document.getElementById("formusuario") --> onlick --> insertusuario()
-
-                                                }
-                                                else { console.log("Ups, Me equivoque;"); }
-                                            }
-                                         };
-    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    ajax.send("ctrl=noticia&acti=actualizar&titulo="+titulo+"&descrp="+descrp+"&fchcre="+fchcre+"&fchfin="+fchfin+"&usuid="+usuid+"&ficid="+ficid+"&id="+id);
-
-    document.getElementById("btnguardar").setAttribute("onclick", "Insertnoticia();");
-    document.getElementById('formnoticia').reset();								 
+    document.getElementById("subir-news").value = "Subir";
+    document.getElementById("subir-news").setAttribute("onclick", "InsertNoticia();");
 }
                              
-function Cancelarnoticia()
+function CancelarNoticia()
 {
     var result = document.getElementById('tview');
 
