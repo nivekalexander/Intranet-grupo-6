@@ -101,7 +101,7 @@
 		document.formanuncio.usuid.value  = usuid;
 		document.formanuncio.ficid.value  = ficid;
 		
-		document.getElementById("btnguardar").value = "Actualizar";
+		document.getElementById("btnguardar").innerHTML = "Actualizar";
 		document.getElementById("btnguardar").setAttribute("onclick", "UpdateAnuncio();");
 		
 		// Cambiar la propiedad DEL FORMULARIO desde javascript de ONSUBMIT() ONCLICK() CAMBIE  -> UPDATEUSUARIO() al boton guardar
@@ -131,7 +131,7 @@
 													if( ajax.status == 200 ) // Estado 200 es SUCCESS = CORRECTO
 													{
 														result.innerHTML = ajax.responseText;
-														document.getElementById("btnguardar").value = "Guardar";
+														document.getElementById("btnguardar").innerHTML = "Crear";
 
 														// limpiar el formulario
 														// document.getElementById("formusuario") --> onlick --> insertusuario()
@@ -170,5 +170,8 @@
 													else { console.log("Ups, Me equivoque;"); }
 												}
 											 };
-		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");							 
+		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+		document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");
+		document.getElementById("btnguardar").innerHTML = "Crear";						 
 	}
