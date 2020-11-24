@@ -41,8 +41,8 @@ class Anuncio
 		public function Insert(Anuncio $data)
 									 {
 									 	try  				 {
-									 							$sql="INSERT INTO tbl_anuncio(`anu_titulo`, `anu_descrp`, `anu_feccrn`, `anu_fecfn`, `anu_ficid`, `anu_usuid`)
-																					 VALUES(?,?,?,?,?,?)";
+									 							$sql="INSERT INTO tbl_anuncio(`anu_titulo`, `anu_descrp`, `anu_fecfn`, `anu_ficid`, `anu_usuid`)
+																					 VALUES(?,?,?,?,?)";
 																					 			 
 
 									 							$this->pdo->prepare($sql)
@@ -50,7 +50,6 @@ class Anuncio
 									 									  			 array(
 																								$data->titulo,
 																								$data->descrp,
-																								$data->fchcre,
 																								$data->fchfin,
 																								$data->ficid,
 																								$data->usuid
@@ -77,7 +76,7 @@ class Anuncio
 		public function Update(Anuncio $data)
 									 {
 									 	try  				 {
-									 							$sql="UPDATE tbl_anuncio SET anu_titulo=?,anu_descrp=?,anu_feccrn=?,anu_fecfn=?,anu_ficid=?,anu_usuid=? 
+									 							$sql="UPDATE tbl_anuncio SET anu_titulo=?,anu_descrp=?,anu_fecfn=?,anu_ficid=?,anu_usuid=? 
 
 																 WHERE anu_id=?";
 																 
@@ -87,7 +86,6 @@ class Anuncio
 	
 																							$data->titulo,
 																							$data->descrp,
-																							$data->fchcre,
 																							$data->fchfin,
 																							$data->ficid,
 																							$data->usuid,
