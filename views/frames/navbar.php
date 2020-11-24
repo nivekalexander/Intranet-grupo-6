@@ -1,3 +1,5 @@
+
+<body id="page-top">
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
 
