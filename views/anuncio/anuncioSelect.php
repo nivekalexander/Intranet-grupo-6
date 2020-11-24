@@ -1,39 +1,11 @@
 <table>
-		<!-- Cabecera de la Tabla 
-		<thead>
-			<tr>
-				<th>titulo			</th>
-				<th>Descripcion 	</th>
-				<th>Fecha Creacion 		</th>
-				<th>Fecha Fin 	</th>
-				<th>Ficha id	</th>
-				<th>Usaurio id	</th>
-				<th>Editar		</th>
-				<th>Eliminar	</th>
-			</tr>
-		</thead>-->
 
-		<!-- Cuerpo de la Tabla -->
 		<tbody>
 				<?php foreach ( $this->anuncio->Select() as $filas ): ?>
 
-					 	<?php  $grupal = "'".$filas->anu_id."','".$filas->anu_titulo."','".$filas->anu_descrp."','".$filas->anu_feccrn."','".$filas->anu_fecfn."','".$filas->anu_ficid."','".$filas->anu_usuid."'"; ?>
+					 	<?php  $grupal = "'".$filas->anu_id."','".$filas->anu_titulo."','".$filas->anu_descrp."','".$filas->anu_feccrn."','".$filas->anu_fecfn."','".$filas->anu_usuid."','".$filas->anu_ficid."'"; ?>
 						
-						<!--
-						<tr>
-							
-							
- 							<td><?php //echo $filas->anu_titl;		?></td>
- 							<td><?php //echo $filas->anu_descrp;	?></td>
- 							<td><?php //echo $filas->anu_fechcr;	?></td>
- 							<td><?php //echo $filas->anu_fechfn;	?></td>
- 							<td><?php //echo $filas->anu_fichid; 	?></td>
- 							<td><?php //echo $filas->anu_usuid;		?></td>
-
-							<td> <button data-toggle="modal" data-target="#modalanuncios" data-dismiss="modal" onclick="EditarAnuncio(<?php //echo $grupal; ?>)"> Editar   </button>    </td>
-							<td> <button onclick="BorrarAnuncio(<?php //echo $filas->anu_id;?>);"> Eliminar </button>    </td>
-						</tr>-->
-
+					
 
 					<div class="d-flex justify-content-center">
 						<div class="card bg-light mb-5 w-100 diseño-tarjeta">
