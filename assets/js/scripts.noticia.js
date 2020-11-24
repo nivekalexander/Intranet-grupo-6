@@ -74,14 +74,16 @@ function InsertNoticia(){
     document.formnoticia.reset();
 }
 
+var urlEdit;
 
-function EditarNoticia(id)
+function EditarNoticia(id,url)
 {
     $.confirm({
         title: 'Confirmación!',
         content: '¿Esta seguro que desea editar esta noticia?',
         buttons: {
             Confirmar: function () {
+                urlEdit = url;
                 document.formnoticia.idnews.value = id;
                 document.getElementById("subir-news").innerHTML = "Actualizar";
                 document.getElementById("subir-news").setAttribute("onclick", "UpdateNoticia();");
@@ -106,7 +108,7 @@ function UpdateNoticia()
     var paquete = new FormData();
     paquete.append('archivo',$('#file-news')[0].files[0]);
 
-    var destino = "main.php?ctrl=noticia&acti=actualizar&id="+id;
+    var destino = "main.php?ctrl=noticia&acti=actualizar&id="+id+"&url="+urlEdit;
     $.ajax({
         url: destino,        
         type: 'POST',
@@ -126,6 +128,7 @@ function UpdateNoticia()
 
     document.getElementById("subir-news").innerHTML = "Subir";
     document.getElementById("subir-news").setAttribute("onclick", "InsertNoticia();");
+    urlEdit = "";
 }
                              
 function CancelarNoticia()
