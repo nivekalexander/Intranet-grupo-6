@@ -14,7 +14,8 @@ class Anuncio
 		public function Select()
 									 {
 									 	try  				 {
-									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_anuncio ORDER BY anu_id DESC");
+									 							$sql=$this->pdo->prepare("SELECT tbl_anuncio.anu_id,tbl_anuncio.anu_titulo,tbl_anuncio.anu_descrp,tbl_anuncio.anu_feccrn,tbl_anuncio.anu_fecfn,tbl_anuncio.anu_ficid,tbl_anuncio.anu_usuid,tbl_usuario.usu_nombre, tbl_usuario.usu_aplldo
+																 						 FROM tbl_anuncio  INNER JOIN tbl_usuario WHERE  tbl_anuncio.anu_id=tbl_usuario.usu_id ORDER BY tbl_anuncio.anu_id DESC");
 									 							$sql->execute();
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
 									 						 }
@@ -25,7 +26,7 @@ class Anuncio
 		public function NameUsu()
 		{
 			try  				 {
-									$sql=$this->pdo->prepare("SELECT tbl_usuario.usu_nombre, tbl_usuario.usu_aplldo FROM tbl_anuncio INNER JOIN tbl_usuario WHERE tbl_usuario.usu_id = tbl_anuncio.anu_id");
+									$sql=$this->pdo->prepare("SELECT tbl_usuario.usu_nombre, tbl_usuario.usu_aplldo FROM tbl_usuario INNER JOIN tbl_anuncio WHERE  tbl_anuncio.anu_id=tbl_usuario.usu_id ORDER BY tbl_anuncio.anu_id DESC");
 									$sql->execute();
 									return $sql->fetchALL(PDO::FETCH_OBJ);
 								 }

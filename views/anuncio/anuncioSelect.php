@@ -44,7 +44,7 @@
 										<a href="perfil.php?id=925763" name="imagenPost"><img src="https://www.flaticon.es/svg/static/icons/svg/599/599305.svg" width="40" height="40"></a>
 									</div >
 									<div class="float-left">
-									Marcela de Saris<br>Fecha inicio : <?php echo $filas->anu_feccrn;?>
+									<?php echo $filas->usu_nombre;?> <?php echo $filas->usu_aplldo;?><br>Fecha inicio : <?php echo $filas->anu_feccrn;?>
 									</div>
 							 </div>
 							
