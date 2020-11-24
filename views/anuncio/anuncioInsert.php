@@ -1,6 +1,6 @@
 <!-- Modal -->
 
-<div class="modal fade" id="modalanuncios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalanuncios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog" role="document">
 	  <div class="modal-content">
 			<div class="modal-header Color-Slidebar">
@@ -11,7 +11,7 @@
 			</div>
 			<div class="modal-body espaciado">
 
-				<form name="formanuncio" id="formanuncio" class="needs-validation"  novalidate>
+				<form name="formanuncio" id="formanuncio" class="needs-validation" >
 
 					<input type="text" name="id" hidden>
 				<div>
@@ -68,10 +68,15 @@
 							var validation = Array.prototype.filter.call(forms, function(form) {
 								form.addEventListener('submit', function(event) {
 								if (form.checkValidity() === true) {
-									event.preventDefault();
-									event.stopPropagation();
-									InsertAnuncio();
-									$('#modalanuncios').modal('hide');
+									var nombreBoton = document.getElementById("btnguardar").innerHTML;
+									if (nombreBoton == "Crear"){
+										InsertAnuncio();
+										$('#modalanuncios').modal('hide');
+									}
+									if (nombreBoton == "Actualizar"){
+										UpdateAnuncio();
+										$('#modalanuncios').modal('hide');
+									}
 								}
 								if (form.checkValidity() === false) {
 									event.preventDefault();

@@ -86,7 +86,7 @@ function EditarNoticia(id,url)
                 urlEdit = url;
                 document.formnoticia.idnews.value = id;
                 document.getElementById("subir-news").innerHTML = "Actualizar";
-                document.getElementById("subir-news").setAttribute("onclick", "UpdateNoticia();");
+                //document.getElementById("subir-news").setAttribute("onclick", "UpdateNoticia();");
                 $("#noticiaModal").modal("show");
             },
             Cancelar: function () {
@@ -127,9 +127,11 @@ function UpdateNoticia()
     document.formnoticia.reset();
 
     document.getElementById("subir-news").innerHTML = "Subir";
-    document.getElementById("subir-news").setAttribute("onclick", "InsertNoticia();");
+    //document.getElementById("subir-news").setAttribute("onclick", "InsertNoticia();");
     urlEdit = "";
 }
+
+/*
                              
 function CancelarNoticia()
 {
@@ -157,3 +159,4 @@ function CancelarNoticia()
     ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");		
 
 }
+*/

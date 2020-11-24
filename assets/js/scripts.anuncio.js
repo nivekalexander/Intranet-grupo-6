@@ -102,7 +102,7 @@
 		document.formanuncio.ficid.value  = ficid;
 		
 		document.getElementById("btnguardar").innerHTML = "Actualizar";
-		document.getElementById("btnguardar").setAttribute("onclick", "UpdateAnuncio();");
+		//document.getElementById("btnguardar").setAttribute("onclick", "UpdateAnuncio();");
 		
 		// Cambiar la propiedad DEL FORMULARIO desde javascript de ONSUBMIT() ONCLICK() CAMBIE  -> UPDATEUSUARIO() al boton guardar
 	}
@@ -143,9 +143,9 @@
 		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 		ajax.send("ctrl=anuncio&acti=actualizar&titulo="+titulo+"&descrp="+descrp+"&fchcre="+fchcre+"&fchfin="+fchfin+"&usuid="+usuid+"&ficid="+ficid+"&id="+id);
 
-		$('#modalanuncios').modal('hide');	
+		// $('#modalanuncios').modal('hide');	
 		
-		document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");
+		//document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");
 		document.getElementById('formanuncio').reset();	
 								 
 	}
@@ -175,6 +175,6 @@
 											 };
 		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 
-		document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");
+		// document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");
 		document.getElementById("btnguardar").innerHTML = "Crear";						 
 	}

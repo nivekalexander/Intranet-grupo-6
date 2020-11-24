@@ -1,6 +1,6 @@
 <!-- Modal -->
 
-<div class="modal fade" style="padding-top: 187px;" id="noticiaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" style="padding-top: 187px;" id="noticiaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
@@ -13,11 +13,11 @@
 
       <div class="modal-body">     
 
-      <form id="formnoticia" name="formnoticia" class="needs-validation" novalidate>   
+      <form id="formnoticia" name="formnoticia" class="needs-validation">   
             <div class="form-group custom-file">
                 <input type="number" name="idnews" id="id-news" hidden>
-                <input type="file" class="form-control-file custom-file-input" name="file-news" id="file-news" accept="image/*" lang="es" required>
-                <label class="custom-file-label" for="file-news">Seleccionar Archivo</label>
+                <input type="file" class=" custom-file-input" name="file-news" id="file-news" accept="image/*" lang="es" required>
+                <label id="labelSelectFile" class="custom-file-label" for="file-news">Seleccionar Archivo</label>
                 <div class="invalid-feedback">No se a seleccionado ningun archivo</div>
             </div>              
       </div>
@@ -34,6 +34,9 @@
 <!--End Modal -->
 
 <script>
+
+// document.getElementById("labelSelectFile").innerHTML = document.getElementById("file-news").value;
+
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
     'use strict';
@@ -44,14 +47,22 @@
       var validation = Array.prototype.filter.call(forms, function(form) {
         form.addEventListener('submit', function(event) {
           if (form.checkValidity() === true) {
-            InsertNoticia();
-            $('#noticiaModal').modal('hide');
+            var nombreBoton = document.getElementById("subir-news").innerHTML;
+            if (nombreBoton == "Subir"){
+              InsertNoticia();
+              $('#noticiaModal').modal('hide');
+            }
+            if (nombreBoton == "Actualizar"){
+              UpdateNoticia();
+              $('#noticiaModal').modal('hide');
+            }
+           
           }
           if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();            
           }
-          form.classList.add('was-validated');
+          //form.classList.add('was-validated');
         }, false);
       });
     }, false);
