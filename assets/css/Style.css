@@ -1,96 +1,97 @@
-#login{
-    background:url("../img/fondologin.svg");
+#login {
+    background: url("../img/img-login/fondologin.svg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
 }
 
-#contenedorLogin{ 
-    background-color: rgba(0,0,0,0.6);
-    opacity:8;
+#contenedorLogin {
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 8;
     position: absolute;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 }
 
-.formlogin{
+.formlogin {
     background-color: #01142db9 !important;
-    opacity:10;
+    opacity: 10;
 }
 
-.navbar-logo{
+.navbar-logo {
     margin-left: 10px;
 }
 
-.boton-login{
+.boton-login {
     color: #fff;
     background-color: #e6902e !important;
 }
 
-.Color-Slidebar{
+.Color-Slidebar {
     background-color: #01142D !important;
     background-image: none;
 }
 
-#logosena{
-    height:60px ;
+#logosena {
+    height: 60px;
     width: 60px;
 }
 
-.separador{
+.separador {
     background-color: white;
     width: 1px;
     height: 60px;
     margin-left: 26px;
 }
 
-.navbar-fondo{
+.navbar-fondo {
     background-color: #01142D !important;
 }
 
-.slidebar-img{
+.slidebar-img {
     width: 14%;
     margin-right: 20px;
     /*margin: 0 auto;*/
 }
 
-.slidebar-center{
+.slidebar-center {
     margin: 0 auto;
     width: 30%;
 }
 
-.dropdown-text-color{
-    color : #ffffff !important;
+.dropdown-text-color {
+    color: #ffffff !important;
 }
 
-.programa2{
+.programa2 {
     font-size: 80% !important;
 }
 
-.center-login{
+.center-login {
     padding: 5%;
 }
 
+
 /*Estilos Noticias*/
-.noti-tittle{
+
+.noti-tittle {
     color: #F2994B;
     font-weight: 700;
 }
 
-
-.btn-rounded{
+.btn-rounded {
     background-color: #F2994B;
     border-radius: 50rem !important;
     color : #ffffff !important;   
     overflow: hidden;     
 }
 
-.espaciado{
+.espaciado {
     padding: 40px;
 }
 
-.panel-perfil{
+.panel-perfil {
     height: 95%;
     width: 630px;
     background-color: rgb(237, 237, 237);
@@ -100,15 +101,15 @@
     margin-left: auto;
 }
 
-.panel-datos{
+.panel-datos {
     padding: 1.5rem;
     margin-right: 0;
     margin-left: 0;
     border-width: .2rem;
-    background-color:  #01142D;
+    background-color: #01142D;
 }
 
-.panel-foto{
+.panel-foto {
     height: 90px;
     width: 90px;
     background-color: white;
@@ -117,55 +118,51 @@
     border: 1px solid #858796;
     margin-top: 10px;
     margin-bottom: 10px;
-    overflow: hidden;    
+    overflow: hidden;
 }
 
-.img-profile{
+.img-profile {
     height: 100%;
     width: 100%;
 }
 
-.form-perfil{
-
-    
-    padding-top: 50px;;
+.form-perfil {
+    padding-top: 50px;
+    ;
 }
-.btn-gris{
+
+.btn-gris {
     background-color: #858796;
     border-radius: 50rem !important;
-    color : #ffffff !important;
+    color: #ffffff !important;
 }
 
-.espaciado{
+.espaciado {
     padding: 40px;
 }
 
-.col-form-label{
+.col-form-label {
     color: white;
-    font-weight: 700;    
+    font-weight: 700;
 }
+
 
 /*Fin Estilos Noticias*/
 
+
 /* Botón ver contraseña - formulario perfil  */
-.ver-pass{
+
+.ver-pass {
     height: 37px;
     width: 37px;
     background-color: #F2994B;
     margin-right: auto;
     margin-left: auto;
-    overflow: hidden;  
+    overflow: hidden;
 }
 
-
-.footer-estilo{
+.footer-estilo {
     background-color: #01142D;
     z-index: -1;
 }
-
-
-
-
-
-
 

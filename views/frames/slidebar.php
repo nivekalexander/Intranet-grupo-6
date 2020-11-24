@@ -8,7 +8,7 @@
     <!-- Nav Item - Grupos -->
     <li class="nav-item active">
       <a class="nav-link"  href="./main.php?ctrl=grupos">
-        <img src="../assets/img/grupos.svg" class="slidebar-img" alt="new">
+        <img src="../assets/img/img-slidebar/grupos.svg" class="slidebar-img" alt="new">
         <span>Grupos</span></a>
     </li>
 
@@ -18,7 +18,7 @@
     <!-- Nav Item - Noticias -->
     <li class="nav-item active">
       <a class="nav-link" href="./main.php?ctrl=noticia">
-        <img src="../assets/img/periodico.svg" class="slidebar-img" alt="new">
+        <img src="../assets/img/img-slidebar/periodico.svg" class="slidebar-img" alt="new">
         <span>Noticias</span></a>
     </li>
 
@@ -29,7 +29,7 @@
     <li class="nav-item active">
       <a class="nav-link" href="./main.php?ctrl=anuncio">
 
-        <img src="../assets/img/anuncios.svg" class="slidebar-img" alt="new">
+        <img src="../assets/img/img-slidebar/anuncios.svg" class="slidebar-img" alt="new">
         <span>Anuncios</span></a>
 
     </li>
@@ -40,7 +40,7 @@
     <!-- Nav Item - Material de Apoyo -->
     <li class="nav-item active">
       <a class="nav-link"  href="./main.php?ctrl=materialApollo">
-        <img src="../assets/img/materialapoyo.svg" class="slidebar-img" alt="new">
+        <img src="../assets/img/img-slidebar/materialapoyo.svg" class="slidebar-img" alt="new">
         <span>Material de apoyo</span></a>
     </li>
 
@@ -50,7 +50,7 @@
     <!-- Nav Item - Foro -->
     <li class="nav-item active">
       <a class="nav-link"  href="./main.php?ctrl=foro">
-        <img src="../assets/img/foro.svg" class="slidebar-img" alt="new">
+        <img src="../assets/img/img-slidebar/foro.svg" class="slidebar-img" alt="new">
         <span>Foro</span></a>
     </li>
 
@@ -60,7 +60,7 @@
     <!-- Nav Item - Horario -->
     <li class="nav-item active">
       <a class="nav-link"  href="./main.php?ctrl=horario">
-        <img src="../assets/img/horario.svg" class="slidebar-img" alt="new">
+        <img src="../assets/img/img-slidebar/horario.svg" class="slidebar-img" alt="new">
         <span>Horario</span></a>
     </li>
 
@@ -70,7 +70,7 @@
     <!-- Nav Item - Usuarios -->
     <li class="nav-item active">
       <a class="nav-link"  href="./main.php?ctrl=usuario">
-        <img src="../assets/img/usuarios.svg" class="slidebar-img" alt="new">
+        <img src="../assets/img/img-slidebar/usuarios.svg" class="slidebar-img" alt="new">
         <span>Usuarios</span></a>
     </li>
 
@@ -80,7 +80,7 @@
     <!-- Nav Item - Ficha -->
     <li class="nav-item active">
       <a class="nav-link"  href="./main.php?ctrl=ficha">
-        <img src="../assets/img/ficha.svg" class="slidebar-img" alt="new">
+        <img src="../assets/img/img-slidebar/ficha.svg" class="slidebar-img" alt="new">
         <span>Ficha</span></a>
     </li>
 
@@ -91,7 +91,7 @@
     <!-- Nav Item - Programa de formación -->
     <li class="nav-item active">
       <a class="nav-link"  href="./main.php?ctrl=programa">
-        <img src="../assets/img/programaformacion.svg" class="slidebar-img" alt="new">
+        <img src="../assets/img/img-slidebar/programaformacion.svg" class="slidebar-img" alt="new">
         <span id="programa" class="programa2">Programa de formación</span></a>
     </li>
 
