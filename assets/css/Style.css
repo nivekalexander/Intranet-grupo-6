@@ -82,7 +82,8 @@
 .btn-rounded{
     background-color: #F2994B;
     border-radius: 50rem !important;
-    color : #ffffff !important;    
+    color : #ffffff !important;   
+    overflow: hidden;     
 }
 
 .espaciado{
@@ -161,7 +162,6 @@
     background-color: #01142D;
     z-index: -1;
 }
-
 
 
 

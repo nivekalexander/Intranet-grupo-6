@@ -1,3 +1,4 @@
+
 function ObjAjax()
 {
     var xmlhttp=false;
