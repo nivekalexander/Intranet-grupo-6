@@ -81,7 +81,7 @@
 
 
 
-	function EditarAnuncio(id, titulo, descrp, feccrn, fchfin, usuid, ficid) {
+	function EditarAnuncio(id, titulo, descrp, fchfin, usuid, ficid) {
 
 	    document.formanuncio.id.value = id;
 	    document.formanuncio.titulo.value = titulo;
