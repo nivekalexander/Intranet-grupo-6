@@ -6,7 +6,7 @@
 
       <div class="modal-header Color-Slidebar">
         <h5 class="modal-title dropdown-text-color" id="exampleModalLabel">Subir Archivo</h5>
-        <button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close" onclick="CancelarNoticia();">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -14,15 +14,15 @@
       <div class="modal-body">     
 
       <form id="formnoticia" name="formnoticia" class="needs-validation">   
-            <div class="custom-file btn rounded" style="background-color: #e3e6f0; overflow: hidden; ">
+            <div class="custom-file btn rounded" style="background-color: #e3e6f0; overflow: hidden;">
                 <input type="number" name="idnews" id="id-news" hidden>
-                <input type="file" name="file-news" id="file-news" accept="image/*" lang="es" required>                
+                <input type="file" name="file-news" id="file-news" accept="image/*" lang="es" required>
                 <div class="invalid-feedback">No se a seleccionado ningun archivo</div>
             </div>                        
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarNoticia();">Cerrar</button>
         <button type="submit" id="subir-news" class="btn btn-primary btn-rounded" >Subir</button>
         <!-- onclick="InsertNoticia();" -->
       </div>
