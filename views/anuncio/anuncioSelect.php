@@ -17,7 +17,7 @@
 		<tbody>
 				<?php foreach ( $this->anuncio->Select() as $filas ): ?>
 
-					 	<?php  $grupal = "'".$filas->anu_id."','".$filas->anu_titl."','".$filas->anu_descrp."','".$filas->anu_fechcr."','".$filas->anu_fechfn."','".$filas->anu_fichid."','".$filas->anu_usuid."'"; ?>
+					 	<?php  $grupal = "'".$filas->anu_id."','".$filas->anu_titulo."','".$filas->anu_descrp."','".$filas->anu_feccrn."','".$filas->anu_fecfn."','".$filas->anu_ficid."','".$filas->anu_usuid."'"; ?>
 						
 						<!--
 						<tr>
@@ -44,12 +44,12 @@
 										<a href="perfil.php?id=925763" name="imagenPost"><img src="https://www.flaticon.es/svg/static/icons/svg/599/599305.svg" width="40" height="40"></a>
 									</div >
 									<div class="float-left">
-									Marcela de Saris<br>Fecha inicio : <?php echo $filas->anu_fechcr;?>
+									Marcela de Saris<br>Fecha inicio : <?php echo $filas->anu_feccrn;?>
 									</div>
 							 </div>
 							
   							<div class="card-body">
-  							  <h5 class="card-title">Titulo : <?php echo $filas->anu_titl; ?></h5>
+  							  <h5 class="card-title">Titulo : <?php echo $filas->anu_titulo; ?></h5>
 								<p class="card-text"><?php echo $filas->anu_descrp;?></p>
 								<div class="float-right"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalanuncios" data-dismiss="modal" onclick="EditarAnuncio(<?php echo $grupal; ?>);"> Editar</button>
 							    <button type="button" class="btn-rounded btn"onclick="BorrarAnuncio(<?php echo $filas->anu_id;?>);"> Eliminar </button></div>
