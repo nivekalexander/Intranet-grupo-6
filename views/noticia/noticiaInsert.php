@@ -6,7 +6,7 @@
 
       <div class="modal-header Color-Slidebar">
         <h5 class="modal-title dropdown-text-color" id="exampleModalLabel">Subir Archivo</h5>
-        <button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close" onclick="CancelarNoticia();">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -14,16 +14,15 @@
       <div class="modal-body">     
 
       <form id="formnoticia" name="formnoticia" class="needs-validation">   
-            <div class="form-group custom-file">
+            <div class="custom-file btn rounded" style="background-color: #e3e6f0; overflow: hidden;">
                 <input type="number" name="idnews" id="id-news" hidden>
-                <input type="file" class=" custom-file-input" name="file-news" id="file-news" accept="image/*" lang="es" required>
-                <label id="labelSelectFile" class="custom-file-label" for="file-news">Seleccionar Archivo</label>
+                <input type="file" name="file-news" id="file-news" accept="image/*" lang="es" required>
                 <div class="invalid-feedback">No se a seleccionado ningun archivo</div>
-            </div>              
+            </div>                        
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarNoticia();">Cerrar</button>
         <button type="submit" id="subir-news" class="btn btn-primary btn-rounded" >Subir</button>
         <!-- onclick="InsertNoticia();" -->
       </div>
@@ -35,17 +34,18 @@
 
 <script>
 
-// document.getElementById("labelSelectFile").innerHTML = document.getElementById("file-news").value;
+// document.getElementById("customFileLang").innerHTML = document.getElementById("file-news").files[0].name;
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
-    'use strict';
-    window.addEventListener('load', function() {
+    'use strict';        
+    window.addEventListener('load', function() {         
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.getElementsByClassName('needs-validation');
       // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function(form) {
+      var validation = Array.prototype.filter.call(forms, function(form) {        
         form.addEventListener('submit', function(event) {
+          
           if (form.checkValidity() === true) {
             var nombreBoton = document.getElementById("subir-news").innerHTML;
             if (nombreBoton == "Subir"){

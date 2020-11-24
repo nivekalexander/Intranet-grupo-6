@@ -1,3 +1,4 @@
+
 function ObjAjax()
 {
     var xmlhttp=false;
@@ -131,32 +132,9 @@ function UpdateNoticia()
     urlEdit = "";
 }
 
-/*
+
                              
 function CancelarNoticia()
 {
-    var result = document.getElementById('tview');
-
-    document.getElementById('formnoticia').reset();
-
-    const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-    ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
-    ajax.onreadystatechange = function (){
-                                            if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
-                                            {
-                                                if( ajax.status == 200 ) // Estado 200 es SUCCESS = CORRECTO
-                                                {
-                                                    result.innerHTML = ajax.responseText;
-                                                    
-
-                                                    // limpiar el formulario
-                                                    // document.getElementById("formusuario") --> onlick --> insertusuario()
-
-                                                }
-                                                else { console.log("Ups, Me equivoque;"); }
-                                            }
-                                         };
-    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");		
-
+    document.formnoticia.reset();
 }
-*/
