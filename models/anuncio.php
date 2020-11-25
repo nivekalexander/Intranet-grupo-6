@@ -14,8 +14,7 @@ class Anuncio
 		public function Select()
 									 {
 									 	try  				 {
-									 							$sql=$this->pdo->prepare("SELECT tbl_anuncio.anu_id,tbl_anuncio.anu_titulo,tbl_anuncio.anu_descrp,tbl_anuncio.anu_feccrn,tbl_anuncio.anu_fecfn,tbl_anuncio.anu_ficid,tbl_anuncio.anu_usuid,tbl_usuario.usu_nombre, tbl_usuario.usu_aplldo 
-																 						  FROM tbl_anuncio  
+									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_anuncio  
 																 						  INNER JOIN tbl_usuario 
 																 						  WHERE  tbl_anuncio.anu_usuid=tbl_usuario.usu_id 
 																 						  ORDER BY tbl_anuncio.anu_id DESC");
