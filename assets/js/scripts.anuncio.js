@@ -18,13 +18,11 @@
 
 	                var result = document.getElementById('tview');
 
-	                const ajax = new XMLHttpRequest(); 
-	                ajax.open("POST", "main.php", true); 
+	                const ajax = new XMLHttpRequest();
+	                ajax.open("POST", "main.php", true);
 	                ajax.onreadystatechange = function() {
-	                    if (ajax.readyState == 4) 
-	                    {
-	                        if (ajax.status == 200) 
-	                        {
+	                    if (ajax.readyState == 4) {
+	                        if (ajax.status == 200) {
 
 	                            result.innerHTML = ajax.responseText;
 
@@ -55,13 +53,11 @@
 	    var usuid = document.formanuncio.usuid.value;
 	    var ficid = document.formanuncio.ficid.value;
 
-	    const ajax = new XMLHttpRequest(); 
-	    ajax.open("POST", "main.php", true); 
+	    const ajax = new XMLHttpRequest();
+	    ajax.open("POST", "main.php", true);
 	    ajax.onreadystatechange = function() {
-	        if (ajax.readyState == 4) 
-	        {
-	            if (ajax.status == 200) 
-	            {
+	        if (ajax.readyState == 4) {
+	            if (ajax.status == 200) {
 
 	                result.innerHTML = ajax.responseText;
 
@@ -91,9 +87,8 @@
 	    document.formanuncio.ficid.value = ficid;
 
 	    document.getElementById("btnguardar").innerHTML = "Actualizar";
-	    
+	    document.getElementById("titlemodalanuncios").innerHTML = "Editar Anuncios";
 
-	    
 	}
 
 
@@ -110,18 +105,16 @@
 
 	    document.getElementById('formanuncio').reset();
 
-	    const ajax = new XMLHttpRequest(); 
-	    ajax.open("POST", "main.php", true); 
+	    const ajax = new XMLHttpRequest();
+	    ajax.open("POST", "main.php", true);
 	    ajax.onreadystatechange = function() {
-	        if (ajax.readyState == 4) 
-	        {
-	            if (ajax.status == 200) 
-	            {
+	        if (ajax.readyState == 4) {
+	            if (ajax.status == 200) {
 	                result.innerHTML = ajax.responseText;
 	                document.getElementById("btnguardar").innerHTML = "Crear";
 
-	                
-	                
+
+
 
 	            } else { console.log("Ups, Me equivoque;"); }
 	        }
@@ -129,16 +122,15 @@
 	    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	    ajax.send("ctrl=anuncio&acti=actualizar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&usuid=" + usuid + "&ficid=" + ficid + "&id=" + id);
 
-	    
 
-	    
+
+
 	    document.getElementById('formanuncio').reset();
 
 	}
 
 	function CancelarAnuncio() {
-
 	    document.getElementById('formanuncio').reset();
-		    
 	    document.getElementById("btnguardar").innerHTML = "Crear";
+	    document.getElementById("titlemodalanuncios").innerHTML = "Crear Anuncios";
 	}

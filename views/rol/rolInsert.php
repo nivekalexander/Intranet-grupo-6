@@ -4,7 +4,7 @@
   <div class="modal-dialog" role="document">
 	  <div class="modal-content">
 			<div class="modal-header Color-Slidebar">
-				<h5 class="modal-title dropdown-text-color" id="exampleModalLabel">Crear rol</h5>
+				<h5 class="modal-title dropdown-text-color" id="titlerol">Crear rol</h5>
 				<button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close" onclick="CancelarRol();">
 				<span aria-hidden="true">&times;</span>
 				</button>
