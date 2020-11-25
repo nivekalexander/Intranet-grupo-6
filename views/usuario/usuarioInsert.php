@@ -41,7 +41,7 @@
 
 				<div>
 					<label for="ficha">Ficha id</label><br>
-                        <select class="form-control rounded" name="ficha" id="fich" >
+                        <select class="form-control rounded" name="ficha" id="fich" required>
                             <option value="1">1907036</option>
                             <option value="2">2</option>
                         </select>
