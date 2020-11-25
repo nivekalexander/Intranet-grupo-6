@@ -42,8 +42,11 @@
 				<div>
 					<label for="ficha">Ficha id</label><br>
                         <select class="form-control rounded" name="ficha" id="fich" required>
-                            <option value="1">1907036</option>
-                            <option value="2">2</option>
+							<?php
+								foreach ($this->ficha->Select() as $datos): 
+                                      echo '<option value="'.$datos->fic_id.'">'.$datos->fic_codigo.'</option>';
+								endforeach;
+							?>
                         </select>
 					<div class="invalid-feedback">Seleccione un Campo</div><br>
 				</div>
@@ -51,9 +54,11 @@
                 <div>
 					<label for="rol">Rol</label><br>
 					<select class="form-control rounded" name="rol" id="rol" >
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+							<?php
+								foreach ($this->rol->Select() as $datos): 
+                                      echo '<option value="'.$datos->rol_id.'">'.$datos->rol_nombre.'</option>';
+								endforeach;
+							?>
                         </select>
 					<div class="invalid-feedback">Seleccione un Campo</div><br>
 				</div>
@@ -61,8 +66,11 @@
                 <div>
 					<label for="estado">Estado</label><br>
                     <select class="form-control rounded" name="estado" id="estado" >
-                            <option value="1">Activo</option>
-                            <option value="2">Inactivo</option>
+							<?php
+								foreach ($this->estado->Select() as $datos): 
+                                      echo '<option value="'.$datos->est_id.'">'.$datos->est_nombre.'</option>';
+								endforeach;
+							?>
                         </select>
 					<div class="invalid-feedback">Seleccione un Campo.</div><br>
 				</div>
@@ -70,9 +78,11 @@
                 <div>
 					<label for="identi">Tipo Identificaion</label><br>
                     <select class="form-control rounded" name="identi" id="identi" required>
-                            <option value="1">C.C</option>
-                            <option value="2">C.E</option>
-                            <option value="3">T.I</option>
+                            <?php
+								foreach ($this->tipoidentificacion->Select() as $datos): 
+                                      echo '<option value="'.$datos->tip_id.'">'.$datos->tip_idntfc.'</option>';
+								endforeach;
+							?>
                         </select>
 					<div class="invalid-feedback">Seleccine un Campo.</div><br>
 				</div>
