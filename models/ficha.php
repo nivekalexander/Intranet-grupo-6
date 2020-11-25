@@ -22,21 +22,21 @@ class Ficha
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-	public function Insert(Ficha $data)
+	public function Insert(Ficha $datos)
 									 {
 									 	try  				 {
 									 							$sql="INSERT INTO tbl_ficha (fic_codigo,fic_feccrn,fic_fecfn,fic_tijid,fic_modid,fic_tofid,fic_pfoid)
-									 										        VALUES(?,?,?,?,?,?,?)";
+									 										        VALUES(?,?,?,?,?,?,?);";
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
-                                                                                                $data->fic_codigo,
-                                                                                                $data->fic_feccrn,
-                                                                                                $data->fic_fecfn,
-                                                                                                $data->fic_tijid,
-                                                                                                $data->fic_modid,
-                                                                                                $data->fic_tofid,
-                                                                                                $data->fic_pfoid
+                                                                                                $datos->fic_codigo,
+                                                                                                $datos->fic_feccrn,
+                                                                                                $datos->fic_fecfn,
+                                                                                                $datos->fic_tijid,
+                                                                                                $datos->fic_modid,
+                                                                                                $datos->fic_tofid,
+                                                                                                $datos->fic_pfoid
 									 									  			 	   )
 									 									  			);
 									 						 }
