@@ -9,33 +9,45 @@ function ObjAjax()
     return xmlhttp;
 }
 
-
 function BorrarTipoidentificacion(id)
 {
-    var result = document.getElementById('tview');
+    $.confirm({
+        title: 'Confirmación!',
+        content: '¿Esta seguro que desea eliminar este tipo de programa de formación?',
+        buttons: {
+            confirm: function() {
+                $.alert('Se ha eliminado correctamente');
+    
+                var result = document.getElementById('tview');
 
-    const ajax = new XMLHttpRequest(); 
-    ajax.open("POST","main.php",true); 
-    ajax.onreadystatechange = function (){
-                                            if( ajax.readyState == 4 ) 
-                                            {
-                                                if( ajax.status == 200 ) 
-                                                {
+                const ajax = new XMLHttpRequest(); 
+                ajax.open("POST","main.php",true); 
+                ajax.onreadystatechange = function (){
+                                                        if( ajax.readyState == 4 ) 
+                                                        {
+                                                            if( ajax.status == 200 )
+                                                            {
 
-                                                    result.innerHTML = ajax.responseText;
+                                                                result.innerHTML = ajax.responseText;
 
-                                                }
-                                                else
-                                                {
-                                                    console.log("Ups, Me equivoque;");
-                                                }
-                                            }
-                                         };
+                                                            }
+                                                            else
+                                                            {
+                                                                console.log("Ups, Me equivoque;");
+                                                            }
+                                                        }
+                                                    };
 
-    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    ajax.send("ctrl=tipoidentificacion&acti=eliminar&id="+id);
+                    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+                    ajax.send("ctrl=tipoidentificacion&acti=eliminar&id="+id);
+                },
+                cancel: function() {
+                $.alert('Has cancelado la eliminación');
+            }
+         }
+    });
+
 }
-
 
 function InsertTipoidentificacion()
 {
@@ -79,7 +91,7 @@ function EditarTipoidentificacion(id,tipo)
     
 
     document.getElementById("btntipid").innerHTML = "Actualizar";
-    document.getElementById("btntipid").setAttribute("onclick", "UpdateTipoidentificacion();");
+    
 
 }
 
@@ -111,7 +123,6 @@ function UpdateTipoidentificacion()
     ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     
     ajax.send("ctrl=tipoidentificacion&acti=actualizar&tipo="+tipo+"&id="+id);
-    document.getElementById("btntipid").setAttribute("onClick", "InsertTipoidentificacion();");
 
     document.getElementById("formtipoidentificacion").reset();
 }
