@@ -47,7 +47,7 @@
 
 									$datos = $this->estado;
 
-									$datos->nombr = $_REQUEST['nombre'];
+									$datos->nombre = $_REQUEST['nombre'];
 
 									$this->estado->Insert($datos);
 

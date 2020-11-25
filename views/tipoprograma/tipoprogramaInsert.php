@@ -22,10 +22,10 @@
 							<div class="valid-feedback">¡Valido!</div>
 					    </div>
 
-					<div class="modal-footer">
-							<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarTipoPrograma();">Cerrar</button>
-							<button type="submit" class="btn-rounded btn" id="btn-tipo-programa">Crear</button>
-					</div>
+						<div class="modal-footer">
+								<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarTipoPrograma();">Cerrar</button>
+								<button type="submit" class="btn-rounded btn" id="btn-tipo-programa">Crear</button>
+						</div>
             				
 
             		</form>
@@ -33,36 +33,36 @@
 					<script>
 
 
-					(function() {
-						'use strict';
-						window.addEventListener('load', function() {
-							// Fetch all the forms we want to apply custom Bootstrap validation styles to
-							var forms = document.getElementsByClassName('needs-validation');
-							// Loop over them and prevent submission
-							var validation = Array.prototype.filter.call(forms, function(form) {
-								form.addEventListener('submit', function(event) {
-								if (form.checkValidity() === true) {
-									var nombreBoton = document.getElementById("btn-tipo-programa").innerHTML;
-									if (nombreBoton == "Crear"){
-										InsertTipoPrograma();
-										$('#modaltipoprograma').modal('hide');
+						(function() {
+							'use strict';
+							window.addEventListener('load', function() {
+								// Fetch all the forms we want to apply custom Bootstrap validation styles to
+								var forms = document.getElementsByClassName('needs-validation');
+								// Loop over them and prevent submission
+								var validation = Array.prototype.filter.call(forms, function(form) {
+									form.addEventListener('submit', function(event) {
+									if (form.checkValidity() === true) {
+										var nombreBoton = document.getElementById("btn-tipo-programa").innerHTML;
+										if (nombreBoton == "Crear"){
+											InsertTipoPrograma();
+											$('#modaltipoprograma').modal('hide');
+										}
+										if (nombreBoton == "Actualizar"){
+											UpdateTipoPrograma();
+											$('#modaltipoprograma').modal('hide');
+										}
 									}
-									if (nombreBoton == "Actualizar"){
-										UpdateTipoPrograma();
-										$('#modaltipoprograma').modal('hide');
+									if (form.checkValidity() === false) {
+										event.preventDefault();
+										event.stopPropagation();
 									}
-								}
-								if (form.checkValidity() === false) {
-									event.preventDefault();
-									event.stopPropagation();
-								}
-								 form.classList.add('was-validated');
-								}, false);
-							});
-						}, false);
-					})();
+									form.classList.add('was-validated');
+									}, false);
+								});
+							}, false);
+						})();
 
-				</script>
+					</script>
 	   		</div>
 		</div>   
 	</div>
