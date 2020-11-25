@@ -1,6 +1,5 @@
-<link href="assets/scss/noticias.scss" rel="stylesheet/sass" type="text/css">
 
-<div class="container espaciado">
+<div class="container espaciado" id="main">
       <a class="btn-rounded btn float-right" data-toggle="modal" data-target="#noticiaModal">Crear noticia</a>
     <h3 class="noti-tittle">Noticias</h3>
 

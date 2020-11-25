@@ -1,0 +1,75 @@
+<?php  
+	class Horario{
+
+		private $pdo;
+
+
+		public function __Construct(){ 
+
+										try 					{	$this->pdo=Database::Conectar();	}
+										catch (Exception $e) 	{	die($e->getMessage());				}
+		}
+
+		public function Select()
+									 {
+									 	try  				 {
+									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_horario");
+									 							$sql->execute();
+									 							return $sql->fetchALL(PDO::FETCH_OBJ);
+									 						 }
+									 	catch (Exception $e) {	die($e->getMessage());			 }
+									 }
+
+		public function Get()
+		{
+									try  				 {
+															$sql=$this->pdo->prepare("SELECT * FROM tbl_horario WHERE hor_ficid = 3");
+															$sql->execute();
+															return $sql;
+															}
+									catch (Exception $e) {	die($e->getMessage());			 }
+		}
+
+		public function Insert(Horario $datos)
+									 { 
+									 	try  				 {
+									 							$sql="INSERT INTO tbl_horario(hor_url, hor_triini, hor_trifin, hor_trinum, hor_ficid) VALUES(?,?,?,?,?);";
+									 							$this->pdo->prepare($sql)
+																		   ->execute(array(
+																						   $datos->url,
+																						   $datos->triini,
+																						   $datos->trifin,
+																						   $datos->trinum,
+																						   $datos->fichaid	
+																		));
+									 						 }
+									 	catch (Exception $e) {	die($e->getMessage());}
+									 }
+
+		public function Delete($id)
+									 {
+									 	try  				 {
+									 							$sql="DELETE FROM tbl_horario WHERE hor_id=?";
+									 							$this->pdo->prepare($sql)
+									 									  ->execute(array($id));
+									 						 }
+									 	catch (Exception $e) {	die($e->getMessage());			 }
+									 }
+
+		public function Update(Horario $hor)
+									 {
+									 	try  				 {
+									 							$sql="UPDATE tbl_horario SET hor_url=?
+									 							WHERE hor_id=?";
+									 							$this->pdo->prepare($sql)
+									 									  ->execute(array(
+																						   $hori->url,
+																						   $hori->id
+																					));
+									 						 }
+									 	catch (Exception $e) {	die($e->getMessage());			 }
+									 }
+
+
+	}
+?>
