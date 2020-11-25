@@ -14,12 +14,12 @@ function BorrarTipoidentificacion(id)
 {
     var result = document.getElementById('tview');
 
-    const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-    ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
+    const ajax = new XMLHttpRequest(); 
+    ajax.open("POST","main.php",true); 
     ajax.onreadystatechange = function (){
-                                            if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
+                                            if( ajax.readyState == 4 ) 
                                             {
-                                                if( ajax.status == 200 ) // Estado 200 es SUCCESS = CORRECTO
+                                                if( ajax.status == 200 ) 
                                                 {
 
                                                     result.innerHTML = ajax.responseText;
@@ -45,12 +45,12 @@ function InsertTipoidentificacion()
    
     document.getElementById("formtipoidentificacion").reset();
 
-    const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-    ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
+    const ajax = new XMLHttpRequest(); 
+    ajax.open("POST","main.php",true); 
     ajax.onreadystatechange = function (){
-                                            if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
+                                            if( ajax.readyState == 4 ) 
                                             {
-                                                if( ajax.status == 200 ) // Estado 200 es SUCCESS = CORRECTO
+                                                if( ajax.status == 200 )
                                                 {
 
                                                     result.innerHTML = ajax.responseText;
@@ -73,15 +73,13 @@ function InsertTipoidentificacion()
 
 function EditarTipoidentificacion(id,tipo)
 {
-    document.formtipoidentificacion.tipo.value 		= tipo;
-    document.formtipoidentificacion.id.value 			= id;
+    document.formtipoidentificacion.tipo.value = tipo;
+    document.formtipoidentificacion.id.value = id;
 
     
 
-    document.getElementById("btnguardar").value = "Actualizar";
-    document.getElementById("btnguardar").setAttribute("onclick", "UpdateTipoidentificacion();");
-    // Cambiar la propiedad DEL FORMULARIO desde javascript de ONSUBMIT() ONCLICK() CAMBIE  -> UPDATEUSUARIO() al boton guardar
-    
+    document.getElementById("btntipid").innerHTML = "Actualizar";
+    document.getElementById("btntipid").setAttribute("onclick", "UpdateTipoidentificacion();");
 
 }
 
@@ -96,17 +94,15 @@ function UpdateTipoidentificacion()
 
     
 
-    const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-    ajax.open("POST","main.php",true); // Se usa el Controlador General y su Accion
+    const ajax = new XMLHttpRequest(); 
+    ajax.open("POST","main.php",true); 
     ajax.onreadystatechange = function (){
-                                            if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
+                                            if( ajax.readyState == 4 ) 
                                             {
-                                                if( ajax.status == 200 ) // Estado 200 es SUCCESS = CORRECTO
+                                                if( ajax.status == 200 ) 
                                                 {
                                                     result.innerHTML = ajax.responseText;
-                                                    document.getElementById("btnguardar").value = "Guardar";
-                                                    // limpiar el formulario
-                                                    // document.getElementById("formusuario") --> onlick --> insertusuario()
+                                                    document.getElementById("btntipid").innerHTML = "Crear";
 
                                                 }
                                                 else { console.log("Ups, Me equivoque;"); }
@@ -115,9 +111,15 @@ function UpdateTipoidentificacion()
     ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     
     ajax.send("ctrl=tipoidentificacion&acti=actualizar&tipo="+tipo+"&id="+id);
-
-
-    document.getElementById("btnguardar").setAttribute("onClick", "InsertTipoidentificacion();");
+    document.getElementById("btntipid").setAttribute("onClick", "InsertTipoidentificacion();");
 
     document.getElementById("formtipoidentificacion").reset();
+}
+
+function CancelarTipoIdentificacion() {
+
+    document.getElementById('formtipoidentificacion').reset();
+
+    document.getElementById("btntipid").innerHTML = "Crear";
+
 }

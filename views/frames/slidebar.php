@@ -115,11 +115,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Usuarios:</h6>
           <a class="collapse-item"  href="./main.php?ctrl=estado">Estado</a>
-<<<<<<< HEAD
-          <a class="collapse-item"  href="./main.php?ctrl=tipoIdentificacion">Tipo identificación</a>
-=======
           <a class="collapse-item"  href="./main.php?ctrl=tipoidentificacion">Tipo identificación</a>
->>>>>>> b38897bdead2e0674873bc1acb4ece90d4cff489
           <a class="collapse-item"  href="./main.php?ctrl=rol">Rol</a>
           <div class="collapse-divider"></div>
           <h6 class="collapse-header">Ficha:</h6>
