@@ -18,10 +18,8 @@
 							
  							<td scope="row"><?php echo $filas->tip_idntfc;?></td>
 
-							<td scope="row"> 	<button class="btn-rounded btn" data-toggle="modal" data-target="#modaltipoidentificacion" data-dismiss="modal" onclick="EditarTipoidentificacion(<?php echo $grupal; ?>)"> Editar   
-
-							</button>    </td>
-							<td scope="row"> 	<button class="btn-rounded btn" onclick="BorrarTipoidentificacion(<?php echo $filas->tip_id;?>);"> Eliminar </button>    </td>
+							<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modaltipoidentificacion" data-dismiss="modal" onclick="EditarTipoidentificacion(<?php echo $grupal; ?>)">Editar</button></td>
+							<td scope="row"><button class="btn-rounded btn" onclick="BorrarTipoidentificacion(<?php echo $filas->tip_id;?>);"> Eliminar </button>    </td>
 						</tr>
 					 
 				<?php endforeach; ?>

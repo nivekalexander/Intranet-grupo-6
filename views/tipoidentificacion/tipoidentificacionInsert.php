@@ -10,19 +10,21 @@
 			</div>
 			<div class="modal-body espaciado">	
 
-				<form class="needs-validation" name="formtipoidentificacion" id="formtipoidentificacion" novalidate>
+				<form name="formtipoidentificacion" id="formtipoidentificacion" class="needs-validation" novalidate>
 				
 						<input type="text" name="id" hidden>
-						<div>
-							<label for="tipo">tipo identificacion</label><br>
-							<input class="form-control rounded" type="text" name="tipo" id="tipo" required>
-							<div class="invalid-feedback">Campo Obligatorio</div>
-							<div class="valid-feedback">¡Valido!</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarTipoIdentificacion();">Cancelar</button>
-							<button type="submit" id="btntipid" class="btn-rounded btn">Crear</button>
-						</div>		
+					<div>
+						<label for="tipo">tipo identificacion</label><br>
+						<input class="form-control rounded" type="text" name="tipo" required>
+						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="valid-feedback">¡Valido!</div>
+					</div>
+
+				<div class="modal-footer">
+						<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarTipoIdentificacion();">Cancelar</button>
+						<button type="submit" id="btntipid" class="btn-rounded btn">Crear</button>
+				</div>	
+
 				</form>
 
 				<script>
@@ -58,7 +60,6 @@
 					})();
 
 				</script>
-
 			</div>
 		</div>   
 	</div>
