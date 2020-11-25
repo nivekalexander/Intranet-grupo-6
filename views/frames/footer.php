@@ -15,6 +15,7 @@
     <script src="../assets/js/scripts.tipoidentificacion.js"></script>
     <script src="../assets/js/scripts.fases.js"></script>
     <script src="../assets/js/scripts.tipojornada.js"></script>
+    <script src="../assets/js/scripts.modalidad.js"></script>
 
     <!--Fin Scripts de los modulos -->
     <!-- End of Page Wrapper -->

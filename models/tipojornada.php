@@ -32,7 +32,7 @@
 		 		     }
 	 		
 	 		}
- 		public function Insert(Tipojornada $data){
+ 		public function Insert(TipoJornada $data){
 			try   {
 	 				$sql= "INSERT INTO tbl_tipojornada (tij_nombre) VALUES(?)";
 	 				$this->pdo->prepare($sql)  ->execute(array($data->name ));
@@ -42,7 +42,7 @@
  				     }
 				 }
 
-		 public function Update(Tipojornada $data){
+		 public function Update(TipoJornada $data){
 
 			try   {
 
