@@ -13,7 +13,12 @@
     <script src="../assets/js/scripts.usuario.js"></script>
     <script src="../assets/js/scripts.noticia.js"></script>
     <script src="../assets/js/scripts.rol.js"></script>
+<<<<<<< HEAD
     <script src="../assets/js/scripts.tipoidentificacion.js"></script>
+=======
+    <script src="../assets/js/scripts.fases.js"></script>
+    <script src="../assets/js/scripts.tipojornada.js"></script>
+>>>>>>> c533118e40dfd9b62297eb2a12e14af4a1b9217f
 
     <!--Fin Scripts de los modulos -->
     <!-- End of Page Wrapper -->
