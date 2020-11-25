@@ -8,8 +8,8 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Tipo de Programa</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
+                <th scope="col">xd</th>
+                <th scope="col">xd</th>
 			</tr>
 		</thead>
 
