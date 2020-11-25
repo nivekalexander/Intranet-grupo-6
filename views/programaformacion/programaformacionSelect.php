@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table id="tablaprogramaformacion" class="table table-striped">
 		<!-- Cabecera de la Tabla -->
 		<thead class="thead-dark">
 			<tr>

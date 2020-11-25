@@ -46,6 +46,9 @@
 
 	  <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 
+    <!--DataTable-->
+    <script type="text/javascript" src="../assets/datatables/datatables.min.js"></script>
+
   </body>
 
 </html>

@@ -19,6 +19,7 @@
   <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="../assets/css/Style.css" rel="stylesheet">
   <link href="../assets/css/jquery-confirm.css" rel="stylesheet">
+  <link href="../assets/datatables/datatables.min.css" rel="stylesheet" type="text/css">
 
   <link rel="icon" href="img/logo/icon.jpg">
 </head>
