@@ -120,10 +120,7 @@
           <h6 class="collapse-header">General:</h6>
           <a class="collapse-item" href="./main.php?ctrl=tipoprograma">Tipo de Programa</a>
           <a class="collapse-item" href="./main.php?ctrl=tipooferta">Tipo Oferta</a>
-          <a class="collapse-item" href="./main.php?ctrl=fases">Fases</a>          
-          <a class="collapse-item" href="./main.php?ctrl=tipojornada">Tipo Jornada</a>
-          <a class="collapse-item" href="./main.php?ctrl=modalidad">Modalidad</a>
-          <a class="collapse-item"  href="./main.php?ctrl=estado">Estado</a>
+          <a class="collapse-item" href="blank.html">Fases</a>
         </div>
       </div>
     </li>

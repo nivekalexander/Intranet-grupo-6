@@ -1,48 +1,61 @@
-<?php 
+<?php
 
 
-class Tipoidentificacion
-	{
-		private $pdo;
+class Tipooferta
+{
+	private $pdo;
 
-		public function __Construct()
+
+	public function __construct()
 									 {
 									 	try  				 {	$this->pdo=Database::Conectar(); }
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-		public function Select()
+	public function Select()
 									 {
 									 	try  				 {
-									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_tipoid ORDER BY tip_id DESC");
+									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_tipooferta ORDER BY tof_id DESC");
 									 							$sql->execute();
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
 									 						 }
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-
-		public function Insert(Tipoidentificacion $data)
+	public function Insert(Tipooferta $data)
 									 {
 									 	try  				 {
-									 							$sql="INSERT INTO tbl_tipoid(`tip_idntfc`)
+									 							$sql="INSERT INTO tbl_tipooferta(tof_nombre)
 									 										        VALUES(?)";
-
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
-																								$data->tipo
-																								
-																							)
+									 									  			 	    $data->nombre
+									 									  			 	   )
 									 									  			);
 									 						 }
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-		public function Delete($id)
+    public function Update(Tipooferta $datos)
 									 {
 									 	try  				 {
-									 							$sql="DELETE FROM tbl_tipoid WHERE tip_id=?";
+									 							$sql="UPDATE tbl_tipooferta SET tof_nombre = ? WHERE tof_id = ?";
+									 							$this->pdo->prepare($sql)
+									 									  ->execute(
+									 									  			 array(
+									 									  			 	    $datos->nombre,
+									 									  			 	    $datos->id
+									 									  			 	   )
+									 									  			);
+									 						 }
+									 	catch (Exception $e) {	die($e->getMessage());			 }
+									 }
+
+	public function Delete($id)
+									 {
+									 	try  				 {
+									 							$sql="DELETE FROM tbl_tipooferta WHERE tof_id=?";
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
@@ -53,25 +66,9 @@ class Tipoidentificacion
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-		public function Update(Tipoidentificacion $datos)
-									 {
-									 	try  				 {
-									 							$sql="UPDATE tbl_tipoid SET tip_idntfc=?
 
-									 							WHERE tip_id=?";
-									 							$this->pdo->prepare($sql)
-									 									  ->execute(
-									 									  			 array(
-	
-                                                                                             $datos->tipo,
-                                                                                             $datos->id
 
-									 									  			 	  )
-									 									  			);
-									 						 }
-									 	catch (Exception $e) {	die($e->getMessage());			 }
-									 }
-	}
+}
+
 
 ?>
-
