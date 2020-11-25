@@ -15,7 +15,7 @@
 						<input type="text" name="id" hidden>
 						<div>
 							<label for="tipo">tipo identificacion</label><br>
-							<input class="form-control rounded" type="text" name="tipo" id="tipo" required>
+							<input class="form-control rounded" type="text" id="tipo" required>
 							<div class="invalid-feedback">Campo Obligatorio</div>
 							<div class="valid-feedback">¡Valido!</div>
 						</div>
