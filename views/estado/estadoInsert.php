@@ -15,7 +15,7 @@
 						
 					<input type="text" name="id" hidden>
 					<div>
-						<label for="nombre" class="form-control rounded">Nombre Estado</label>
+						<label for="nombre" >Nombre Estado</label>
 						<input class="form-control rounded" type="text" name="nombre" required>
 						<div class="invalid-feedback">Campo Obligatorio</div>
 						<div class="valid-feedback">¡Valido!</div>

@@ -19,8 +19,8 @@
 			<tr>
 				
 				<td scope="row"><?php echo $filas->est_nombre;?></td>
-				<td scope="row"><button onclick="EditarEstado(<?php echo $grupal; ?>)">Editar</button></td>
-				<td scope="row"><button onclick="BorrarEstado(<?php echo $filas->est_id;?>);">Eliminar</button></td>
+				<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalestado" data-dismiss="modal" onclick="EditarEstado(<?php echo $grupal; ?>)">Editar</button></td>
+				<td scope="row"><button class="btn-rounded btn" onclick="BorrarEstado(<?php echo $filas->est_id;?>);">Eliminar</button></td>
 
 			</tr>
 				
