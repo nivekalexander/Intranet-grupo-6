@@ -6,7 +6,7 @@
 	{	
 		private $tipoIdentificacion;
 
-		function __Construct()	{
+		function __construct()	{
 							  		$this->tipoIdentificacion= new TipoIdentificacion(); 		// Instancia de la Clase del Modelo Usuario
 							  	}
 
@@ -30,7 +30,7 @@
 
 									$data= $this->tipoIdentificacion;
 
-									$data->tipo 	= $_REQUEST['tipo'];
+									$data->tipo = $_REQUEST['tipo'];
 
 
 									$this->tipoIdentificacion->Insert($data);
