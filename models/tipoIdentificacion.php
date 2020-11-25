@@ -14,7 +14,7 @@ class Tipoidentificacion
 		public function Select()
 									 {
 									 	try  				 {
-									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_tipdoc_usuario ORDER BY tip_id DESC");
+									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_tipoid ORDER BY tip_id DESC");
 									 							$sql->execute();
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
 									 						 }
@@ -25,7 +25,7 @@ class Tipoidentificacion
 		public function Insert(Tipoidentificacion $data)
 									 {
 									 	try  				 {
-									 							$sql="INSERT INTO tbl_tipdoc_usuario(`tip_tipidn`)
+									 							$sql="INSERT INTO tbl_tipoid(`tip_idntfc`)
 									 										        VALUES(?)";
 
 									 							$this->pdo->prepare($sql)
@@ -42,7 +42,7 @@ class Tipoidentificacion
 		public function Delete($id)
 									 {
 									 	try  				 {
-									 							$sql="DELETE FROM tbl_tipdoc_usuario WHERE tip_id=?";
+									 							$sql="DELETE FROM tbl_tipoid WHERE tip_id=?";
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
@@ -56,7 +56,7 @@ class Tipoidentificacion
 		public function Update(Tipoidentificacion $datos)
 									 {
 									 	try  				 {
-									 							$sql="UPDATE tbl_tipdoc_usuario SET tip_tipidn=?
+									 							$sql="UPDATE tbl_tipoid SET tip_idntfc=?
 
 									 							WHERE tip_id=?";
 									 							$this->pdo->prepare($sql)

@@ -14,6 +14,7 @@
     <script src="../assets/js/scripts.usuario.js"></script>
     <script src="../assets/js/scripts.noticia.js"></script>
     <script src="../assets/js/scripts.rol.js"></script>
+    <script src="../assets/js/scripts.tipoidentificacion.js"></script>
 
     <!--Fin Scripts de los modulos -->
     <!-- End of Page Wrapper -->
