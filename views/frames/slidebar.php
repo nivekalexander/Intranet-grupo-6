@@ -121,6 +121,7 @@
           <h6 class="collapse-header">Ficha:</h6>
           <a class="collapse-item" href="./main.php?ctrl=tipoprograma">Tipo de Programa</a>
           <a class="collapse-item" href="blank.html">Tipo Oferta</a>
+          <a class="collapse-item" href="blank.html">Fases</a>
         </div>
       </div>
     </li>
