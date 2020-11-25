@@ -65,7 +65,7 @@ function InsertTipoPrograma() {
     };
 
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=tipoprograma&acti=insertar&nombre=" + nombrepro);
+    ajax.send("ctrl=tipoprograma&acti=insertar&nombre="+nombrepro);
 
     document.getElementById('formtipoprograma').reset();
 }

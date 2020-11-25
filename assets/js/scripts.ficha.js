@@ -53,7 +53,7 @@ function InsertarFicha()
 {
     var result = document.getElementById('tview');
 
-    var fic_codigo 	= document.formficha.codigo.value;
+    var fic_codigo 	= document.formficha.fic_codigo.value;
     var fic_feccrn=document.formficha.fic_feccrn.value ;
     var fic_fecfn=document.formficha.fic_fecfn.value ;	
     var fic_tijid=document.formficha.fic_tijid.value ;	

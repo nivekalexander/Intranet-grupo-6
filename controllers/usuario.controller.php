@@ -1,14 +1,21 @@
 <?php
 
     require_once('../models/usuario.php');
-   
+	require_once('../models/ficha.php');
+	require_once('../models/rol.php');
+	require_once('../models/estado.php');
+	require_once('../models/tipoidentificacion.php');
 
 	class UsuarioController
 	{	
 		private $usuario;
 
 		function __construct()	{
-							  		$this->usuario= new Usuario();
+									  $this->usuario= new Usuario();
+									  $this->ficha = new Ficha();
+									  $this->rol = new Rol();
+									  $this->estado = new Estado();
+									  $this->tipoidentificacion = new Tipoidentificacion();
 							  	}
 
 		public function Index()
