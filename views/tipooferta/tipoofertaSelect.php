@@ -19,7 +19,7 @@
 			<tr>
 				
 				<td scope="row"><?php echo $filas->tof_nombre;?></td>
-				<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalestado" data-dismiss="modal" onclick="EditarTipoOferta(<?php echo $grupal; ?>)">Editar</button></td>
+				<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modaltipooferta" data-dismiss="modal" onclick="EditarTipoOferta(<?php echo $grupal; ?>)">Editar</button></td>
 				<td scope="row"><button class="btn-rounded btn" onclick="BorrarTipoOferta(<?php echo $filas->tof_id;?>);">Eliminar</button></td>
 
 			</tr>

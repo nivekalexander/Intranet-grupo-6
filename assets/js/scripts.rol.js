@@ -80,6 +80,8 @@ function EditarRol(id, nombrerol) {
     document.formrol.nombre.value = nombrerol;
 
     document.getElementById("btn-rol").innerHTML = "Actualizar";
+    document.getElementById("titlerol").innerHTML = "Actualizar Rol";
+
 
 }
 
@@ -111,7 +113,8 @@ function UpdateRol() {
 
 }
 
-function CancelarRol() {    
-    document.getElementById('formrol').reset();    
+function CancelarRol() {
+    document.getElementById('formrol').reset();
     document.getElementById("btn-rol").innerHTML = "Crear";
+    document.getElementById("titlerol").innerHTML = "Crear Rol";
 }

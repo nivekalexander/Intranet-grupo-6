@@ -4,7 +4,7 @@
   <div class="modal-dialog" role="document">
 	  <div class="modal-content">
 			<div class="modal-header Color-Slidebar">
-				<h5 class="modal-title dropdown-text-color" id="exampleModalLabel">Crear tipo programa</h5>
+				<h5 class="modal-title dropdown-text-color" id="titletipprograma">Crear tipo de programa</h5>
 				<button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close" onclick="CancelarTipoPrograma();">
 				<span aria-hidden="true">&times;</span>
 				</button>

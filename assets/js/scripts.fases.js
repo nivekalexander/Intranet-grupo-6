@@ -44,7 +44,7 @@ function BorrarFases(id) {
 }
 
 
-function InsertFases() {    
+function InsertFases() {
     var result = document.getElementById('tview');
 
     var nombrefases = document.formfases.nombre.value;
@@ -80,7 +80,7 @@ function EditarFases(id, nombrefases) {
     document.formfases.nombre.value = nombrefases;
 
     document.getElementById("btn-fases").innerHTML = "Actualizar";
-
+    document.getElementById("titlefase").innerHTML = "Actualizar fase";
 }
 
 
@@ -111,7 +111,8 @@ function UpdateFases() {
 
 }
 
-function CancelarFases() {    
-    document.getElementById('formfases').reset();    
+function CancelarFases() {
+    document.getElementById('formfases').reset();
     document.getElementById("btn-fases").innerHTML = "Crear";
+    document.getElementById("titlefase").innerHTML = "Crear fase";
 }

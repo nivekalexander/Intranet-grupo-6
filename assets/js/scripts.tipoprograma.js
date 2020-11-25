@@ -80,6 +80,8 @@ function EditarTipoPrograma(id, nombrepro) {
     document.formtipoprograma.nombre.value = nombrepro;
 
     document.getElementById("btn-tipo-programa").innerHTML = "Actualizar";
+    document.getElementById("titletipprograma").innerHTML = "Actualizar tipo de programa";
+
 
 }
 
@@ -114,4 +116,5 @@ function UpdateTipoPrograma() {
 function CancelarTipoPrograma() {
     document.getElementById('formtipoprograma').reset();
     document.getElementById("btn-tipo-programa").innerHTML = "Crear";
+    document.getElementById("titletipprograma").innerHTML = "Crear tipo de programa";
 }
