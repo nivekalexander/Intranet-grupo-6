@@ -1,5 +1,5 @@
 <?php
-	class Programa
+	class TipoPrograma
 	{
 		public $pdo;
 
@@ -10,7 +10,7 @@
 		}
 
 		public function Select(){
-						try 				{ 	$sql=$this->pdo->prepare("SELECT * FROM tblprogramaformacion");
+						try 				{ 	$sql=$this->pdo->prepare("SELECT * FROM tbl_tipoprograma");
 												$sql->execute();
 												return $sql->fetchALL(PDO::FETCH_OBJ);
 											}
@@ -23,7 +23,7 @@
 		public function Get($id) {
 					 		
 			try   {
-		 			$sql= $this->pdo->prepare("SELECT * FROM tblprogramaformacion WHERE Pro_IdProg=?;");
+		 			$sql= $this->pdo->prepare("SELECT * FROM tbl_tipoprograma WHERE tpr_id=?;");
 		 			$sql->execute(array($id));
 		 			return $sql->fetch(PDO::FETCH_OBJ); 
 		 		}catch (Exception $e) {
@@ -32,9 +32,9 @@
 		 		     }
 	 		
 	 		}
- 		public function Insert(Programa $data){
+ 		public function Insert(TipoPrograma $data){
 			try   {
-	 				$sql= "INSERT INTO tblprogramaformacion (Pro_NombreProg) VALUES(?)";
+	 				$sql= "INSERT INTO tbl_tipoprograma (tpr_nombre) VALUES(?)";
 	 				$this->pdo->prepare($sql)  ->execute(array($data->name ));
  				 }catch (Exception $e) {
  				   die($e->getMessage());
@@ -42,11 +42,11 @@
  				     }
 				 }
 
-		 public function Update(Programa $data){
+		 public function Update(TipoPrograma $data){
 
 			try   {
 
-			 		$sql= "UPDATE tblprogramaformacion SET Pro_NombreProg=?   WHERE Pro_IdProg=?;";
+			 		$sql= "UPDATE tbl_tipoprograma SET tpr_nombre=? WHERE tpr_id=?;";
 			 		$this->pdo->prepare($sql)  ->execute(array($data->name,	$data->id)); 
 					}catch (Exception $e) {
 					  die($e->getMessage());
@@ -57,7 +57,7 @@
 
 		public function Delete($id){
 			try   {
-					$sql= "DELETE FROM tblprogramaformacion WHERE Pro_IdProg=?;";
+					$sql= "DELETE FROM tbl_tipoprograma WHERE tpr_id=?;";
 					$this->pdo->prepare($sql)  ->execute(array($id));
 					 }
 			 catch (Exception $e) { 

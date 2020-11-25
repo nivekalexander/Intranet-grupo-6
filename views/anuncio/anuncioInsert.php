@@ -27,12 +27,6 @@
 				</div>
 
 				<div>
-					<label for="fchcre">Fecha Creacion</label><br>
-					<input class="form-control rounded" type="date" name="fchcre" id="fchcre" required>
-					<div class="invalid-feedback">Complete el campo.</div><br>
-				</div>
-
-				<div>
 					<label for="fchfin">Fecha Fin</label><br>
 					<input class="form-control rounded" type="date" name="fchfin" id="fchfin" required>
 					<div class="invalid-feedback">Complete el campo.</div><br>

@@ -14,15 +14,10 @@
 								{
 									   
 									require_once('../views/frames/header.php');
-									
 									require_once('../views/frames/navbar.php');
-									
 									require_once('../views/frames/slidebar.php');
-									
 									require_once('../views/anuncio/anuncioView.php');
-									
 									require_once('../views/frames/firtsfooter.php');
-								
 									require_once('../views/frames/footer.php');
 								}
 
@@ -33,7 +28,6 @@
 
 									$datos->titulo 	= $_REQUEST['titulo'];
 									$datos->descrp 	= $_REQUEST['descrp'];
-									$datos->fchcre	= $_REQUEST['fchcre'];
 									$datos->fchfin	= $_REQUEST['fchfin'];
 									$datos->usuid 	= $_REQUEST['usuid'];
 									$datos->ficid 	= $_REQUEST['ficid'];
@@ -55,7 +49,6 @@
 
 										$datos->titulo 	= $_REQUEST['titulo'];
 										$datos->descrp 	= $_REQUEST['descrp'];
-										$datos->fchcre	= $_REQUEST['fchcre'];
 										$datos->fchfin	= $_REQUEST['fchfin'];
 										$datos->usuid 	= $_REQUEST['usuid'];
 										$datos->ficid 	= $_REQUEST['ficid'];

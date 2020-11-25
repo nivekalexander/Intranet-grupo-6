@@ -116,10 +116,10 @@
           <h6 class="collapse-header">Usuarios:</h6>
           <a class="collapse-item"  href="./main.php?ctrl=estado">Estado</a>
           <a class="collapse-item"  href="./main.php?ctrl=tipoIdentificacion">Tipo identificación</a>
-          <a class="collapse-item"  href="./main.php?ctrl=rol"">Rol</a>
+          <a class="collapse-item"  href="./main.php?ctrl=rol">Rol</a>
           <div class="collapse-divider"></div>
           <h6 class="collapse-header">Other Pages:</h6>
-          <a class="collapse-item" href="404.html">404 Page</a>
+          <a class="collapse-item" href="./main.php?ctrl=tipoprograma">Tipo de Programa</a>
           <a class="collapse-item" href="blank.html">Blank Page</a>
         </div>
       </div>
