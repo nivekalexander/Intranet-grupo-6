@@ -91,7 +91,7 @@ class Anuncio
 																							$data->fchfin,
 																							$data->ficid,
 																							$data->usuid,
-																							
+
  																							$data->id
 
 									 									  			 	  )
