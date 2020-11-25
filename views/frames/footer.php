@@ -14,6 +14,7 @@
     <script src="../assets/js/scripts.noticia.js"></script>
     <script src="../assets/js/scripts.rol.js"></script>
     <script src="../assets/js/scripts.fases.js"></script>
+    <script src="../assets/js/scripts.tipojornada.js"></script>
 
     <!--Fin Scripts de los modulos -->
     <!-- End of Page Wrapper -->
