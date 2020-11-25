@@ -18,12 +18,12 @@
 
 	                var result = document.getElementById('tview');
 
-	                const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-	                ajax.open("POST", "main.php", true); // Se usa el Controlador General y su Accion
+	                const ajax = new XMLHttpRequest(); 
+	                ajax.open("POST", "main.php", true); 
 	                ajax.onreadystatechange = function() {
-	                    if (ajax.readyState == 4) // Estado 4 es DONE = TERMINADO
+	                    if (ajax.readyState == 4) 
 	                    {
-	                        if (ajax.status == 200) // Estado 200 es SUCCESS = CORRECTO
+	                        if (ajax.status == 200) 
 	                        {
 
 	                            result.innerHTML = ajax.responseText;
@@ -55,12 +55,12 @@
 	    var usuid = document.formanuncio.usuid.value;
 	    var ficid = document.formanuncio.ficid.value;
 
-	    const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-	    ajax.open("POST", "main.php", true); // Se usa el Controlador General y su Accion
+	    const ajax = new XMLHttpRequest(); 
+	    ajax.open("POST", "main.php", true); 
 	    ajax.onreadystatechange = function() {
-	        if (ajax.readyState == 4) // Estado 4 es DONE = TERMINADO
+	        if (ajax.readyState == 4) 
 	        {
-	            if (ajax.status == 200) // Estado 200 es SUCCESS = CORRECTO
+	            if (ajax.status == 200) 
 	            {
 
 	                result.innerHTML = ajax.responseText;
@@ -91,9 +91,9 @@
 	    document.formanuncio.ficid.value = ficid;
 
 	    document.getElementById("btnguardar").innerHTML = "Actualizar";
-	    //document.getElementById("btnguardar").setAttribute("onclick", "UpdateAnuncio();");
+	    
 
-	    // Cambiar la propiedad DEL FORMULARIO desde javascript de ONSUBMIT() ONCLICK() CAMBIE  -> UPDATEUSUARIO() al boton guardar
+	    
 	}
 
 
@@ -110,18 +110,18 @@
 
 	    document.getElementById('formanuncio').reset();
 
-	    const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-	    ajax.open("POST", "main.php", true); // Se usa el Controlador General y su Accion
+	    const ajax = new XMLHttpRequest(); 
+	    ajax.open("POST", "main.php", true); 
 	    ajax.onreadystatechange = function() {
-	        if (ajax.readyState == 4) // Estado 4 es DONE = TERMINADO
+	        if (ajax.readyState == 4) 
 	        {
-	            if (ajax.status == 200) // Estado 200 es SUCCESS = CORRECTO
+	            if (ajax.status == 200) 
 	            {
 	                result.innerHTML = ajax.responseText;
 	                document.getElementById("btnguardar").innerHTML = "Crear";
 
-	                // limpiar el formulario
-	                // document.getElementById("formusuario") --> onlick --> insertusuario()
+	                
+	                
 
 	            } else { console.log("Ups, Me equivoque;"); }
 	        }
@@ -129,36 +129,16 @@
 	    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	    ajax.send("ctrl=anuncio&acti=actualizar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&usuid=" + usuid + "&ficid=" + ficid + "&id=" + id);
 
-	    // $('#modalanuncios').modal('hide');	
+	    
 
-	    //document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");
+	    
 	    document.getElementById('formanuncio').reset();
 
 	}
 
 	function CancelarAnuncio() {
-	    var result = document.getElementById('tview');
 
 	    document.getElementById('formanuncio').reset();
-
-	    const ajax = new XMLHttpRequest(); // Ojo Se puede Llamar la funcion CrearAjax();
-	    ajax.open("POST", "main.php", true); // Se usa el Controlador General y su Accion
-	    ajax.onreadystatechange = function() {
-	        if (ajax.readyState == 4) // Estado 4 es DONE = TERMINADO
-	        {
-	            if (ajax.status == 200) // Estado 200 es SUCCESS = CORRECTO
-	            {
-	                result.innerHTML = ajax.responseText;
-
-
-	                // limpiar el formulario
-	                // document.getElementById("formusuario") --> onlick --> insertusuario()
-
-	            } else { console.log("Ups, Me equivoque;"); }
-	        }
-	    };
-	    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-	    // document.getElementById("btnguardar").setAttribute("onclick", "InsertAnuncio();");
+		    
 	    document.getElementById("btnguardar").innerHTML = "Crear";
 	}

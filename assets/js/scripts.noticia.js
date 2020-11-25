@@ -25,9 +25,9 @@ function BorrarNoticia(id,url)
                     const ajax = new XMLHttpRequest(); 
                     ajax.open("POST","main.php",true); 
                     ajax.onreadystatechange = function (){
-                                                            if( ajax.readyState == 4 ) // Estado 4 es DONE = TERMINADO
+                                                            if( ajax.readyState == 4 ) 
                                                             {
-                                                                if( ajax.status == 200 ) // Estado 200 es SUCCESS = CORRECTO
+                                                                if( ajax.status == 200 ) 
                                                                 {
                                                                 
                                                                     result.innerHTML = ajax.responseText;
@@ -87,7 +87,7 @@ function EditarNoticia(id,url)
                 urlEdit = url;
                 document.formnoticia.idnews.value = id;
                 document.getElementById("subir-news").innerHTML = "Actualizar";
-                //document.getElementById("subir-news").setAttribute("onclick", "UpdateNoticia();");
+                
                 $("#noticiaModal").modal("show");
             },
             Cancelar: function () {
@@ -128,7 +128,7 @@ function UpdateNoticia()
     document.formnoticia.reset();
 
     document.getElementById("subir-news").innerHTML = "Subir";
-    //document.getElementById("subir-news").setAttribute("onclick", "InsertNoticia();");
+    
     urlEdit = "";
 }
 

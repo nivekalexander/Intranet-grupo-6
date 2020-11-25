@@ -9,13 +9,13 @@
 
 		<!-- Cuerpo de la Tabla -->
 		<tbody>
-				<?php foreach ( $this->tipoidentificacion->Select() as $filas ): ?>
+				<?php foreach ( $this->tipoIdentificacion->Select() as $filas ): ?>
 					 
-					 	<?php  $grupal = "'".$filas->tip_id."','".$filas->tip_tipidn."'"; ?>
+					 	<?php  $grupal = "'".$filas->tip_id."','".$filas->tip_idntfc."'"; ?>
 
 						<tr>
 							
- 							<td><?php echo $filas->tip_tipidn;?></td>
+ 							<td><?php echo $filas->tip_idntfc;?></td>
 
 							<td> 	<button onclick="EditarTipoidentificacion(<?php echo $grupal; ?>)"> Editar   </button>    </td>
 							<td> 	<button onclick="BorrarTipoidentificacion(<?php echo $filas->tip_id;?>);"> Eliminar </button>    </td>
