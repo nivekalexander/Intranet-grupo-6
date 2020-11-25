@@ -16,6 +16,7 @@
     <script src="../assets/js/scripts.fases.js"></script>
     <script src="../assets/js/scripts.tipojornada.js"></script>
     <script src="../assets/js/scripts.modalidad.js"></script>
+    <script src="../assets/js/scripts.horario.js"></script>
     <script src="../assets/js/scripts.ficha.js"></script>
     <script src="../assets/js/scripts.tipooferta.js"></script>
 
