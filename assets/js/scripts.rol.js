@@ -8,10 +8,10 @@ function ObjAjax() {
 }
 
 
-function BorrarTipoPrograma(id) {
+function BorrarRol(id) {
     $.confirm({
         title: 'Confirmación!',
-        content: '¿Esta seguro que desea eliminar este tipo de programa de formación?',
+        content: '¿Esta seguro que desea eliminar este rol?',
         buttons: {
             confirm: function() {
                 $.alert('Se ha eliminado correctamente');
@@ -33,7 +33,7 @@ function BorrarTipoPrograma(id) {
                 };
 
                 ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                ajax.send("ctrl=tipoprograma&acti=eliminar&id=" + id);
+                ajax.send("ctrl=rol&acti=eliminar&id=" + id);
             },
             cancel: function() {
                 $.alert('Has cancelado la eliminación');
@@ -44,10 +44,10 @@ function BorrarTipoPrograma(id) {
 }
 
 
-function InsertTipoPrograma() {
+function InsertRol() {
     var result = document.getElementById('tview');
 
-    var nombrepro = document.formtipoprograma.nombre.value;
+    var nombrerol = document.formrol.nombre.value;
 
 
     const ajax = new XMLHttpRequest();
@@ -65,33 +65,33 @@ function InsertTipoPrograma() {
     };
 
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=tipoprograma&acti=insertar&nombre=" + nombrepro);
+    ajax.send("ctrl=rol&acti=insertar&nombre=" + nombrerol);
 
-    document.getElementById('formtipoprograma').reset();
+    document.getElementById('formrol').reset();
 }
 
 
 
 
 
-function EditarTipoPrograma(id, nombrepro) {
+function EditarRol(id, nombrerol) {
 
-    document.formtipoprograma.id.value = id;
-    document.formtipoprograma.nombre.value = nombrepro;
+    document.formrol.id.value = id;
+    document.formrol.nombre.value = nombrerol;
 
-    document.getElementById("btn-tipo-programa").innerHTML = "Actualizar";
+    document.getElementById("btn-rol").innerHTML = "Actualizar";
 
 }
 
 
-function UpdateTipoPrograma() {
+function UpdateRol() {
 
     var result = document.getElementById('tview');
 
-    var nombrepro = document.formtipoprograma.nombre.value;
-    var id = document.formtipoprograma.id.value;
+    var nombrerol = document.formrol.nombre.value;
+    var id = document.formrol.id.value;
 
-    document.getElementById('formtipoprograma').reset();
+    document.getElementById('formrol').reset();
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -99,19 +99,19 @@ function UpdateTipoPrograma() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
-                document.getElementById("btn-tipo-programa").innerHTML = "Crear";
+                document.getElementById("btn-rol").innerHTML = "Crear";
 
             } else { console.log("Ups, Me equivoque;"); }
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=tipoprograma&acti=actualizar&nombre=" + nombrepro + "&id=" + id);
+    ajax.send("ctrl=rol&acti=actualizar&nombre=" + nombrerol + "&id=" + id);
 
-    document.getElementById('formtipoprograma').reset();
+    document.getElementById('formrol').reset();
 
 }
 
-function CancelarTipoPrograma() {
-    document.getElementById('formtipoprograma').reset();
-    document.getElementById("btn-tipo-programa").innerHTML = "Crear";
+function CancelarRol() {    
+    document.getElementById('formrol').reset();    
+    document.getElementById("btn-rol").innerHTML = "Crear";
 }
