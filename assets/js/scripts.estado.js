@@ -11,28 +11,42 @@ function ObjAjax()
 
 function BorrarEstado(id)
 {
-    var result = document.getElementById('tview');
+    $.confirm({
+        title: 'Confirmación!',
+        content: '¿Esta seguro que desea eliminar este tipo de programa de formación?',
+        buttons: {
+            confirm: function() {
+                $.alert('Se ha eliminado correctamente');
 
-    const ajax = new XMLHttpRequest(); 
-    ajax.open("POST","main.php",true); 
-    ajax.onreadystatechange = function (){
-                                            if( ajax.readyState == 4 ) 
-                                            {
-                                                if( ajax.status == 200 )
-                                                {
+                    var result = document.getElementById('tview');
 
-                                                    result.innerHTML = ajax.responseText;
+                    const ajax = new XMLHttpRequest(); 
+                    ajax.open("POST","main.php",true); 
+                    ajax.onreadystatechange = function (){
+                                                            if( ajax.readyState == 4 ) 
+                                                            {
+                                                                if( ajax.status == 200 )
+                                                                {
 
-                                                }
-                                                else
-                                                {
-                                                    console.log("Ups, Me equivoque;");
-                                                }
-                                            }
-                                         };
+                                                                    result.innerHTML = ajax.responseText;
 
-    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    ajax.send("ctrl=estado&acti=eliminar&id="+id);
+                                                                }
+                                                                else
+                                                                {
+                                                                    console.log("Ups, Me equivoque;");
+                                                                }
+                                                            }
+                                                        };
+
+                    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+                    ajax.send("ctrl=estado&acti=eliminar&id="+id);
+                },
+                cancel: function() {
+                $.alert('Has cancelado la eliminación');
+            }
+        }
+    });
+
 }
 
 function InsertarEstado()
@@ -63,7 +77,7 @@ function InsertarEstado()
     ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     ajax.send("ctrl=estado&acti=insertar&nombre="+nombre);
 
-    //document.getElementById('formestado').reset();
+    document.getElementById('formestado').reset();
 }
 
 
@@ -72,9 +86,8 @@ function EditarEstado(id,nombre){
 
     document.formestado.id.value		= id;
     document.formestado.nombre.value 	= nombre;
-    document.getElementById("btnguardar").value = "Actualizar";
 
-    document.getElementById("btnguardar").setAttribute("onclick", "UpdateEstado();");
+    document.getElementById("btnguardar").innerHTML = "Actualizar";
 }
 
 function UpdateEstado(){
@@ -94,7 +107,7 @@ function UpdateEstado(){
                                                 if( ajax.status == 200 ) 
                                                 {
                                                     result.innerHTML = ajax.responseText;
-                                                    document.getElementById("btnguardar").value = "Guardar";
+                                                    
 
 
                                                 }
@@ -104,6 +117,13 @@ function UpdateEstado(){
     ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     ajax.send("ctrl=estado&acti=actualizar&nombre="+nombre+"&id="+id);
 
-    document.getElementById("btnguardar").setAttribute("onclick", "EditarEstado();");
+   
+
+}
+function CancelarEstado() {
+
+    document.getElementById('formestado').reset();
+
+    document.getElementById("btnguardar").innerHTML = "Crear";
 
 }
