@@ -7,6 +7,7 @@
 
     <script src="../assets/js/scripts.menu.js"></script>	
     <script src="../assets/js/scripts.tipoprograma.js"></script>
+    <script src="../assets/js/scripts.tipooferta.js"></script>
     <script src="../assets/js/scripts.tipoidentificacion.js"></script>
     <script src="../assets/js/scripts.anuncio.js"></script>
     <script src="../assets/js/scripts.estado.js"></script>
