@@ -90,7 +90,7 @@
 
     <!-- Nav Item - Programa de formación -->
     <li class="nav-item active">
-      <a class="nav-link"  href="./main.php?ctrl=programa">
+      <a class="nav-link"  href="./main.php?ctrl=programaformacion">
         <img src="../assets/img/img-slidebar/programaformacion.svg" class="slidebar-img" alt="new">
         <span id="programa" class="programa2">Programa de formación</span></a>
     </li>
@@ -123,6 +123,7 @@
           <a class="collapse-item" href="./main.php?ctrl=tipojornada">Tipo Jornada</a>
           <a class="collapse-item" href="./main.php?ctrl=fases">Fases</a>
           <a class="collapse-item" href="./main.php?ctrl=modalidad">Modalidad</a>
+          <a class="collapse-item" href="./main.php?ctrl=estado">Estado</a>
         </div>
       </div>
     </li>

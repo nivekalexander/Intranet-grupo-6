@@ -44,7 +44,7 @@ function BorrarModalidad(id) {
 }
 
 
-function InsertModalidad() {    
+function InsertModalidad() {
     var result = document.getElementById('tview');
 
     var nombremodalidad = document.formmodalidad.nombre.value;
@@ -80,7 +80,7 @@ function EditarModalidad(id, nombremodalidad) {
     document.formmodalidad.nombre.value = nombremodalidad;
 
     document.getElementById("btn-modalidad").innerHTML = "Actualizar";
-
+    document.getElementById("titlemodalidad").innerHTML = "Actualizar modalidad";
 }
 
 
@@ -111,7 +111,8 @@ function UpdateModalidad() {
 
 }
 
-function CancelarModalidad() {    
-    document.getElementById('formmodalidad').reset();    
+function CancelarModalidad() {
+    document.getElementById('formmodalidad').reset();
     document.getElementById("btn-modalidad").innerHTML = "Crear";
+    document.getElementById("titlemodalidad").innerHTML = "Crear modalidad";
 }

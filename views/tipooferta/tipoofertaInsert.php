@@ -4,7 +4,7 @@
   <div class="modal-dialog" role="document">
 	  <div class="modal-content">
 			<div class="modal-header Color-Slidebar">
-				<h5 class="modal-title dropdown-text-color" id="exampleModalLabel">Crear tipo programa</h5>
+				<h5 class="modal-title dropdown-text-color" id="titletipoferta">Crear tipo de oferta</h5>
 				<button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close" onclick="CancelarTipoOferta();">
 				<span aria-hidden="true">&times;</span>
 				</button>
@@ -23,7 +23,7 @@
 					    </div>
 
 						<div class="modal-footer">
-								<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarTipoPrograma();">Cerrar</button>
+								<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarTipoOferta();">Cerrar</button>
 								<button type="submit" class="btn-rounded btn" id="btnguardar">Crear</button>
 						</div>
             				
@@ -44,7 +44,7 @@
 									if (form.checkValidity() === true) {
 										var nombreBoton = document.getElementById("btnguardar").innerHTML;
 										if (nombreBoton == "Crear"){
-											InsertTipoOferta();
+											InsertarTipoOferta();
 											$('#modaltipooferta').modal('hide');
 										}
 										if (nombreBoton == "Actualizar"){

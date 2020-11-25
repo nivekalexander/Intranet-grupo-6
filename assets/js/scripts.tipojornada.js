@@ -80,6 +80,7 @@ function EditarTipoJornada(id, nombrejor) {
     document.formtipojornada.nombre.value = nombrejor;
 
     document.getElementById("btn-tipo-jornada").innerHTML = "Actualizar";
+    document.getElementById("titletipjornada").innerHTML = "Actualizar tipo de jornada";
 
 }
 
@@ -114,4 +115,5 @@ function UpdateTipoJornada() {
 function CancelarTipoJornada() {
     document.getElementById('formtipojornada').reset();
     document.getElementById("btn-tipo-jornada").innerHTML = "Crear";
+    document.getElementById("titletipjornada").innerHTML = "Crear tipo de jornada";
 }
