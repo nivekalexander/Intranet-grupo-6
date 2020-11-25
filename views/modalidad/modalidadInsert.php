@@ -1,30 +1,30 @@
 <!-- Modal -->
 
-<div class="modal fade" id="modalrol" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+<div class="modal fade" id="modalmodalidad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog" role="document">
 	  <div class="modal-content">
 			<div class="modal-header Color-Slidebar">
-				<h5 class="modal-title dropdown-text-color" id="exampleModalLabel">Crear rol</h5>
-				<button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close" onclick="CancelarRol();">
+				<h5 class="modal-title dropdown-text-color" id="exampleModalLabel">Crear modalidad</h5>
+				<button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close" onclick="CancelarModalidad();">
 				<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body espaciado">		
 			
-					<form name="formrol" id="formrol" class="needs-validation" novalidate>
+					<form name="formmodalidad" id="formmodalidad" class="needs-validation" novalidate>
 
             				<input type="text" name="id" hidden>
 
 						<div>
-            				<label for="nombre">Nombre Rol</label><br>
+            				<label for="nombre">Nombre Modalidad</label><br>
             				<input class="form-control rounded" type="text" name="nombre" required>
 							<div class="invalid-feedback">Campo Obligatorio</div>
 							<div class="valid-feedback">¡Valido!</div>
 					    </div>
 
 					<div class="modal-footer">
-							<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarRol();">Cerrar</button>
-							<button type="submit" class="btn-rounded btn" id="btn-rol">Crear</button>
+							<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarModalidad();">Cerrar</button>
+							<button type="submit" class="btn-rounded btn" id="btn-modalidad">Crear</button>
 					</div>
             				
 
@@ -42,14 +42,14 @@
 							var validation = Array.prototype.filter.call(forms, function(form) {
 								form.addEventListener('submit', function(event) {
 								if (form.checkValidity() === true) {
-									var nombreBoton = document.getElementById("btn-rol").innerHTML;
+									var nombreBoton = document.getElementById("btn-modalidad").innerHTML;
 									if (nombreBoton == "Crear"){
-										InsertRol();
-										$('#modalrol').modal('hide');
+										InsertModalidad();
+										$('#modalmodalidad').modal('hide');
 									}
 									if (nombreBoton == "Actualizar"){
-										UpdateRol();
-										$('#modalrol').modal('hide');
+										UpdateModalidad();
+										$('#modalmodalidad').modal('hide');
 									}
 								}
 								if (form.checkValidity() === false) {

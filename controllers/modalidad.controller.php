@@ -1,12 +1,12 @@
 <?php 
-require_once('../models/fases.php');
+require_once('../models/modalidad.php');
 
-class FasesController{
+class ModalidadController{
 
-	private $fases;
+	private $modalidad;
 
 	public function __Construct()	{
-							  		$this->fases = new Fases(); 		
+							  		$this->modalidad = new Modalidad(); 		
 		}
 
 		public function Index()
@@ -14,7 +14,7 @@ class FasesController{
 									require_once('../views/frames/header.php');
 									require_once('../views/frames/navbar.php');
 									require_once('../views/frames/slidebar.php');
-									require_once('../views/fases/fasesView.php');
+									require_once('../views/modalidad/modalidadView.php');
 									require_once('../views/frames/footer.php');
 
 
@@ -23,31 +23,31 @@ class FasesController{
 
 		public function Eliminar()
 								{
-									$this->fases->Delete($_REQUEST['id']);
-									require_once('../views/fases/fasesSelect.php');
+									$this->modalidad->Delete($_REQUEST['id']);
+									require_once('../views/modalidad/modalidadSelect.php');
 								}
 
 	    public function Insertar()
 								{
 
-									$datos= $this->fases;
+									$datos= $this->modalidad;
 
 									$datos->name = $_REQUEST['nombre'];
 
-									$this->fases->Insert($datos);
+									$this->modalidad->Insert($datos);
 
-									require_once('../views/fases/fasesSelect.php');
+									require_once('../views/modalidad/modalidadSelect.php');
 								}
 		public function Actualizar()
 								{
 									
-									$datos= $this->fases;
+									$datos= $this->modalidad;
 
 									$datos->name = $_REQUEST['nombre'];
 									$datos->id = $_REQUEST['id'];
-									$this->fases->Update($datos);
+									$this->modalidad->Update($datos);
 
-									require_once('../views/fases/fasesSelect.php');
+									require_once('../views/modalidad/modalidadSelect.php');
 								}
 
 

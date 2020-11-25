@@ -1,5 +1,5 @@
 <?php
-	class Rol
+	class Modalidad
 	{
 		public $pdo;
 
@@ -10,7 +10,7 @@
 		}
 
 		public function Select(){
-						try 				{ 	$sql=$this->pdo->prepare("SELECT * FROM tbl_rol");
+						try 				{ 	$sql=$this->pdo->prepare("SELECT * FROM tbl_modalidad");
 												$sql->execute();
 												return $sql->fetchALL(PDO::FETCH_OBJ);
 											}
@@ -23,7 +23,7 @@
 		public function Get($id) {
 					 		
 			try   {
-		 			$sql= $this->pdo->prepare("SELECT * FROM tbl_rol WHERE rol_id=?;");
+		 			$sql= $this->pdo->prepare("SELECT * FROM tbl_modalidad WHERE mod_id=?;");
 		 			$sql->execute(array($id));
 		 			return $sql->fetch(PDO::FETCH_OBJ); 
 		 		}catch (Exception $e) {
@@ -32,22 +32,22 @@
 		 		     }
 	 		
 	 		}
- 		public function Insert(Rol $data){
+ 		public function Insert(Modalidad $data){
 			try   {
-	 				$sql= "INSERT INTO tbl_rol (rol_nombre) VALUES(?)";
-	 				$this->pdo->prepare($sql)->execute(array($data->name ));
+	 				$sql= "INSERT INTO tbl_modalidad (mod_nombre) VALUES(?)";
+	 				$this->pdo->prepare($sql)->execute(array($data->name));
  				 }catch (Exception $e) {
  				   die($e->getMessage());
 
  				     }
 				 }
 
-		 public function Update(Rol $data){
+		 public function Update(Modalidad $data){
 
 			try   {
 
-			 		$sql= "UPDATE tbl_rol SET rol_nombre=? WHERE rol_id=?;";
-			 		$this->pdo->prepare($sql)->execute(array($data->name,	$data->id)); 
+			 		$sql= "UPDATE tbl_modalidad SET mod_nombre=? WHERE mod_id=?;";
+			 		$this->pdo->prepare($sql)->execute(array($data->name, $data->id)); 
 					}catch (Exception $e) {
 					  die($e->getMessage());
 					
@@ -57,7 +57,7 @@
 
 		public function Delete($id){
 			try   {
-					$sql= "DELETE FROM tbl_rol WHERE rol_id=?;";
+					$sql= "DELETE FROM tbl_modalidad WHERE mod_id=?;";
 					$this->pdo->prepare($sql)->execute(array($id));
 					 }
 			 catch (Exception $e) { 
