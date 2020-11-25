@@ -24,7 +24,7 @@
 
 					<div class="modal-footer">
 							<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarRol();">Cerrar</button>
-							<button type="submit" class="btn-rounded btn" id="btn-rol">Crear</button>
+							<button type="submit" id="btn-rol" class="btn-rounded btn">Crear</button>
 					</div>
             				
 
