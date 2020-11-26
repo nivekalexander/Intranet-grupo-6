@@ -6,17 +6,17 @@
 
       <div class="modal-header Color-Slidebar">
         <h5 class="modal-title dropdown-text-color" id="ModalLabelArchivo">Subir Archivo</h5>
-        <button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close" onclick="CancelarNoticia();">
+        <button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close" onclick="CancelarHorario();">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
 
-      <form id="formhorario" name="formhorario" class="needs-validation">   
+      <form id="formhorario" name="formhorario" class="needs-validation" novalidate>   
 
       <div class="modal-body">           
                   <input type="number" name="id" id="id" hidden>
                   <label>Horario PDF</label>
-                <div class="form-group custom-file btn rounded" style="background-color: #e3e6f0; overflow: hidden;">                                    
+                <div class="form-group btn rounded" style="background-color: #e3e6f0; overflow: hidden;">                                    
                   <input type="file" name="file" id="file" accept=".pdf" lang="es" required>
                   <div class="invalid-feedback">No se ha seleccionado ningun archivo</div>                
                 </div><br><br>
@@ -50,9 +50,8 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarNoticia();">Cerrar</button>
-        <button type="submit" id="subir-hor" class="btn btn-primary btn-rounded" >Subir</button>
-        <!-- onclick="InsertNoticia();" -->
+        <button type="button" id="cancel-hor" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarHorario();">Cerrar</button>
+        <button type="button" id="subir-hor" class="btn btn-primary btn-rounded" >Subir</button>
       </div>
 
       </form>  
@@ -64,36 +63,42 @@
 
 <script>
 
-// document.getElementById("customFileLang").innerHTML = document.getElementById("file-hor").files[0].name;
-
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
-    'use strict';        
+    'use strict';            
     window.addEventListener('load', function() {         
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.getElementsByClassName('needs-validation');
       // Loop over them and prevent submission
       var validation = Array.prototype.filter.call(forms, function(form) {        
-        form.addEventListener('submit', function(event) {
-          
-          if (form.checkValidity() === true) {
+        document.getElementById("subir-hor").addEventListener('click', function(event) {          
+          if (form.checkValidity() === true) {            
             var nombreBoton = document.getElementById("subir-hor").innerHTML;
-            if (nombreBoton == "Subir"){
-              InsertHorario();
-              $('#horarioModal').modal('hide');
-            }
-            if (nombreBoton == "Actualizar"){
-              UpdateHorario();
-              $('#horarioModal').modal('hide');
-            }
-           
+            var filesize = formhorario.file.files[0].size;            
+            if(filesize<2000000){
+              if (nombreBoton == "Subir"){                            
+                InsertHorario();
+                $('#horarioModal').modal('hide');              
+              }
+              if (nombreBoton == "Actualizar"){
+                UpdateHorario();
+                $('#horarioModal').modal('hide');
+              }
+            }else{
+                $.alert('El archivo seleccionado excede el limite de 2MB');
+            }                         
           }
           if (form.checkValidity() === false) {
             event.preventDefault();
-            event.stopPropagation();            
-          }
-          //form.classList.add('was-validated');
+            event.stopPropagation();                                    
+          }          
+          form.classList.add('was-validated');
+          $("#horarioModal").on('hidden.bs.modal', function () {
+            formhorario.classList.remove('was-validated');
+            formhorario.reset();
+          });
         }, false);
+                
       });
     }, false);
   })();

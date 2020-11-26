@@ -49,6 +49,14 @@
     background-color: #01142D !important;
 }
 
+.nav-link-select {
+    background-color: #ffffff5b !important;
+}
+
+.selection:hover {
+    background-color: #ffffff5b !important;
+}
+
 .slidebar-img {
     width: 14%;
     margin-right: 20px;
@@ -171,6 +179,8 @@
     border-radius: 50rem !important;
     color: #ffffff !important;
     overflow: hidden !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
 textarea {

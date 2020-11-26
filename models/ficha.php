@@ -15,7 +15,16 @@ class Ficha
 	public function Select()
 									 {
 									 	try  				 {
-									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_ficha ORDER BY fic_id DESC");
+									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_ficha 
+																 INNER JOIN tbl_tipojornada 
+																 INNER JOIN tbl_modalidad 
+																 INNER JOIN tbl_tipooferta 
+																 INNER JOIN tbl_Programaformacion
+																 WHERE tbl_ficha.fic_tijid = tbl_tipojornada.tij_id AND
+																 tbl_ficha.fic_modid = tbl_modalidad.mod_id AND
+																 tbl_ficha.fic_tofid = tbl_tipooferta.tof_id AND
+																 tbl_ficha.fic_pfoid = tbl_Programaformacion.pfo_id
+																ORDER BY tbl_ficha.fic_id DESC");
 									 							$sql->execute();
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
 									 						 }

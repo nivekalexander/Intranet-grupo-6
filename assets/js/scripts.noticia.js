@@ -119,7 +119,7 @@ function UpdateNoticia() {
     document.formnoticia.reset();
 
     document.getElementById("subir-news").innerHTML = "Subir";
-
+    document.getElementById("titlenoticias").innerHTML = "Subir Archivo";
     urlEdit = "";
 }
 

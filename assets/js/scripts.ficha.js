@@ -31,6 +31,16 @@ function BorrarFicha(fic_id)
 
                                                                     result.innerHTML = ajax.responseText;
 
+                                                                    $(document).ready(function() {
+                                                                        $('#tableficha').DataTable({
+                                                                            dom: 'Bfrtip',
+                                                                            buttons: ['copy', 'excel', 'pdf', 'csv'],
+                                                                            "language": {
+                                                                                "url": "../assets/datatables/Spanish.json"
+                                                                            }
+                                                                        });
+                                                                     });
+
                                                                 }
                                                                 else
                                                                 {
@@ -72,6 +82,16 @@ function InsertarFicha()
 
                                                     result.innerHTML = ajax.responseText;
 
+                                                    $(document).ready(function() {
+                                                        $('#tableficha').DataTable({
+                                                            dom: 'Bfrtip',
+                                                            buttons: ['copy', 'excel', 'pdf', 'csv'],
+                                                            "language": {
+                                                                "url": "../assets/datatables/Spanish.json"
+                                                            }
+                                                        });
+                                                    });
+
                                                 }
                                                 else
                                                 {
@@ -98,6 +118,8 @@ function EditarFicha(fic_id,fic_codigo,fic_feccrn,fic_fecfn,fic_tijid,fic_modid,
     document.formficha.fic_modid.value 	= fic_modid;
     document.formficha.fic_tofid.value 	= fic_tofid;
     document.formficha.fic_pfoid.value 	= fic_pfoid;
+
+    document.getElementById("titleficha").innerHTML = "Actualizar Ficha";
     document.getElementById("btnguardar").innerHTML = "Actualizar";
 }
 
@@ -106,8 +128,7 @@ function UpdateFicha(){
     var result = document.getElementById('tview');
 
     var fic_id 		= document.formficha.fic_id.value;
-    var fic_codigo 	= document.formficha.fic_codigo.value;
-    
+    var fic_codigo 	= document.formficha.fic_codigo.value;  
     var fic_feccrn=document.formficha.fic_feccrn.value ;
     var fic_fecfn=document.formficha.fic_fecfn.value ;	
     var fic_tijid=document.formficha.fic_tijid.value ;	
@@ -125,7 +146,16 @@ function UpdateFicha(){
                                                 if( ajax.status == 200 ) 
                                                 {
                                                     result.innerHTML = ajax.responseText;
-                                                    
+
+                                                       $(document).ready(function() {
+                                                            $('#tableficha').DataTable({
+                                                                dom: 'Bfrtip',
+                                                                buttons: ['copy', 'excel', 'pdf', 'csv'],
+                                                                "language": {
+                                                                    "url": "../assets/datatables/Spanish.json"
+                                                                }
+                                                            });
+                                                         });
 
 
                                                 }
@@ -136,13 +166,15 @@ function UpdateFicha(){
     ajax.send("ctrl=ficha&acti=actualizar&fic_id="+fic_id+"&fic_codigo="+fic_codigo+"&fic_feccrn="+fic_feccrn+"&fic_fecfn="+fic_fecfn+"&fic_tijid="+fic_tijid+"&fic_modid="+fic_modid+"&fic_tofid="+fic_tofid+"&fic_pfoid="+fic_pfoid);      				
     
 
-   
+    document.getElementById("btnguardar").innerHTML = "Crear";
+    document.getElementById("titleficha").innerHTML = "Crear Ficha";
 
 }
 function CancelarFicha() {
 
     document.getElementById('formficha').reset();
 
+    document.getElementById("titleficha").innerHTML = "Crear Ficha";
     document.getElementById("btnguardar").innerHTML = "Crear";
 
 }

@@ -99,7 +99,7 @@ function UpdateModalidad() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
-                document.getElementById("btn-modalidad").innerHTML = "Crear";
+                
 
             } else { console.log("Ups, Me equivoque;"); }
         }
@@ -107,6 +107,8 @@ function UpdateModalidad() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=modalidad&acti=actualizar&nombre=" + nombremodalidad + "&id=" + id);
 
+    document.getElementById("btn-modalidad").innerHTML = "Crear";
+    document.getElementById("titlemodalidad").innerHTML = "Crear modalidad";
     document.getElementById('formmodalidad').reset();
 
 }

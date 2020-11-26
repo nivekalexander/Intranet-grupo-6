@@ -101,7 +101,7 @@ function UpdateRol() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
-                document.getElementById("btn-rol").innerHTML = "Crear";
+               
 
             } else { console.log("Ups, Me equivoque;"); }
         }
@@ -110,7 +110,8 @@ function UpdateRol() {
     ajax.send("ctrl=rol&acti=actualizar&nombre=" + nombrerol + "&id=" + id);
 
     document.getElementById('formrol').reset();
-
+    document.getElementById("btn-rol").innerHTML = "Crear";
+    document.getElementById("titlerol").innerHTML = "Crear Rol";
 }
 
 function CancelarRol() {

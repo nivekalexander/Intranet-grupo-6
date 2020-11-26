@@ -68,5 +68,17 @@
             }
         });
     });
+    // Ficha
+
+    $(document).ready(function() {
+        $('#tableficha').DataTable({
+            dom: 'Bfrtip',
+            buttons: ['copy', 'excel', 'pdf', 'csv'],
+            "language": {
+                "url": "../assets/datatables/Spanish.json"
+            }
+        });
+    });
+
 
 })(jQuery); // End of use strict
