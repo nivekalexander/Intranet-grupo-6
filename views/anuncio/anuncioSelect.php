@@ -10,8 +10,6 @@
 					<div class="d-flex justify-content-center">
 						<div class="card bg-light mb-5 w-100 diseño-tarjeta">
 							  <div class="card-header " >
-							  
-							
 									<div class="float-left mr-5" >
 										<a href="perfil.php?id=925763" name="imagenPost"><img src="https://www.flaticon.es/svg/static/icons/svg/599/599305.svg" width="40" height="40"></a>
 									</div >
