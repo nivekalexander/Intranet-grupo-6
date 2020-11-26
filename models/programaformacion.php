@@ -14,12 +14,12 @@ class ProgramaFormacion
 		public function Select()
 									 {
 									 	try  				 {
-									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_ProgramaFormacion 
+									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_Programaformacion 
                                                                                           INNER JOIN tbl_estado 
                                                                                           INNER JOIN tbl_tipoprograma 
-                                                                                          WHERE tbl_ProgramaFormacion.pfo_estid=tbl_estado.est_id 
-                                                                                          AND tbl_programaformacion.pfo_tprid = tbl_tipoprograma.tpr_id 
-                                                                                          ORDER BY tbl_ProgramaFormacion.pfo_id DESC");
+                                                                                          WHERE tbl_Programaformacion.pfo_estid=tbl_estado.est_id 
+                                                                                          AND tbl_Programaformacion.pfo_tprid = tbl_tipoprograma.tpr_id 
+                                                                                          ORDER BY tbl_Programaformacion.pfo_id DESC");
 									 							$sql->execute();
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
 									 						 }
@@ -53,7 +53,7 @@ class ProgramaFormacion
 		public function Delete($id)
 									 {
 									 	try  				 {
-									 							$sql="DELETE FROM tbl_ProgramaFormacion WHERE pfo_id=?";
+									 							$sql="DELETE FROM tbl_Programaformacion WHERE pfo_id=?";
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
@@ -67,7 +67,7 @@ class ProgramaFormacion
 		public function Update(ProgramaFormacion $data)
 									 {
 									 	try  				 {
-									 							$sql="UPDATE tbl_ProgramaFormacion SET pfo_versn=?,pfo_duracn=?,pfo_abrvtr=?,pfo_nompro=?,pfo_estid=?,pfo_tprid=? 
+									 							$sql="UPDATE tbl_Programaformacion SET pfo_versn=?,pfo_duracn=?,pfo_abrvtr=?,pfo_nompro=?,pfo_estid=?,pfo_tprid=? 
 																 WHERE pfo_id=?";
 																 
 									 							$this->pdo->prepare($sql)

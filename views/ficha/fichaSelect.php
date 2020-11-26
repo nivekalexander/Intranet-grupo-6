@@ -6,9 +6,9 @@
             <th  scope="col">Codigo</th>
             <th  scope="col">Fecha Creacion</th>
             <th  scope="col">Fecha Fin</th>
-            <th  scope="col">Tipo Jornada</th>
-            <th  scope="col">Tipo Modalidad</th>
-            <th  scope="col">Tipo Oferta</th>
+            <th  scope="col">Jornada</th>
+            <th  scope="col">Modalidad</th>
+            <th  scope="col">Oferta</th>
             <th  scope="col">Programa De Formacion</th>
 			<th  scope="col">Editar</th>
 			<th  scope="col">Eliminar</th>
@@ -27,10 +27,10 @@
                 <td scope="row"><?php echo $filas->fic_codigo;?></td>
                 <td scope="row"><?php echo $filas->fic_feccrn;?></td>
                 <td scope="row"><?php echo $filas->fic_fecfn;?></td>
-                <td scope="row"><?php echo $filas->fic_tijid;?></td>
-                <td scope="row"><?php echo $filas->fic_modid;?></td>
-                <td scope="row"><?php echo $filas->fic_tofid;?></td>
-                <td scope="row"><?php echo $filas->fic_pfoid;?></td>
+                <td scope="row"><?php echo $filas->tij_nombre;?></td>
+                <td scope="row"><?php echo $filas->mod_nombre;?></td>
+                <td scope="row"><?php echo $filas->tof_nombre;?></td>
+                <td scope="row"><?php echo $filas->pfo_nompro;?></td>
 
 
 				<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalficha" data-dismiss="modal" onclick="EditarFicha(<?php echo $grupal; ?>)">Editar</button></td>

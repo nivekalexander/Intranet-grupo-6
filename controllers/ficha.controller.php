@@ -1,13 +1,23 @@
 <?php
 
 	require_once('../models/ficha.php');
-
+	require_once('../models/tipojornada.php');
+	require_once('../models/modalidad.php');
+	require_once('../models/tipooferta.php');
+	require_once('../models/programaformacion.php');
 	class FichaController
 	{	
 		private $ficha;
-
+		private $tipojornada;
+		private $tipomodalidad;
+		private $tipooferta;
+		private $programaformacion;
 		function __construct()	{
-							  		$this->ficha= new Ficha(); 		
+									  $this->ficha= new Ficha(); 	
+									  $this->tipojornada= new TipoJornada(); 	
+									  $this->tipomodalidad= new Modalidad(); 	
+									  $this->tipooferta= new TipoOferta();
+									  $this->programaformacion= new ProgramaFormacion();  		
 							  	}
 
 		public function Index()
