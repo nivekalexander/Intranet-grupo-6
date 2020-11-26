@@ -23,7 +23,7 @@
 		public function Get()
 		{
 									try  				 {
-															$sql=$this->pdo->prepare("SELECT * FROM tbl_horario WHERE hor_ficid = 1");
+															$sql=$this->pdo->prepare("SELECT * FROM tbl_horario WHERE hor_ficid = 2");
 															$sql->execute();
 															return $sql->fetch(PDO::FETCH_OBJ);
 															}
