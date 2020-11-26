@@ -1,3 +1,4 @@
+<script src="../assets/js/scripts.perfil.js"></script>
 <div class="container espaciado">
     <h3 class="noti-tittle">Perfil</h3>
     <div class="border border-secondary panel-perfil" readonly>

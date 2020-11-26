@@ -1,25 +1,5 @@
+
   
-
-
-
-   
-    <!-- Scripts de los modulos -->
-
-    <!-- <script src="../assets/js/scripts.menu.js"></script>	 -->
-    <script src="../assets/js/scripts.tipoprograma.js"></script>
-    <script src="../assets/js/scripts.anuncio.js"></script>
-    <script src="../assets/js/scripts.estado.js"></script>
-    <script src="../assets/js/scripts.usuario.js"></script>
-    <script src="../assets/js/scripts.noticia.js"></script>
-    <script src="../assets/js/scripts.rol.js"></script>
-    <script src="../assets/js/scripts.tipoidentificacion.js"></script>
-    <script src="../assets/js/scripts.fases.js"></script>
-    <script src="../assets/js/scripts.tipojornada.js"></script>
-    <script src="../assets/js/scripts.modalidad.js"></script>
-    <script src="../assets/js/scripts.horario.js"></script>
-    <script src="../assets/js/scripts.ficha.js"></script>
-    <script src="../assets/js/scripts.tipooferta.js"></script>
-
     <!--Fin Scripts de los modulos -->
     <!-- End of Page Wrapper -->
     <!-- Bootstrap core JavaScript-->
@@ -41,7 +21,7 @@
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/chart-area-demo.js"></script>
     <script src="../assets/js/demo/chart-pie-demo.js"></script>
-    <script src="../assets/js/scripts.perfil.js"></script>
+    
 
     <!--Bootstrap-->
 

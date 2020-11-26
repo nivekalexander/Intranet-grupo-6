@@ -9,6 +9,7 @@ function ObjAjax()
     return xmlhttp;
 }
 
+
 function BorrarFicha(fic_id)
 {
     $.confirm({
