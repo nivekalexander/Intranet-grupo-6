@@ -27,10 +27,10 @@
 						<td scope="row"><?php echo $filas->usu_aplldo; ?> </td>
                         <td scope="row"><?php echo $filas->usu_passwd; ?></td>
                         <td scope="row"><?php echo $filas->usu_correo;?></td>
-                        <td scope="row"><?php echo $filas->usu_ficid;?></td>
-                        <td scope="row"><?php echo $filas->usu_rolid;?></td>
-                        <td scope="row"><?php echo $filas->usu_estid;?></td>
-                        <td scope="row"><?php echo $filas->usu_tipid;?></td>
+                        <td scope="row"><?php echo $filas->fic_codigo;?></td>
+                        <td scope="row"><?php echo $filas->rol_nombre;?></td>
+                        <td scope="row"><?php echo $filas->est_nombre;?></td>
+                        <td scope="row"><?php echo $filas->tip_idntfc;?></td>
                         
 						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalusuario" data-dismiss="modal" onclick="EditarUsuario(<?php echo $grupal;?>)">Editar</button></td>
 						<td scope="row"><button class="btn-rounded btn" onclick="BorrarUsuario(<?php echo $filas->usu_id; ?>);">Eliminar</button></td>

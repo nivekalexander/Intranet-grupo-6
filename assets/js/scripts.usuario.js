@@ -154,3 +154,26 @@ function CancelarUsuario() {
         
     document.getElementById("btnguardar").innerHTML = "Crear";
 }
+
+function ConfirmUsuario(id){
+  document.getElementById('confirm').value = id;
+ 
+
+  const ajax = new XMLHttpRequest(); 
+    ajax.open("POST", "main.php", true); 
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4) 
+        {
+            if (ajax.status == 200) 
+            {
+                result.innerHTML = ajax.responseText;
+                document.getElementById("btnguardar").innerHTML = "Crear";
+
+
+            } else { console.log("Ups, Me equivoque;"); }
+        }
+    };                                                                                                 
+    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    ajax.send("ctrl=usuario&acti=seleccionar&rol=" + id);
+  
+}

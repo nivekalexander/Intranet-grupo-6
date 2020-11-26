@@ -6,10 +6,10 @@
             		    <h3 class="noti-tittle">Usuario</h3>
             		</div>
         		<div id="forms">
-        				<?php include('usuarioInsert.php');?>
+        				<?php include('usuarioConfirm.php');?>
         		</div>
         		<div id="tview">
-        				<?php include('usuarioSelect.php');?>
+        				<?php //include('usuarioSelect.php');?>
         		</div>
         </div>
 </div>

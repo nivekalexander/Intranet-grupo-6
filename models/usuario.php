@@ -12,11 +12,22 @@ class Usuario
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-	public function Select()
+	public function Select(Usuario $data)
 									 {
 									 	try  				 {
-									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_usuario  ORDER BY usu_id DESC");
+									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_usuario 
+																 INNER JOIN tbl_ficha 
+																 INNER JOIN tbl_rol 
+																 INNER JOIN tbl_estado 
+																 INNER JOIN tbl_tipoid 
+																 WHERE tbl_usuario.usu_ficid = tbl_ficha.fic_id 
+																 AND tbl_usuario.usu_rolid = tbl_rol.rol_id 
+																 AND tbl_usuario.usu_estid = tbl_estado.est_id 
+																 AND tbl_usuario.usu_tipid = tbl_tipoid.tip_id
+																 AND usu_rolid = ?
+																 ORDER BY tbl_usuario.usu_id DESC");
 									 							$sql->execute(
+																	$data->rol
                                                                  );
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
 									 						 }

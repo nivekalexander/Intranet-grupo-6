@@ -128,7 +128,7 @@
 
 .form-perfil {
     padding-top: 50px;
-    ;
+    
 }
 
 .btn-gris {
@@ -175,4 +175,26 @@
 
 textarea {
     resize: none !important;
+}
+
+/* Iconos para confirmar el tipo de usuario*/
+.border-warning{
+    background: url("../img/img-confirmUsu/imagen_usuarios_confirm.svg");
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 15rem;
+    height: 15rem;
+    margin: .25rem;
+    position: relative;
+    left: 150px;
+    border-color: #01142D !important;
+}
+
+.usuConfirm-text {
+    color: rgba(1, 20, 45, 0.8);
+    font-weight: 700;
+    position:relative;
+    left:-15px;
+    top: 12px;
 }
