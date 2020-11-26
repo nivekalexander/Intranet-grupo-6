@@ -1,5 +1,5 @@
-<h3 class="noti-tittle">Grupos</h3><br><br>
-<div class="row row-cols-1 row-cols-md-3">
+
+<div class="row row-cols-1 row-cols-md-3" style="border:5px solid red;">
     <?php foreach ( $this->grupos->Select() as $filas ): ?>
       <div class="col mb-4 card-deck">  
       <?php  $grupal = "'".$filas->fic_id."'"?>
