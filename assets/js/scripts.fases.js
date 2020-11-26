@@ -99,7 +99,7 @@ function UpdateFases() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
-                document.getElementById("btn-fases").innerHTML = "Crear";
+                
 
             } else { console.log("Ups, Me equivoque;"); }
         }
@@ -108,7 +108,8 @@ function UpdateFases() {
     ajax.send("ctrl=fases&acti=actualizar&nombre=" + nombrefases + "&id=" + id);
 
     document.getElementById('formfases').reset();
-
+    document.getElementById("btn-fases").innerHTML = "Crear";
+    document.getElementById("titlefase").innerHTML = "Crear fase";
 }
 
 function CancelarFases() {

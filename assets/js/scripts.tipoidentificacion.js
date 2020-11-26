@@ -96,7 +96,7 @@ function UpdateTipoidentificacion() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
-                document.getElementById("btntipid").innerHTML = "Crear";
+                
 
             } else { console.log("Ups, Me equivoque;"); }
         }
@@ -106,6 +106,9 @@ function UpdateTipoidentificacion() {
     ajax.send("ctrl=tipoidentificacion&acti=actualizar&tipo=" + tipo + "&id=" + id);
 
     document.getElementById("formtipoidentificacion").reset();
+
+    document.getElementById("btntipid").innerHTML = "Crear";
+    document.getElementById("titletipid").innerHTML = "Crear Nueva Identificacion";
 }
 
 function CancelarTipoIdentificacion() {

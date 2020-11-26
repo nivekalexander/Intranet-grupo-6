@@ -100,7 +100,7 @@ function UpdateTipoJornada() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
-                document.getElementById("btn-tipo-jornada").innerHTML = "Crear";
+                
 
             } else { console.log("Ups, Me equivoque;"); }
         }
@@ -109,6 +109,9 @@ function UpdateTipoJornada() {
     ajax.send("ctrl=tipojornada&acti=actualizar&nombre=" + nombrejor + "&id=" + id);
 
     document.getElementById('formtipojornada').reset();
+
+    document.getElementById("btn-tipo-jornada").innerHTML = "Crear";
+    document.getElementById("titletipjornada").innerHTML = "Crear tipo de jornada";
 
 }
 

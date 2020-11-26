@@ -25,6 +25,15 @@ function BorrarProgramaFormacion(id) {
                         if (ajax.status == 200) {
 
                             result.innerHTML = ajax.responseText;
+                            $(document).ready(function() {
+                                $('#tablaprogramaformacion').DataTable({
+                                    dom: 'Bfrtip',
+                                    buttons: ['copy', 'excel', 'pdf', 'csv'],
+                                    "language": {
+                                        "url": "../assets/datatables/Spanish.json"
+                                    }
+                                });
+                            });
 
                         } else {
                             console.log("Ups, Me equivoque;");
@@ -64,6 +73,16 @@ function InsertProgramaFormacion() {
             if (ajax.status == 200) {
 
                 result.innerHTML = ajax.responseText;
+
+                $(document).ready(function() {
+                    $('#tablaprogramaformacion').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: ['copy', 'excel', 'pdf', 'csv'],
+                        "language": {
+                            "url": "../assets/datatables/Spanish.json"
+                        }
+                    });
+                });
 
             } else {
                 console.log("Ups, Me equivoque;");
@@ -118,8 +137,18 @@ function UpdateProgramaFormacion() {
     ajax.onreadystatechange = function() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
+
                 result.innerHTML = ajax.responseText;
-                document.getElementById("btnproforma").innerHTML = "Crear";
+                
+                $(document).ready(function() {
+                    $('#tablaprogramaformacion').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: ['copy', 'excel', 'pdf', 'csv'],
+                        "language": {
+                            "url": "../assets/datatables/Spanish.json"
+                        }
+                    });
+                });
 
 
             } else { console.log("Ups, Me equivoque;"); }
@@ -129,6 +158,8 @@ function UpdateProgramaFormacion() {
     ajax.send("ctrl=programaformacion&acti=actualizar&version=" + version + "&duracion=" + duracion + "&abreviacion=" + abreviacion + "&nombre=" + nombre + "&estado=" + estado + "&tipoprograma=" + tipPrograma + "&id=" + id);
 
     document.getElementById('formprogramaformacion').reset();
+    document.getElementById("btnproforma").innerHTML = "Crear";
+    document.getElementById("titleproforma").innerHTML = "Crear Programa de formación";
 
 }
 

@@ -104,13 +104,13 @@ function UpdateTipoOferta() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=tipooferta&acti=actualizar&nombre=" + nombre + "&id=" + id);
 
-
+    document.getElementById("titletipoferta").innerHTML = "Crear tipo de oferta"; 
+    document.getElementById("btnguardar").innerHTML = "Crear";
 
 }
 
 function CancelarTipoOferta() {
-
-    document.getElementById("titletipoferta").innerHTML = "Crear tipo de oferta";
     document.getElementById('formtipooferta').reset();
+    document.getElementById("titletipoferta").innerHTML = "Crear tipo de oferta"; 
     document.getElementById("btnguardar").innerHTML = "Crear";
 }

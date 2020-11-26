@@ -101,7 +101,7 @@ function UpdateTipoPrograma() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
-                document.getElementById("btn-tipo-programa").innerHTML = "Crear";
+                
 
             } else { console.log("Ups, Me equivoque;"); }
         }
@@ -110,6 +110,9 @@ function UpdateTipoPrograma() {
     ajax.send("ctrl=tipoprograma&acti=actualizar&nombre=" + nombrepro + "&id=" + id);
 
     document.getElementById('formtipoprograma').reset();
+
+    document.getElementById("btn-tipo-programa").innerHTML = "Crear";
+    document.getElementById("titletipprograma").innerHTML = "Crear tipo de programa";
 
 }
 
