@@ -25,7 +25,7 @@
 									try  				 {
 															$sql=$this->pdo->prepare("SELECT * FROM tbl_horario WHERE hor_ficid = 3");
 															$sql->execute();
-															return $sql;
+															return $sql->fetch(PDO::FETCH_OBJ);
 															}
 									catch (Exception $e) {	die($e->getMessage());			 }
 		}
