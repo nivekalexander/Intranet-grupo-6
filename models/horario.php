@@ -23,7 +23,7 @@
 		public function Get()
 		{
 									try  				 {
-															$sql=$this->pdo->prepare("SELECT * FROM tbl_horario WHERE hor_ficid = 3");
+															$sql=$this->pdo->prepare("SELECT * FROM tbl_horario WHERE hor_ficid = 2");
 															$sql->execute();
 															return $sql->fetch(PDO::FETCH_OBJ);
 															}
@@ -56,15 +56,18 @@
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-		public function Update(Horario $hor)
+		public function Update(Horario $datos)
 									 {
 									 	try  				 {
-									 							$sql="UPDATE tbl_horario SET hor_url=?
+									 							$sql="UPDATE tbl_horario SET hor_url = ?, hor_triini = ?, hor_trifin = ?, hor_trinum = ?
 									 							WHERE hor_id=?";
 									 							$this->pdo->prepare($sql)
-									 									  ->execute(array(
-																						   $hori->url,
-																						   $hori->id
+									 									  ->execute(array(																						
+																						$datos->url,
+																						$datos->triini,
+																						$datos->trifin,
+																						$datos->trinum,
+																						$datos->id
 																					));
 									 						 }
 									 	catch (Exception $e) {	die($e->getMessage());			 }

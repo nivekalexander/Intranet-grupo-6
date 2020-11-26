@@ -8,10 +8,10 @@ function ObjAjax() {
 }
 
 
-function BorrarNoticia(id, url) {
+function BorrarHorario(id, url) {
     $.confirm({
         title: 'Confirmación!',
-        content: '¿Esta seguro que desea eliminar esta noticia?',
+        content: '¿Esta seguro que desea eliminar este horario?',
         buttons: {
             Confirmar: function() {
                 $.alert('Se ha eliminado correctamente');
@@ -25,6 +25,10 @@ function BorrarNoticia(id, url) {
                         if (ajax.status == 200) {
 
                             result.innerHTML = ajax.responseText;
+                            document.getElementById("crearhorario").innerHTML = "Crear Horario";
+                            document.getElementById("ModalLabelArchivo").innerHTML = "Subir Archivo"; 
+                            document.getElementById("subir-hor").innerHTML = "Subir";               
+                            document.formhorario.reset();
 
                         } else {
                             console.log("Ups, Me equivoque;");
@@ -33,7 +37,7 @@ function BorrarNoticia(id, url) {
                 };
 
                 ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                ajax.send("ctrl=noticia&acti=eliminar&id=" + id + "&url=" + url);
+                ajax.send("ctrl=horario&acti=eliminar&id=" + id + "&url=" + url);
             },
             Cancelar: function() {
                 $.alert('Has cancelado la eliminación');
@@ -61,7 +65,7 @@ function InsertHorario() {
     trinum = document.formhorario.trinum.value;
     triini = document.formhorario.fchinicio.value;
     trifin = document.formhorario.fchfin.value;
-    fichaid = "3"; // >>>>>>>>> CAMBIAR ESTE VALOR CUANDO SE OBTENGA LA FICHA <<<<<<<<< 
+    fichaid = "2"; // >>>>>>>>> CAMBIAR ESTE VALOR CUANDO SE OBTENGA LA FICHA <<<<<<<<< 
 
     paquete.append('archivo', $('#file')[0].files[0]);
     paquete.append('triini', triini);
@@ -102,6 +106,7 @@ function EditarHorario(id, url, triini, trifin, trinum, fichaid) {
                 document.formhorario.fchinicio.value = triini;
                 document.formhorario.fchfin.value = trifin;
                 document.formhorario.idficha.value = fichaid;
+                document.getElementById("ModalLabelArchivo").innerHTML = "Actualizar Archivo";                
                 document.getElementById("subir-hor").innerHTML = "Actualizar";
 
                 $("#horarioModal").modal("show");
@@ -112,15 +117,23 @@ function EditarHorario(id, url, triini, trifin, trinum, fichaid) {
 }
 
 
-function UpdateNoticia() {
-
-    var result = document.getElementById('tview');
-    var id = document.formnoticia.idnews.value;
+function UpdateHorario() {
 
     var paquete = new FormData();
-    paquete.append('archivo', $('#file-news')[0].files[0]);
 
-    var destino = "main.php?ctrl=noticia&acti=actualizar&id=" + id + "&url=" + urlEdit;
+    var id = document.formhorario.id.value;
+    var trinum = document.formhorario.trinum.value;
+    var triini = document.formhorario.fchinicio.value;
+    var trifin = document.formhorario.fchfin.value;    
+
+    paquete.append('archivo', $('#file')[0].files[0]);
+    paquete.append('id', id);
+    paquete.append('url', urlEdit);
+    paquete.append('triini', triini);
+    paquete.append('trifin', trifin);
+    paquete.append('trinum', trinum);
+
+    var destino = "main.php?ctrl=horario&acti=actualizar";
     $.ajax({
         url: destino,
         type: 'POST',
@@ -129,16 +142,17 @@ function UpdateNoticia() {
         processData: false,
         cache: false,
         success: function(resultado) {
-            document.getElementById('tview').innerHTML = resultado;
+            document.getElementById('tview').innerHTML = resultado;            
         },
         error: function() {
             alert('Algo anda mal');
         }
     });
     $('#noticiaModal').modal('hide');
-    document.formnoticia.reset();
+    document.getElementById("ModalLabelArchivo").innerHTML = "Subir Archivo";  
+    document.getElementById("subir-hor").innerHTML = "Subir";
 
-    document.getElementById("subir-news").innerHTML = "Subir";
+    document.formhorario.reset();
 
     urlEdit = "";
 }
@@ -146,5 +160,7 @@ function UpdateNoticia() {
 
 
 function CancelarNoticia() {
-    document.formnoticia.reset();
+    document.getElementById("ModalLabelArchivo").innerHTML = "Subir Archivo"; 
+    document.getElementById("subir-hor").innerHTML = "Subir";               
+    document.formhorario.reset();
 }

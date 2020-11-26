@@ -18,7 +18,7 @@
                 <embed src="<?php echo $hor->hor_url; ?>" type="application/pdf" width="100%" height="600px" />
             </div>
             <div class="card-footer text-muted">
-                <button class="btn btn-rounded" onclick="EliminarHorario('<?php echo $hor->hor_id;?>' , '<?php echo $hor->hor_url; ?>');">Eliminar</button>
+                <button class="btn btn-rounded" onclick="BorrarHorario('<?php echo $hor->hor_id;?>' , '<?php echo $hor->hor_url; ?>');">Eliminar</button>
                 <input type="button" id="actualizar-horario" onclick="EditarHorario(<?php echo $grupal;?>);" hidden>
             </div>
         </div>
