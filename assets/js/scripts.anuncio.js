@@ -111,7 +111,6 @@
 	        if (ajax.readyState == 4) {
 	            if (ajax.status == 200) {
 	                result.innerHTML = ajax.responseText;
-	                document.getElementById("btnguardar").innerHTML = "Crear";
 
 
 
@@ -123,7 +122,8 @@
 	    ajax.send("ctrl=anuncio&acti=actualizar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&usuid=" + usuid + "&ficid=" + ficid + "&id=" + id);
 
 
-
+		document.getElementById("btnguardar").innerHTML = "Crear";
+	    document.getElementById("titlemodalanuncios").innerHTML = "Crear Anuncios";
 
 	    document.getElementById('formanuncio').reset();
 

@@ -103,7 +103,8 @@ function UpdateEstado() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=estado&acti=actualizar&nombre=" + nombre + "&id=" + id);
 
-
+    document.getElementById("btnguardar").innerHTML = "Crear";
+    document.getElementById("titleestado").innerHTML = "Crear Nuevo Estado";
 
 }
 

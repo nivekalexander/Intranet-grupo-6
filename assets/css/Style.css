@@ -179,6 +179,8 @@
     border-radius: 50rem !important;
     color: #ffffff !important;
     overflow: hidden !important;
+    box-shadow:none !important;
+    border:none  !important;
 }
 
 textarea {

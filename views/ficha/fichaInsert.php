@@ -4,7 +4,7 @@
   <div class="modal-dialog" role="document">
 	  <div class="modal-content">
 			<div class="modal-header Color-Slidebar">
-				<h5 class="modal-title dropdown-text-color" id="exampleModalLabel">Crear Nuevo Ficha</h5>
+				<h5 class="modal-title dropdown-text-color" id="titleficha">Crear Nuevo Ficha</h5>
 				<button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close" onclick="CancelarFicha();">
 				<span aria-hidden="true">&times;</span>
 				</button>
@@ -32,31 +32,47 @@
 						<div class="invalid-feedback">Campo Obligatorio</div>
 						<div class="valid-feedback">¡Valido!</div>
                     </div>
+					<div>
+                        <label for="fic_tijid">Tipo Jornada</label><br>
+						<select class="form-control rounded" type="text" name="fic_tijid" id="fic_tijid" required>
+                            <?php 
+                            foreach ($this->tipojornada->Select() as $datos): 
+                                      echo '<option value="'.$datos->tij_id.'">'.$datos->tij_nombre.'</option>';
+                            endforeach;
+                            ?>
+                        </select><br>
+					</div>
                     <div>
-						<label for="fic_tijid" >Tipo Jornada</label>
-						<input class="form-control rounded" type="text" name="fic_tijid" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
-						<div class="valid-feedback">¡Valido!</div>
-                    </div>
-                    <div>
-						<label for="fic_modid" >Tipo Modalidad</label>
-						<input class="form-control rounded" type="text" name="fic_modid" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
-						<div class="valid-feedback">¡Valido!</div>
-                    </div>
-                    <div>
-						<label for="fic_tofid" >Tipo Oferta</label>
-						<input class="form-control rounded" type="text" name="fic_tofid" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
-						<div class="valid-feedback">¡Valido!</div>
-                    </div>
-                    <div>
-						<label for="fic_pfoid" >Programa De Formacion </label>
-						<input class="form-control rounded" type="text" name="fic_pfoid" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
-						<div class="valid-feedback">¡Valido!</div>
-                    </div>
-
+					<div>
+                        <label for="fic_modid">Tipo Modalidad</label><br>
+						<select class="form-control rounded" type="text" name="fic_modid" id="fic_modid" required>
+                            <?php 
+                            foreach ($this->tipomodalidad->Select() as $datos): 
+                                      echo '<option value="'.$datos->mod_id.'">'.$datos->mod_nombre.'</option>';
+                            endforeach;
+                            ?>
+                        </select><br>
+					</div>
+					<div>
+                        <label for="fic_tofid">Tipo Oferta</label><br>
+						<select class="form-control rounded" type="text" name="fic_tofid" id="fic_tofid" required>
+                            <?php 
+                            foreach ($this->tipooferta->Select() as $datos): 
+                                      echo '<option value="'.$datos->tof_id.'">'.$datos->tof_nombre.'</option>';
+                            endforeach;
+                            ?>
+                        </select><br>
+					</div>
+					<div>
+                        <label for="fic_pfoid">Programa De Formacion</label><br>
+						<select class="form-control rounded" type="text" name="fic_pfoid" id="fic_pfoid" required>
+                            <?php 
+                            foreach ($this->programaformacion->Select() as $datos): 
+                                      echo '<option value="'.$datos->pfo_id.'">'.$datos->pfo_nompro.'</option>';
+                            endforeach;
+                            ?>
+                        </select><br>
+					</div>
 					
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarFicha();">Cancelar</button>
