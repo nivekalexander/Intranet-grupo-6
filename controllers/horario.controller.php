@@ -35,7 +35,7 @@
 									if(is_uploaded_file($temp)){
 										move_uploaded_file($temp,$ruta);										
 									}else{
-										echo "No se cargo la imagen";
+										echo "No se cargo el archivo";
 									}			
 									
 									$datos = $this->horario;
@@ -80,7 +80,7 @@
 										if(is_uploaded_file($temp)){
 											move_uploaded_file($temp,$ruta);										
 										}else{
-											echo "No se cargo la imagen";
+											echo "No se cargo el archivo";
 										}	
 										
 										$datos->id = $_REQUEST['id'];

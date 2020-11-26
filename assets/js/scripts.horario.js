@@ -61,6 +61,7 @@ function GestionarHorario() {
 }
 
 function InsertHorario() {
+
     var paquete = new FormData();
     trinum = document.formhorario.trinum.value;
     triini = document.formhorario.fchinicio.value;
@@ -89,7 +90,7 @@ function InsertHorario() {
             alert('Algo anda mal');
         }
     });
-    document.formhorario.reset();
+    
 }
 
 var urlEdit;
@@ -115,7 +116,6 @@ function EditarHorario(id, url, triini, trifin, trinum, fichaid) {
         }
     });
 }
-
 
 function UpdateHorario() {
 
@@ -152,15 +152,12 @@ function UpdateHorario() {
     document.getElementById("ModalLabelArchivo").innerHTML = "Subir Archivo";  
     document.getElementById("subir-hor").innerHTML = "Subir";
 
-    document.formhorario.reset();
-
-    urlEdit = "";
+    urlEdit = "";  
 }
 
 
 
-function CancelarNoticia() {
+function CancelarHorario() {
     document.getElementById("ModalLabelArchivo").innerHTML = "Subir Archivo"; 
     document.getElementById("subir-hor").innerHTML = "Subir";               
-    document.formhorario.reset();
 }

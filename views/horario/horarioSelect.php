@@ -18,7 +18,7 @@
                 if(file_exists($hor->hor_url)){
                     echo "<embed src=".$hor->hor_url." type='application/pdf' width='100%' height='600px'>";
                 }else{
-                    echo "No se encontro el archivo, posiblemente fue eliminado";
+                    echo "No se encontro el archivo, posiblemente fue eliminado o no esta disponible";
                 }
                 ?>                
             </div>
