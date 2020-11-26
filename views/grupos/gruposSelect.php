@@ -10,7 +10,7 @@
               <?php echo $filas->fic_codigo;?>
             </div>            
             <div class="float-right">
-              <a href="perfil.php?id=925763" name="imagenPost"><img src="https://www.flaticon.es/svg/static/icons/svg/599/599305.svg" width="40" height="40"></a>
+              <a href="perfil.php?id=925763" name="imagenPost"><img src="../assets/img/logosena.svg" width="40" height="40"></a>
             </div>
           </div>
 
