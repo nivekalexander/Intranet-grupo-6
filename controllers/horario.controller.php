@@ -74,7 +74,7 @@
 										$exts = explode('.',$name);             
 										$exts = end($exts);                     
 										$temp = $_FILES['archivo']['tmp_name']; 
-										$ruta = "../assets/img/img-news/";
+										$ruta = "../assets/horarios/";
 										$ruta = $ruta.$fecha.".".$exts;
 
 										if(is_uploaded_file($temp)){
@@ -83,8 +83,11 @@
 											echo "No se cargo la imagen";
 										}	
 										
-										$datos->url = $ruta;
 										$datos->id = $_REQUEST['id'];
+										$datos->url = $ruta;
+										$datos->triini = $_REQUEST['triini'];
+										$datos->trifin = $_REQUEST['trifin'];
+										$datos->trinum = $_REQUEST['trinum'];									
 										
  										$this->horario->Update($datos);
 
