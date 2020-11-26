@@ -28,22 +28,22 @@
 					</div>
 
                     <div>
-						<label for="abreviatura">Abreviatura</label><br>
-						<input class="form-control rounded" type="text" name="abreviatura" required>
+						<label for="abreviacion">Abreviatura</label><br>
+						<input class="form-control rounded" type="text" name="abreviacion" required>
 						<div class="invalid-feedback">Campo Obligatorio</div>
 						<div class="valid-feedback">¡Valido!</div><br>
 					</div>
 
                     <div>
-						<label for="nombreprograma">nombre del programa</label><br>
-						<input class="form-control rounded" type="text" name="nombreprograma" required>
+						<label for="nombre">nombre del programa</label><br>
+						<input class="form-control rounded" type="text" name="nombre" required>
 						<div class="invalid-feedback">Campo Obligatorio</div>
 						<div class="valid-feedback">¡Valido!</div><br>
 					</div>
 
                     <div>
                         <label for="estado">Estado</label><br>
-						<select class="form-control rounded" type="text" name="estado" required>
+						<select class="form-control rounded" type="text" name="estado" id="estado" required>
                             <?php 
                             foreach ($this->estado->Select() as $datos): 
                                       echo '<option value="'.$datos->est_id.'">'.$datos->est_nombre.'</option>';
@@ -55,7 +55,7 @@
                     
                     <div>
                         <label for="tipoprograma">Tipo de programa</label><br>
-						<select class="form-control rounded" type="text" name="tipoprograma" required>
+						<select class="form-control rounded" type="text" name="tipoprograma" id="tipPrograma" required>
                             <?php 
                             foreach ($this->tipoprograma->Select() as $datos): 
                                       echo '<option value="'.$datos->tpr_id.'">'.$datos->tpr_nombre.'</option>';
@@ -72,16 +72,6 @@
 				</form>
 
 				<script>
-
-				$(document).ready(function() {
-						    $('#tablaprogramaformacion').DataTable({
-												dom: 'Bfrtip',
-												buttons: ['copy', 'excel', 'pdf','csv'],
-													"language": {
-				               					 				"url": "../assets/datatables/Spanish.json"
-				            									}
-								});
-						} );
 					
 					(function() {
 						'use strict';

@@ -1,3 +1,17 @@
+<script>
+$(document).ready(function() {
+						    $('#tablaprogramaformacion').DataTable({
+												dom: 'Bfrtip',
+												buttons: ['copy', 'excel', 'pdf','csv'],
+													"language": {
+				               					 				"url": "../assets/datatables/Spanish.json"
+				            									}
+								});
+						} );
+
+</script>
+
+
 <table id="tablaprogramaformacion" class="table table-striped">
 		<!-- Cabecera de la Tabla -->
 		<thead class="thead-dark">

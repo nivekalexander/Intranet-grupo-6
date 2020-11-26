@@ -1,3 +1,4 @@
+<script src="../assets/js/scripts.programaformacion.js"></script>
 <div class="container">
 	<div id="main">
 			<div class="container espaciado">
