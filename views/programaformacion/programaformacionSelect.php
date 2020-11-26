@@ -1,18 +1,5 @@
-<script>
-$(document).ready(function() {
-						    $('#tablaprogramaformacion').DataTable({
-												dom: 'Bfrtip',
-												buttons: ['copy', 'excel', 'pdf','csv'],
-													"language": {
-				               					 				"url": "../assets/datatables/Spanish.json"
-				            									}
-								});
-						} );
-
-</script>
-
-
-<table id="tablaprogramaformacion" class="table table-striped">
+<div class="table-responsive">
+	<table id="tablaprogramaformacion" class="table table-striped">
 		<!-- Cabecera de la Tabla -->
 		<thead class="thead-dark">
 			<tr>
@@ -22,8 +9,8 @@ $(document).ready(function() {
                 <th scope="col">Nombre</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Tipo de Programa</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
 			</tr>
 		</thead>
 
@@ -48,4 +35,5 @@ $(document).ready(function() {
 					 
 				<?php endforeach; ?>
 		</tbody>
-</table>
+	</table>
+</div>

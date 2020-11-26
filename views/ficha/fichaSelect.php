@@ -1,4 +1,5 @@
-<table class="table table-striped">
+<div class="table-responsive">
+	<table class="table table-striped">
 	<!-- Cabecera de la Tabla -->
 	<thead class="thead-dark">
 		<tr>
@@ -40,4 +41,5 @@
 				
 		<?php endforeach; ?>
 	</tbody>
-</table>
+	</table>
+</div>

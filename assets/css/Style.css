@@ -83,8 +83,8 @@
 .btn-rounded {
     background-color: #F2994B;
     border-radius: 50rem !important;
-    color : #ffffff !important;   
-    overflow: hidden;     
+    color: #ffffff !important;
+    overflow: hidden;
 }
 
 .espaciado {
@@ -166,3 +166,13 @@
     z-index: -1;
 }
 
+.dt-button {
+    background-color: #F2994B !important;
+    border-radius: 50rem !important;
+    color: #ffffff !important;
+    overflow: hidden !important;
+}
+
+textarea {
+    resize: none !important;
+}
