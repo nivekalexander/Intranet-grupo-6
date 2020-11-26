@@ -14,8 +14,13 @@
                 <div class="float-left">Trimestre #<?php echo $hor->hor_trinum; ?></div>
                 <div class="float-right">Fecha <?php echo $hor->hor_triini." | ".$hor->hor_trifin; ?></div>
             </div>
-            <div class="card-body">
-                <embed src="<?php echo $hor->hor_url; ?>" type="application/pdf" width="100%" height="600px" />
+            <div class="card-body"><?php 
+                if(file_exists($hor->hor_url)){
+                    echo "<embed src=".$hor->hor_url." type='application/pdf' width='100%' height='600px'>";
+                }else{
+                    echo "No se encontro el archivo, posiblemente fue eliminado";
+                }
+                ?>                
             </div>
             <div class="card-footer text-muted">
                 <button class="btn btn-rounded" onclick="BorrarHorario('<?php echo $hor->hor_id;?>' , '<?php echo $hor->hor_url; ?>');">Eliminar</button>
