@@ -18,7 +18,7 @@
 		<tbody>
 				<?php foreach ( $this->programaformacion->Select() as $filas ): ?>
 					 
-					 	<?php  $grupal = "'".$filas->pfo_id."','".$filas->pfo_versn."','".$filas->pfo_duracn."','".$filas->pfo_abrvtr."','".$filas->pfo_nompro."','".$filas->est_nombre."','".$filas->tpr_nombre."'"; ?>
+					 	<?php  $grupal = "'".$filas->pfo_id."','".$filas->pfo_versn."','".$filas->pfo_duracn."','".$filas->pfo_abrvtr."','".$filas->pfo_nompro."','".$filas->est_id."','".$filas->tpr_id."'"; ?>
 
 						<tr>
 

@@ -65,11 +65,7 @@ function InsertHorario() {
     trinum = document.formhorario.trinum.value;
     triini = document.formhorario.fchinicio.value;
     trifin = document.formhorario.fchfin.value;
-<<<<<<< HEAD
-    fichaid = "1"; // >>>>>>>>> CAMBIAR ESTE VALOR CUANDO SE OBTENGA LA FICHA <<<<<<<<< 
-=======
     fichaid = "2"; // >>>>>>>>> CAMBIAR ESTE VALOR CUANDO SE OBTENGA LA FICHA <<<<<<<<< 
->>>>>>> 46d34a4821cdf4f5c2c1154dd058116aff702a01
 
     paquete.append('archivo', $('#file')[0].files[0]);
     paquete.append('triini', triini);
