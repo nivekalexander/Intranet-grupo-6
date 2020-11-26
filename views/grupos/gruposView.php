@@ -3,9 +3,15 @@
 	<div id="main">
 			<div class="container espaciado">
     		    <h3 class="noti-tittle">Bienvenido Instructor Marcela de Saris</h3>
-    		</div>
+			</div>					
+			<h3 class="noti-tittle">Grupos</h3><br><br>
+			<fieldset>
+			<legend>
+		<h1>hola bebe</h1>
+</legend>	
 			<div id="tview">
 					<?php  include('gruposSelect.php'); ?>
-			</div>
+			</div>	
+			</fieldset>		
 	</div>
 </div>
