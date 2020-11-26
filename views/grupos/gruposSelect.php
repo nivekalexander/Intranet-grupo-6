@@ -1,12 +1,12 @@
 
-<div class="row row-cols-1 row-cols-md-3" style="border:5px solid red;">
+<div class="row row-cols-1 row-cols-md-3">
     <?php foreach ( $this->grupos->Select() as $filas ): ?>
       <div class="col mb-4 card-deck">  
       <?php  $grupal = "'".$filas->fic_id."'"?>
         <div class="card bg-light mb-3 ">
 
           <div class="card-header font-weight-bold">
-            <div class="float-left">
+            <div class="float-left noti-tittle" style="font-size: 25px;">
               <?php echo $filas->fic_codigo;?>
             </div>            
             <div class="float-right">
