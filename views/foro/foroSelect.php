@@ -1,5 +1,5 @@
-<h1>Hola</h1>
-<table>
+<div class="table-responsive">
+  <table>
   <!-- Cabecera de la tabla-->
   <thead>
     <tr>
@@ -35,4 +35,5 @@
   <!-- pie de la tabla-->
   <tfoot>
   </tfoot>
-</table>
+  </table>
+</div>

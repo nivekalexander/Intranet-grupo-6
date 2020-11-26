@@ -91,9 +91,10 @@ function EditarProgramaFormacion(id, version, duracion, abreviacion, nombre, est
     document.formprogramaformacion.nombre.value = nombre;
     document.getElementById('estado').value = estado;
     document.getElementById('tipPrograma').value = tipPrograma;
+    $("#tipPrograma").val(tipPrograma);
 
     document.getElementById("btnproforma").innerHTML = "Actualizar";
-
+    document.getElementById("titleproforma").innerHTML = "Actualizar Programa de formación";
 }
 
 
@@ -134,4 +135,5 @@ function UpdateProgramaFormacion() {
 function CancelarProgramaFormacion() {
     document.getElementById('formprogramaformacion').reset();
     document.getElementById("btnproforma").innerHTML = "Crear";
+    document.getElementById("titleproforma").innerHTML = "Crear Programa de formación";
 }

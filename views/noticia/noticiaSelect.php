@@ -4,7 +4,7 @@
     foreach ($this->noticia->Select() as $filas):  ?>
         <div class="card text-center w-100 diseño-tarjeta mt-lg-4">
             <div class="card-header" style="background-color: #F2994B; color: white;">
-            <?php echo $filas->not_fech; ?>
+                <div class="float-right"> <?php echo $filas->not_fech; ?> </div>
             </div>
             <div class="card-body">
                 <img src="<?php echo $filas->not_url; ?>" class="card-img" alt="No se encontro">
