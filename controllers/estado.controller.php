@@ -25,6 +25,7 @@
 									require_once('../views/frames/firtsfooter.php');
 
 									require_once('../views/frames/footer.php');
+									
 								}
 
 		public function Eliminar()

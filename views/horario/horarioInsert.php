@@ -11,48 +11,48 @@
         </button>
       </div>
 
-      <form id="formhorario" name="formhorario" class="needs-validation" novalidate>   
+      <form id="formulario" name="formulario" class="needs-validation" novalidate>   
 
-      <div class="modal-body">           
-                  <input type="number" name="id" id="id" hidden>
-                  <label>Horario PDF</label>
-                <div class="form-group btn rounded" style="background-color: #e3e6f0; overflow: hidden;">                                    
-                  <input type="file" name="file" id="file" accept=".pdf" lang="es" required>
-                  <div class="invalid-feedback">No se ha seleccionado ningun archivo</div>                
-                </div><br><br>
+        <div class="modal-body">           
+            <input type="number" name="id" id="id" hidden>
+            <label>Horario PDF</label>
+          <div class="form-group btn rounded" style="background-color: #e3e6f0; overflow: hidden;">                                    
+            <input type="file" name="file" id="file" accept=".pdf" lang="es" required>
+            <div class="invalid-feedback">No se ha seleccionado ningun archivo</div>                
+          </div><br><br>
 
-                <div class="form-group">
-                  <label for="trinum">Número del trimestre</label>
-                  <select class="form-control" id="trinum" name="trinum" required>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                  </select>
-                </div>
+          <div class="form-group">
+            <label for="trinum">Número del trimestre</label>
+            <select class="form-control" id="trinum" name="trinum" required>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+          </div>
 
-                <div>
-                  <label for="fchinicio">Fecha Inicio Trimestre</label><br>
-                  <input class="form-control rounded" type="date" name="fchinicio" id="fchinicio" required>
-                  <div class="invalid-feedback">Complete el campo.</div><br>
-                </div>
+          <div>
+            <label for="fchinicio">Fecha Inicio Trimestre</label><br>
+            <input class="form-control rounded" type="date" name="fchinicio" id="fchinicio" required>
+            <div class="invalid-feedback">Complete el campo.</div><br>
+          </div>
 
-                <div>
-                  <label for="fchfin">Fecha Fin Trimestre</label><br>
-                  <input class="form-control rounded" type="date" name="fchfin" id="fchfin" required>
-                  <div class="invalid-feedback">Complete el campo.</div><br>
-                </div> 
+          <div>
+            <label for="fchfin">Fecha Fin Trimestre</label><br>
+            <input class="form-control rounded" type="date" name="fchfin" id="fchfin" required>
+            <div class="invalid-feedback">Complete el campo.</div><br>
+          </div> 
 
-                <input type="text" id="idficha" name="idficha" hidden>  
-                               
-      </div>
+          <input type="text" id="idficha" name="idficha" hidden>  
+                                  
+        </div>
 
-      <div class="modal-footer">
-        <button type="button" id="cancel-hor" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarHorario();">Cerrar</button>
-        <button type="button" id="subir-hor" class="btn btn-primary btn-rounded" >Subir</button>
-      </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel-hor" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarHorario();">Cerrar</button>
+          <button type="button" id="btnguardar" class="btn btn-primary btn-rounded" >Subir</button>
+        </div>
 
       </form>  
       
@@ -71,9 +71,9 @@
       var forms = document.getElementsByClassName('needs-validation');
       // Loop over them and prevent submission
       var validation = Array.prototype.filter.call(forms, function(form) {        
-        document.getElementById("subir-hor").addEventListener('click', function(event) {          
+        document.getElementById("btnguardar").addEventListener('click', function(event) {        
           if (form.checkValidity() === true) {            
-            var nombreBoton = document.getElementById("subir-hor").innerHTML;
+            var nombreBoton = document.getElementById("btnguardar").innerHTML;
             var filesize = formhorario.file.files[0].size;            
             if(filesize<2000000){
               if (nombreBoton == "Subir"){                            

@@ -57,10 +57,10 @@ function InsertProgramaFormacion() {
     var result = document.getElementById('tview');
 
 
-    var version = document.formprogramaformacion.version.value;
-    var duracion = document.formprogramaformacion.duracion.value;
-    var abreviacion = document.formprogramaformacion.abreviacion.value;
-    var nombre = document.formprogramaformacion.nombre.value;
+    var version = document.formulario.version.value;
+    var duracion = document.formulario.duracion.value;
+    var abreviacion = document.formulario.abreviacion.value;
+    var nombre = document.formulario.nombre.value;
     var estado = document.getElementById('estado').value;
     var tipPrograma = document.getElementById('tipPrograma').value;
 
@@ -93,7 +93,7 @@ function InsertProgramaFormacion() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=programaformacion&acti=insertar&version=" + version + "&duracion=" + duracion + "&abreviacion=" + abreviacion + "&nombre=" + nombre + "&estado=" + estado + "&tipoprograma=" + tipPrograma);
 
-    document.getElementById('formprogramaformacion').reset();
+     
 }
 
 
@@ -102,17 +102,17 @@ function InsertProgramaFormacion() {
 
 function EditarProgramaFormacion(id, version, duracion, abreviacion, nombre, estado, tipPrograma) {
 
-    document.formprogramaformacion.id.value = id;
+    document.formulario.id.value = id;
 
-    document.formprogramaformacion.version.value = version;
-    document.formprogramaformacion.duracion.value = duracion;
-    document.formprogramaformacion.abreviacion.value = abreviacion;
-    document.formprogramaformacion.nombre.value = nombre;
+    document.formulario.version.value = version;
+    document.formulario.duracion.value = duracion;
+    document.formulario.abreviacion.value = abreviacion;
+    document.formulario.nombre.value = nombre;
     document.getElementById('estado').value = estado;
     document.getElementById('tipPrograma').value = tipPrograma;
     $("#tipPrograma").val(tipPrograma);
 
-    document.getElementById("btnproforma").innerHTML = "Actualizar";
+    document.getElementById("btnguardar").innerHTML = "Actualizar";
     document.getElementById("titleproforma").innerHTML = "Actualizar Programa de formación";
 }
 
@@ -121,16 +121,16 @@ function UpdateProgramaFormacion() {
 
     var result = document.getElementById('tview');
 
-    var id = document.formprogramaformacion.id.value;
+    var id = document.formulario.id.value;
 
-    var version = document.formprogramaformacion.version.value;
-    var duracion = document.formprogramaformacion.duracion.value;
-    var abreviacion = document.formprogramaformacion.abreviacion.value;
-    var nombre = document.formprogramaformacion.nombre.value;
+    var version = document.formulario.version.value;
+    var duracion = document.formulario.duracion.value;
+    var abreviacion = document.formulario.abreviacion.value;
+    var nombre = document.formulario.nombre.value;
     var estado = document.getElementById('estado').value;
     var tipPrograma = document.getElementById('tipPrograma').value;
 
-    document.getElementById('formprogramaformacion').reset();
+     
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -157,14 +157,14 @@ function UpdateProgramaFormacion() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=programaformacion&acti=actualizar&version=" + version + "&duracion=" + duracion + "&abreviacion=" + abreviacion + "&nombre=" + nombre + "&estado=" + estado + "&tipoprograma=" + tipPrograma + "&id=" + id);
 
-    document.getElementById('formprogramaformacion').reset();
-    document.getElementById("btnproforma").innerHTML = "Crear";
+     
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titleproforma").innerHTML = "Crear Programa de formación";
 
 }
 
 function CancelarProgramaFormacion() {
-    document.getElementById('formprogramaformacion').reset();
-    document.getElementById("btnproforma").innerHTML = "Crear";
+     
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titleproforma").innerHTML = "Crear Programa de formación";
 }

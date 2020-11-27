@@ -64,7 +64,7 @@ function InsertNoticia() {
             alert('Algo anda mal');
         }
     });
-    document.formnoticia.reset();
+     
 }
 
 var urlEdit;
@@ -77,8 +77,8 @@ function EditarNoticia(id, url) {
         buttons: {
             Confirmar: function() {
                 urlEdit = url;
-                document.formnoticia.idnews.value = id;
-                document.getElementById("subir-news").innerHTML = "Actualizar";
+                document.formulario.idnews.value = id;
+                document.getElementById("btnguardar").innerHTML = "Actualizar";
 
                 $("#noticiaModal").modal("show");
 
@@ -94,8 +94,8 @@ function EditarNoticia(id, url) {
 
 function UpdateNoticia() {
 
-    var result = document.getElementById('tview');
-    var id = document.formnoticia.idnews.value;
+    //var result = document.getElementById('tview');
+    var id = document.formulario.idnews.value;
 
     var paquete = new FormData();
     paquete.append('archivo', $('#file-news')[0].files[0]);
@@ -116,9 +116,9 @@ function UpdateNoticia() {
         }
     });
     $('#noticiaModal').modal('hide');
-    document.formnoticia.reset();
+     
 
-    document.getElementById("subir-news").innerHTML = "Subir";
+    document.getElementById("btnguardar").innerHTML = "Subir";
     document.getElementById("titlenoticias").innerHTML = "Subir Archivo";
     urlEdit = "";
 }
@@ -126,6 +126,6 @@ function UpdateNoticia() {
 
 
 function CancelarNoticia() {
-    document.formnoticia.reset();
+     
     document.getElementById("titlenoticias").innerHTML = "Subir Archivo";
 }

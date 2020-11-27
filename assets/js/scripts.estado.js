@@ -45,7 +45,7 @@ function BorrarEstado(id) {
 function InsertarEstado() {
     var result = document.getElementById('tview');
 
-    var nombre = document.formestado.nombre.value;
+    var nombre = document.formulario.nombre.value;
 
 
     const ajax = new XMLHttpRequest();
@@ -65,15 +65,15 @@ function InsertarEstado() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=estado&acti=insertar&nombre=" + nombre);
 
-    document.getElementById('formestado').reset();
+  
 }
 
 
 
 function EditarEstado(id, nombre) {
 
-    document.formestado.id.value = id;
-    document.formestado.nombre.value = nombre;
+    document.formulario.id.value = id;
+    document.formulario.nombre.value = nombre;
 
     document.getElementById("btnguardar").innerHTML = "Actualizar";
     document.getElementById("titleestado").innerHTML = "Actualizar Estado";
@@ -83,10 +83,10 @@ function UpdateEstado() {
 
     var result = document.getElementById('tview');
 
-    var nombre = document.formestado.nombre.value;
-    var id = document.formestado.id.value;
+    var nombre = document.formulario.nombre.value;
+    var id = document.formulario.id.value;
 
-    document.getElementById('formestado').reset();
+    
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -110,7 +110,7 @@ function UpdateEstado() {
 
 function CancelarEstado() {
 
-    document.getElementById('formestado').reset();
+    
     document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titleestado").innerHTML = "Crear Nuevo Estado";
 

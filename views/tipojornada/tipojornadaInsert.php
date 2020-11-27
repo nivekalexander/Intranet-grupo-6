@@ -11,7 +11,7 @@
 			</div>
 			<div class="modal-body espaciado">		
 			
-					<form name="formtipojornada" id="formtipojornada" class="needs-validation" novalidate>
+					<form name="formulario" id="formulario" class="needs-validation" novalidate>
 
             				<input type="text" name="id" hidden>
 
@@ -24,7 +24,7 @@
 
 						<div class="modal-footer">
 								<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarTipoJornada();">Cerrar</button>
-								<button type="submit" class="btn-rounded btn" id="btn-tipo-jornada">Crear</button>
+								<button type="button" class="btn-rounded btn" id="btnguardar">Crear</button>
 						</div>
             				
 
@@ -40,9 +40,9 @@
 								var forms = document.getElementsByClassName('needs-validation');
 								// Loop over them and prevent submission
 								var validation = Array.prototype.filter.call(forms, function(form) {
-									form.addEventListener('submit', function(event) {
+									document.getElementById("btnguardar").addEventListener('click', function(event) {
 									if (form.checkValidity() === true) {
-										var nombreBoton = document.getElementById("btn-tipo-jornada").innerHTML;
+										var nombreBoton = document.getElementById("btnguardar").innerHTML;
 										if (nombreBoton == "Crear"){
 											InsertTipoJornada();
 											$('#modaltipojornada').modal('hide');

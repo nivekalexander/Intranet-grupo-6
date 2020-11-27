@@ -47,7 +47,7 @@ function BorrarModalidad(id) {
 function InsertModalidad() {
     var result = document.getElementById('tview');
 
-    var nombremodalidad = document.formmodalidad.nombre.value;
+    var nombremodalidad = document.formulario.nombre.value;
 
 
     const ajax = new ObjAjax();
@@ -67,7 +67,7 @@ function InsertModalidad() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=modalidad&acti=insertar&nombre=" + nombremodalidad);
 
-    document.getElementById('formmodalidad').reset();
+     
 }
 
 
@@ -76,10 +76,10 @@ function InsertModalidad() {
 
 function EditarModalidad(id, nombremodalidad) {
 
-    document.formmodalidad.id.value = id;
-    document.formmodalidad.nombre.value = nombremodalidad;
+    document.formulario.id.value = id;
+    document.formulario.nombre.value = nombremodalidad;
 
-    document.getElementById("btn-modalidad").innerHTML = "Actualizar";
+    document.getElementById("btnguardar").innerHTML = "Actualizar";
     document.getElementById("titlemodalidad").innerHTML = "Actualizar modalidad";
 }
 
@@ -88,8 +88,8 @@ function UpdateModalidad() {
 
     var result = document.getElementById('tview');
 
-    var nombremodalidad = document.formmodalidad.nombre.value;
-    var id = document.formmodalidad.id.value;
+    var nombremodalidad = document.formulario.nombre.value;
+    var id = document.formulario.id.value;
 
     document.getElementById('formmodalidad').reset();
 
@@ -107,14 +107,14 @@ function UpdateModalidad() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=modalidad&acti=actualizar&nombre=" + nombremodalidad + "&id=" + id);
 
-    document.getElementById("btn-modalidad").innerHTML = "Crear";
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titlemodalidad").innerHTML = "Crear modalidad";
-    document.getElementById('formmodalidad').reset();
+    
 
 }
 
 function CancelarModalidad() {
-    document.getElementById('formmodalidad').reset();
-    document.getElementById("btn-modalidad").innerHTML = "Crear";
+     
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titlemodalidad").innerHTML = "Crear modalidad";
 }

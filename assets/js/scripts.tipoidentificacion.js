@@ -45,9 +45,9 @@ function BorrarTipoidentificacion(id) {
 function InsertTipoidentificacion() {
     var result = document.getElementById('tview');
 
-    var tipo = document.formtipoidentificacion.tipo.value;
+    var tipo = document.formulario.tipo.value;
 
-    document.getElementById("formtipoidentificacion").reset();
+     
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -73,11 +73,11 @@ function InsertTipoidentificacion() {
 
 function EditarTipoidentificacion(id, tipo) {
 
-    document.formtipoidentificacion.tipo.value = tipo;
-    document.formtipoidentificacion.id.value = id;
+    document.formulario.tipo.value = tipo;
+    document.formulario.id.value = id;
 
     document.getElementById("titletipid").innerHTML = "Actualizar Tipo Identificación";
-    document.getElementById("btntipid").innerHTML = "Actualizar";
+    document.getElementById("btnguardar").innerHTML = "Actualizar";
 }
 
 
@@ -85,8 +85,8 @@ function UpdateTipoidentificacion() {
 
     var result = document.getElementById('tview');
 
-    var tipo = document.formtipoidentificacion.tipo.value;
-    var id = document.formtipoidentificacion.id.value;
+    var tipo = document.formulario.tipo.value;
+    var id = document.formulario.id.value;
 
 
 
@@ -105,14 +105,14 @@ function UpdateTipoidentificacion() {
 
     ajax.send("ctrl=tipoidentificacion&acti=actualizar&tipo=" + tipo + "&id=" + id);
 
-    document.getElementById("formtipoidentificacion").reset();
+     
 
-    document.getElementById("btntipid").innerHTML = "Crear";
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titletipid").innerHTML = "Crear Nueva Identificacion";
 }
 
 function CancelarTipoIdentificacion() {
-    document.getElementById('formtipoidentificacion').reset();
-    document.getElementById("btntipid").innerHTML = "Crear";
+     
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titletipid").innerHTML = "Crear Nueva Identificacion";
 }

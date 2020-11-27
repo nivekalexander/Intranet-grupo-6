@@ -47,7 +47,7 @@ function BorrarFases(id) {
 function InsertFases() {
     var result = document.getElementById('tview');
 
-    var nombrefases = document.formfases.nombre.value;
+    var nombrefases = document.formulario.nombre.value;
 
 
     const ajax = new ObjAjax();
@@ -67,7 +67,7 @@ function InsertFases() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=fases&acti=insertar&nombre=" + nombrefases);
 
-    document.getElementById('formfases').reset();
+    
 }
 
 
@@ -76,10 +76,10 @@ function InsertFases() {
 
 function EditarFases(id, nombrefases) {
 
-    document.formfases.id.value = id;
-    document.formfases.nombre.value = nombrefases;
+    document.formulario.id.value = id;
+    document.formulario.nombre.value = nombrefases;
 
-    document.getElementById("btn-fases").innerHTML = "Actualizar";
+    document.getElementById("btnguardar").innerHTML = "Actualizar";
     document.getElementById("titlefase").innerHTML = "Actualizar fase";
 }
 
@@ -88,10 +88,10 @@ function UpdateFases() {
 
     var result = document.getElementById('tview');
 
-    var nombrefases = document.formfases.nombre.value;
-    var id = document.formfases.id.value;
+    var nombrefases = document.formulario.nombre.value;
+    var id = document.formulario.id.value;
 
-    document.getElementById('formfases').reset();
+    
 
     const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
@@ -107,13 +107,13 @@ function UpdateFases() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=fases&acti=actualizar&nombre=" + nombrefases + "&id=" + id);
 
-    document.getElementById('formfases').reset();
-    document.getElementById("btn-fases").innerHTML = "Crear";
+    
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titlefase").innerHTML = "Crear fase";
 }
 
 function CancelarFases() {
-    document.getElementById('formfases').reset();
-    document.getElementById("btn-fases").innerHTML = "Crear";
+    
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titlefase").innerHTML = "Crear fase";
 }

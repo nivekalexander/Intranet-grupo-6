@@ -47,7 +47,7 @@ function BorrarTipoJornada(id) {
 function InsertTipoJornada() {
     var result = document.getElementById('tview');
 
-    var nombrejor = document.formtipojornada.nombre.value;
+    var nombrejor = document.formulario.nombre.value;
 
 
     const ajax = new ObjAjax();
@@ -67,7 +67,7 @@ function InsertTipoJornada() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=tipojornada&acti=insertar&nombre=" + nombrejor);
 
-    document.getElementById('formtipojornada').reset();
+  
 }
 
 
@@ -76,10 +76,10 @@ function InsertTipoJornada() {
 
 function EditarTipoJornada(id, nombrejor) {
 
-    document.formtipojornada.id.value = id;
-    document.formtipojornada.nombre.value = nombrejor;
+    document.formulario.id.value = id;
+    document.formulario.nombre.value = nombrejor;
 
-    document.getElementById("btn-tipo-jornada").innerHTML = "Actualizar";
+    document.getElementById("btnguardar").innerHTML = "Actualizar";
     document.getElementById("titletipjornada").innerHTML = "Actualizar tipo de jornada";
 
 }
@@ -89,10 +89,10 @@ function UpdateTipoJornada() {
 
     var result = document.getElementById('tview');
 
-    var nombrejor = document.formtipojornada.nombre.value;
-    var id = document.formtipojornada.id.value;
+    var nombrejor = document.formulario.nombre.value;
+    var id = document.formulario.id.value;
 
-    document.getElementById('formtipojornada').reset();
+     
 
     const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
@@ -108,15 +108,15 @@ function UpdateTipoJornada() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=tipojornada&acti=actualizar&nombre=" + nombrejor + "&id=" + id);
 
-    document.getElementById('formtipojornada').reset();
+     
 
-    document.getElementById("btn-tipo-jornada").innerHTML = "Crear";
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titletipjornada").innerHTML = "Crear tipo de jornada";
 
 }
 
 function CancelarTipoJornada() {
-    document.getElementById('formtipojornada').reset();
-    document.getElementById("btn-tipo-jornada").innerHTML = "Crear";
+     
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titletipjornada").innerHTML = "Crear tipo de jornada";
 }

@@ -11,41 +11,41 @@
 			</div>
 			<div class="modal-body espaciado">
 
-				<form name="formulario" id="formanuncio" class="needs-validation" novalidate>
+				<form name="formulario" id="formulario" class="needs-validation" novalidate>
 
-					<input type="text" name="id" hidden>
-				<div>
-					<label for="titulo">Titulo</label><br>
-					<input class="form-control rounded" type="text" name="titulo" id="titulo" required>
-					<div class="invalid-feedback">Complete el campo.</div><br>
-			    </div>
-
-				<div>
-					<label for="descrp">Descripcion</label><br>
-					<textarea class="form-control rounded" name="descrp" id="descrp" rows="3" required></textarea>
-					<div class="invalid-feedback">Complete el campo.</div><br>
-				</div>
-
-				<div>
-					<label for="fchfin">Fecha Fin</label><br>
-					<input class="form-control rounded" type="date" name="fchfin" id="fchfin" required>
-					<div class="invalid-feedback">Complete el campo.</div><br>
-				</div>
-
-				<div>
-					<label for="usuid">Id Usuario</label><br>
-					<input class="form-control rounded" type="text" name="usuid" id="usuid" required>
-					<div class="invalid-feedback">Complete el campo.</div><br>
-				</div>
-
-				<div>					
-					<input class="form-control rounded" type="text" name="ficid" id="ficid" value="<?php echo $fichapuntero; ?>" hidden>					
-				</div>
-				
-					<div class="modal-footer">
-					<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarAnuncio();">Cerrar</button>
-					<button type="button" id="btnguardar" class="btn btn-primary btn-rounded">Crear</button>
+						<input type="text" name="id" hidden>
+					<div>
+						<label for="titulo">Titulo</label><br>
+						<input class="form-control rounded" type="text" name="titulo" id="titulo" required>
+						<div class="invalid-feedback">Complete el campo.</div><br>
 					</div>
+
+					<div>
+						<label for="descrp">Descripcion</label><br>
+						<textarea class="form-control rounded" name="descrp" id="descrp" rows="3" required></textarea>
+						<div class="invalid-feedback">Complete el campo.</div><br>
+					</div>
+
+					<div>
+						<label for="fchfin">Fecha Fin</label><br>
+						<input class="form-control rounded" type="date" name="fchfin" id="fchfin" required>
+						<div class="invalid-feedback">Complete el campo.</div><br>
+					</div>
+
+					<div>
+						<label for="usuid">Id Usuario</label><br>
+						<input class="form-control rounded" type="text" name="usuid" id="usuid" required>
+						<div class="invalid-feedback">Complete el campo.</div><br>
+					</div>
+
+					<div>					
+						<input class="form-control rounded" type="text" name="ficid" id="ficid" value="<?php echo $fichapuntero; ?>" hidden>					
+					</div>
+					
+						<div class="modal-footer">
+						<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarAnuncio();">Cerrar</button>
+						<button type="button" id="btnguardar" class="btn btn-primary btn-rounded">Crear</button>
+						</div>
 				</form>
 				
 				<script>

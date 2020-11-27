@@ -47,7 +47,7 @@ function BorrarTipoPrograma(id) {
 function InsertTipoPrograma() {
     var result = document.getElementById('tview');
 
-    var nombrepro = document.formtipoprograma.nombre.value;
+    var nombrepro = document.formulario.nombre.value;
 
 
     const ajax = new XMLHttpRequest();
@@ -67,7 +67,7 @@ function InsertTipoPrograma() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=tipoprograma&acti=insertar&nombre="+nombrepro);
 
-    document.getElementById('formtipoprograma').reset();
+     
 }
 
 
@@ -76,10 +76,10 @@ function InsertTipoPrograma() {
 
 function EditarTipoPrograma(id, nombrepro) {
 
-    document.formtipoprograma.id.value = id;
-    document.formtipoprograma.nombre.value = nombrepro;
+    document.formulario.id.value = id;
+    document.formulario.nombre.value = nombrepro;
 
-    document.getElementById("btn-tipo-programa").innerHTML = "Actualizar";
+    document.getElementById("btnguardar").innerHTML = "Actualizar";
     document.getElementById("titletipprograma").innerHTML = "Actualizar tipo de programa";
 
 
@@ -90,10 +90,10 @@ function UpdateTipoPrograma() {
 
     var result = document.getElementById('tview');
 
-    var nombrepro = document.formtipoprograma.nombre.value;
-    var id = document.formtipoprograma.id.value;
+    var nombrepro = document.formulario.nombre.value;
+    var id = document.formulario.id.value;
 
-    document.getElementById('formtipoprograma').reset();
+     
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -109,15 +109,15 @@ function UpdateTipoPrograma() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=tipoprograma&acti=actualizar&nombre=" + nombrepro + "&id=" + id);
 
-    document.getElementById('formtipoprograma').reset();
+     
 
-    document.getElementById("btn-tipo-programa").innerHTML = "Crear";
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titletipprograma").innerHTML = "Crear tipo de programa";
 
 }
 
 function CancelarTipoPrograma() {
-    document.getElementById('formtipoprograma').reset();
-    document.getElementById("btn-tipo-programa").innerHTML = "Crear";
+     
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titletipprograma").innerHTML = "Crear tipo de programa";
 }

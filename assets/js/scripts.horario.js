@@ -27,8 +27,8 @@ function BorrarHorario(id, url) {
                             result.innerHTML = ajax.responseText;
                             document.getElementById("crearhorario").innerHTML = "Crear Horario";
                             document.getElementById("ModalLabelArchivo").innerHTML = "Subir Archivo";
-                            document.getElementById("subir-hor").innerHTML = "Subir";
-                            document.formhorario.reset();
+                            document.getElementById("btnguardar").innerHTML = "Subir";
+                            
 
                         } else {
                             console.log("Ups, Me equivoque;");
@@ -63,9 +63,9 @@ function GestionarHorario() {
 function InsertHorario() {
 
     var paquete = new FormData();
-    trinum = document.formhorario.trinum.value;
-    triini = document.formhorario.fchinicio.value;
-    trifin = document.formhorario.fchfin.value;
+    trinum = document.formulario.trinum.value;
+    triini = document.formulario.fchinicio.value;
+    trifin = document.formulario.fchfin.value;
     fichaid = "2"; // >>>>>>>>> CAMBIAR ESTE VALOR CUANDO SE OBTENGA LA FICHA <<<<<<<<< 
 
     paquete.append('archivo', $('#file')[0].files[0]);
@@ -102,13 +102,13 @@ function EditarHorario(id, url, triini, trifin, trinum, fichaid) {
         buttons: {
             Confirmar: function() {
                 urlEdit = url;
-                document.formhorario.id.value = id;
-                document.formhorario.trinum.value = trinum;
-                document.formhorario.fchinicio.value = triini;
-                document.formhorario.fchfin.value = trifin;
-                document.formhorario.idficha.value = fichaid;
+                document.formulario.id.value = id;
+                document.formulario.trinum.value = trinum;
+                document.formulario.fchinicio.value = triini;
+                document.formulario.fchfin.value = trifin;
+                document.formulario.idficha.value = fichaid;
                 document.getElementById("ModalLabelArchivo").innerHTML = "Actualizar Archivo";
-                document.getElementById("subir-hor").innerHTML = "Actualizar";
+                document.getElementById("btnguardar").innerHTML = "Actualizar";
 
                 $("#horarioModal").modal("show");
             },
@@ -121,10 +121,10 @@ function UpdateHorario() {
 
     var paquete = new FormData();
 
-    var id = document.formhorario.id.value;
-    var trinum = document.formhorario.trinum.value;
-    var triini = document.formhorario.fchinicio.value;
-    var trifin = document.formhorario.fchfin.value;
+    var id = document.formulario.id.value;
+    var trinum = document.formulario.trinum.value;
+    var triini = document.formulario.fchinicio.value;
+    var trifin = document.formulario.fchfin.value;
 
     paquete.append('archivo', $('#file')[0].files[0]);
     paquete.append('id', id);
@@ -150,7 +150,7 @@ function UpdateHorario() {
     });
     $('#noticiaModal').modal('hide');
     document.getElementById("ModalLabelArchivo").innerHTML = "Subir Archivo";
-    document.getElementById("subir-hor").innerHTML = "Subir";
+    document.getElementById("btnguardar").innerHTML = "Subir";
 
     urlEdit = "";
 }
@@ -159,5 +159,5 @@ function UpdateHorario() {
 
 function CancelarHorario() {
     document.getElementById("ModalLabelArchivo").innerHTML = "Subir Archivo";
-    document.getElementById("subir-hor").innerHTML = "Subir";
+    document.getElementById("btnguardar").innerHTML = "Subir";
 }

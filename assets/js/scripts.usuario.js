@@ -50,10 +50,10 @@ function InsertUsuario() {
     var result = document.getElementById('tview');
 
 
-    var nombre      = document.formusuario.nombre.value;
-    var apellido    = document.formusuario.apellido.value;
-    var contraseña  = document.formusuario.contraseña.value;
-    var correo      = document.formusuario.correo.value;
+    var nombre      = document.formulario.nombre.value;
+    var apellido    = document.formulario.apellido.value;
+    var contraseña  = document.formulario.contraseña.value;
+    var correo      = document.formulario.correo.value;
     var ficha       = document.getElementById('fich').value;
     var rol         = document.getElementById('rol').value;
     var estado      = document.getElementById('estado').value;
@@ -80,7 +80,6 @@ function InsertUsuario() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=usuario&acti=insertar&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&ficha=" + ficha +"&rol="+rol+"&estado="+estado+"&identi="+identi);
 
-    document.getElementById('formusuario').reset();
 }
 
 
@@ -89,12 +88,12 @@ function InsertUsuario() {
 
 function EditarUsuario(id, nombre,apellido,contraseña,correo,ficha,rol,estado,identi){
 
-    document.formusuario.id.value = id;
+    document.formulario.id.value = id;
 
-    document.formusuario.nombre.value       =  nombre ;
-    document.formusuario.apellido.value     = apellido;
-    document.formusuario.contraseña.value   = contraseña;
-    document.formusuario.correo.value       = correo;
+    document.formulario.nombre.value       =  nombre ;
+    document.formulario.apellido.value     = apellido;
+    document.formulario.contraseña.value   = contraseña;
+    document.formulario.correo.value       = correo;
     document.getElementById('fich').value   = ficha;
     document.getElementById('rol').value    = rol;
     document.getElementById('estado').value = estado;
@@ -111,18 +110,18 @@ function UpdateUsuario() {
 
     var result = document.getElementById('tview');
     
-    var id          = document.formusuario.id.value;
+    var id          = document.formulario.id.value;
 
-    var nombre      = document.formusuario.nombre.value;
-    var apellido    = document.formusuario.apellido.value;
-    var contraseña  = document.formusuario.contraseña.value;
-    var correo      = document.formusuario.correo.value;
+    var nombre      = document.formulario.nombre.value;
+    var apellido    = document.formulario.apellido.value;
+    var contraseña  = document.formulario.contraseña.value;
+    var correo      = document.formulario.correo.value;
     var ficha       = document.getElementById('fich').value;
     var rol         = document.getElementById('rol').value;
     var estado      = document.getElementById('estado').value;
     var identi      = document.getElementById('identi').value;
     
-    document.getElementById('formusuario').reset();
+     
 
     const ajax = new XMLHttpRequest(); 
     ajax.open("POST", "main.php", true); 
@@ -143,14 +142,12 @@ function UpdateUsuario() {
 
     
 
-    
-    document.getElementById('formusuario').reset();
+ 
 
 }
 
 function CancelarUsuario() {
-
-    document.getElementById('formusuario').reset();
+ 
         
     document.getElementById("btnguardar").innerHTML = "Crear";
 }

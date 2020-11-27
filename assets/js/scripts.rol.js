@@ -47,7 +47,7 @@ function BorrarRol(id) {
 function InsertRol() {
     var result = document.getElementById('tview');
 
-    var nombrerol = document.formrol.nombre.value;
+    var nombrerol = document.formulario.nombre.value;
 
 
     const ajax = new XMLHttpRequest();
@@ -67,7 +67,7 @@ function InsertRol() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=rol&acti=insertar&nombre=" + nombrerol);
 
-    document.getElementById('formrol').reset();
+     
 }
 
 
@@ -76,10 +76,10 @@ function InsertRol() {
 
 function EditarRol(id, nombrerol) {
 
-    document.formrol.id.value = id;
-    document.formrol.nombre.value = nombrerol;
+    document.formulario.id.value = id;
+    document.formulario.nombre.value = nombrerol;
 
-    document.getElementById("btn-rol").innerHTML = "Actualizar";
+    document.getElementById("btnguardar").innerHTML = "Actualizar";
     document.getElementById("titlerol").innerHTML = "Actualizar Rol";
 
 
@@ -90,10 +90,10 @@ function UpdateRol() {
 
     var result = document.getElementById('tview');
 
-    var nombrerol = document.formrol.nombre.value;
-    var id = document.formrol.id.value;
+    var nombrerol = document.formulario.nombre.value;
+    var id = document.formulario.id.value;
 
-    document.getElementById('formrol').reset();
+     
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -109,13 +109,13 @@ function UpdateRol() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=rol&acti=actualizar&nombre=" + nombrerol + "&id=" + id);
 
-    document.getElementById('formrol').reset();
-    document.getElementById("btn-rol").innerHTML = "Crear";
+     
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titlerol").innerHTML = "Crear Rol";
 }
 
 function CancelarRol() {
-    document.getElementById('formrol').reset();
-    document.getElementById("btn-rol").innerHTML = "Crear";
+     
+    document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titlerol").innerHTML = "Crear Rol";
 }

@@ -45,7 +45,7 @@ function BorrarTipoOferta(id) {
 function InsertarTipoOferta() {
     var result = document.getElementById('tview');
 
-    var nombre = document.formtipooferta.nombre.value;
+    var nombre = document.formulario.nombre.value;
 
 
     const ajax = new XMLHttpRequest();
@@ -65,15 +65,15 @@ function InsertarTipoOferta() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=tipooferta&acti=insertar&nombre=" + nombre);
 
-    document.getElementById('formtipooferta').reset();
+     
 }
 
 
 
 function EditarTipoOferta(id, nombre) {
 
-    document.formtipooferta.id.value = id;
-    document.formtipooferta.nombre.value = nombre;
+    document.formulario.id.value = id;
+    document.formulario.nombre.value = nombre;
 
     document.getElementById("titletipoferta").innerHTML = "Actualizar tipo de oferta";
     document.getElementById("btnguardar").innerHTML = "Actualizar";
@@ -84,10 +84,10 @@ function UpdateTipoOferta() {
 
     var result = document.getElementById('tview');
 
-    var nombre = document.formtipooferta.nombre.value;
-    var id = document.formtipooferta.id.value;
+    var nombre = document.formulario.nombre.value;
+    var id = document.formulario.id.value;
 
-    document.getElementById('formtipooferta').reset();
+     
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -110,7 +110,7 @@ function UpdateTipoOferta() {
 }
 
 function CancelarTipoOferta() {
-    document.getElementById('formtipooferta').reset();
+     
     document.getElementById("titletipoferta").innerHTML = "Crear tipo de oferta"; 
     document.getElementById("btnguardar").innerHTML = "Crear";
 }

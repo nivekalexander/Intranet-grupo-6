@@ -13,17 +13,17 @@
 
       <div class="modal-body">     
 
-      <form id="formnoticia" name="formnoticia" class="needs-validation">   
-            <div class="custom-file btn rounded" style="background-color: #e3e6f0; overflow: hidden;">
-                <input type="number" name="idnews" id="id-news" hidden>
-                <input type="file" name="file-news" id="file-news" accept="image/*" lang="es" required>
-                <div class="invalid-feedback">No se a seleccionado ningun archivo</div>
-            </div>                        
+      <form id="formulario" name="formulario" class="needs-validation">   
+        <div class="custom-file btn rounded" style="background-color: #e3e6f0; overflow: hidden;">
+          <input type="number" name="idnews" id="id-news" hidden>
+          <input type="file" name="file-news" id="file-news" accept="image/*" lang="es" required>
+          <div class="invalid-feedback">No se a seleccionado ningun archivo</div>
+        </div>                        
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarNoticia();">Cerrar</button>
-        <button type="submit" id="subir-news" class="btn btn-primary btn-rounded" >Subir</button>
+        <button type="button" id="btnguardar" class="btn btn-primary btn-rounded" >Subir</button>
         <!-- onclick="InsertNoticia();" -->
       </div>
       </form>  
@@ -44,10 +44,10 @@
       var forms = document.getElementsByClassName('needs-validation');
       // Loop over them and prevent submission
       var validation = Array.prototype.filter.call(forms, function(form) {        
-        form.addEventListener('submit', function(event) {
+        document.getElementById("btnguardar").addEventListener('click', function(event) { 
           
           if (form.checkValidity() === true) {
-            var nombreBoton = document.getElementById("subir-news").innerHTML;
+            var nombreBoton = document.getElementById("btnguardar").innerHTML;
             if (nombreBoton == "Subir"){
               InsertNoticia();
               $('#noticiaModal').modal('hide');

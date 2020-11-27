@@ -11,7 +11,7 @@
 			</div>
 			<div class="modal-body espaciado">	
 
-				<form name="formestado" id="formestado" class="needs-validation" novalidate>
+				<form name="formulario" id="formulario" class="needs-validation" novalidate>
 						
 					<input type="text" name="id" hidden>
 					<div>
@@ -23,7 +23,7 @@
 					
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarEstado();">Cancelar</button>
-						<button type="submit" class="btn-rounded btn" id="btnguardar">Crear</button>
+						<button type="button" class="btn-rounded btn" id="btnguardar">Crear</button>
 					</div>
 
 				</form>
@@ -38,7 +38,7 @@
 							var forms = document.getElementsByClassName('needs-validation');
 							// Loop over them and prevent submission
 							var validation = Array.prototype.filter.call(forms, function(form) {
-								form.addEventListener('submit', function(event) {
+								document.getElementById("btnguardar").addEventListener('click', function(event) { 
 								if (form.checkValidity() === true) {
 									var nombreBoton = document.getElementById("btnguardar").innerHTML;
 									if (nombreBoton == "Crear"){

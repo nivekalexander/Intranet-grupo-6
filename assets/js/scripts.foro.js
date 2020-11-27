@@ -38,5 +38,5 @@ function InsertForo() {
 function CancelarForo(){
 
     // document.getElementById("ModalLabelArchivo").innerHTML = "Subir Archivo"; 
-    document.getElementById("subir-for").innerHTML = "Subir";               
+    document.getElementById("btnguardar").innerHTML = "Subir";               
 }

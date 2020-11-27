@@ -11,9 +11,9 @@
 			</div>
 			<div class="modal-body espaciado">		
 			
-					<form name="formrol" id="formrol" class="needs-validation" novalidate>
+					<form name="formulario" id="formulario" class="needs-validation" novalidate>
 
-            				<input type="text" name="id" hidden>
+            			<input type="text" name="id" hidden>
 
 						<div>
             				<label for="nombre">Nombre Rol</label><br>
@@ -22,10 +22,10 @@
 							<div class="valid-feedback">¡Valido!</div>
 					    </div>
 
-					<div class="modal-footer">
-							<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarRol();">Cerrar</button>
-							<button type="submit" id="btn-rol" class="btn-rounded btn">Crear</button>
-					</div>
+						<div class="modal-footer">
+								<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarRol();">Cerrar</button>
+								<button type="button" id="btnguardar" class="btn-rounded btn">Crear</button>
+						</div>
             				
 
             		</form>
@@ -40,9 +40,9 @@
 							var forms = document.getElementsByClassName('needs-validation');
 							// Loop over them and prevent submission
 							var validation = Array.prototype.filter.call(forms, function(form) {
-								form.addEventListener('submit', function(event) {
+								document.getElementById("btnguardar").addEventListener('click', function(event) {
 								if (form.checkValidity() === true) {
-									var nombreBoton = document.getElementById("btn-rol").innerHTML;
+									var nombreBoton = document.getElementById("btnguardar").innerHTML;
 									if (nombreBoton == "Crear"){
 										InsertRol();
 										$('#modalrol').modal('hide');

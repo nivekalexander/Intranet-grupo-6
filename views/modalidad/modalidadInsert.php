@@ -11,26 +11,26 @@
 			</div>
 			<div class="modal-body espaciado">		
 			
-					<form name="formmodalidad" id="formmodalidad" class="needs-validation" novalidate>
+				<form name="formulario" id="formulario" class="needs-validation" novalidate>
 
-            				<input type="text" name="id" hidden>
+					<input type="text" name="id" hidden>
 
-						<div>
-            				<label for="nombre">Nombre Modalidad</label><br>
-            				<input class="form-control rounded" type="text" name="nombre" required>
-							<div class="invalid-feedback">Campo Obligatorio</div>
-							<div class="valid-feedback">¡Valido!</div>
-					    </div>
+					<div>
+						<label for="nombre">Nombre Modalidad</label><br>
+						<input class="form-control rounded" type="text" name="nombre" required>
+						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="valid-feedback">¡Valido!</div>
+					</div>
 
 					<div class="modal-footer">
 							<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarModalidad();">Cerrar</button>
-							<button type="submit" class="btn-rounded btn" id="btn-modalidad">Crear</button>
+							<button type="button" class="btn-rounded btn" id="btnguardar">Crear</button>
 					</div>
-            				
+						
 
-            		</form>
+				</form>
 
-					<script>
+				<script>
 
 
 					(function() {
@@ -40,9 +40,9 @@
 							var forms = document.getElementsByClassName('needs-validation');
 							// Loop over them and prevent submission
 							var validation = Array.prototype.filter.call(forms, function(form) {
-								form.addEventListener('submit', function(event) {
+								document.getElementById("btnguardar").addEventListener('click', function(event) { 
 								if (form.checkValidity() === true) {
-									var nombreBoton = document.getElementById("btn-modalidad").innerHTML;
+									var nombreBoton = document.getElementById("btnguardar").innerHTML;
 									if (nombreBoton == "Crear"){
 										InsertModalidad();
 										$('#modalmodalidad').modal('hide');

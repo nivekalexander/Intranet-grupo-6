@@ -1,4 +1,4 @@
-<form class="form-perfil">
+<form class="formulario">
     <!-- Identificación -->
     <div class="form-group row">
         <label for="id-perfil" class="col-sm-4 col-form-label">Identificación</label>
