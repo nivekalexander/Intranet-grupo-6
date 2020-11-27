@@ -20,5 +20,6 @@
     <link href="../assets/datatables/datatables.min.css" rel="stylesheet" type="text/css">
 
   <link rel="icon" href="img/logo/icon.jpg">
+  
 </head>
   

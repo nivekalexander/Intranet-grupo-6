@@ -8,9 +8,9 @@
         		<div id="forms">
         				<?php include('usuarioInsert.php');?>
         		</div>
-				<div>
-						<?php include('usuarioConfirm.php'); ?>
-				</div>
+				<!-- <div>
+					
+				</div> -->
         		<div id="tview">
 						
         				<?php include('usuarioSelect.php');?>
