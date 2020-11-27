@@ -1,6 +1,7 @@
 <?php
 		require_once('../models/database.php');
 		//$controller = 'noticia';
+		$error="hola";
 	try{
 		if ( !ISSET($_REQUEST['ctrl']) )
 		{
