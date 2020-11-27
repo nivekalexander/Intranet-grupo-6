@@ -16,7 +16,8 @@
 	            confirm: function() {
 	                $.alert('Se ha eliminado correctamente');
 
-	                var result = document.getElementById('tview');
+					var result = document.getElementById('tview');
+					var ficid = document.formulario.ficid.value;
 
 	                const ajax = new XMLHttpRequest();
 	                ajax.open("POST", "main.php", true);
@@ -33,7 +34,7 @@
 	                };
 
 	                ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	                ajax.send("ctrl=anuncio&acti=eliminar&id=" + id);
+	                ajax.send("ctrl=anuncio&acti=eliminar&id=" + id +"&ficid="+ficid);
 	            },
 	            cancel: function() {
 	                $.alert('Has cancelado la eliminación');
@@ -77,13 +78,12 @@
 
 
 
-	function EditarAnuncio(id, titulo, descrp, fchfin, usuid, ficid) {
+	function EditarAnuncio(id, titulo, descrp, fchfin, ficid) {
 
 	    document.formulario.id.value = id;
 	    document.formulario.titulo.value = titulo;
 	    document.formulario.descrp.value = descrp;
 	    document.formulario.fchfin.value = fchfin;
-	    document.formulario.usuid.value = usuid;
 	    document.formulario.ficid.value = ficid;
 
 	    document.getElementById("btnguardar").innerHTML = "Actualizar";
@@ -99,7 +99,6 @@
 	    var titulo = document.formulario.titulo.value;
 	    var descrp = document.formulario.descrp.value;
 	    var fchfin = document.formulario.fchfin.value;
-	    var usuid = document.formulario.usuid.value;
 	    var ficid = document.formulario.ficid.value;
 	    var id = document.formulario.id.value;
 
@@ -117,7 +116,7 @@
 	        }
 	    };
 	    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	    ajax.send("ctrl=anuncio&acti=actualizar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&usuid=" + usuid + "&ficid=" + ficid + "&id=" + id);
+	    ajax.send("ctrl=anuncio&acti=actualizar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&ficid=" + ficid + "&id=" + id);
 
 
 	    document.getElementById("btnguardar").innerHTML = "Crear";

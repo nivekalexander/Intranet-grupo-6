@@ -41,6 +41,9 @@
 		public function Eliminar()
 								{
 									$this->anuncio->Delete($_REQUEST['id']);
+
+									$fichapuntero  	= $_REQUEST['ficid'];
+
 									require_once('../views/anuncio/anuncioSelect.php');
 								}
 
@@ -50,10 +53,10 @@
 
 										$datos->titulo 	= $_REQUEST['titulo'];
 										$datos->descrp 	= $_REQUEST['descrp'];
-										$datos->fchfin	= $_REQUEST['fchfin'];
-										$datos->usuid 	= $_REQUEST['usuid'];
-										$datos->ficid 	= $_REQUEST['ficid'];
- 										$datos->id 		= $_REQUEST['id'];
+										$datos->fchfin	= $_REQUEST['fchfin'];										
+										$datos->id 		= $_REQUEST['id'];
+
+										$fichapuntero  	= $_REQUEST['ficid'];
 
  										$this->anuncio->Update($datos);
 
