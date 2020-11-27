@@ -4,6 +4,7 @@
 
 	class EstadoController
 	{	
+		
 		private $estado;
 
 		function __construct()	{
@@ -12,6 +13,7 @@
 
 		public function Index()
 								{
+									
 									require_once('../views/frames/header.php');
 									
 									require_once('../views/frames/navbar.php');
