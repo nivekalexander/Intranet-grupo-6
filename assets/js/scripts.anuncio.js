@@ -47,11 +47,11 @@
 	function InsertAnuncio() {
 	    var result = document.getElementById('tview');
 
-	    var titulo = document.formanuncio.titulo.value;
-	    var descrp = document.formanuncio.descrp.value;
-	    var fchfin = document.formanuncio.fchfin.value;
-	    var usuid = document.formanuncio.usuid.value;
-	    var ficid = document.formanuncio.ficid.value;
+	    var titulo = document.formulario.titulo.value;
+	    var descrp = document.formulario.descrp.value;
+	    var fchfin = document.formulario.fchfin.value;
+	    var usuid = document.formulario.usuid.value;
+	    var ficid = document.formulario.ficid.value;
 
 	    const ajax = new XMLHttpRequest();
 	    ajax.open("POST", "main.php", true);
@@ -70,7 +70,7 @@
 	    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	    ajax.send("ctrl=anuncio&acti=insertar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&usuid=" + usuid + "&ficid=" + ficid);
 
-	    document.getElementById('formanuncio').reset();
+	    
 	}
 
 
@@ -79,12 +79,12 @@
 
 	function EditarAnuncio(id, titulo, descrp, fchfin, usuid, ficid) {
 
-	    document.formanuncio.id.value = id;
-	    document.formanuncio.titulo.value = titulo;
-	    document.formanuncio.descrp.value = descrp;
-	    document.formanuncio.fchfin.value = fchfin;
-	    document.formanuncio.usuid.value = usuid;
-	    document.formanuncio.ficid.value = ficid;
+	    document.formulario.id.value = id;
+	    document.formulario.titulo.value = titulo;
+	    document.formulario.descrp.value = descrp;
+	    document.formulario.fchfin.value = fchfin;
+	    document.formulario.usuid.value = usuid;
+	    document.formulario.ficid.value = ficid;
 
 	    document.getElementById("btnguardar").innerHTML = "Actualizar";
 	    document.getElementById("titlemodalanuncios").innerHTML = "Editar Anuncios";
@@ -96,14 +96,12 @@
 
 	    var result = document.getElementById('tview');
 
-	    var titulo = document.formanuncio.titulo.value;
-	    var descrp = document.formanuncio.descrp.value;
-	    var fchfin = document.formanuncio.fchfin.value;
-	    var usuid = document.formanuncio.usuid.value;
-	    var ficid = document.formanuncio.ficid.value;
-	    var id = document.formanuncio.id.value;
-
-	    document.getElementById('formanuncio').reset();
+	    var titulo = document.formulario.titulo.value;
+	    var descrp = document.formulario.descrp.value;
+	    var fchfin = document.formulario.fchfin.value;
+	    var usuid = document.formulario.usuid.value;
+	    var ficid = document.formulario.ficid.value;
+	    var id = document.formulario.id.value;
 
 	    const ajax = new XMLHttpRequest();
 	    ajax.open("POST", "main.php", true);
@@ -124,13 +122,11 @@
 
 		document.getElementById("btnguardar").innerHTML = "Crear";
 	    document.getElementById("titlemodalanuncios").innerHTML = "Crear Anuncios";
-
-	    document.getElementById('formanuncio').reset();
-
+	    
 	}
 
 	function CancelarAnuncio() {
-	    document.getElementById('formanuncio').reset();
+	    // document.getElementById('formulario').reset();
 	    document.getElementById("btnguardar").innerHTML = "Crear";
 	    document.getElementById("titlemodalanuncios").innerHTML = "Crear Anuncios";
 	}
