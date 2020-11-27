@@ -74,7 +74,7 @@
         document.getElementById("btnguardar").addEventListener('click', function(event) {        
           if (form.checkValidity() === true) {            
             var nombreBoton = document.getElementById("btnguardar").innerHTML;
-            var filesize = formhorario.file.files[0].size;            
+            var filesize = formulario.file.files[0].size;            
             if(filesize<2000000){
               if (nombreBoton == "Subir"){                            
                 InsertHorario();
