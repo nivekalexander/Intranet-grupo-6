@@ -34,7 +34,7 @@
 
 					<div>
 						<label for="usuid">Id Usuario</label><br>
-						<input class="form-control rounded" type="text" name="usuid" id="usuid" required>
+						<input class="form-control rounded" type="text" name="usuid" id="usuid">
 						<div class="invalid-feedback">Complete el campo.</div><br>
 					</div>
 

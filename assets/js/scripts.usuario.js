@@ -25,6 +25,15 @@ function BorrarUsuario(id) {
                         if (ajax.status == 200) {
 
                             result.innerHTML = ajax.responseText;
+                            $(document).ready(function() {
+                                $('#tableusuario').DataTable({
+                                    dom: 'Bfrtip',
+                                    buttons: ['copy', 'excel', 'pdf', 'csv'],
+                                    "language": {
+                                        "url": "../assets/datatables/Spanish.json"
+                                    }
+                                });
+                            });
 
                         } else {
                             console.log("Ups, Me equivoque;");
@@ -66,6 +75,15 @@ function InsertUsuario() {
             if (ajax.status == 200) {
 
                 result.innerHTML = ajax.responseText;
+                $(document).ready(function() {
+                    $('#tableusuario').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: ['copy', 'excel', 'pdf', 'csv'],
+                        "language": {
+                            "url": "../assets/datatables/Spanish.json"
+                        }
+                    });
+                });
 
             } else {
                 console.log("Ups, Me equivoque;");
@@ -126,6 +144,15 @@ function UpdateUsuario() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
+                $(document).ready(function() {
+                    $('#tableusuario').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: ['copy', 'excel', 'pdf', 'csv'],
+                        "language": {
+                            "url": "../assets/datatables/Spanish.json"
+                        }
+                    });
+                });
                 document.getElementById("btnguardar").innerHTML = "Crear";
 
 
