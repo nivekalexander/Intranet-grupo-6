@@ -4,7 +4,7 @@
   <div class="modal-dialog" role="document">
 	  <div class="modal-content">
 			<div class="modal-header Color-Slidebar">
-				<h5 class="modal-title dropdown-text-color" id="exampleModalLabel">Crear Usuario</h5>
+				<h5 class="modal-title dropdown-text-color" id="titleusuario">Crear Usuario</h5>
 				<button type="button" class="close dropdown-text-color" data-dismiss="modal" aria-label="Close" onclick="CancelarUsuario();">
 				<span aria-hidden="true">&times;</span>
 				</button>
@@ -23,7 +23,7 @@
 
 					<div>
 						<label for="apellido">Apellido</label><br>
-						<textarea class="form-control rounded" name="apellido" id="apellido" rows="3" required></textarea>
+						<input class="form-control rounded" name="apellido" id="apellido" required>
 						<div class="invalid-feedback">Complete el campo.</div><br>
 					</div>
 
@@ -36,7 +36,7 @@
 					<div>
 						<label for="correo">Correo</label><br>
 						<input class="form-control rounded" type="email" name="correo" id="correo" required>
-						<div class="invalid-feedback">Complete el campo.</div><br>
+						<div class="invalid-feedback">Introduzca una dirección de correo valida.</div><br>
 					</div>
 
 					<div>

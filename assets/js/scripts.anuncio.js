@@ -16,8 +16,8 @@
 	            confirm: function() {
 	                $.alert('Se ha eliminado correctamente');
 
-					var result = document.getElementById('tview');
-					var ficid = document.formulario.ficid.value;
+	                var result = document.getElementById('tview');
+	                var ficid = document.formulario.ficid.value;
 
 	                const ajax = new XMLHttpRequest();
 	                ajax.open("POST", "main.php", true);
@@ -34,7 +34,7 @@
 	                };
 
 	                ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	                ajax.send("ctrl=anuncio&acti=eliminar&id=" + id +"&ficid="+ficid);
+	                ajax.send("ctrl=anuncio&acti=eliminar&id=" + id + "&ficid=" + ficid);
 	            },
 	            cancel: function() {
 	                $.alert('Has cancelado la eliminación');
@@ -71,7 +71,7 @@
 	    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	    ajax.send("ctrl=anuncio&acti=insertar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&usuid=" + usuid + "&ficid=" + ficid);
 
-	    
+
 	}
 
 

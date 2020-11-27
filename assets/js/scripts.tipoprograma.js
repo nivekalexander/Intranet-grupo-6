@@ -65,9 +65,9 @@ function InsertTipoPrograma() {
     };
 
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=tipoprograma&acti=insertar&nombre="+nombrepro);
+    ajax.send("ctrl=tipoprograma&acti=insertar&nombre=" + nombrepro);
 
-     
+
 }
 
 
@@ -93,7 +93,7 @@ function UpdateTipoPrograma() {
     var nombrepro = document.formulario.nombre.value;
     var id = document.formulario.id.value;
 
-     
+
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -101,7 +101,7 @@ function UpdateTipoPrograma() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
-                
+
 
             } else { console.log("Ups, Me equivoque;"); }
         }
@@ -109,7 +109,7 @@ function UpdateTipoPrograma() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=tipoprograma&acti=actualizar&nombre=" + nombrepro + "&id=" + id);
 
-     
+
 
     document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titletipprograma").innerHTML = "Crear tipo de programa";
@@ -117,7 +117,7 @@ function UpdateTipoPrograma() {
 }
 
 function CancelarTipoPrograma() {
-     
+
     document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titletipprograma").innerHTML = "Crear tipo de programa";
 }
