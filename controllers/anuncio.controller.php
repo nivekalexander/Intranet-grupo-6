@@ -57,11 +57,14 @@
 										$datos->fchfin	= $_REQUEST['fchfin'];										
 										$datos->id 		= $_REQUEST['id'];
 
-										$fichapuntero  	= $_REQUEST['ficid'];
+										
 
  										$this->anuncio->Update($datos);
 
- 										require_once('../views/anuncio/anuncioSelect.php');
+										 $fichapuntero  	= $_REQUEST['ficid'];
+
+										 require_once('../views/anuncio/anuncioSelect.php');
+										 
 									}
 
 	}

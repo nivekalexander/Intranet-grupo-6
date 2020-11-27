@@ -107,21 +107,21 @@
 	    ajax.onreadystatechange = function() {
 	        if (ajax.readyState == 4) {
 	            if (ajax.status == 200) {
+
 	                result.innerHTML = ajax.responseText;
-
-
-
+					document.getElementById("btnguardar").innerHTML = "Crear";
+					document.getElementById("titlemodalanuncios").innerHTML = "Crear Anuncios";
 
 	            } else { console.log("Ups, Me equivoque;"); }
 	        }
 	    };
 	    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	    ajax.send("ctrl=anuncio&acti=actualizar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&ficid=" + ficid + "&id=" + id);
+	    ajax.send("ctrl=anuncio&acti=actualizar&titulo="+titulo+"&descrp="+descrp+"&fchfin="+fchfin+"&ficid="+ficid+"&id="+id);
 
 
-	    document.getElementById("btnguardar").innerHTML = "Crear";
-	    document.getElementById("titlemodalanuncios").innerHTML = "Crear Anuncios";
-
+	    
+	    
+	    
 	}
 
 	function CancelarAnuncio() {
