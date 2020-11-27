@@ -10,7 +10,7 @@
               <?php echo $filas->fic_codigo;?>
             </div>            
             <div class="float-right">
-              <a href="perfil.php?id=925763" name="imagenPost"><img src="../assets/img/logosena.svg" width="40" height="40"></a>
+              <a  name="imagenPost"><img src="../assets/img/logosena.svg" width="40" height="40"></a>
             </div>
           </div>
 
@@ -22,7 +22,7 @@
           </div>
 
           <div class="card-footer">
-            <button class="float-right btn-rounded btn" data-toggle="modal" data-target="#modaltipoidentificacion" data-dismiss="modal" onclick="EditarTipoidentificacion(<?php echo $grupal; ?>)">Entrar</button>
+            <a class="float-right btn-rounded btn" href="main.php?ctrl=noticia&fcpt=<?php echo($filas->fic_id);?>">Entrar</a>
           </div>
 
         </div>
