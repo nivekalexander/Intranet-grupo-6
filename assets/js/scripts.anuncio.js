@@ -44,7 +44,7 @@
 	}
 
 
-	function InsertAnuncio(fichapuntero) {
+	function InsertAnuncio() {
 	    var result = document.getElementById('tview');
 
 	    var titulo = document.formulario.titulo.value;
@@ -68,7 +68,7 @@
 	    };
 
 	    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	    ajax.send("ctrl=anuncio&acti=insertar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&usuid=" + usuid + "&ficid=" + ficid + "&fcpt=" + fichapuntero);
+	    ajax.send("ctrl=anuncio&acti=insertar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&usuid=" + usuid + "&ficid=" + ficid);
 
 	    
 	}

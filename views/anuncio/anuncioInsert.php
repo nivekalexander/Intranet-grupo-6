@@ -38,10 +38,8 @@
 					<div class="invalid-feedback">Complete el campo.</div><br>
 				</div>
 
-				<div>
-					<label for="ficid">Ficha id</label><br>
-					<input class="form-control rounded" type="text" name="ficid" id="ficid" required>
-					<div class="invalid-feedback">Complete el campo.</div><br>
+				<div>					
+					<input class="form-control rounded" type="text" name="ficid" id="ficid" value="<?php echo $fichapuntero; ?>" hidden>					
 				</div>
 				
 					<div class="modal-footer">
@@ -64,7 +62,7 @@
 								if (form.checkValidity() === true) {
 									var nombreBoton = document.getElementById("btnguardar").innerHTML;
 									if (nombreBoton == "Crear"){
-										InsertAnuncio(<?php echo $fichapuntero?>);
+										InsertAnuncio();
 										$('#modalanuncios').modal('hide');
 									}
 									if (nombreBoton == "Actualizar"){

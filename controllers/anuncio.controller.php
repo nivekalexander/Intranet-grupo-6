@@ -31,6 +31,7 @@
 									$datos->fchfin	= $_REQUEST['fchfin'];
 									$datos->usuid 	= $_REQUEST['usuid'];
 									$datos->ficid 	= $_REQUEST['ficid'];
+									$fichapuntero  	= $_REQUEST['ficid'];
 
 									$this->anuncio->Insert($datos);
 
