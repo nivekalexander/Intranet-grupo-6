@@ -76,7 +76,7 @@ class Anuncio
 		public function Update(Anuncio $data)
 									 {
 									 	try  				 {
-									 							$sql="UPDATE tbl_anuncio SET anu_titulo=?,anu_descrp=?,anu_fecfn=?,anu_ficid=?,anu_usuid=? 
+									 							$sql="UPDATE tbl_anuncio SET anu_titulo=?,anu_descrp=?,anu_fecfn=? 
 
 																 WHERE anu_id=?";
 																 
@@ -87,8 +87,6 @@ class Anuncio
 																							$data->titulo,
 																							$data->descrp,
 																							$data->fchfin,
-																							$data->ficid,
-																							$data->usuid,
 
  																							$data->id
 
