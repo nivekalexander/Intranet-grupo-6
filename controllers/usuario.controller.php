@@ -24,7 +24,8 @@
 									require_once('../views/frames/header.php');
 									require_once('../views/frames/navbar.php');
 									require_once('../views/frames/slidebar.php');
-									require_once('../views/usuario/usuarioView.php');
+									//require_once('../views/usuario/usuarioView.php');
+									require_once('../views/usuario/usuarioConfirm.php');
 									require_once('../views/frames/firtsfooter.php');
 									require_once('../views/frames/footer.php'); 
 								}
@@ -73,6 +74,14 @@
 
  										require_once('../views/usuario/usuarioSelect.php');
 									}
+		public function seleccion()
+								{
+									$datos = $this->usuario;
+
+									$this->usuario->Select($_REQUEST['rol']);
+
+									require_once('../views/usuario/usuarioSelect.php');
+								}
 
 	}
 
