@@ -1,4 +1,4 @@
-<script src="../assets/js/scripts.anuncio.js"></script>
+ <script src="../assets/js/scripts.grupos.js"></script>
 <div class="container">
 	<div id="main">
 			<div class="container espaciado">

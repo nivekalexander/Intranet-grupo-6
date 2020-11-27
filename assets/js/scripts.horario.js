@@ -90,7 +90,7 @@ function InsertHorario() {
             alert('Algo anda mal');
         }
     });
-    
+
 }
 
 var urlEdit;
@@ -152,12 +152,12 @@ function UpdateHorario() {
     document.getElementById("ModalLabelArchivo").innerHTML = "Subir Archivo";
     document.getElementById("subir-hor").innerHTML = "Subir";
 
-    urlEdit = "";  
+    urlEdit = "";
 }
 
 
 
 function CancelarHorario() {
-    document.getElementById("ModalLabelArchivo").innerHTML = "Subir Archivo"; 
-    document.getElementById("subir-hor").innerHTML = "Subir";               
+    document.getElementById("ModalLabelArchivo").innerHTML = "Subir Archivo";
+    document.getElementById("subir-hor").innerHTML = "Subir";
 }
