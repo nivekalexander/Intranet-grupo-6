@@ -2,14 +2,18 @@
 <div class="container">
         <div id="main">
         			<div class="container espaciado">
-            		     <a class="btn-rounded btn float-right" data-toggle="modal" data-target="#modalusuario">Crear Usuario</a>
+            		    <a class="btn-rounded btn float-right" data-toggle="modal" data-target="#modalusuario">Crear Usuario</a>
             		    <h3 class="noti-tittle">Usuario</h3>
             		</div>
         		<div id="forms">
-        				<?php include('usuarioConfirm.php');?>
+        				<?php include('usuarioInsert.php');?>
         		</div>
+				<!-- <div>
+					
+				</div> -->
         		<div id="tview">
-        				<?php //include('usuarioSelect.php');?>
+						
+        				<?php include('usuarioSelect.php');?>
         		</div>
         </div>
 </div>

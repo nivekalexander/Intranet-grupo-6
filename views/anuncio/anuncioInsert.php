@@ -11,7 +11,7 @@
 			</div>
 			<div class="modal-body espaciado">
 
-				<form name="formanuncio" id="formanuncio" class="needs-validation" >
+				<form name="formulario" id="formanuncio" class="needs-validation" novalidate>
 
 					<input type="text" name="id" hidden>
 				<div>
@@ -38,15 +38,13 @@
 					<div class="invalid-feedback">Complete el campo.</div><br>
 				</div>
 
-				<div>
-					<label for="ficid">Ficha id</label><br>
-					<input class="form-control rounded" type="text" name="ficid" id="ficid" required>
-					<div class="invalid-feedback">Complete el campo.</div><br>
+				<div>					
+					<input class="form-control rounded" type="text" name="ficid" id="ficid" value="<?php echo $fichapuntero; ?>" hidden>					
 				</div>
 				
 					<div class="modal-footer">
 					<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarAnuncio();">Cerrar</button>
-					<button type="submit" id="btnguardar" class="btn btn-primary btn-rounded">Crear</button>
+					<button type="button" id="btnguardar" class="btn btn-primary btn-rounded">Crear</button>
 					</div>
 				</form>
 				
@@ -60,7 +58,7 @@
 							var forms = document.getElementsByClassName('needs-validation');
 							// Loop over them and prevent submission
 							var validation = Array.prototype.filter.call(forms, function(form) {
-								form.addEventListener('submit', function(event) {
+								document.getElementById("btnguardar").addEventListener('click', function(event) {
 								if (form.checkValidity() === true) {
 									var nombreBoton = document.getElementById("btnguardar").innerHTML;
 									if (nombreBoton == "Crear"){

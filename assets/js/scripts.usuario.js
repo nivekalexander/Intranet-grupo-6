@@ -155,8 +155,11 @@ function CancelarUsuario() {
     document.getElementById("btnguardar").innerHTML = "Crear";
 }
 
-function ConfirmUsuario(id){
-  document.getElementById('confirm').value = id;
+function ConfirmUsuario(){
+
+var result = document.getElementById('tview');
+
+  var id = document.getElementById('confirm').value;
  
 
   const ajax = new XMLHttpRequest(); 
@@ -174,6 +177,6 @@ function ConfirmUsuario(id){
         }
     };                                                                                                 
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=seleccionar&rol=" + id);
+    ajax.send("ctrl=usuario&acti=seleccionar&rol="+ id);
   
 }

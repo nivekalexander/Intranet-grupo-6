@@ -1,3 +1,4 @@
+
 <div class="table-responsive">
 	<table  class="table table-striped">
 		<!-- Cabecera de la Tabla -->
@@ -15,7 +16,7 @@
                 <th scope="col">Eliminar</th>
 			</tr>
 		</thead>
-   
+	
 		<!-- Cuerpo de la Tabla -->
 		<tbody>
 				<?php foreach ($this->usuario->Select() as $filas): ?>

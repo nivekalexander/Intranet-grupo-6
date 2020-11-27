@@ -1,5 +1,4 @@
-
- <script src="../assets/js/scripts.horario.js"></script>
+<script src="../assets/js/scripts.horario.js"></script>
 <div class="container espaciado" id="main">
       <a id="crearhorario" class="btn-rounded btn float-right" onclick="GestionarHorario();">Crear Horario</a>
     <h3 class="noti-tittle">Horario</h3>

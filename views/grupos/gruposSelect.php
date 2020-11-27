@@ -7,7 +7,7 @@
 
           <div class="card-header font-weight-bold">
             <div class="float-left noti-tittle" style="font-size: 25px;">
-              <?php echo $filas->fic_codigo;?>
+             <?php echo $filas->fic_codigo;?>
             </div>            
             <div class="float-right">
               <a  name="imagenPost"><img src="../assets/img/logosena.svg" width="40" height="40"></a>

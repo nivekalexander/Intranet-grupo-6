@@ -81,11 +81,6 @@
                 }          
                 form.classList.add('was-validated');
 
-                // $("#foroModal").on('hidden.bs.modal', function () {
-                //     document.formforo.classList.remove('was-validated');
-                //     document.formforo.reset();
-                // });
-
             }, false);
                 
         });
