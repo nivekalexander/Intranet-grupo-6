@@ -15,9 +15,9 @@ class Anuncio
 									 {
 									 	try  				 {
 									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_anuncio 
-																 						  INNER JOIN tbl_usuario 
-																						  WHERE tbl_anuncio.anu_usuid=tbl_usuario.usu_id 
-																 						  AND tbl_anuncio.anu_ficid=1 
+																						  INNER JOIN tbl_usuario 
+																						  WHERE tbl_anuncio.anu_usuid = tbl_usuario.usu_id 
+																						  AND tbl_anuncio.anu_ficid = ? 
 																						  ORDER BY tbl_anuncio.anu_id DESC");
 									 							$sql->execute(array($fichapuntero));
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
