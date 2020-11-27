@@ -64,7 +64,7 @@
 								if (form.checkValidity() === true) {
 									var nombreBoton = document.getElementById("btnguardar").innerHTML;
 									if (nombreBoton == "Crear"){
-										InsertAnuncio();
+										InsertAnuncio(<?php echo $fichapuntero?>);
 										$('#modalanuncios').modal('hide');
 									}
 									if (nombreBoton == "Actualizar"){

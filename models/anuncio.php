@@ -11,14 +11,16 @@ class Anuncio
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-		public function Select()
+		public function Select($fichapuntero)
 									 {
 									 	try  				 {
-									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_anuncio  
+									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_anuncio 
 																 						  INNER JOIN tbl_usuario 
-																 						  WHERE  tbl_anuncio.anu_usuid=tbl_usuario.usu_id 
+																 						  INNER JOIN tbl_ficha 
+																 						  WHERE tbl_anuncio.anu_usuid=tbl_usuario.usu_id 
+																 						  AND tbl_anuncio.anu_ficid=? 
 																 						  ORDER BY tbl_anuncio.anu_id DESC");
-									 							$sql->execute();
+									 							$sql->execute(array($fichapuntero));
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
 									 						 }
 									 	catch (Exception $e) {	die($e->getMessage());			 }

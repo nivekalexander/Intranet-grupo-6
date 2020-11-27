@@ -44,7 +44,7 @@
 	}
 
 
-	function InsertAnuncio() {
+	function InsertAnuncio(fichapuntero) {
 	    var result = document.getElementById('tview');
 
 	    var titulo = document.formanuncio.titulo.value;
@@ -68,7 +68,7 @@
 	    };
 
 	    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	    ajax.send("ctrl=anuncio&acti=insertar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&usuid=" + usuid + "&ficid=" + ficid);
+	    ajax.send("ctrl=anuncio&acti=insertar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&usuid=" + usuid + "&ficid=" + ficid + "&fcpt=" + fichapuntero);
 
 	    document.getElementById('formanuncio').reset();
 	}
@@ -122,7 +122,7 @@
 	    ajax.send("ctrl=anuncio&acti=actualizar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&usuid=" + usuid + "&ficid=" + ficid + "&id=" + id);
 
 
-		document.getElementById("btnguardar").innerHTML = "Crear";
+	    document.getElementById("btnguardar").innerHTML = "Crear";
 	    document.getElementById("titlemodalanuncios").innerHTML = "Crear Anuncios";
 
 	    document.getElementById('formanuncio').reset();
