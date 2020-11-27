@@ -29,15 +29,6 @@
 									require_once('../views/frames/footer.php'); 
 								}
 
-		/*public function Seleccionar(){
-								$datos = $this->usuario;
-
-								$datos->rol = $_REQUEST['rol'];
-
-								$this->usuario->Select($datos);}
-								require_once('../views/usuario/usuarioConfirm.php');
-		}*/
-
                                 
 		public function Insertar()
 								{
