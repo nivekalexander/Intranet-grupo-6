@@ -1,6 +1,6 @@
 <!-- Modal -->
 
-<div class="modal fade" style="padding-top: 187px;" id="horarioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
+<div class="modal fade" id="horarioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
@@ -74,7 +74,7 @@
         document.getElementById("btnguardar").addEventListener('click', function(event) {        
           if (form.checkValidity() === true) {            
             var nombreBoton = document.getElementById("btnguardar").innerHTML;
-            var filesize = formhorario.file.files[0].size;            
+            var filesize = formulario.file.files[0].size;            
             if(filesize<2000000){
               if (nombreBoton == "Subir"){                            
                 InsertHorario();

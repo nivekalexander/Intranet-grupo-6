@@ -1,4 +1,4 @@
-<div class="modal fade" style="padding-top: 187px;" id="foroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
+<div class="modal fade" id="foroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
