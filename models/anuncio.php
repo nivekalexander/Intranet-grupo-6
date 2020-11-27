@@ -11,7 +11,7 @@ class Anuncio
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-		public function Select()
+		public function Select($fichapuntero)
 									 {
 									 	try  				 {
 									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_anuncio  
