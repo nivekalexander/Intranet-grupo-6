@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container-fluid">
     <?php foreach ($this->rol->Select() as $filas): ?>
 
         <div id="confirm" value="<?php echo $filas->rol_id;?>" >

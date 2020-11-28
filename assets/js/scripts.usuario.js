@@ -175,15 +175,17 @@ function ConfirmUsuario() {
     var result = document.getElementById('tview');
 
     var id = document.getElementById('confirm').value;
+    
 
+    console.log(id = document.getElementById('confirm').value);
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
     ajax.onreadystatechange = function() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
-                result.innerHTML = ajax.responseText;
                 
+                result.innerHTML = ajax.responseText;
 
 
             } else { console.log("Ups, Me equivoque;"); }

@@ -61,7 +61,7 @@
                       </a>
                       <!-- Dropdown - User logout -->
                       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in navbar-fondo" aria-labelledby="userDropdown">
-                        <a class="dropdown-item navbar-fondo dropdown-text-color" href="./main.php?ctrl=perfil">
+                        <a class="dropdown-item navbar-fondo dropdown-text-color" onclick="menu('perfil');">
                           <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                           Perfil
                         </a>
@@ -92,7 +92,7 @@
         <div class="modal-body">Presiona "Salir" para cerrar tú sesion.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary btn-gris" type="button" data-dismiss="modal">Cancelar</button>
-          <a class="btn btn-rounded btn-primary " href="./main.php?ctrl=login">Salir</a>
+          <a class="btn btn-rounded btn-primary " onclick="menu('login');">Salir</a>
         </div>
       </div>
     </div>
