@@ -21,6 +21,7 @@
 									require_once('../views/anuncio/anuncioView.php');
 									
 								}
+		
 
 		public function Insertar()
 								{

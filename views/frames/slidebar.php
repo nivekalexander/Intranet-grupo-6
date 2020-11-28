@@ -244,7 +244,6 @@
   </ul>
 
 <?php }?>
-
  <!-- End of Sidebar -->
 
  <div class="container espaciado" id="main">
