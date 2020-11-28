@@ -1,6 +1,10 @@
  <!--funcionalidad-->
   <script src="../assets/js/scripts.foro.js"></script>
 
+
+<div class="container" id="contenedorForo">
+  
+
 <div class="container">
     <div class="container espaciado" id="main">
       <a class="btn-rounded btn float-right" data-toggle="modal" data-target="#foroModal">Crear Foro</a>
@@ -14,5 +18,6 @@
     <div id="tview">
       <?php include_once("foroSelect.php");?> 
     </div>
-  
+
 </div>
+  

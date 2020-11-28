@@ -53,6 +53,10 @@
     background-color: #ffffff5b !important;
 }
 
+.selection{
+    cursor: pointer;
+}
+
 .selection:hover {
     background-color: #ffffff5b !important;
 }

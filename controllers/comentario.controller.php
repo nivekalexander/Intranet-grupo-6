@@ -1,31 +1,25 @@
 <?php
 
-	require_once('../models/anuncio.php');
+	require_once('../models/comentario.php');
 
-
-
-	class AnuncioController
+	class ComentarioController
 	{	
-		private $anuncio;
+		private $comentario;
 
 		function __Construct()	{
-							  		$this->anuncio= new Anuncio(); 		// Instancia de la Clase del Modelo Usuario
+							  		$this->comentario = new Comentario(); 		// Instancia de la Clase del Modelo Usuario
 							  	}
 
 		public function Index()
 								{
-									
-									
-									echo $_SESSION['fichapuntero'];
-
-									require_once('../views/anuncio/anuncioView.php');
-									
+                                    $fichapuntero  	= $_REQUEST['ficid'];
+									require_once('../views/comentario/comentarioView.php');
 								}
 
 		public function Insertar()
 								{
 
-									$datos= $this->anuncio;
+									$datos= $this->comentario;
 
 									$datos->titulo 	= $_REQUEST['titulo'];
 									$datos->descrp 	= $_REQUEST['descrp'];
@@ -35,23 +29,23 @@
 									
 									$fichapuntero  	= $_REQUEST['ficid'];
 
-									$this->anuncio->Insert($datos);
+									$this->comentario->Insert($datos);
 
-									require_once('../views/anuncio/anuncioSelect.php');
+									require_once('../views/comentario/comentarioSelect.php');
 								}
 
 		public function Eliminar()
 								{
-									$this->anuncio->Delete($_REQUEST['id']);
+									$this->comentario->Delete($_REQUEST['id']);
 
 									$fichapuntero  	= $_REQUEST['ficid'];
 
-									require_once('../views/anuncio/anuncioSelect.php');
+									require_once('../views/comentario/comentarioSelect.php');
 								}
 
 		public function Actualizar()
 									{
-										$datos = $this->anuncio;
+										$datos = $this->comentario;
 
 										$datos->titulo 	= $_REQUEST['titulo'];
 										$datos->descrp 	= $_REQUEST['descrp'];
@@ -60,11 +54,11 @@
 
 										
 
- 										$this->anuncio->Update($datos);
+ 										$this->comentario->Update($datos);
 
 										 $fichapuntero  	= $_REQUEST['ficid'];
 
-										 require_once('../views/anuncio/anuncioSelect.php');
+										 require_once('../views/comentario/comentarioSelect.php');
 										 
 									}
 

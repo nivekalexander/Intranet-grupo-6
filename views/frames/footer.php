@@ -3,7 +3,8 @@
     <!--Fin Scripts de los modulos -->
     <!-- End of Page Wrapper -->
 
-  
+    <script src="../assets/js/scripts.menu.js"></script>
+
 
 
 

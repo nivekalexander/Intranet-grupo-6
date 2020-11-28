@@ -1,4 +1,4 @@
-<div><a class="btn-rounded btn float-right " data-toggle="modal" data-target="#modalusuario">Crear Usuario</a></div>
+<div><a class="btn-rounded btn float-right " data-toggle="modal" data-target="#modalusuario" onclick="ConfirmUsuario(<?php echo $rolpuntero; ?>);">Crear Usuario</a></div>
 
 <div class="table-responsive">
 	<table id="tableusuario"  class="table table-striped">
@@ -22,11 +22,11 @@
 	
 		<!-- Cuerpo de la Tabla -->
 		<tbody> 
-				<?php echo $rolpuntero ?>
+			
 				<?php foreach ($this->usuario->Select($rolpuntero) as $filas): ?>
 
 					<?php $grupal = "'".$filas->usu_id."','".$filas->usu_nombre."','".$filas->usu_aplldo."','".$filas->usu_passwd."','".$filas->usu_correo."','".$filas->usu_ficid."','".$filas->usu_rolid."','".$filas->usu_estid."','".$filas->usu_tipid."'";?>
-
+					<?php $eliminar = "'".$filas->usu_id."','".$filas->usu_rolid."'"; ?>
 					<tr>
 						<td scope="row"><?php echo $filas->usu_nombre; ?></td>
 						<td scope="row"><?php echo $filas->usu_aplldo; ?> </td>
@@ -39,7 +39,7 @@
 						<td scope="row" hidden><?php echo $filas->usu_rolid;?></td>
                         
 						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalusuario" data-dismiss="modal" onclick="EditarUsuario(<?php echo $grupal;?>)">Editar</button></td>
-						<td scope="row"><button class="btn-rounded btn" onclick="BorrarUsuario(<?php echo $filas->usu_id; ?>);">Eliminar</button></td>
+						<td scope="row"><button class="btn-rounded btn" onclick="BorrarUsuario(<?php echo $eliminar ?>);">Eliminar</button></td>
 					</tr>
 
 				<?php endforeach;?>
