@@ -1,3 +1,4 @@
+
 <!-- Modal -->
 
 <div class="modal fade" id="modalusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
@@ -50,13 +51,14 @@
 								?>
 							</select>
 						<div class="invalid-feedback">Seleccione un Campo</div><br>
-					</div>
+					</div><br>
 
 					<div>
-						<input class="form-control rounded" name="rol" id="rol" value="<?php echo $rolpuntero; ?>">
+						<?php echo $rolpuntero ?>
+						<input class="form-control rounded" name="rol" id="rol" value="<?php echo $rolpuntero ?>" readonly>
 					</div>
 
-					<div>
+					<div><br>
 						<label for="estado">Estado</label><br>
 						<select class="form-control rounded" name="estado" id="estado" >
 								<?php

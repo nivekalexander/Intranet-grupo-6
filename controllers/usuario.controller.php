@@ -81,13 +81,14 @@
  										require_once('../views/usuario/usuarioSelect.php');
 									}
 		public function Seleccion()
-								{
+								{	
 									$datos = $this->usuario;
-
+									
 									$rolpuntero=$_REQUEST['rolid'];
 									$this->usuario->Select($rolpuntero);
 
 									require_once('../views/usuario/usuarioSelect.php');
+									
 								}
 
 	}
