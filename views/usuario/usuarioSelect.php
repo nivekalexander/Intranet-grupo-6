@@ -1,3 +1,4 @@
+<div><a class="btn-rounded btn float-right " data-toggle="modal" data-target="#modalusuario">Crear Usuario</a></div>
 
 <div class="table-responsive">
 	<table id="tableusuario"  class="table table-striped">
@@ -13,13 +14,16 @@
                 <th scope="col">Estado</th>
                 <th scope="col">Tipo Identificaión</th>
                 <th scope="col">Editar</th>
-                <th scope="col">Eliminar</th>
+				<th scope="col">Eliminar</th>
+				<th scope="col" hidden></th>
+				
 			</tr>
 		</thead>
 	
 		<!-- Cuerpo de la Tabla -->
 		<tbody> 
-				<?php foreach ($this->usuario->Select($_SESSION['rolpuntero']) as $filas): ?>
+				<?php echo $rolpuntero ?>
+				<?php foreach ($this->usuario->Select($rolpuntero) as $filas): ?>
 
 					<?php $grupal = "'".$filas->usu_id."','".$filas->usu_nombre."','".$filas->usu_aplldo."','".$filas->usu_passwd."','".$filas->usu_correo."','".$filas->usu_ficid."','".$filas->usu_rolid."','".$filas->usu_estid."','".$filas->usu_tipid."'";?>
 
@@ -31,7 +35,8 @@
                         <td scope="row"><?php echo $filas->fic_codigo;?></td>
                         <td scope="row"><?php echo $filas->rol_nombre;?></td>
                         <td scope="row"><?php echo $filas->est_nombre;?></td>
-                        <td scope="row"><?php echo $filas->tip_idntfc;?></td>
+						<td scope="row"><?php echo $filas->tip_idntfc;?></td>
+						<td scope="row" hidden><?php echo $filas->usu_rolid;?></td>
                         
 						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalusuario" data-dismiss="modal" onclick="EditarUsuario(<?php echo $grupal;?>)">Editar</button></td>
 						<td scope="row"><button class="btn-rounded btn" onclick="BorrarUsuario(<?php echo $filas->usu_id; ?>);">Eliminar</button></td>

@@ -9,6 +9,7 @@
 	class UsuarioController
 	{	
 		private $usuario;
+		public  $rolpuntero;
 
 		function __construct()	{	
 									  $this->usuario= new Usuario();
@@ -19,13 +20,10 @@
 							  	}
 
 		public function Index()
-								{   
-									require_once('../views/frames/header.php');
-									require_once('../views/frames/navbar.php');
-									require_once('../views/frames/slidebar.php');
+								{
+									   
 									require_once('../views/usuario/usuarioView.php');
-									require_once('../views/frames/firtsfooter.php');
-									require_once('../views/frames/footer.php'); 
+									
 								}
 
                                 
@@ -41,7 +39,9 @@
                                     $datos->ficha       = $_REQUEST['ficha'];
                                     $datos->rol         = $_REQUEST['rol'];
                                     $datos->estado      = $_REQUEST['estado'];
-                                    $datos->identi      = $_REQUEST['identi'];
+									$datos->identi      = $_REQUEST['identi'];
+									
+									$rolpuntero         = $_REQUEST['rol'];
 
 									$this->usuario->Insert($datos);
 
@@ -51,6 +51,9 @@
 		public function Eliminar()
 								{
 									$this->usuario->Delete($_REQUEST['id']);
+
+									$rolpuntero         = $_REQUEST['rol'];
+									
 									require_once('../views/usuario/usuarioSelect.php');
 								}
 
@@ -66,21 +69,23 @@
                                         $datos->rol         = $_REQUEST['rol'];
                                         $datos->estado      = $_REQUEST['estado'];
                                         $datos->identi      = $_REQUEST['identi'];
-                                        $datos->id          = $_REQUEST['id'];
+										$datos->id          = $_REQUEST['id'];
+
+										$rolpuntero         = $_REQUEST['rol'];
     
  										$this->usuario->Update($datos);
 
  										require_once('../views/usuario/usuarioSelect.php');
 									}
 		public function Seleccion()
-								{
-									session_start();
+								{	
 									$datos = $this->usuario;
-
-									$_SESSION['rolpuntero']=$_REQUEST['rol'];
-									$this->usuario->Select($_REQUEST['rol']);
+									
+									$rolpuntero=$_REQUEST['rolid'];
+									$this->usuario->Select($rolpuntero);
 
 									require_once('../views/usuario/usuarioSelect.php');
+									
 								}
 
 	}

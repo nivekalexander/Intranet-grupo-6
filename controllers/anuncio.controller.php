@@ -2,6 +2,8 @@
 
 	require_once('../models/anuncio.php');
 
+
+
 	class AnuncioController
 	{	
 		private $anuncio;
@@ -12,13 +14,12 @@
 
 		public function Index()
 								{
-									   
-									require_once('../views/frames/header.php');
-									require_once('../views/frames/navbar.php');
-									require_once('../views/frames/slidebar.php');
+									
+									
+									echo $_SESSION['fichapuntero'];
+
 									require_once('../views/anuncio/anuncioView.php');
-									require_once('../views/frames/firtsfooter.php');
-									require_once('../views/frames/footer.php');
+									
 								}
 
 		public function Insertar()
