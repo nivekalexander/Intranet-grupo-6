@@ -9,7 +9,7 @@
         </button>
       </div>
 
-      <form id="formulario" name="formulario" class="needs-validation" novalidate>   
+      <form id="formulario" name="formulario" class="needs-validation" autocomplete="off" novalidate>   
 
         <div class="modal-body">
 
@@ -39,7 +39,7 @@
             <div class="invalid-feedback">Complete el campo.</div><br>
           </div> 
 
-          <input type="text" id="idficha" name="idficha" hidden>  
+          <input type="text" id="idficha" name="idficha" value="<?php echo $fichapuntero ?>" hidden>  
                               
         </div>
 

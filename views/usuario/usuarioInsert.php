@@ -15,6 +15,7 @@
 				<form name="formulario" id="formulario" class="needs-validation" >
 
 					<input type="text" name="id" hidden>
+
 					<div>
 						<label for="nombre">Nombre</label><br>
 						<input class="form-control rounded" type="text" name="nombre" id="nombre" required>
@@ -52,15 +53,7 @@
 					</div>
 
 					<div>
-						<label for="rol">Rol</label><br>
-						<select class="form-control rounded" name="rol" id="rol" >
-								<?php
-									foreach ($this->rol->Select() as $datos): 
-										echo '<option value="'.$datos->rol_id.'">'.$datos->rol_nombre.'</option>';
-									endforeach;
-								?>
-							</select>
-						<div class="invalid-feedback">Seleccione un Campo</div><br>
+						<input class="form-control rounded" name="rol" id="rol" value="<?php echo $rolpuntero; ?>">
 					</div>
 
 					<div>

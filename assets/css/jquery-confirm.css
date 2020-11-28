@@ -515,8 +515,10 @@ body[class*=jconfirm-no-scroll-] {
 }
 
 .jconfirm .jconfirm-box .jconfirm-buttons button.btn-default {
-    background-color: #ecf0f1;
-    color: #000;
+    background-color: #F2994B;
+    border-radius: 50rem !important;
+    color: #ffffff !important;
+    overflow: hidden;    
     text-shadow: none;
     -webkit-transition: background .2s;
     transition: background .2s;

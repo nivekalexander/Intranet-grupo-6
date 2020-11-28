@@ -18,6 +18,10 @@ function BorrarUsuario(id) {
 
                 var result = document.getElementById('tview');
 
+                var rol = document.getElementById('rol').value;
+
+
+
                 const ajax = new XMLHttpRequest();
                 ajax.open("POST", "main.php", true);
                 ajax.onreadystatechange = function() {
@@ -42,7 +46,7 @@ function BorrarUsuario(id) {
                 };
 
                 ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                ajax.send("ctrl=usuario&acti=eliminar&id=" + id);
+                ajax.send("ctrl=usuario&acti=eliminar&id=" + id + "&rol=" + rol);
             },
             cancel: function() {
                 $.alert('Has cancelado la eliminación');
@@ -170,28 +174,32 @@ function CancelarUsuario() {
     document.getElementById("titleusuario").innerHTML = "Crear usuario";
 }
 
-function ConfirmUsuario() {
+function ConfirmUsuario(id) {
 
     var result = document.getElementById('tview');
-
-    var id = document.getElementById('confirm').value;
-    
-
-    console.log(id = document.getElementById('confirm').value);
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
     ajax.onreadystatechange = function() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
-                
                 result.innerHTML = ajax.responseText;
+
+                $(document).ready(function() {
+                    $('#tableusuario').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: ['copy', 'excel', 'pdf', 'csv'],
+                        "language": {
+                            "url": "../assets/datatables/Spanish.json"
+                        }
+                    });
+                });
 
 
             } else { console.log("Ups, Me equivoque;"); }
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=seleccion&rol="+id);
+    ajax.send("ctrl=usuario&acti=seleccion&rolid=" + id);
 
 }
