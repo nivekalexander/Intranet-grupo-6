@@ -22,7 +22,8 @@
           </div>
 
           <div class="card-footer">
-            <a class="float-right btn-rounded btn" href="main.php?ctrl=noticia&fcpt=<?php echo($filas->fic_id);?>">Entrar</a>
+            <a class="nav-link  float-right btn-rounded btn" onclick="menuGruposeleccion('anuncio',<?php echo $filas->fic_id;?>);">Entrar</a>
+            <?php $_SESSION['fichapuntero']=$filas->fic_id; ?>
           </div>
 
         </div>

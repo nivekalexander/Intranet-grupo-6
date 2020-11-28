@@ -2,6 +2,8 @@
 
 	require_once('../models/anuncio.php');
 
+
+
 	class AnuncioController
 	{	
 		private $anuncio;
@@ -12,6 +14,9 @@
 
 		public function Index()
 								{
+									
+									
+									echo $_SESSION['fichapuntero'];
 
 									require_once('../views/anuncio/anuncioView.php');
 									

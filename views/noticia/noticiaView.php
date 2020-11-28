@@ -3,7 +3,7 @@
 
   <div class="container espaciado">
   <a class="btn-rounded btn float-right" data-toggle="modal" data-target="#noticiaModal">Crear noticia</a>
-  <h3 class="noti-tittle">Noticias <?php echo($fichapuntero);?></h3>
+  <h3 class="noti-tittle">Noticias <?php echo($_SESSION['fichapuntero']);?></h3>
   </div>
   <div class="formsNoti">
     <?php include_once("noticiaInsert.php");?> 

@@ -1,9 +1,19 @@
 <?php
 		require_once('../models/database.php');
 		//$controller = 'noticia';
+	if(!ISSET($_SESSION['fichapuntero']) and ISSET($_REQUEST['fcpt'] ) ){
+
+		$_SESSION['fichapuntero'] = $_REQUEST['fcpt'];
+
+	}else{
 		
+	}
+		
+
 	try{
-		if ( !ISSET($_REQUEST['ctrl']) )
+
+		
+		if (!ISSET($_REQUEST['ctrl']) )
 		{
 			require_once("error404.php");
 
@@ -23,6 +33,8 @@
 					require_once("../controllers/$controller.controller.php");
 					$controller = ucwords($controller).'Controller';
 					$controller = new $controller;
+
+					
 
 					if(method_exists($controller,$accion)){
 						

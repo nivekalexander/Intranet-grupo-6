@@ -1,16 +1,19 @@
-<?php
 
-//error_reporting(E_ALL ^ E_NOTICE);
-$fichapuntero=$_REQUEST['fcpt'];
-
-if( null !==$fichapuntero){ ?>
 <!-- Page Wrapper -->
 <div id="wrapper">
-<?php $fichapuntero=$_REQUEST['fcpt'];?>
 
+  <input id="fichapuntero" type="text" hidden>
 
   <!-- Sidebar -->
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+  <?php
+
+    error_reporting(E_ALL ^ E_NOTICE);
+
+
+    if(isset($_SESSION['fichapuntero'])){ ?>
+    
 
     <!-- Nav Item - Grupos -->
     <li class="nav-item active" >
@@ -144,17 +147,10 @@ if( null !==$fichapuntero){ ?>
 
   </ul>
 
-  <!-- End of Sidebar -->
-
-  <div class="container espaciado" id="main">
+ 
 
 <?php }else{?>
 
-<!-- Page Wrapper -->
-<div id="wrapper">
-
-  <!-- Sidebar -->
-  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Nav Item - Grupos -->
     <li class="nav-item active">
@@ -248,8 +244,9 @@ if( null !==$fichapuntero){ ?>
     </li>
 
   </ul>
-  <!-- End of Sidebar -->
-  <div class="container espaciado" id="main">
-
 
 <?php }?>
+
+ <!-- End of Sidebar -->
+
+ <div class="container espaciado" id="main">

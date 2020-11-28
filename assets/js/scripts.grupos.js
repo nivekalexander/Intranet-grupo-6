@@ -1,4 +1,4 @@
-function Ficha(id) {
+/*function Ficha(id) {
 
     var result = document.getElementById('');
     const ajax = new XMLHttpRequest();
@@ -15,4 +15,4 @@ function Ficha(id) {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=x&acti=x&id=" + id);
 
-}
+}*/

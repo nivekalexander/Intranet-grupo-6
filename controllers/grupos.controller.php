@@ -12,7 +12,7 @@
 
 		public function Index()
 								{
-								session_start();
+								
                                
                                 require_once('../views/grupos/gruposView.php');
 							
