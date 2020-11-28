@@ -104,7 +104,7 @@ function InsertUsuario() {
 
 
 
-function EditarUsuario(id, nombre, apellido, contraseña, correo, ficha, rol, estado, identi) {
+function EditarUsuario(id, nombre, apellido, contraseña, correo, ficha, estado, identi) {
 
     document.formulario.id.value = id;
 
@@ -113,7 +113,6 @@ function EditarUsuario(id, nombre, apellido, contraseña, correo, ficha, rol, es
     document.formulario.contraseña.value = contraseña;
     document.formulario.correo.value = correo;
     document.getElementById('fich').value = ficha;
-    document.getElementById('rol').value = rol;
     document.getElementById('estado').value = estado;
     document.getElementById('identi').value = identi;
 
