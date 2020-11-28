@@ -18,6 +18,10 @@ function BorrarUsuario(id) {
 
                 var result = document.getElementById('tview');
 
+                var rol = document.getElementById('rol').value;
+
+
+
                 const ajax = new XMLHttpRequest();
                 ajax.open("POST", "main.php", true);
                 ajax.onreadystatechange = function() {
@@ -42,7 +46,7 @@ function BorrarUsuario(id) {
                 };
 
                 ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                ajax.send("ctrl=usuario&acti=eliminar&id=" + id);
+                ajax.send("ctrl=usuario&acti=eliminar&id=" + id + "&rol=" + rol);
             },
             cancel: function() {
                 $.alert('Has cancelado la eliminación');
@@ -196,6 +200,6 @@ function ConfirmUsuario(id) {
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=seleccion&rol=" + id);
+    ajax.send("ctrl=usuario&acti=seleccion&rolid=" + id);
 
 }

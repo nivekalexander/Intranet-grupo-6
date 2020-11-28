@@ -190,15 +190,10 @@ textarea {
 /* Iconos para confirmar el tipo de usuario*/
 
 .border-warning {
-   
-    
-  
     width: 15rem;
     height: 15rem;
     margin: .25rem;
-   
     left: 150px;
-  
 }
 
 .usuConfirm-text {
@@ -207,4 +202,10 @@ textarea {
     position: relative;
     left: -15px;
     top: 12px;
+}
+
+.centrar-usu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

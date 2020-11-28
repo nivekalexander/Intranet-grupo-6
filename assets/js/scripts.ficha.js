@@ -91,7 +91,7 @@ function InsertarFicha() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=ficha&acti=insertar&fic_codigo=" + fic_codigo + "&fic_feccrn=" + fic_feccrn + "&fic_fecfn=" + fic_fecfn + "&fic_tijid=" + fic_tijid + "&fic_modid=" + fic_modid + "&fic_tofid=" + fic_tofid + "&fic_pfoid=" + fic_pfoid);
 
-     
+
 }
 
 
@@ -124,7 +124,7 @@ function UpdateFicha() {
     var fic_tofid = document.formulario.fic_tofid.value;
     var fic_pfoid = document.formulario.fic_pfoid.value;
 
-    
+
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -158,7 +158,7 @@ function UpdateFicha() {
 
 function CancelarFicha() {
 
-    
+
 
     document.getElementById("titleficha").innerHTML = "Crear Ficha";
     document.getElementById("btnguardar").innerHTML = "Crear";
