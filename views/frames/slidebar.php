@@ -18,10 +18,8 @@ if( null !==$fichapuntero){ ?>
         <img src="../assets/img/img-slidebar/grupos.svg" class="slidebar-img" alt="new">
         <span>Grupos</span></a>
     </li>
-
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
-
     <!-- Nav Item - Noticias -->
     <li class="nav-item active">
       <a class="nav-link selection" href="main.php?ctrl=noticia&fcpt=<?php echo($fichapuntero);?>">
