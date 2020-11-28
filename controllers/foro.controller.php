@@ -58,6 +58,8 @@
 								$datos->for_fchini = $_REQUEST['fhcini'];
 								$datos->for_descrp = $_REQUEST['descrp'];
 								$datos->for_ficid = $_REQUEST['ficid'];
+
+								$fichapuntero = $_REQUEST['ficid'];
 								
 								$this->foro->Insert($datos);
 								require_once('../views/foro/foroSelect.php');
@@ -66,6 +68,8 @@
 		public function Eliminar(){
 
 								$this->foro->Delete($_REQUEST['id']);
+								$fichapuntero = $_REQUEST['ficid'];
+
 								require_once('../views/foro/foroSelect.php');
 
 								}
@@ -74,13 +78,13 @@
 
 								$datos=$this->foro;
 	
-								$datos->foro_id=$_REQUEST['foro_id'];
-								$datos->foro_titulo=$_REQUEST['foro_titulo'];
-								$datos->foro_mensaje=$_REQUEST['foro_mensaje'];
-								$datos->foro_fecha_inicio=$_REQUEST['foro_fecha_inicio'];
-								$datos->foro_fecha_fin=$_REQUEST['foro_fecha_fin'];
-																	
-								//,nombres,area,clave, estado
+								$datos->for_id = $_REQUEST['id'];
+								$datos->for_titulo = $_REQUEST['titulo'];
+								$datos->for_fchfin = $_REQUEST['fchfin'];
+								$datos->for_fchini = $_REQUEST['fchini'];
+								$datos->for_descrp = $_REQUEST['descrp'];
+
+								$fichapuntero = $_REQUEST['ficid'];																	
 	
 								$this->foro->Update($datos);
 								require_once('../views/foro/foroSelect.php');
