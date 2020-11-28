@@ -170,12 +170,9 @@ function CancelarUsuario() {
     document.getElementById("titleusuario").innerHTML = "Crear usuario";
 }
 
-function ConfirmUsuario() {
+function ConfirmUsuario(id) {
 
     var result = document.getElementById('tview');
-
-    var id = document.getElementById('confirm').value;
-
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -183,13 +180,22 @@ function ConfirmUsuario() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
-                
+
+                $(document).ready(function() {
+                    $('#tableusuario').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: ['copy', 'excel', 'pdf', 'csv'],
+                        "language": {
+                            "url": "../assets/datatables/Spanish.json"
+                        }
+                    });
+                });
 
 
             } else { console.log("Ups, Me equivoque;"); }
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=seleccion&rol="+id);
+    ajax.send("ctrl=usuario&acti=seleccion&rol=" + id);
 
 }
