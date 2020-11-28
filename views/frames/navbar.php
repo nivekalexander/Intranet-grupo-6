@@ -75,8 +75,7 @@
               
                     </li>
               
-                  </ul>
-              
+                  </ul>     
     </nav>
                 <!-- End of Topbar -->
  <!-- Logout Modal-->
