@@ -4,7 +4,7 @@
 <div class="container">
     <div class="container espaciado" id="main">
       <a class="btn-rounded btn float-right" data-toggle="modal" data-target="#foroModal">Crear Foro</a>
-      <h3 class="noti-tittle">Foros</h3>
+      <h3 class="noti-tittle">Foros <?php echo $fichapuntero ?></h3>
     </div>
 
     <div class="formsForo">
