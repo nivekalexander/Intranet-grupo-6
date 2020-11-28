@@ -12,9 +12,6 @@
 				<div id="tview">
         				<?php include('usuarioConfirm.php');?>
 				</div>
-				<!-- <div>
-					
-				</div> -->
-        		
+				
         </div>
 </div>

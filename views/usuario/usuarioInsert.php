@@ -54,7 +54,7 @@
 					</div>
 
 					<div>
-						<input class="form-control rounded" name="rol" id="rol" >
+						<input class="form-control rounded" name="rol" id="rol" hidden>
 					</div>
 
 					<div>
