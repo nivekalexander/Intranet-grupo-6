@@ -1,47 +1,47 @@
 <?php
 		require_once('../models/database.php');
 		//$controller = 'noticia';
+	if(!ISSET($_SESSION['fichapuntero']) and ISSET($_REQUEST['fcpt'] ) ){
+
+		$_SESSION['fichapuntero'] = $_REQUEST['fcpt'];
+
+	}else{
 		
+	}
+		
+
 	try{
-		if ( !ISSET($_REQUEST['ctrl']) )
-		{
+
+		
+		if (!ISSET($_REQUEST['ctrl']) ){
 			require_once("error404.php");
 
-		}
-		else
-		{
+			require_once("error404.php");
 			
+		}else{
+
+			$controller = strtolower($_REQUEST['ctrl']);
+			$accion = ucwords(strtolower(ISSET($_REQUEST['acti']) ? $_REQUEST['acti'] : 'Index'));
 			
-				$controller = strtolower($_REQUEST['ctrl']);
-				$accion = ucwords(strtolower(ISSET($_REQUEST['acti']) ? $_REQUEST['acti'] : 'Index'));
-				if(! file_exists("../controllers/$controller.controller.php"))
-				{
-					$error="No Existe El Controlador";
-					require_once("error404.php");
-					
+			if(!file_exists("../controllers/$controller.controller.php")){
+
+				$error="No Existe El Controlador";
+				require_once("error404.php");
+				
+			}else{
+				require_once("../controllers/$controller.controller.php");
+				$controller = ucwords($controller).'Controller';
+				$controller = new $controller;
+
+				if(method_exists($controller,$accion)){					
+					call_user_func(array($controller,$accion));
 				}else{
-					require_once("../controllers/$controller.controller.php");
-					$controller = ucwords($controller).'Controller';
-					$controller = new $controller;
-
-					if(method_exists($controller,$accion)){
-						
-						call_user_func(array($controller,$accion));
-						
-					}else{
-						$error="No Existe El Metodo";
-						require_once("error404.php");
-
-					}
-					
-				}
-
-			
-
-		}
+					$error = "No Existe El Metodo";
+					require_once("error404.php");			
+				}				
+			}				
+		}		
 	}catch(Exception $e){
-
 		require_once("error404.php");
-		
 	}
 ?>

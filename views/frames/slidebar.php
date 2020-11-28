@@ -1,20 +1,23 @@
-<?php
 
-//error_reporting(E_ALL ^ E_NOTICE);
-$fichapuntero=$_REQUEST['fcpt'];
-
-if( null !==$fichapuntero){ ?>
 <!-- Page Wrapper -->
 <div id="wrapper">
-<?php $fichapuntero=$_REQUEST['fcpt'];?>
 
+  <input id="fichapuntero" type="text" hidden>
 
   <!-- Sidebar -->
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
+  <?php
+
+    error_reporting(E_ALL ^ E_NOTICE);
+
+
+    if(isset($_SESSION['fichapuntero'])){ ?>
+    
+
     <!-- Nav Item - Grupos -->
-    <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=grupos">
+    <li class="nav-item active" >
+      <a class="nav-link selection"  onclick="menu('grupos');" >
         <img src="../assets/img/img-slidebar/grupos.svg" class="slidebar-img" alt="new">
         <span>Grupos</span></a>
     </li>
@@ -24,7 +27,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Noticias -->
     <li class="nav-item active">
-      <a class="nav-link selection" href="main.php?ctrl=noticia&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection"  onclick="menu('noticia');">
         <img src="../assets/img/img-slidebar/periodico.svg" class="slidebar-img" alt="new">
         <span>Noticias</span></a>
     </li>
@@ -34,7 +37,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Anuncios -->
     <li class="nav-item active">
-      <a class="nav-link selection" href="./main.php?ctrl=anuncio&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection" onclick="menu('anuncio');">
 
         <img src="../assets/img/img-slidebar/anuncios.svg" class="slidebar-img" alt="new">
         <span>Anuncios</span></a>
@@ -46,7 +49,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Material de Apoyo -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=materialApollo&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection"  onclick="menu('materialapoyo');">
         <img src="../assets/img/img-slidebar/materialapoyo.svg" class="slidebar-img" alt="new">
         <span>Material de apoyo</span></a>
     </li>
@@ -56,7 +59,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Foro -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=foro&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection" onclick="menu('foro');">
         <img src="../assets/img/img-slidebar/foro.svg" class="slidebar-img" alt="new">
         <span>Foro</span></a>
     </li>
@@ -66,7 +69,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Horario -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=horario&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection"  onclick="menu('horario');">
         <img src="../assets/img/img-slidebar/horario.svg" class="slidebar-img" alt="new">
         <span>Horario</span></a>
     </li>
@@ -76,7 +79,7 @@ if( null !==$fichapuntero){ ?>
     </div>
     <!-- Nav Item - Usuarios -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=usuario&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection"  onclick="menu('usuario');">
         <img src="../assets/img/img-slidebar/usuarios.svg" class="slidebar-img" alt="new">
         <span>Usuarios</span></a>
     </li>
@@ -86,7 +89,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Ficha -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=ficha&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection"  onclick="menu('ficha');">
         <img src="../assets/img/img-slidebar/ficha.svg" class="slidebar-img" alt="new">
         <span>Ficha</span></a>
     </li>
@@ -97,7 +100,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Programa de formación -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=programaformacion&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection"  onclick="menu('programaformacion');">
         <img src="../assets/img/img-slidebar/programaformacion.svg" class="slidebar-img" alt="new">
         <span id="programa" class="programa2">Programa de formación</span></a>
     </li>
@@ -121,16 +124,16 @@ if( null !==$fichapuntero){ ?>
       <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Usuarios:</h6>
-          <a class="collapse-item"  href="./main.php?ctrl=tipoidentificacion&fcpt=<?php echo($fichapuntero);?>">Tipo identificación</a>
-          <a class="collapse-item"  href="./main.php?ctrl=rol&fcpt=<?php echo($fichapuntero);?>">Rol</a>
+          <a class="collapse-item"  onclick="menu('tipoidentificacion');">Tipo identificación</a>
+          <a class="collapse-item" onclick="menu('rol');">Rol</a>
           <div class="collapse-divider"></div>
           <h6 class="collapse-header">General:</h6>
-          <a class="collapse-item" href="./main.php?ctrl=tipoprograma&fcpt=<?php echo($fichapuntero);?>">Tipo de Programa</a>
-          <a class="collapse-item" href="./main.php?ctrl=tipooferta&fcpt=<?php echo($fichapuntero);?>">Tipo Oferta</a>
-          <a class="collapse-item" href="./main.php?ctrl=tipojornada&fcpt=<?php echo($fichapuntero);?>">Tipo Jornada</a>
-          <a class="collapse-item" href="./main.php?ctrl=fases&fcpt=<?php echo($fichapuntero);?>">Fases</a>
-          <a class="collapse-item" href="./main.php?ctrl=modalidad&fcpt=<?php echo($fichapuntero);?>">Modalidad</a>
-          <a class="collapse-item" href="./main.php?ctrl=estado&fcpt=<?php echo($fichapuntero);?>">Estado</a>
+          <a class="collapse-item" onclick="menu('tipoidentificacion');">Tipo de Programa</a>
+          <a class="collapse-item" onclick="menu('tipooferta');">Tipo Oferta</a>
+          <a class="collapse-item" onclick="menu('tipojornada');">Tipo Jornada</a>
+          <a class="collapse-item" onclick="menu('fases');">Fases</a>
+          <a class="collapse-item" onclick="menu('modalidad');">Modalidad</a>
+          <a class="collapse-item" onclick="menu('estado');">Estado</a>
         </div>
       </div>
     </li>
@@ -144,18 +147,14 @@ if( null !==$fichapuntero){ ?>
 
   </ul>
 
-  <!-- End of Sidebar -->
+ 
+
 <?php }else{?>
 
-<!-- Page Wrapper -->
-<div id="wrapper">
-
-  <!-- Sidebar -->
-  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Nav Item - Grupos -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=grupos">
+      <a class="nav-link selection"  onclick="menu('grupos');">
         <img src="../assets/img/img-slidebar/grupos.svg" class="slidebar-img" alt="new">
         <span>Grupos</span></a>
     </li>
@@ -166,7 +165,7 @@ if( null !==$fichapuntero){ ?>
       <!-- Sidebar Toggler (Sidebar) -->
        <!-- Nav Item - Noticias -->
     <li class="nav-item active">
-      <a class="nav-link selection" href="main.php?ctrl=noticia">
+      <a class="nav-link selection" onclick="menu('noticia');">
         <img src="../assets/img/img-slidebar/periodico.svg" class="slidebar-img" alt="new">
         <span>Noticias</span></a>
     </li>
@@ -181,7 +180,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Usuarios -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=usuario">
+      <a class="nav-link selection"  onclick="menu('usuario');">
         <img src="../assets/img/img-slidebar/usuarios.svg" class="slidebar-img" alt="new">
         <span>Usuarios</span></a>
     </li>
@@ -191,7 +190,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Ficha -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=ficha">
+      <a class="nav-link selection"  onclick="menu('ficha');">
         <img src="../assets/img/img-slidebar/ficha.svg" class="slidebar-img" alt="new">
         <span>Ficha</span></a>
     </li>
@@ -202,7 +201,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Programa de formación -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=programaformacion">
+      <a class="nav-link selection"  onclick="menu('programaformacion');">
         <img src="../assets/img/img-slidebar/programaformacion.svg" class="slidebar-img" alt="new">
         <span id="programa" class="programa2">Programa de formación</span></a>
     </li>
@@ -230,23 +229,24 @@ if( null !==$fichapuntero){ ?>
       <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Usuarios:</h6>
-          <a class="collapse-item"  href="./main.php?ctrl=tipoidentificacion">Tipo identificación</a>
-          <a class="collapse-item"  href="./main.php?ctrl=rol">Rol</a>
+          <a class="collapse-item"  onclick="menu('tipoidentificacion');">Tipo identificación</a>
+          <a class="collapse-item"  onclick="menu('rol');">Rol</a>
           <div class="collapse-divider"></div>
           <h6 class="collapse-header">General:</h6>
-          <a class="collapse-item" href="./main.php?ctrl=tipoprograma">Tipo de Programa</a>
-          <a class="collapse-item" href="./main.php?ctrl=tipooferta">Tipo Oferta</a>
-          <a class="collapse-item" href="./main.php?ctrl=tipojornada">Tipo Jornada</a>
-          <a class="collapse-item" href="./main.php?ctrl=fases">Fases</a>
-          <a class="collapse-item" href="./main.php?ctrl=modalidad">Modalidad</a>
-          <a class="collapse-item" href="./main.php?ctrl=estado">Estado</a>
+          <a class="collapse-item" onclick="menu('tipoprograma');">Tipo de Programa</a>
+          <a class="collapse-item" onclick="menu('tipooferta');">Tipo Oferta</a>
+          <a class="collapse-item" onclick="menu('tipoprograma');">Tipo Jornada</a>
+          <a class="collapse-item" onclick="menu('fases');">Fases</a>
+          <a class="collapse-item" onclick="menu('modalidad');">Modalidad</a>
+          <a class="collapse-item" onclick="menu('estado');">Estado</a>
         </div>
       </div>
     </li>
 
   </ul>
 
- 
-
-
 <?php }?>
+
+ <!-- End of Sidebar -->
+
+ <div class="container espaciado" id="main">
