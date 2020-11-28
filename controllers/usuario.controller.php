@@ -53,9 +53,10 @@
 
 		public function Eliminar()
 								{
-									$this->usuario->Delete($_REQUEST['id']);
 
 									$rolpuntero         = $_REQUEST['rol'];
+
+									$this->usuario->Delete($_REQUEST['id']);
 									
 									require_once('../views/usuario/usuarioSelect.php');
 								}

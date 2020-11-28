@@ -51,14 +51,13 @@
 								?>
 							</select>
 						<div class="invalid-feedback">Seleccione un Campo</div><br>
-					</div><br>
-
-					<div>
-						<?php echo $rolpuntero ?>
-						<input class="form-control rounded" name="rol" id="rol" value="<?php echo $rolpuntero ?>" readonly>
 					</div>
 
-					<div><br>
+					<div>
+						<input class="form-control rounded" name="rol" id="rol" >
+					</div>
+
+					<div>
 						<label for="estado">Estado</label><br>
 						<select class="form-control rounded" name="estado" id="estado" >
 								<?php
