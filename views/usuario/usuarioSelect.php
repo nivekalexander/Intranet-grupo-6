@@ -19,7 +19,7 @@
 	
 		<!-- Cuerpo de la Tabla -->
 		<tbody>
-				<?php foreach ($this->usuario->Select() as $filas): ?>
+				<?php foreach ($this->usuario->Select($rolpuntero) as $filas): ?>
 
 					<?php $grupal = "'".$filas->usu_id."','".$filas->usu_nombre."','".$filas->usu_aplldo."','".$filas->usu_passwd."','".$filas->usu_correo."','".$filas->usu_ficid."','".$filas->usu_rolid."','".$filas->usu_estid."','".$filas->usu_tipid."'";?>
 

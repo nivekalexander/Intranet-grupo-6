@@ -12,7 +12,7 @@ class Usuario
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-	public function Select()//Select($rol)
+	public function Select($rol)
 									 {
 									 	try  				 {
 									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_usuario 
@@ -24,10 +24,9 @@ class Usuario
 																 AND tbl_usuario.usu_rolid = tbl_rol.rol_id 
 																 AND tbl_usuario.usu_estid = tbl_estado.est_id 
 																 AND tbl_usuario.usu_tipid = tbl_tipoid.tip_id
-																 /*AND usu_rolid = ?*/
+																 AND tbl_usuario.usu_rolid = ?
 																 ORDER BY tbl_usuario.usu_id DESC");
-																 $sql->execute();
-																 //$sql->execute(array($rol));
+																 $sql->execute(array($rol));
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
 									 						 }
 									 	catch (Exception $e) {	die($e->getMessage());			 }
