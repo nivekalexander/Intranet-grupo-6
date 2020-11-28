@@ -190,16 +190,15 @@ textarea {
 /* Iconos para confirmar el tipo de usuario*/
 
 .border-warning {
-    background: url("../img/img-confirmUsu/imagen_usuarios_confirm.svg");
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: cover;
+   
+    
+  
     width: 15rem;
     height: 15rem;
     margin: .25rem;
-    position: relative;
+   
     left: 150px;
-    border-color: #01142D !important;
+  
 }
 
 .usuConfirm-text {

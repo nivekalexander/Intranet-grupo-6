@@ -13,7 +13,8 @@
 				</div> -->
         		<div id="tview">
 						
-        				<?php include('usuarioSelect.php');?>
-        		</div>
+        				<?php include('usuarioConfirm.php');?>
+						
+				</div>
         </div>
 </div>

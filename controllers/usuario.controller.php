@@ -10,7 +10,7 @@
 	{	
 		private $usuario;
 
-		function __construct()	{
+		function __construct()	{	
 									  $this->usuario= new Usuario();
 									  $this->ficha = new Ficha();
 									  $this->rol = new Rol();
@@ -19,8 +19,7 @@
 							  	}
 
 		public function Index()
-								{
-									   
+								{   
 									require_once('../views/frames/header.php');
 									require_once('../views/frames/navbar.php');
 									require_once('../views/frames/slidebar.php');
@@ -73,6 +72,16 @@
 
  										require_once('../views/usuario/usuarioSelect.php');
 									}
+		public function Seleccion()
+								{
+									session_start();
+									$datos = $this->usuario;
+
+									$_SESSION['rolpuntero']=$_REQUEST['rol'];
+									$this->usuario->Select($_REQUEST['rol']);
+
+									require_once('../views/usuario/usuarioSelect.php');
+								}
 
 	}
 
