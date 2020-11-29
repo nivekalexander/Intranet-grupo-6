@@ -1,7 +1,7 @@
 <div class="card container border rounded">
     <div class="card-header bg-white" >                                   
         <div class="card-tittle">
-            <h3>Comentarios: <?php $num = $this->comentario->GetCount($_REQUEST['id']); echo $num->count;?> </h3><br>
+            <h5>Comentarios: <?php $num = $this->comentario->GetCount($_REQUEST['id']); echo $num->count;?> </h5><br>
         </div>
     </div>
     
