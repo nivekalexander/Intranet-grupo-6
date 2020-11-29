@@ -36,16 +36,14 @@
 
 		public function Insert(Comentario $data){
 								
-										try 					{	$sql = "INSERT INTO tbl_comentario (for_titulo, for_fchfin, for_fchini, for_descrp, for_ficid) 
-																						  VALUES (?, ?, ?, ?, ?)";
+										try 					{	$sql = "INSERT INTO tbl_comentario (com_respst, com_perprt, com_forid) 
+																						  VALUES (?, ?, ?)";
 																	   $this->pdo->prepare($sql) 
 																				 ->execute(
 																							array(
-																								$data->for_titulo,
-																								$data->for_fchfin,
-																								$data->for_fchini,
-																								$data->for_descrp,
-																								$data->for_ficid
+																								$data->respst,
+																								$data->perprt,
+																								$data->forid
 																							)
 																						);
 																		

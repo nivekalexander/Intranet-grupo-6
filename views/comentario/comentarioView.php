@@ -1,7 +1,4 @@
- <!--funcionalidad-->
- <script src="../assets/js/scripts.comentario.js"></script>
-
-<div class="container">
+ <!--funcionalidad-->  
 
     <div class="container espaciado" id="main">
       <a class="btn-rounded btn float-right" href="./main.php?ctrl=foro&fcpt=<?php echo($fichapuntero);?>">Volver</a>
@@ -23,18 +20,20 @@
             <div class="card-body">            
             <p class="card-text"><?php echo $_REQUEST['descrp'];?></p>
             <div class="float-right">                
-                <button type="button" class="btn-rounded btn" > Comentar </button>
+                <button type="button" id="collapseCom" class="btn-rounded btn" onclick="CleanCom();" data-toggle="collapse" data-target="#comentarioInsert" aria-expanded="false" aria-controls="collapseExample"> Comentar </button>
             </div>
             </div>
+            <div class="collapse" id="comentarioInsert">
+              <div class="card card-body bg-light border border-secondary">
+                <div class="formsComentario">
+                  <?php include_once("comentarioInsert.php");?> 
+                </div>
+              </div>
+            </div>            
         </div>
-    </div>
-
-    <div class="formsComentario">
-      <?php include_once("comentarioInsert.php");?> 
     </div>
 
     <div id="tview">
       <?php include_once("comentarioSelect.php");?> 
     </div>
   
-</div>

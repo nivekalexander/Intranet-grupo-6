@@ -23,10 +23,17 @@
                 <div class="card-body">                    
                     <p class="card-text"><?php echo $filas->com_respst;?></p>
                     <div class="float-right">
-                        <button type="button" class="btn-rounded btn"> Responder </button>
+                        <button type="button" class="btn-rounded btn"> Editar </button>                        
+                        <button type="button" class="btn-rounded btn" data-toggle="collapse" data-target="#respuestaInsert<?php echo $filas->com_id;?>" aria-expanded="false" aria-controls="collapseExample"> Responder </button>
+                    </div>
+                </div>
+                <div class="collapse" id="respuestaInsert<?php echo $filas->com_id;?>">
+                    <div class="card card-body">
+                        Panel respuestas
                     </div>
                 </div>
             </div>
+            
 
         <?php endforeach; ?>
     </tbody>

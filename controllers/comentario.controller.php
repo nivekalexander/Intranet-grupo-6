@@ -11,7 +11,7 @@
 							  	}
 
 		public function Index()
-								{
+								{	
                                     $fichapuntero  	= $_REQUEST['ficid'];
 									require_once('../views/comentario/comentarioView.php');
 								}
@@ -21,13 +21,9 @@
 
 									$datos= $this->comentario;
 
-									$datos->titulo 	= $_REQUEST['titulo'];
-									$datos->descrp 	= $_REQUEST['descrp'];
-									$datos->fchfin	= $_REQUEST['fchfin'];
-									$datos->usuid 	= $_REQUEST['usuid'];
-									$datos->ficid 	= $_REQUEST['ficid'];
-									
-									$fichapuntero  	= $_REQUEST['ficid'];
+									$datos->respst 	= $_REQUEST['respst'];
+									$datos->perprt 	= $_REQUEST['perprt'];
+									$datos->forid	= $_REQUEST['id'];																		
 
 									$this->comentario->Insert($datos);
 
