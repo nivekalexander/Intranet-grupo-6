@@ -21,7 +21,22 @@
 									require_once('../views/materialapoyo/materialapoyoView.php');
 									require_once('../views/frames/firtsfooter.php');
 									require_once('../views/frames/footer.php');
-								}
+                                }
+        public function Faseconfirmar()
+                                    {
+                                        
+                                        
+
+
+                                        $idfase=$_REQUEST['fase'];
+                                        $fichapuntero=$_REQUEST['fcpt'];
+
+
+                                        
+
+                                        require_once('../views/materialapoyo/materialapoyoSelect.php'); 
+
+                                    }
 
 
 

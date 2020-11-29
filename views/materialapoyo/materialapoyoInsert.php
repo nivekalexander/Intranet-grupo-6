@@ -16,7 +16,7 @@
 						<input type="text" name="id" hidden>
                     <div>
 						<label for="publicador">Publicador</label><br>
-						<input class="form-control rounded" type="text" name="publicador" id="publicador" display>
+						<input class="form-control rounded" type="text" name="publicador" id="publicador" >
 						
 					</div>
 					<div>

@@ -45,6 +45,8 @@
 									$datos->trifin = $_REQUEST['trifin'];
 									$datos->trinum = $_REQUEST['trinum'];
 									$datos->fichaid	= $_REQUEST['fichaid'];
+
+									$fichapuntero = $_REQUEST['fichaid'];
 																	
 									$this->horario->Insert($datos);
 
@@ -52,9 +54,10 @@
 								}
 
 		public function Eliminar()
-								{			
+								{		
+									$fichapuntero = -0;	
 									$url = $_REQUEST['url'];
-									file_exists($url) ? unlink($url): "";									
+									file_exists($url) ? unlink($url): "";	
 
 									$this->horario->Delete($_REQUEST['id']);
 									require_once('../views/horario/horarioSelect.php');
@@ -87,7 +90,9 @@
 										$datos->url = $ruta;
 										$datos->triini = $_REQUEST['triini'];
 										$datos->trifin = $_REQUEST['trifin'];
-										$datos->trinum = $_REQUEST['trinum'];									
+										$datos->trinum = $_REQUEST['trinum'];	
+										
+										$fichapuntero = $_REQUEST['fichaid'];
 										
  										$this->horario->Update($datos);
 

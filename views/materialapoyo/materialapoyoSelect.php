@@ -1,7 +1,7 @@
 <table>
 
 	<tbody>
-			<?php foreach ( $this->materialapoyo->Select($fichapuntero) as $filas ): ?>
+			<?php foreach ( $this->materialapoyo->Select( $idfase,$fichapuntero) as $filas ): ?>
 
 					 	<?php  $grupal = "'".$filas->map_id."','".$filas->map_titulo."','".$filas->map_fecpub."','".$filas->map_descrp."','"."','".$filas->map_archurl."','".$filas->map_fasid."'"; ?>
 						
@@ -25,7 +25,7 @@
 							<p class="card-text"><?php echo $filas->map_descrp;?></p>
                             <h5 class="card-title">Material : <?php echo $filas->map_archurl; ?></h5>
                             <input type="file" name="archivo" hidden>
-							<div class="float-right"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalmaterialapoyo" data-dismiss="modal" onclick="EditarMaterialApoyo(<?php echo $grupal; ?>);">Editar</button>
+							<div class="float-right"><button class="btn-rounded btn"  onclick="EditarMaterialApoyo(<?php echo $grupal; ?>);">Editar</button>
 							<button type="button" class="btn-rounded btn" onclick="BorrarMaterialApoyo(<?php echo $filas->map_id;?>);"> Eliminar </button></div>
 						</div>
 					</div>

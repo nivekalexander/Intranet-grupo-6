@@ -6,6 +6,33 @@ function ObjAjax() {
     if (!xmlhttp && typeof XMLHttpRequest != 'undefined') { xmlhttp = new XMLHttpRequest(); }
     return xmlhttp;
 }
+function FasesMaterialApoyo(fase){
+
+    var fcpt=document.getElementById("fichapuntero").value;
+
+   
+
+    var result = document.getElementById('tview');
+
+                const ajax = new XMLHttpRequest();
+                ajax.open("POST", "main.php", true);
+                ajax.onreadystatechange = function() {
+                    if (ajax.readyState == 4) {
+                        if (ajax.status == 200) {
+
+                            result.innerHTML = ajax.responseText;
+
+                        } else {
+                            console.log("Ups, Me equivoque;");
+                        }
+                    }
+                };
+
+                ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                ajax.send("ctrl=materialapoyo&acti=faseconfirmar&fase="+fase+"&fcpt="+fcpt);
+
+}
+
 
 
 function BorrarMaterialApoyo(id, url) {
@@ -77,7 +104,7 @@ function EditarMaterialApoyo(id, url) {
         buttons: {
             Confirmar: function() {
                 urlEdit = url;
-                document.formulario.idnews.value = id;
+                
                 document.getElementById("btnguardar").innerHTML = "Actualizar";
 
                 $("#modalmaterialapoyo").modal("show");

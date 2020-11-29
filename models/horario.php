@@ -20,11 +20,11 @@
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-		public function Get()
+		public function Get($ficid)
 		{
 									try  				 {
-															$sql=$this->pdo->prepare("SELECT * FROM tbl_horario WHERE hor_ficid =1");
-															$sql->execute();
+															$sql=$this->pdo->prepare("SELECT * FROM tbl_horario WHERE hor_ficid = ?");
+															$sql->execute(array($ficid));
 															return $sql->fetch(PDO::FETCH_OBJ);
 															}
 									catch (Exception $e) {	die($e->getMessage());			 }
