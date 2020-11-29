@@ -82,6 +82,14 @@ function BorrarComentario(id){
     });
 }
 
+function EditarComentario(comid, cnombre, ccomentario){    
+    document.formularioColl.comid.value = comid;
+    document.formularioColl.cnombre.value = cnombre;
+    document.formularioColl.ccomentario.value = ccomentario;
+    $('#comentarioInsert').collapse('show');
+    // $('#btnenviar').attr()
+}
+
 function CleanCom() {
     document.formularioColl.reset();
     $("form").removeClass('was-validated');
