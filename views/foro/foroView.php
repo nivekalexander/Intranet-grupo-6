@@ -1,3 +1,5 @@
+<script src="../assets/js/scripts.comentario.js"></script>
+<script src="../assets/js/scripts.foro.js"></script>
  <!--funcionalidad-->
 <div class="container" id="contenedorForo">    
   
@@ -13,8 +15,5 @@
     <div id="tview">
       <?php include_once("foroSelect.php");?> 
     </div>
-
-    <script src="../assets/js/scripts.comentario.js"></script>
-    <script src="../assets/js/scripts.foro.js"></script>
   
 </div>
