@@ -7,7 +7,6 @@ function ObjAjax() {
     return xmlhttp;
 }
 
-
 function BorrarHorario(id, url) {
     $.confirm({
         title: 'Confirmación!',
