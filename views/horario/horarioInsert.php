@@ -45,7 +45,7 @@
             <div class="invalid-feedback">Complete el campo.</div><br>
           </div> 
 
-          <input type="text" id="idficha" name="idficha" hidden>  
+          <input type="text" id="idficha" name="idficha" value="<?php echo $_REQUEST['fcpt']; ?>">  
                                   
         </div>
 
