@@ -46,3 +46,5 @@
 		</tbody>
 	</table>
 </div>
+<button class="btn-rounded btn redirigir" onclick="SeleccionarUsuario();">Seleccionar Usuario</button>
+

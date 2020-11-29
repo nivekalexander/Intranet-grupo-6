@@ -189,23 +189,28 @@ textarea {
 
 /* Iconos para confirmar el tipo de usuario*/
 
-.border-warning {
-    width: 15rem;
-    height: 15rem;
-    margin: .25rem;
-    left: 150px;
-}
 
 .usuConfirm-text {
     color: rgba(1, 20, 45, 0.8);
     font-weight: 700;
     position: relative;
-    left: -15px;
+
     top: 12px;
+    
 }
+
+.usuConfirm-text:hover {
+    background-color: #01142D;
+}
+
 
 .centrar-usu {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1em;
+    margin-right: 1em !important;
+    margin-left: 1em !important;
+    
 }
+
