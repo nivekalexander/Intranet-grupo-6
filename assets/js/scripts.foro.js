@@ -3,7 +3,7 @@ function ObjAjax() {
     try { xmlhttp = new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {
         try { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); } catch (E) { xmlhttp = false; }
     }
-    if (!xmlhttp && typeof ObjAjax != 'undefined') { xmlhttp = new XMLHttpRequest(); }
+    if (!xmlhttp && typeof XMLHttpRequest != 'undefined') { xmlhttp = new XMLHttpRequest(); }
     return xmlhttp;
 }
 
@@ -52,7 +52,7 @@ function BorrarForo(id){
                     if (ajax.readyState == 4) {
                         if (ajax.status == 200) {
 
-                            result.innerHTML = ajax.responseText;
+                            result.innerHTML = ajax.responseText;                            
 
                         } else {
                             console.log("Ups, Me equivoque;");
@@ -101,7 +101,7 @@ function UpdateForo(){
     var fchini = document.formulario.fchini.value;
     var ficid  = document.formulario.idficha.value;
 
-    const ajax = new XMLHttpRequest();
+    const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
     ajax.onreadystatechange = function() {
         if (ajax.readyState == 4) {
@@ -116,6 +116,29 @@ function UpdateForo(){
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=foro&acti=actualizar&titulo="+titulo+"&descrp="+descrp+"&fchfin="+fchfin+"&fchini="+fchini+"&ficid="+ficid+"&id="+id);
+}
+
+function ParticiparForo(id,titulo,fchfin,fchini,descrp){
+
+    var result = document.getElementById("contenedorForo");
+    var ficid  = document.formulario.idficha.value;
+
+    const ajax = new ObjAjax();
+    ajax.open("POST", "main.php", true);
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4) {
+            if (ajax.status == 200) {
+
+                result.innerHTML = ajax.responseText;                
+
+            } else { console.log("Ups, Me equivoque;"); }
+        }
+    };
+    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    ajax.send("ctrl=comentario&titulo="+titulo+"&descrp="+descrp+"&fchfin="+fchfin+"&fchini="+fchini+"&ficid="+ficid+"&id="+id);    
+
+
+
 }
 
 function CancelarForo(){

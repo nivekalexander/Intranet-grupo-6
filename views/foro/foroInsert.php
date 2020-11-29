@@ -53,17 +53,18 @@
     </div>
   </div>
 </div>
+
 <script>
 (function() {
-    'use strict';            
-    window.addEventListener('load', function() {         
-        
+    'use strict';                
+
+    window.addEventListener('load', function() {                 
         var forms = document.getElementsByClassName('needs-validation');                
-        var validation = Array.prototype.filter.call(forms, function(form) {        
-            document.getElementById("btnguardar").addEventListener('click', function(event) {          
+        var validation = Array.prototype.filter.call(forms, function(form) {      
+            document.getElementById("btnguardar").addEventListener('click', function(event) {                  
                 if (form.checkValidity() === true) {                                  
-                    var nombreBoton = document.getElementById("btnguardar").innerHTML;
-                    if (nombreBoton == "Subir"){                            
+                    var nombreBoton = document.getElementById("btnguardar").innerHTML;                   
+                    if (nombreBoton == "Subir"){                         
                         InsertForo();
                         $('#foroModal').modal('hide');              
                     }

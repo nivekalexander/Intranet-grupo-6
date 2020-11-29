@@ -4,7 +4,7 @@
   <tbody>
     
     <?php foreach ($this->foro->Select($fichapuntero) as $filas): ?>
-      <?php $grupal="'".$filas->for_id."','".$filas->for_titulo."','".$filas->for_fchfin."','".$filas->for_fchini."','".$filas->for_descrp."'" ?>
+      <?php $grupal="'".$filas->for_id."','".$filas->for_titulo."','".$filas->for_fchfin."','".$filas->for_fchini."','".$filas->for_descrp."'"; ?>
 
         <div class="d-flex justify-content-center">
           <div class="card bg-light mb-5 w-100 diseño-tarjeta">
@@ -22,7 +22,7 @@
                 <h5 class="card-title">Titulo: <?php echo $filas->for_titulo; ?></h5>
                 <p class="card-text"><?php echo $filas->for_descrp;?></p>
                 <div class="float-right">
-                  <button type="button" class="btn-rounded btn"> Participar </button>
+                  <button type="button" class="btn-rounded btn" onclick="ParticiparForo(<?php echo $grupal; ?>);"> Participar </button>
                   <button class="btn-rounded btn" data-toggle="modal" onclick="EditarForo(<?php echo $grupal; ?>);">Editar</button>
                   <button type="button" class="btn-rounded btn" onclick="BorrarForo('<?php echo $filas->for_id;?>');"> Eliminar </button>
                 </div>
