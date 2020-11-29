@@ -46,7 +46,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Material de Apoyo -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=materialApollo&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection"  href="./main.php?ctrl=materialapoyo&fcpt=<?php echo($fichapuntero);?>">
         <img src="../assets/img/img-slidebar/materialapoyo.svg" class="slidebar-img" alt="new">
         <span>Material de apoyo</span></a>
     </li>
