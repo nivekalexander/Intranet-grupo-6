@@ -216,9 +216,11 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
+    padding: 1em;
+    margin-right: 1em !important;
+    margin-left: 1em !important;
+    
 }
-
 .listconfirmMaterialApoyo {
     list-style:none;
     padding-left: 20%;
@@ -245,11 +247,5 @@ textarea {
     
 
 }
-=======
-    padding: 1em;
-    margin-right: 1em !important;
-    margin-left: 1em !important;
-    
-}
 
->>>>>>> d23dd246ed1b8092cc625ef860a0cf6f58d58bc3
+
