@@ -32,9 +32,7 @@
 
 		public function Eliminar()
 								{
-									$this->comentario->Delete($_REQUEST['id']);
-
-									$fichapuntero  	= $_REQUEST['ficid'];
+									$this->comentario->Delete($_REQUEST['comid']);
 
 									require_once('../views/comentario/comentarioSelect.php');
 								}

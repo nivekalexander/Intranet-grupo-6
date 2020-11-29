@@ -11,12 +11,15 @@
         
         <?php foreach ($this->comentario->Select($_REQUEST['id']) as $filas): ?>
         <?php $grupal="'".$filas->com_id."','".$filas->com_respst."','".$filas->com_fchcrt."','".$filas->com_perprt."','".$filas->com_forid."'"; ?>
-            
-            <div class="card bg-light mb-5 w-100 diseño-tarjeta">
-                <div class="card-header " >                                   
+
+            <div class="card bg-light mb-5">
+                <div class="card-header" >                                   
                     <div class="float-left">                        
-                        <?php echo $filas->com_fchcrt;?><br>
-                        <?php echo $filas->com_perprt;?>
+                        <small><?php echo $filas->com_fchcrt;?><br></small>
+                        <h4><?php echo $filas->com_perprt;?></h4>
+                    </div>
+                    <div class="float-right">
+                        <button type="button" class="btn btn-danger rounded-pill" onclick="BorrarComentario(<?php echo $filas->com_id; ?>);"> X </button>       
                     </div>
                 </div>
                 
