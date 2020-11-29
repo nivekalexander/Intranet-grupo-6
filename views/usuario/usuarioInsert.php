@@ -1,3 +1,4 @@
+
 <!-- Modal -->
 
 <div class="modal fade" id="modalusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
@@ -15,6 +16,7 @@
 				<form name="formulario" id="formulario" class="needs-validation" >
 
 					<input type="text" name="id" hidden>
+
 					<div>
 						<label for="nombre">Nombre</label><br>
 						<input class="form-control rounded" type="text" name="nombre" id="nombre" required>
@@ -52,15 +54,7 @@
 					</div>
 
 					<div>
-						<label for="rol">Rol</label><br>
-						<select class="form-control rounded" name="rol" id="rol" >
-								<?php
-									foreach ($this->rol->Select() as $datos): 
-										echo '<option value="'.$datos->rol_id.'">'.$datos->rol_nombre.'</option>';
-									endforeach;
-								?>
-							</select>
-						<div class="invalid-feedback">Seleccione un Campo</div><br>
+						<input class="form-control rounded" name="rol" id="rol" hidden>
 					</div>
 
 					<div>

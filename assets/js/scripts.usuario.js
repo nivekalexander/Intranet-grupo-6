@@ -8,7 +8,7 @@ function ObjAjax() {
 }
 
 
-function BorrarUsuario(id) {
+function BorrarUsuario(id, rolid) {
     $.confirm({
         title: 'Confirmación!',
         content: '¿Esta seguro que desea eliminar este usuario?',
@@ -42,13 +42,15 @@ function BorrarUsuario(id) {
                 };
 
                 ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                ajax.send("ctrl=usuario&acti=eliminar&id=" + id);
+                ajax.send("ctrl=usuario&acti=eliminar&id=" + id + "&rol=" + rolid);
+
             },
             cancel: function() {
                 $.alert('Has cancelado la eliminación');
             }
         }
     });
+
 
 }
 
@@ -162,6 +164,8 @@ function UpdateUsuario() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=usuario&acti=actualizar&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&ficha=" + ficha + "&rol=" + rol + "&estado=" + estado + "&identi=" + identi + "&id=" + id);
 
+    document.getElementById('rol').value = rol;
+
     document.getElementById("titleusuario").innerHTML = "Crear usuario";
 }
 
@@ -170,9 +174,11 @@ function CancelarUsuario() {
     document.getElementById("titleusuario").innerHTML = "Crear usuario";
 }
 
+
 function ConfirmUsuario(id) {
 
     var result = document.getElementById('tview');
+    document.getElementById('rol').value = id;
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -196,6 +202,6 @@ function ConfirmUsuario(id) {
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=seleccion&rol=" + id);
+    ajax.send("ctrl=usuario&acti=seleccion&rolid=" + id);
 
 }

@@ -6,7 +6,7 @@ $fichapuntero=$_REQUEST['fcpt'];
 if( null !==$fichapuntero){ ?>
 <!-- Page Wrapper -->
 <div id="wrapper">
-<?php $fichapuntero=$_REQUEST['fcpt'];?>
+
 
 
   <!-- Sidebar -->
