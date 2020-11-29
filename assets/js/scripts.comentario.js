@@ -1,0 +1,52 @@
+function ObjAjax() {
+    var xmlhttp = false;
+    try { xmlhttp = new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {
+        try { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); } catch (E) { xmlhttp = false; }
+    }
+    if (!xmlhttp && typeof XMLHttpRequest != 'undefined') { xmlhttp = new XMLHttpRequest(); }
+    return xmlhttp;
+}
+
+function InsertComentario() {
+    var result = document.getElementById('tview');
+
+    var respst = document.formularioColl.ccomentario.value;
+    var perprt = document.formularioColl.cnombre.value;
+    var forid = document.formularioColl.forid.value;
+
+    if(!perprt == ""){
+        if(!respst == ""){
+            
+            const ajax = new ObjAjax();
+            ajax.open("POST", "main.php", true);
+            ajax.onreadystatechange = function() {
+                if (ajax.readyState == 4) {
+                    if (ajax.status == 200) {
+        
+                        result.innerHTML = ajax.responseText;
+                        document.formularioColl.reset();
+                        $("form").removeClass('was-validated');
+        
+                    } else {
+                        console.log("Ups, Me equivoque;");
+                    }
+                }
+            };
+        
+            ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            ajax.send("ctrl=comentario&acti=insertar&respst=" + respst + "&perprt=" + perprt + "&id=" + forid);    
+
+        
+        }else{
+            $.alert("Escriba su comentario");        
+        }
+    }else{
+        $.alert("Escriba su nombre");        
+    }          
+
+}
+
+function CleanCom() {
+    document.formularioColl.reset();
+    $("form").removeClass('was-validated');
+}
