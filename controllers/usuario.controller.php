@@ -29,6 +29,7 @@
 									require_once('../views/frames/footer.php'); 
 								}
 
+
                                 
 		public function Insertar()
 								{
@@ -82,15 +83,19 @@
  										require_once('../views/usuario/usuarioSelect.php');
 									}
 		public function Seleccion()
-								{	
-									$datos = $this->usuario;
-									
-									$rolpuntero=$_REQUEST['rolid'];
-									$this->usuario->Select($rolpuntero);
+									{	
+										$datos = $this->usuario;
+										
+										$rolpuntero=$_REQUEST['rolid'];
+										$this->usuario->Select($rolpuntero);
 
-									require_once('../views/usuario/usuarioSelect.php');
-									
-								}
+										require_once('../views/usuario/usuarioSelect.php');
+										
+									}
+		public function Recargar()
+									{	
+										require_once('../views/usuario/usuarioConfirm.php');
+									}
 
 	}
 

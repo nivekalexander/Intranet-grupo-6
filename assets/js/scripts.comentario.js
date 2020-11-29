@@ -26,6 +26,7 @@ function InsertComentario() {
                         result.innerHTML = ajax.responseText;
                         document.formularioColl.reset();
                         $("form").removeClass('was-validated');
+                        $('#comentarioInsert').collapse('hide');
         
                     } else {
                         console.log("Ups, Me equivoque;");
@@ -44,6 +45,49 @@ function InsertComentario() {
         $.alert("Escriba su nombre");        
     }          
 
+}
+
+function BorrarComentario(id){
+    $.confirm({
+        title: 'Confirmación!',
+        content: '¿Desea eliminar este comentario?',
+        buttons: {
+            confirmar: function() {
+                $.alert('Se ha eliminado correctamente');
+
+                var result = document.getElementById('tview');
+                var forid = document.formularioColl.forid.value;
+
+                const ajax = new ObjAjax();
+                ajax.open("POST", "main.php", true);
+                ajax.onreadystatechange = function() {
+                    if (ajax.readyState == 4) {
+                        if (ajax.status == 200) {
+
+                            result.innerHTML = ajax.responseText;                            
+
+                        } else {
+                            console.log("Ups, Me equivoque;");
+                        }
+                    }
+                };
+
+                ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                ajax.send("ctrl=comentario&acti=eliminar&comid=" + id + "&id=" + forid);
+            },
+            cancelar: function() {
+                
+            }
+        }
+    });
+}
+
+function EditarComentario(comid, cnombre, ccomentario){    
+    document.formularioColl.comid.value = comid;
+    document.formularioColl.cnombre.value = cnombre;
+    document.formularioColl.ccomentario.value = ccomentario;
+    $('#comentarioInsert').collapse('show');
+    // $('#btnenviar').attr()
 }
 
 function CleanCom() {

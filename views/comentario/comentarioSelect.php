@@ -10,20 +10,25 @@
     <tbody>
         
         <?php foreach ($this->comentario->Select($_REQUEST['id']) as $filas): ?>
-        <?php $grupal="'".$filas->com_id."','".$filas->com_respst."','".$filas->com_fchcrt."','".$filas->com_perprt."','".$filas->com_forid."'"; ?>
-            
-            <div class="card bg-light mb-5 w-100 diseño-tarjeta">
-                <div class="card-header " >                                   
+        <?php $grupal="'".$filas->com_id."','".$filas->com_perprt."','".$filas->com_respst."'"; ?>
+
+            <div class="card bg-light mb-5">
+                <div class="card-header" >                                   
                     <div class="float-left">                        
-                        <?php echo $filas->com_fchcrt;?><br>
-                        <?php echo $filas->com_perprt;?>
+                        <small><?php echo $filas->com_fchcrt;?><br></small>
+                        <h4><?php echo $filas->com_perprt;?></h4>
+                    </div>
+                    <div class="float-right">
+                        <a class="deleteCom" onclick="BorrarComentario(<?php echo $filas->com_id; ?>);">
+                            <img src="../assets/img/img-foro/trash.png" height="40" weidth="40" alt="X">
+                        </a>
                     </div>
                 </div>
                 
                 <div class="card-body">                    
                     <p class="card-text"><?php echo $filas->com_respst;?></p>
                     <div class="float-right">
-                        <button type="button" class="btn-rounded btn"> Editar </button>                        
+                        <a class="btn-rounded btn" href="#comforo" onclick="EditarComentario(<?php echo $grupal;?>);"> Editar </a> 
                         <button type="button" class="btn-rounded btn" data-toggle="collapse" data-target="#respuestaInsert<?php echo $filas->com_id;?>" aria-expanded="false" aria-controls="collapseExample"> Responder </button>
                     </div>
                 </div>

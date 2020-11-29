@@ -54,7 +54,7 @@
 
 	public function Delete($id){
 									
-											try 					{	$sql="DELETE FROM tbl_comentario WHERE for_id = ?";
+											try 					{	$sql="DELETE FROM tbl_comentario WHERE com_id = ?";
 																		$this->pdo->prepare($sql)
 																				->execute(array($id));
 																	}
