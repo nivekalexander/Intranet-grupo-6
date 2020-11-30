@@ -67,7 +67,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Horario -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=horario&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>&fic_codigo=<?php echo($fichacodigo);?>">
+      <a class="nav-link selection"  href="./main.php?ctrl=horario&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
         <img src="../assets/img/img-slidebar/horario.svg" class="slidebar-img" alt="new">
         <span>Horario</span></a>
     </li>
