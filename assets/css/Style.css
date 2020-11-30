@@ -221,31 +221,28 @@ textarea {
     margin-left: 1em !important;
     
 }
-.listconfirmMaterialApoyo {
-    list-style:none;
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-top: 5%;
-    
-}
-.listconfirmMaterialApoyo li {
-    list-style:none;
-    padding-bottom: 5%;
-    padding-top:5%;
-    padding-left: 8%;
-    padding-right: 8%;
-    
-    
+#fasescontainer{
 
-}
-.listconfirmMaterialApoyo #contenidofases{
-    background-color: #b4caebfa;
-    border-radius: 3%;
-}
-.listconfirmMaterialApoyo li input{
-    list-style:none;
-    
+    display:inline-flex;
 
 }
 
+#drow-fases{
+    padding-bottom: 10%;
+    margin-right: 30%;
+}
+#drow-fases-nombres:hover{
 
+background-color: #dddeeba9 !important;
+
+}
+#drow-fases-nombres-botones:hover, #drow-fases-nombres-botones:active,#drow-fases-nombres-botones:after{
+
+    background-color: #f2994b !important;
+
+}
+.drow-fases-nombres-botones{
+
+    padding:5%;
+
+}
