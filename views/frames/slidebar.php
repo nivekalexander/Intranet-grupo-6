@@ -1,7 +1,8 @@
 <?php
 
-//error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL ^ E_NOTICE);
 $fichapuntero=$_REQUEST['fcpt'];
+$fichacodigo=$_REQUEST['fic_codigo'];
 
 if( null !==$fichapuntero){ ?>
 <!-- Page Wrapper -->
@@ -24,17 +25,17 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Noticias -->
     <li class="nav-item active">
-      <a class="nav-link selection" href="main.php?ctrl=noticia&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection" href="main.php?ctrl=noticia">
         <img src="../assets/img/img-slidebar/periodico.svg" class="slidebar-img" alt="new">
         <span>Noticias</span></a>
     </li>
-
+    
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Anuncios -->
     <li class="nav-item active">
-      <a class="nav-link selection" href="./main.php?ctrl=anuncio&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection" href="./main.php?ctrl=anuncio&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
 
         <img src="../assets/img/img-slidebar/anuncios.svg" class="slidebar-img" alt="new">
         <span>Anuncios</span></a>
@@ -46,7 +47,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Material de Apoyo -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=materialApollo&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection"  href="./main.php?ctrl=materialapoyo&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
         <img src="../assets/img/img-slidebar/materialapoyo.svg" class="slidebar-img" alt="new">
         <span>Material de apoyo</span></a>
     </li>
@@ -56,7 +57,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Foro -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=foro&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection"  href="./main.php?ctrl=foro&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
         <img src="../assets/img/img-slidebar/foro.svg" class="slidebar-img" alt="new">
         <span>Foro</span></a>
     </li>
@@ -66,7 +67,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Horario -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=horario&fcpt=<?php echo($fichapuntero);?>">
+      <a class="nav-link selection"  href="./main.php?ctrl=horario&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
         <img src="../assets/img/img-slidebar/horario.svg" class="slidebar-img" alt="new">
         <span>Horario</span></a>
     </li>

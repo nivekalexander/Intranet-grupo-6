@@ -25,6 +25,7 @@ function BorrarUsuario(id, rolid) {
                         if (ajax.status == 200) {
 
                             result.innerHTML = ajax.responseText;
+
                             $(document).ready(function() {
                                 $('#tableusuario').DataTable({
                                     dom: 'Bfrtip',
@@ -34,6 +35,7 @@ function BorrarUsuario(id, rolid) {
                                     }
                                 });
                             });
+                            
 
                         } else {
                             console.log("Ups, Me equivoque;");

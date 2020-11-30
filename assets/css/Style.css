@@ -57,6 +57,10 @@
     cursor: pointer;
 }
 
+.deleteCom{
+    cursor: pointer;
+}
+
 .selection:hover {
     background-color: #ffffff5b !important;
 }
@@ -217,4 +221,31 @@ textarea {
     margin-left: 1em !important;
     
 }
+.listconfirmMaterialApoyo {
+    list-style:none;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5%;
+    
+}
+.listconfirmMaterialApoyo li {
+    list-style:none;
+    padding-bottom: 5%;
+    padding-top:5%;
+    padding-left: 8%;
+    padding-right: 8%;
+    
+    
+
+}
+.listconfirmMaterialApoyo #contenidofases{
+    background-color: #b4caebfa;
+    border-radius: 3%;
+}
+.listconfirmMaterialApoyo li input{
+    list-style:none;
+    
+
+}
+
 

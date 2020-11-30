@@ -61,7 +61,7 @@
 
  										$this->anuncio->Update($datos);
 
-										 $fichapuntero  	= $_REQUEST['ficid'];
+										$fichapuntero  	= $_REQUEST['ficid'];
 
 										 require_once('../views/anuncio/anuncioSelect.php');
 										 

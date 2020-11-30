@@ -1,4 +1,5 @@
 <form id="formularioColl" name="formularioColl" class="needs-validation" autocomplete="off" novalidate>
+        <input type="text" id="comid" name="comid" hidden>
     <div class="form-group row">
         <label for="cnombre" class="col-sm-2">Nombre</label>
         <div class="col-sm-10">
@@ -16,7 +17,7 @@
         <input type="text" id="forid" name="forid" value="<?php echo $_REQUEST['id'];?>" hidden>
 
     <div class="float-right">
-        <button type="button" id="btnguardar" class="btn-rounded btn" onclick="InsertComentario();">Enviar</button>                        
+        <button type="button" id="btnenviar" class="btn-rounded btn" onclick="InsertComentario();">Enviar</button>                        
     </div>
 </form>
 

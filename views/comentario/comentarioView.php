@@ -5,7 +5,7 @@
       <h3 class="noti-tittle">Foro: <?php echo $_REQUEST['titulo']; ?>
     </div>
 
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center" id="comforo">
         <div class="card bg-light mb-5 w-100 diseño-tarjeta">
             <div class="card-header " >
             <div class="float-left mr-5" >
