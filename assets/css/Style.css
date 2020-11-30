@@ -199,18 +199,22 @@ textarea {
 
 
 .usuConfirm-text {
-    color: rgba(1, 20, 45, 0.8);
     font-weight: 700;
     position: relative;
-
     top: 12px;
     
 }
 
 .usuConfirm-text:hover {
     background-color: #01142D;
+    
 }
-
+.tituloUsu{
+    color: #01142D ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .centrar-usu {
     display: flex;
@@ -219,8 +223,10 @@ textarea {
     padding: 1em;
     margin-right: 1em !important;
     margin-left: 1em !important;
+    border: #01142D 2px solid;
     
 }
+/* Material de apoyo*/
 .listconfirmMaterialApoyo {
     list-style:none;
     padding-left: 20%;
@@ -234,8 +240,6 @@ textarea {
     padding-top:5%;
     padding-left: 8%;
     padding-right: 8%;
-    
-    
 
 }
 .listconfirmMaterialApoyo #contenidofases{
