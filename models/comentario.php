@@ -12,7 +12,13 @@
 
 		public function Select($foroid){
 										try 					{	
-																	$sql=$this->pdo->prepare("SELECT * FROM tbl_comentario WHERE com_forid = ? ORDER BY com_id desc");
+																	$sql=$this->pdo->prepare("SELECT *,
+																									(SELECT COUNT(res_id) 
+																									FROM tbl_respuesta
+																									WHERE res_comid = tbl_comentario.com_id) 
+																										AS 'respuestas'
+																								FROM tbl_comentario
+																								WHERE com_forid = ?");
 																	$sql->execute(array($foroid));
                                                                     return $sql->fetchALL(PDO::FETCH_OBJ);
 																}

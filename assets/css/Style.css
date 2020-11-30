@@ -53,11 +53,11 @@
     background-color: #ffffff5b !important;
 }
 
-.selection{
+.selection {
     cursor: pointer;
 }
 
-.deleteCom{
+.deleteCom {
     cursor: pointer;
 }
 
@@ -197,30 +197,52 @@ textarea {
 
 /* Iconos para confirmar el tipo de usuario*/
 
-
 .usuConfirm-text {
-    color: rgba(1, 20, 45, 0.8);
     font-weight: 700;
     position: relative;
-
     top: 12px;
-    
 }
 
 .usuConfirm-text:hover {
     background-color: #01142D;
 }
 
+.tituloUsu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    display: flex;
+    padding: 5px;
+    font-weight: 700;
+    margin-right: 1em !important;
+    margin-left: 2em !important;
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+    border: 1px solid #01142d34;
+    background-color: #F2994B;
+    border-radius: 15px;
+}
+
+.color-usu {
+    border-radius: 15px;
+}
 
 .centrar-usu {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1em;
+    padding: 5em;
     margin-right: 1em !important;
     margin-left: 1em !important;
-    
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+    border: 1px solid #01142d34;
+    border-radius: 15px;
+    background-color: #e8e8e85d;
 }
+/* Material de apoyo*/
+
 #fasescontainer{
 
     display:inline-flex;
@@ -297,4 +319,6 @@ background-color: #dddeeba9 !important;
 .contenidomaterial .btn{
 
     color:black !important;
+
 }
+
