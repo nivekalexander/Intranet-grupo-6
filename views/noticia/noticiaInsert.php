@@ -25,6 +25,7 @@
             <button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarNoticia();">Cerrar</button>
             <button type="button" id="btnguardar" class="btn btn-primary btn-rounded" >Subir</button>
           </div>
+          
       </form>
 
       <script>
