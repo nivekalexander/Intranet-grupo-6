@@ -17,18 +17,13 @@
  
 						<div >
 
-							
-							
-							
-
 								<div >
-									
 									<p hidden>
 									<?php echo $filas->usu_nombre;?> <?php echo $filas->usu_aplldo;?>
 									</p>
-									<img src="../assets/img/img-materialapoyo/icon1.png" alt="">
-									<h5 class="card-title">Titulo : <?php echo $filas->map_titulo; ?></h5>
-									<p>Fecha Publicacion : <?php echo $filas->map_fecpub;?></p>
+									<img src="../assets/img/img-materialapoyo/icon1.png" alt="" style="width: 70px ; height: 70px;" >
+									<br><h5 class="card-title"><?php echo $filas->map_titulo; ?></h5>
+									<p><?php echo $filas->map_fecpub;?></p>
 								</div>
 								
 								<p class="card-text" hidden><?php echo $filas->map_descrp;?></p>
