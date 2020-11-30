@@ -108,11 +108,7 @@ function UpdateComentario(comid){
             if (ajax.readyState == 4) {
                 if (ajax.status == 200) {
 
-                    result.innerHTML = ajax.responseText;
-                    $(campoText).attr("hidden","true");
-                    $(textRespt).attr("style","display: initial;");
-                    $(btnComent).attr("onclick","EditarComentario("+comid+");");
-                    document.getElementById("btncomentar"+comid).innerHTML = "Editar";
+                    result.innerHTML = ajax.responseText;                    
 
                 } else { console.log("Ups, Me equivoque;"); }
             }
