@@ -228,8 +228,11 @@ textarea {
 }
 
 #drow-fases{
-    padding-bottom: 10%;
-    margin-right: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+    
 }
 #drow-fases-nombres:hover{
 
@@ -241,8 +244,57 @@ background-color: #dddeeba9 !important;
     background-color: #f2994b !important;
 
 }
-.drow-fases-nombres-botones{
+.drow-fases-nombres-boton{
 
-    padding:5%;
+    width: 100%;
+    color: #ffffff !important;
+    background-color: #07264b !important;
+   
 
+}
+.drow-fases-nombres-boton:hover{
+
+    background-color:#092a5283 !important;
+   
+
+}
+.materialview {
+
+    border: 1px solid#707070;
+    border-radius: 2%;
+    background-color: #CACCCD;
+    width: 100%;
+    height: 100%;
+}
+#botonfase{
+    padding:0.7% !important;
+    background-color: #F2994B !important;
+    border-radius: 6%  !important;
+    color:white;
+    border:1px #F2994B !important;
+}
+.opcionbtn{
+
+    background-color: #F2994B !important;
+    border-radius: 10%  !important;
+    color:#ffffff !important;
+    padding:2%;
+    margin:2px;
+    width:100%;
+    height:50%;
+    border:8px #ffffff !important;
+    border-radius: 50rem !important;
+
+
+}
+.drop-opcionbtn{
+
+    padding: 2%;
+    border:1px  #CACCCD !important;
+    background-color: #cacccd00 !important;
+
+}
+.contenidomaterial .btn{
+
+    color:black !important;
 }

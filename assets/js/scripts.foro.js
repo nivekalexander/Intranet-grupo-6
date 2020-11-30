@@ -8,6 +8,7 @@ function ObjAjax() {
 }
 
 function InsertForo() {
+    
     var result = document.getElementById('tview');
 
     var titulo = document.formulario.titulo.value;
