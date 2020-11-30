@@ -41,18 +41,12 @@
 									{
 										$datos = $this->comentario;
 
-										$datos->titulo 	= $_REQUEST['titulo'];
-										$datos->descrp 	= $_REQUEST['descrp'];
-										$datos->fchfin	= $_REQUEST['fchfin'];										
-										$datos->id 		= $_REQUEST['id'];
-
+										$datos->respst 	= $_REQUEST['respst'];									
+										$datos->id 		= $_REQUEST['comid'];
 										
-
  										$this->comentario->Update($datos);
 
-										 $fichapuntero  	= $_REQUEST['ficid'];
-
-										 require_once('../views/comentario/comentarioSelect.php');
+										require_once('../views/comentario/comentarioSelect.php');
 										 
 									}
 

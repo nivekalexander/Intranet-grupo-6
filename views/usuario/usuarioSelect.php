@@ -1,4 +1,5 @@
 <div><a class="btn-rounded btn float-right " data-toggle="modal" data-target="#modalusuario" onclick="ConfirmUsuario(<?php echo $rolpuntero; ?>);">Crear Usuario</a></div>
+<button class="btn-rounded btn redirigir" onclick="SeleccionarUsuario();">Volver</button><br><br>
 
 <div class="table-responsive">
 	<table id="tableusuario"  class="table table-striped">
@@ -46,5 +47,5 @@
 		</tbody>
 	</table>
 </div>
-<button class="btn-rounded btn redirigir" onclick="SeleccionarUsuario();">Seleccionar Usuario</button>
+
 

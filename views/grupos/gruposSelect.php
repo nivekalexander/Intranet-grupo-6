@@ -22,7 +22,7 @@
           </div>
 
           <div class="card-footer">
-            <a class="float-right btn-rounded btn" href="main.php?ctrl=noticia&fcpt=<?php echo($filas->fic_id);?>&fic_codigo=<?php echo($filas->fic_codigo);?>">Entrar</a>
+            <a class="float-right btn-rounded btn" href="main.php?ctrl=noticia&fcpt=<?php echo ($filas->fic_id);?>&fic_codigo=<?php echo($filas->fic_codigo);?>">Entrar</a>
           </div>
 
         </div>

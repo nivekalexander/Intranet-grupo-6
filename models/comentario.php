@@ -66,15 +66,12 @@
 									
 		try {	
 			$sql = "UPDATE tbl_comentario 
-					SET for_titulo=?, for_descrp=?, for_fchini=?, for_fchfin=?
-					WHERE for_id=?";
+					SET com_respst=?
+					WHERE com_id=?";
 			$this->pdo->prepare($sql)->execute(
 												array(
-													$datos->for_titulo,
-													$datos->for_descrp,
-													$datos->for_fchini,																										
-													$datos->for_fchfin,
-													$datos->for_id													
+													$datos->respst,
+													$datos->id
 												)
 											);
 		} catch(Exception $e) { die($e->getMessage()); }
