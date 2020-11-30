@@ -129,8 +129,7 @@ function ParticiparForo(id,titulo,fchfin,fchini,descrp){
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
 
-                result.innerHTML = ajax.responseText;  
-                CargarRespuestas();              
+                result.innerHTML = ajax.responseText;    
 
             } else { console.log("Ups, Me equivoque;"); }
         }

@@ -1,4 +1,4 @@
-<?php foreach ($this->respuesta->SelectResp($idcom) as $respuestas): ?>
+<?php foreach ($this->respuesta->SelectResp($_REQUEST['comenid']) as $respuestas): ?>
     
 
 <div class="card mb-2">

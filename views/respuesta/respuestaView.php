@@ -1,4 +1,4 @@
 
 <div id="rview">
-    <?php include_once("respuestaSelect.php");?> 
+    <?php include("respuestaSelect.php");?> 
 </div>

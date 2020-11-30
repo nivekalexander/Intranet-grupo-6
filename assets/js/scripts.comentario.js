@@ -126,23 +126,41 @@ function CleanCom() {
     $("form").removeClass('was-validated');
 }
 
-function CargarRespuestas(){
-    var result = document.getElementById('rview');    
+// SCRIPTS RESPUESTAS
 
-    const ajax = new ObjAjax();
-    ajax.open("POST", "main.php", true);
-    ajax.onreadystatechange = function() {
-        if (ajax.readyState == 4) {
-            if (ajax.status == 200) {
+function InsertRespuesta(comid){
+    var result = document.getElementById('tview');
 
-                result.innerHTML = ajax.responseText;                            
+    var respst = document.getElementById("rcomentario"+comid).value;
+    var perprt = document.getElementById("rnombre"+comid).value;
+    var forid = document.formularioColl.forid.value;
 
-            } else {
-                console.log("Ups, Me equivoque;");
-            }
+    if(!perprt == ""){
+        if(!respst == ""){
+            
+            const ajax = new ObjAjax();
+            ajax.open("POST", "main.php", true);
+            ajax.onreadystatechange = function() {
+                if (ajax.readyState == 4) {
+                    if (ajax.status == 200) {
+                        
+                        $.alert("Respuesta enviada");        
+                        result.innerHTML = ajax.responseText;
+        
+                    } else {
+                        console.log("Ups, Me equivoque;");
+                    }
+                }
+            };
+        
+            ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            ajax.send("ctrl=comentario&acti=insertar&respst=" + respst + "&perprt=" + perprt + "&id=" + forid + "&comid=" + comid);    
+
+        
+        }else{
+            $.alert("Escriba su respuesta");        
         }
-    };
-
-    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=respuesta");
+    }else{
+        $.alert("Escriba su nombre");        
+    }          
 }
