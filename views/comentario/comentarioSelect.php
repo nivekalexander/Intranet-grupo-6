@@ -32,13 +32,15 @@
                     <textarea class="form-control" id="ecomentario<?php echo $idcom;?>" rows="3" name="ecomentario<?php echo $idcom;?>" hidden required><?php echo $filas->com_respst;?></textarea><br>
                     <div class="float-right">
                         <button id="btncomentar<?php echo $idcom;?>" class="btn-rounded btn" onclick="EditarComentario(<?php echo $idcom;?>);"> Editar </button> 
-                        <button type="button" class="btn-rounded btn" data-toggle="collapse" data-target="#respuestaInsert<?php echo $idcom;?>" aria-expanded="false" aria-controls="collapseExample"> Responder </button>
+                        <button type="button" class="btn-rounded btn" > Responder </button>
+                    </div>
+                    <div class="float-left">
+                       <button type="button" class="btn btn-gris" data-toggle="collapse" data-target="#respuestaInsert<?php echo $idcom;?>" aria-expanded="false" aria-controls="collapseExample" > Ver respuestas: <?php echo $filas->respuestas;?> </button>
                     </div>
                 </div>
-                <div class="collapse" id="respuestaInsert<?php echo $idcom;?>">
-                    <div class="card card-body">
-                        Panel respuestas
-                    </div>
+                <div class="collapse container rounded-bottom" id="respuestaInsert<?php echo $idcom;?>" style="background-color:  #858796;">
+                    <br>                    
+                    <?php include("respuesta/respuestaView.php");?> 
                 </div>
             </div>
             
