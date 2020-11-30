@@ -1,36 +1,47 @@
-<table>
+<div >
+<table class="table-responsive ">
 
-	<tbody>
+	<tbody class="justify-content-center">
 			<?php foreach ( $this->materialapoyo->Select( $idfase,$fichapuntero) as $filas ): ?>
 
-					 	<?php  $grupal = "'".$filas->map_id."','".$filas->map_titulo."','".$filas->map_fecpub."','".$filas->map_descrp."','"."','".$filas->map_archurl."','".$filas->map_fasid."'"; ?>
+					<?php  $grupal = "'".$filas->map_id."','".$filas->map_titulo."','".$filas->map_fecpub."','".$filas->map_descrp."','"."','".$filas->map_archurl."','".$filas->map_fasid."'"; ?>
 						
 					
 				
 
-				<div class="d-flex justify-content-center">
-					<div class="card bg-light mb-5 w-100 diseño-tarjeta">
-
-						<div class="card-header " >
-							<div class="float-left mr-5" >
-							  <a href="perfil.php?id=925763" name="imagenPost"><img src="https://www.flaticon.es/svg/static/icons/svg/599/599305.svg" width="40" height="40"></a>
-							</div >
-							<div class="float-left">
-							  <?php echo $filas->usu_nombre;?> <?php echo $filas->usu_aplldo;?><br>Fecha Publicacion : <?php echo $filas->map_fecpub;?>
-							</div>
-						</div>
+				<div style="padding:0;" class="btn-group contenidomaterial">
+					<button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						
-						<div class="card-body">
-							<h5 class="card-title">Titulo : <?php echo $filas->map_titulo; ?></h5>
-							<p class="card-text"><?php echo $filas->map_descrp;?></p>
-                            <h5 class="card-title">Material : <?php echo $filas->map_archurl; ?></h5>
-                            <input type="file" name="archivo" hidden>
-							<div class="float-right"><button class="btn-rounded btn"  onclick="EditarMaterialApoyo(<?php echo $grupal; ?>);">Editar</button>
-							<button type="button" class="btn-rounded btn" onclick="BorrarMaterialApoyo(<?php echo $filas->map_id;?>);"> Eliminar </button></div>
-						</div>
-					</div>
-				</div>
 					
+						<!-- Dropdown menu links -->
+ 
+						<div >
+
+								<div >
+									<p hidden>
+									<?php echo $filas->usu_nombre;?> <?php echo $filas->usu_aplldo;?>
+									</p>
+									<img src="../assets/img/img-materialapoyo/icon1.png" alt="" style="width: 70px ; height: 70px;" >
+									<br><h5 class="card-title"><?php echo $filas->map_titulo; ?></h5>
+									<p><?php echo $filas->map_fecpub;?></p>
+								</div>
+								
+								<p class="card-text" hidden><?php echo $filas->map_descrp;?></p>
+								<h5 class="card-title" hidden>Material : <?php echo $filas->map_archurl; ?></h5>
+								<input type="file" name="archivo" hidden>
+								
+							
+						</div>
+					</button>
+					<div class="dropdown-menu drop-opcionbtn">
+						<button type="button" class="  opcionbtn"  onclick="EditarMaterialApoyo(<?php echo $grupal; ?>);">Editar</button><br>
+						<button type="button" class=" opcionbtn" onclick="BorrarMaterialApoyo(<?php echo $filas->map_id;?>);">Eliminar</button><br>
+						<button type="button" class=" opcionbtn" onclick="EditarMaterialApoyo(<?php echo $filas->map_id;?>);">Descargar</button><br>
+					</div>
+					
+				</div>		
+							
 			<?php endforeach; ?>
 	</tbody>
 </table>
+</div>
