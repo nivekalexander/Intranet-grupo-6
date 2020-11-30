@@ -22,7 +22,7 @@
                     </div>
                     <div class="float-right">
                         <a class="deleteCom" onclick="BorrarComentario(<?php echo $idcom; ?>);">
-                            <img src="../assets/img/img-foro/trash.png" height="40" weidth="40" alt="X">
+                            <img src="../assets/img/img-foro/trash.svg" height="40" weidth="40" alt="X">
                         </a>
                     </div>
                 </div>
