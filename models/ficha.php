@@ -48,11 +48,8 @@ class Ficha
                                                                                                 $datos->fic_pfoid
 									 									  			 	   )
 																					   )){mkdir("../assets/fichas/$datos->fic_codigo",0777);
-																								mkdir("../assets/fichas/$datos->fic_codigo/materialApoyo",0777);
-																									mkdir("../assets/fichas/$datos->fic_codigo/materialApoyo/analisis",0777);
-																									mkdir("../assets/fichas/$datos->fic_codigo/materialApoyo/planeacion",0777);
-																									mkdir("../assets/fichas/$datos->fic_codigo/materialApoyo/ejecucion",0777);
-																									mkdir("../assets/fichas/$datos->fic_codigo/materialApoyo/calificacion",0777);};
+																						
+																					   }			
 																					
 									 						 }
 									 	catch (Exception $e) {	die($e->getMessage());			 }
