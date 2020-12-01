@@ -96,7 +96,17 @@ class Usuario
 									 						 }
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
-
+	public function Get($id)
+								{
+								try  				 {
+														$sql=$this->pdo->prepare("SELECT * FROM tbl_usuario
+																				  WHERE tbl_usuario.usu_numdnt = ?
+																				");
+															$sql->execute(array($id));
+														return $sql->fetchALL(PDO::FETCH_OBJ);
+														}
+								catch (Exception $e) {	die($e->getMessage());			 }
+								}
 
 
 }

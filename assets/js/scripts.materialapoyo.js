@@ -73,10 +73,20 @@ function BorrarMaterialApoyo(id, url) {
 
 function InsertMaterialApoyo() {
 
+    
+
     var paquete = new FormData();
     paquete.append('archivo', $('#file-archivo')[0].files[0]);
 
-    var destino = "main.php?ctrl=materialapoyo&acti=insertar";
+    
+
+    var publicador=document.getElementById("publicadormodal").value;
+    var titulo=document.getElementById("titulomodal").value;
+    var descrp=document.getElementById("descrpmodal").value;
+    var fases=document.getElementById("fasesmodal").value;
+    var ficid=document.getElementById("fic_codigomodal").value;
+
+    var destino = "main.php?ctrl=materialapoyo&acti=insertar&publicador="+publicador+"&titulo="+titulo+"&descrp="+descrp+"&ficid="+ficid+"&fases="+fases;
     $.ajax({
         url: destino,
         type: 'POST',
@@ -94,20 +104,29 @@ function InsertMaterialApoyo() {
      
 }
 
-var urlEdit;
+var urlvieja;
 
-function EditarMaterialApoyo(id, url) {
+function EditarMaterialApoyo(map_id,map_titulo,map_descrp,map_archurl,map_fasid,map_usunumdnt) {
+
+    
 
     $.confirm({
         title: 'Confirmación!',
         content: '¿Esta seguro que desea editar este material de apoyo?',
         buttons: {
             Confirmar: function() {
-                urlEdit = url;
-                
+                $("#modalmaterialapoyo").modal("show");
+
+                document.getElementById("idmodal").value=map_id;
+                document.getElementById("publicadormodal").value=map_usunumdnt;
+                document.getElementById("titulomodal").value=map_titulo;
+                document.getElementById("descrpmodal").value=map_descrp;
+                document.getElementById("fasesmodal").value=map_fasid;
+                urlvieja=map_archurl;
+
                 document.getElementById("btnguardar").innerHTML = "Actualizar";
 
-                $("#modalmaterialapoyo").modal("show");
+                
 
                 document.getElementById("titlematerialapoyo").innerHTML = "Actualizar Material De Apoyo";
             },
@@ -122,12 +141,19 @@ function EditarMaterialApoyo(id, url) {
 function UpdateMaterialApoyo() {
 
     //var result = document.getElementById('tview');
-    var id = document.formulario.idnews.value;
-
+    map_id=document.getElementById("idmodal").value;
+    map_usunumdnt=document.getElementById("publicadormodal").value;
+    map_titulo=document.getElementById("titulomodal").value;
+    map_descrp=document.getElementById("descrpmodal").value;
+    map_fasid=document.getElementById("fasesmodal").value;
+    ficid=document.getElementById("fic_codigomodal").value;
+    
+    
     var paquete = new FormData();
-    paquete.append('archivo', $('#file-news')[0].files[0]);
+    paquete.append('archivo',$('#file-archivo')[0].files[0]);
 
-    var destino = "main.php?ctrl=materialapoyo&acti=actualizar&id=" + id + "&url=" + urlEdit;
+    var destino = "main.php?ctrl=materialapoyo&acti=actualizar&url="+urlvieja+"&map_id="+map_id+"&publicador="+map_usunumdnt+"&titulo="+map_titulo+"&descrp="+map_descrp+"&fases="+map_fasid+"&ficid="+ficid; 
+    
     $.ajax({
         url: destino,
         type: 'POST',
@@ -148,12 +174,14 @@ function UpdateMaterialApoyo() {
     document.getElementById("btnguardar").innerHTML = "Subir";
     document.getElementById("titlematerialapoyo").innerHTML = "Subir Material De Apoyo";
     urlEdit = "";
+
 }
 
 
 
 function CancelarMaterialApoyo() {
-     
+ 
     document.getElementById("titlematerialapoyo").innerHTML = "Subir Material De Apoyo";
+
 }
 

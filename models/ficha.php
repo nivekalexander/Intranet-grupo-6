@@ -36,7 +36,7 @@ class Ficha
 									 	try  				 {
 									 							$sql="INSERT INTO tbl_ficha (fic_codigo,fic_feccrn,fic_fecfn,fic_tijid,fic_modid,fic_tofid,fic_pfoid)
 									 										        VALUES(?,?,?,?,?,?,?);";
-									 							$this->pdo->prepare($sql)
+									 							if($this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
                                                                                                 $datos->fic_codigo,
@@ -47,7 +47,10 @@ class Ficha
                                                                                                 $datos->fic_tofid,
                                                                                                 $datos->fic_pfoid
 									 									  			 	   )
-									 									  			);
+																					   )){mkdir("../assets/fichas/$datos->fic_codigo",0777);
+																						
+																					   }			
+																					
 									 						 }
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
@@ -56,7 +59,7 @@ class Ficha
 									 {
 									 	try  				 {
 									 							$sql="UPDATE tbl_ficha SET fic_codigo= ?, fic_feccrn= ?,fic_fecfn= ?,fic_tijid= ?,fic_modid= ?,fic_tofid= ?,fic_pfoid= ?
-                                                                  WHERE fic_id = ?";
+                                                                  WHERE fic_codigo = ?";
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
@@ -78,7 +81,7 @@ class Ficha
 	public function Delete($fic_id)
 									 {
 									 	try  				 {
-									 							$sql="DELETE FROM tbl_ficha WHERE fic_id=?";
+									 							$sql="DELETE FROM tbl_ficha WHERE fic_codigo=?";
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
