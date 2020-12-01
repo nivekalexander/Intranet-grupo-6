@@ -129,5 +129,21 @@
 
 	} 
 
+	public function UpdateResp(Comentario $datos){
+									
+		try {	
+			$sql = "UPDATE tbl_respuesta
+					SET res_respst=?
+					WHERE res_id=?";
+			$this->pdo->prepare($sql)->execute(
+												array(
+													$datos->respst,
+													$datos->id
+												)
+											);
+		} catch(Exception $e) { die($e->getMessage()); }
+
+	} 
+
 }
 ?>

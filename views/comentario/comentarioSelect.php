@@ -75,7 +75,9 @@
 
                             if($allrs){
 
-                                foreach ($allrs as $respuestas): ?>
+                                foreach ($allrs as $respuestas): 
+                                $idresp = $respuestas->res_id;
+                                ?>
         
                                     <div class="card mb-2">
                                         <div class="card-header">
@@ -84,15 +86,20 @@
                                             </div>                                            
                                             <div class="float-right">
                                                 <small><?php echo $respuestas->res_fchcrt; ?></small>                                                
-                                                <a class="deleteRes" onclick="BorrarRespuesta('<?php echo $respuestas->res_id; ?>','<?php echo $idcom; ?>');">
+                                                <a class="deleteRes" onclick="BorrarRespuesta('<?php echo $idresp; ?>','<?php echo $idcom; ?>');">
                                                     <img src="../assets/img/img-foro/trash.svg" height="30" weidth="30" alt="X">                                                
-                                                </a>
+                                                </a>                                                
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                            <?php echo $respuestas->res_respst; ?>
+                                            <p class="card-text" id="mrcomentario<?php echo $idresp; ?>"><?php echo $respuestas->res_respst; ?></p>
+                                            <textarea class="form-control" id="ercomentario<?php echo $idresp;?>" rows="3" name="ercomentario" hidden><?php echo $respuestas->res_respst; ?></textarea>
+                                            <br>
                                             <div class="float-right">
-                                                <img src="../assets/img/img-foro/pen.png" height="30" weidth="30" alt="">
+                                                <a id="imgeditar<?php echo $idresp; ?>" class="editRes" onclick="EditarRespuesta(<?php echo $idresp; ?>);">
+                                                    <img src="../assets/img/img-foro/pen.png" height="30" weidth="30" alt="Editar">
+                                                </a>
+                                                <input class="btn btn-rounded" id="btnresponder<?php echo $idresp; ?>" onclick="UpdateRespuesta('<?php echo $idresp; ?>','<?php echo $idcom; ?>');" value="Actualizar" hidden>
                                             </div>
                                         </div>
                                     </div>

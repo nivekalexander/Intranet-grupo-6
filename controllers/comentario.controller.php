@@ -48,11 +48,15 @@
 		public function Actualizar()
 									{
 										$datos = $this->comentario;
-
-										$datos->respst 	= $_REQUEST['respst'];									
-										$datos->id 		= $_REQUEST['comid'];
+										$datos->respst 	= $_REQUEST['respst'];
 										
- 										$this->comentario->Update($datos);
+										if(isset($_REQUEST['resid'])){
+											$datos->id = $_REQUEST['resid'];
+											$this->comentario->UpdateResp($datos);
+										}else{
+											$datos->id = $_REQUEST['comid'];
+											$this->comentario->Update($datos);
+										}										
 
 										require_once('../views/comentario/comentarioSelect.php');
 										 
