@@ -40,8 +40,9 @@
 					</button>
 					<div class="dropdown-menu drop-opcionbtn">
 						<button type="button" class="  opcionbtn"  onclick="EditarMaterialApoyo(<?php echo $grupal; ?>);">Editar</button><br>
-						<button type="button" class=" opcionbtn" onclick="BorrarMaterialApoyo(<?php echo $filas->map_id;?>);">Eliminar</button><br>
-						<button type="button" class=" opcionbtn" onclick="EditarMaterialApoyo(<?php echo $filas->map_id;?>);">Descargar</button><br>
+						<button type="button" class=" opcionbtn" onclick="BorrarMaterialApoyo('<?php echo $filas->map_id; ?>' , '<?php echo $filas->map_archurl; ?>' , '<?php echo $fichapuntero; ?>' , '<?php echo $idfase; ?>');">Eliminar</button><br>
+						<button type="button" class=" opcionbtn"  onclick="javascript:window.open('<?php echo $filas->map_archurl; ?>', '_blank')" >Descargar</button><br>
+						
 					</div>
 					
 				</div>		

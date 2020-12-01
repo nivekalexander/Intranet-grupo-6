@@ -105,12 +105,12 @@
                                         catch (Exception $e) {	die($e->getMessage());}
                                     }
 
-        public function Delete($id)
+        public function Delect($map_id)
                                     {
                                         try  				 {
-                                                                $sql="DELETE FROM tbl_materialapoyo WHERE not_id=?";
+                                                                $sql="DELETE FROM tbl_materialapoyo WHERE map_id=?";
                                                                 $this->pdo->prepare($sql)
-                                                                        ->execute(array($id));
+                                                                        ->execute(array($map_id));
                                                             }
                                         catch (Exception $e) {	die($e->getMessage());			 }
                                     }
