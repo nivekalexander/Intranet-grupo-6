@@ -58,7 +58,7 @@
 									$exts = explode('.',$name);             
 									$exts = end($exts);                     
 									$temp = $_FILES['archivo']['tmp_name']; 
-									$ruta = '../assets/materialapoyo/'.$fichapuntero.'/';
+									$ruta = '../assets/fichas/'.$fichapuntero.'/';
 									$ruta = $ruta.$fecha.".".$exts;
 
 									if(is_uploaded_file($temp)){
@@ -99,7 +99,7 @@
 									$exts = explode('.',$name);             
 									$exts = end($exts);                     
 									$temp = $_FILES['archivo']['tmp_name']; 
-									$ruta = '../assets/materialapoyo/'.$datos->ficid.'/';
+									$ruta = '../assets/fichas/'.$datos->ficid.'/';
 									$ruta = $ruta.$fecha.".".$exts;
 
 									if(is_uploaded_file($temp)){
@@ -117,6 +117,24 @@
 									$this->materialapoyo->Update($ruta,$datos);
 
 									require_once('../views/materialapoyo/materialapoyoSelect.php');
+			}
+			public function Eliminar()
+			{
+				
+				$idfase=$_REQUEST['idfase'];
+				$map_id = $_REQUEST['map_id'];
+				
+
+				$map_archurl = $_REQUEST['map_archurl'];
+
+				file_exists($map_archurl) ? unlink($urmap_archurll): "";
+
+				$this->materialapoyo->Delect($map_id);
+
+				$fichapuntero=$_REQUEST['fcpt'];
+
+				require_once('../views/materialapoyo/materialapoyoSelect.php');
+
 			}	
 
 

@@ -35,12 +35,18 @@ function FasesMaterialApoyo(fase){
 
 
 
-function BorrarMaterialApoyo(id, url) {
+function BorrarMaterialApoyo(map_id,map_archurl,fcpt,idfase) {
+   
+    
+    
+    
     $.confirm({
         title: 'Confirmación!',
         content: '¿Esta seguro que desea eliminar este material de apoyo?',
         buttons: {
             Confirmar: function() {
+
+
                 $.alert('Se ha eliminado correctamente');
 
                 var result = document.getElementById('tview');
@@ -60,7 +66,7 @@ function BorrarMaterialApoyo(id, url) {
                 };
 
                 ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                ajax.send("ctrl=materialapoyo&acti=eliminar&id=" + id + "&url=" + url);
+                ajax.send("ctrl=materialapoyo&acti=eliminar&map_id="+map_id+"&map_archurl="+map_archurl+"&fcpt="+fcpt+"&idfase="+idfase);
             },
             Cancelar: function() {
                 $.alert('Has cancelado la eliminación');
