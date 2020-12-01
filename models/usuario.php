@@ -54,8 +54,13 @@ class Usuario
 									 									  			);
 									 						 }
 									 	catch (PDOException $e) {	
-											return "El usuario ya existe" ;
-											// die($e->getMessage());			
+											$usuExist = $e->getCode();
+											if($usuExist == 23000){
+												return "El usuario ya existe";
+											}else{
+												die($e->getMessage());
+											}
+																						
 										 }
 									 }
 
