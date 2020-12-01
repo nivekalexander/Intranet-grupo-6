@@ -174,6 +174,7 @@ function UpdateUsuario() {
 }
 
 function CancelarUsuario() {
+    $(".alert").alert('close');
     document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titleusuario").innerHTML = "Crear usuario";
     document.getElementById('id').removeAttribute("disabled");

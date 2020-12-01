@@ -48,7 +48,8 @@
 									
 									$rolpuntero         = $_REQUEST['rol'];
 
-									$this->usuario->Insert($datos);
+									$respuesta = $this->usuario->Insert($datos);
+									
 
 									require_once('../views/usuario/usuarioSelect.php');
 								}

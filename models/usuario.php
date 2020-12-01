@@ -53,7 +53,10 @@ class Usuario
 									 									  			 	   )
 									 									  			);
 									 						 }
-									 	catch (Exception $e) {	die($e->getMessage());			 }
+									 	catch (PDOException $e) {	
+											return "El usuario ya existe" ;
+											// die($e->getMessage());			
+										 }
 									 }
 
     public function Update(Usuario $data)
