@@ -39,6 +39,8 @@
                        <button type="button" class="btn btn-gris" data-toggle="collapse" data-target="#respuestaSelect<?php echo $idcom;?>" aria-expanded="false" aria-controls="collapseExample" > Ver respuestas: <?php echo $filas->respuestas;?> </button>
                     </div>
                 </div>
+
+                <!-- Capa Insertar Respuesta -->
                 <div class="collapse container rounded-bottom" id="respuestaInsert<?php echo $idcom;?>">
                     <br>
                     <div class="card card-body mb-2 border border-secondary">
@@ -52,7 +54,7 @@
 
                             <div class="form-group">
                                 <label for="rcomentario">Comentario</label>
-                                <textarea class="form-control" id="rcomentario<?php echo $idcom;?>" rows="3" name="rcomentario"></textarea>                                
+                                <textarea class="form-control" id="rcomentario<?php echo $idcom;?>" rows="3" name="rcomentario"></textarea>
                             </div>                            
                             <div class="card-footer bg-white">
                                 <div class="float-right">
@@ -63,6 +65,8 @@
                         </form>
                     </div>
                 </div>
+
+                <!-- Capa Mostrar Respuestas -->
                 <div class="collapse container rounded-bottom" id="respuestaSelect<?php echo $idcom;?>" style="background-color:  #858796;">
                     <br>      
                     <div id="capa-respuestas<?php echo $idcom;?>">
@@ -71,7 +75,9 @@
 
                             if($allrs){
 
-                                foreach ($allrs as $respuestas): ?>
+                                foreach ($allrs as $respuestas): 
+                                $idresp = $respuestas->res_id;
+                                ?>
         
                                     <div class="card mb-2">
                                         <div class="card-header">
@@ -79,11 +85,22 @@
                                                 <?php echo $respuestas->res_perprt; ?>
                                             </div>                                            
                                             <div class="float-right">
-                                                <small><?php echo $respuestas->res_fchcrt; ?></small> 
+                                                <small><?php echo $respuestas->res_fchcrt; ?></small>                                                
+                                                <a class="deleteRes" onclick="BorrarRespuesta('<?php echo $idresp; ?>','<?php echo $idcom; ?>');">
+                                                    <img src="../assets/img/img-foro/trash.svg" height="30" weidth="30" alt="X">                                                
+                                                </a>                                                
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                            <?php echo $respuestas->res_respst; ?>
+                                            <p class="card-text" id="mrcomentario<?php echo $idresp; ?>"><?php echo $respuestas->res_respst; ?></p>
+                                            <textarea class="form-control" id="ercomentario<?php echo $idresp;?>" rows="3" name="ercomentario" hidden><?php echo $respuestas->res_respst; ?></textarea>
+                                            <br>
+                                            <div class="float-right">
+                                                <a id="imgeditar<?php echo $idresp; ?>" class="editRes" onclick="EditarRespuesta(<?php echo $idresp; ?>);">
+                                                    <img src="../assets/img/img-foro/pen.png" height="30" weidth="30" alt="Editar">
+                                                </a>
+                                                <input class="btn btn-rounded" id="btnresponder<?php echo $idresp; ?>" onclick="UpdateRespuesta('<?php echo $idresp; ?>','<?php echo $idcom; ?>');" value="Actualizar" hidden>
+                                            </div>
                                         </div>
                                     </div>
                                     

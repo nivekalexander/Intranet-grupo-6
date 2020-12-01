@@ -57,7 +57,7 @@
     cursor: pointer;
 }
 
-.deleteCom {
+.deleteCom, .deleteRes, .editRes {
     cursor: pointer;
 }
 

@@ -103,12 +103,38 @@
 											catch(exception $e)		{ die ($e->getMessage()); 				 }
 			}
 
+	public function DeleteResp($id){
+									
+											try 					{	$sql="DELETE FROM tbl_respuesta WHERE res_id = ?";
+																		$this->pdo->prepare($sql)
+																				->execute(array($id));
+																	}
+
+											catch(exception $e)		{ die ($e->getMessage()); 				 }
+	}			
+
 	public function Update(Comentario $datos){
 									
 		try {	
 			$sql = "UPDATE tbl_comentario 
 					SET com_respst=?
 					WHERE com_id=?";
+			$this->pdo->prepare($sql)->execute(
+												array(
+													$datos->respst,
+													$datos->id
+												)
+											);
+		} catch(Exception $e) { die($e->getMessage()); }
+
+	} 
+
+	public function UpdateResp(Comentario $datos){
+									
+		try {	
+			$sql = "UPDATE tbl_respuesta
+					SET res_respst=?
+					WHERE res_id=?";
 			$this->pdo->prepare($sql)->execute(
 												array(
 													$datos->respst,
