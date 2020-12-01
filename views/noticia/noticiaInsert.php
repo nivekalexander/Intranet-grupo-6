@@ -13,12 +13,11 @@
 
       <div class="modal-body">     
 
-      <form id="formulario" name="formulario" class="needs-validation" novalidate>   
+      <form id="formulario" name="formulario" class="needs-validation">   
 
           <div class="custom-file btn rounded" style="background-color: #e3e6f0; overflow: hidden;">
                <input type="number" name="idnews" id="id-news" hidden>
-               <input type="file" name="file-news" id="file-news" accept="image/*" lang="es" required>
-               <div class="invalid-feedback">No se a seleccionado ningun archivo</div>                    
+               <input type="file" name="file-news" id="file-news" accept="image/*" lang="es" required>               
           </div>
 
           <div class="modal-footer">
@@ -41,7 +40,6 @@
                       // Loop over them and prevent submission
                       var validation = Array.prototype.filter.call(forms, function(form) {        
                         document.getElementById("btnguardar").addEventListener('click', function(event) { 
-
                           if (form.checkValidity() === true) {
                             var nombreBoton = document.getElementById("btnguardar").innerHTML;
                             if (nombreBoton == "Subir"){
@@ -55,10 +53,10 @@
                           
                           }
                           if (form.checkValidity() === false) {
+                            $.alert("Seleccione una imagen");
                             event.preventDefault();
                             event.stopPropagation();            
-                          }
-                          form.classList.add('was-validated');
+                          }                          
                         }, false);
                       });
                     }, false);

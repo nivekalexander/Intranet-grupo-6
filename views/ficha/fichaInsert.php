@@ -16,7 +16,7 @@
 					<input type="text" name="fic_id" hidden>
 					<div>
 						<label for="fic_codigo" >Codigo</label>
-						<input class="form-control rounded" type="text" name="fic_codigo" required>
+						<input class="form-control rounded" type="number" name="fic_codigo" required>
 						<div class="invalid-feedback">Campo Obligatorio</div>
 						<div class="valid-feedback">¡Valido!</div>
                     </div>

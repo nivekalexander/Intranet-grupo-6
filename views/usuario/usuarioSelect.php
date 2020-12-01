@@ -1,3 +1,10 @@
+<?php 
+if(isset($respuesta)){
+	echo "<div class='alert alert-danger' role='alert'>
+			El usuario ya existe
+		  </div>";
+}
+?>
 <div><a class="btn-rounded btn float-right " data-toggle="modal" data-target="#modalusuario" onclick="ConfirmUsuario(<?php echo $rolpuntero; ?>);">Crear Usuario</a></div>
 <button class="btn-rounded btn redirigir" onclick="SeleccionarUsuario();">Volver</button><br><br>
 
