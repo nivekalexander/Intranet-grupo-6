@@ -13,33 +13,45 @@
 
 				<form name="formulario" id="formulario" class="needs-validation" novalidate>
 
-						<input type="text" name="id" hidden>
+						<input type="text" name="idmodal" id="idmodal" hidden>
+						
                     <div>
-						<label for="publicador">Publicador</label><br>
-						<input class="form-control rounded" type="text" name="publicador" id="publicador" >
+						<label for="publicadormodal" >Publicador</label><br>
+						<input class="form-control rounded" type="text"  name="publicadormodal" id="publicadormodal" >
 						
 					</div>
+
 					<div>
-						<label for="titulo">Titulo</label><br>
-						<input class="form-control rounded" type="text" name="titulo" id="titulo" required>
+						<label for="titulomodal">Titulo</label><br>
+						<input class="form-control rounded" type="text" name="titulomodal" id="titulomodal" required>
+
 						<div class="invalid-feedback">Complete el campo.</div><br>
 					</div>
                     
 					<div>
-						<label for="descrp">Descripcion</label><br>
-						<textarea class="form-control rounded" name="descrp" id="descrp" rows="3" required></textarea>
+						<label for="descrpmodal">Descripcion</label><br>
+						<textarea class="form-control rounded" name="descrpmodal" id="descrpmodal" rows="3" required></textarea>
 						<div class="invalid-feedback">Complete el campo.</div><br>
 					</div>
-
-
 					<div>
+					<label for="fasestitulo">Fase</label><br>
+					<select class="form-control rounded" name="fases" id="fasesmodal" required>
+
+						<?php foreach ( $this->fases->Select() as $filas ): 
+							echo '<option value="'.$filas->fas_id.'">'.$filas->fas_nombre.'</option>';
+						 endforeach; ?>
+
+                    </select>
+					</div>
+
+					<div><br>
 						<label for="file-archivo">Material De Apoyo</label><br>
-						<input type="file" name="file-archivo" lang="es" required>
+						<input type="file" id="file-archivo" lang="es" required>
 						<div class="invalid-feedback">Complete el campo.</div><br>
 					</div>
 
 					<div>					
-						<input class="form-control rounded" type="text" name="ficid" id="ficid" value="<?php echo $fichapuntero; ?>" hidden>					
+						<input class="form-control rounded" type="text" name="fic_codigo" id="fic_codigomodal" value="<?php echo $fichapuntero; ?>" hidden>					
 					</div>
 					
 					<div class="modal-footer">

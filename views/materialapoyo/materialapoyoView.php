@@ -10,6 +10,7 @@
 		<div id="forms">
 				<?php  include('materialapoyoInsert.php'); ?>
 		</div>
+		
 
 		<div id="fasescontainer table-responsive ">
 			<div id="drow-fases" class="btn-group dropdown ">
