@@ -21,7 +21,7 @@
 	<tbody>
 		<?php foreach ( $this->ficha->Select() as $filas ): ?>
 				
-			<?php  $grupal = "'".$filas->fic_id."','".$filas->fic_codigo."','".$filas->fic_feccrn."','".$filas->fic_fecfn."','".$filas->fic_tijid."','".$filas->fic_modid."','".$filas->fic_tofid."','".$filas->fic_pfoid."'"; ?>
+			<?php  $grupal = "'".$filas->fic_codigo."','".$filas->fic_feccrn."','".$filas->fic_fecfn."','".$filas->fic_tijid."','".$filas->fic_modid."','".$filas->fic_tofid."','".$filas->fic_pfoid."'"; ?>
 
 			<tr>
 				
@@ -35,7 +35,7 @@
 
 
 				<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalficha" data-dismiss="modal" onclick="EditarFicha(<?php echo $grupal; ?>)">Editar</button></td>
-				<td scope="row"><button class="btn-rounded btn" onclick="BorrarFicha(<?php echo $filas->fic_id;?>);">Eliminar</button></td>
+				<td scope="row"><button class="btn-rounded btn" onclick="BorrarFicha(<?php echo $filas->fic_codigo;?>);">Eliminar</button></td>
 
 			</tr>
 				
