@@ -2,9 +2,9 @@
 <table class="table-responsive ">
 
 	<tbody class="justify-content-center">
-			<?php foreach ( $this->materialapoyo->Select( $idfase,$fichapuntero) as $filas ): ?>
-
-					<?php  $grupal = "'".$filas->map_id."','".$filas->map_titulo."','".$filas->map_fecpub."','".$filas->map_descrp."','"."','".$filas->map_archurl."','".$filas->map_fasid."'"; ?>
+			<?php foreach ( $this->materialapoyo->Select( $idfase,$fichapuntero) as $filas ): 
+				
+				$grupal = "'".$filas->map_id."','".$filas->map_titulo."','".$filas->map_descrp."','".$filas->map_archurl."','".$filas->map_fasid."','".$filas->map_usunumdnt."'";?>
 						
 					
 				
@@ -17,20 +17,25 @@
  
 						<div >
 
-								<div >
-									<p hidden>
-									<?php echo $filas->usu_nombre;?> <?php echo $filas->usu_aplldo;?>
-									</p>
-									<img src="../assets/img/img-materialapoyo/icon1.png" alt="" style="width: 70px ; height: 70px;" >
-									<br><h5 class="card-title"><?php echo $filas->map_titulo; ?></h5>
-									<p><?php echo $filas->map_fecpub;?></p>
-								</div>
+							<div >
 								
-								<p class="card-text" hidden><?php echo $filas->map_descrp;?></p>
-								<h5 class="card-title" hidden>Material : <?php echo $filas->map_archurl; ?></h5>
-								<input type="file" name="archivo" hidden>
+								<input class="form-control rounded" type="text"  name="nombre" id="nombre" value="<?php echo $filas->usu_nombre;?> <?php echo $filas->usu_aplldo;?>" hidden>
+
+								<img src="../assets/img/img-materialapoyo/icon1.png" alt="" style="width: 70px ; height: 70px;" >
+								<br><input class="form-control rounded" type="text"  name="titulo" id="titulo" value="<?php echo $filas->map_titulo; ?>" hidden>
 								
+								<h5 class="card-title"><?php echo $filas->map_titulo; ?></h5>
+								<p><?php echo $filas->map_fecpub;?></p>
+								
+								<input class="form-control rounded" type="text"  name="fecpub" id="fecpub" value="<?php echo $filas->map_fecpub;?>" hidden>
+							</div>
 							
+							<input class="form-control rounded" type="text"  name="descrp" id="descrp" value="<?php echo $filas->map_descrp;?>" hidden>
+							<input class="form-control rounded" type="text"  name="archurl" id="archurl" value="<?php echo $filas->map_archurl; ?>" hidden>
+							
+							
+							
+						
 						</div>
 					</button>
 					<div class="dropdown-menu drop-opcionbtn">

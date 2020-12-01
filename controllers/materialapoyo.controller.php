@@ -1,7 +1,8 @@
 <?php
 
     require_once('../models/materialapoyo.php');
-    require_once('../models/fases.php');
+	require_once('../models/fases.php');
+	require_once('../models/usuario.php');
 
 	class MaterialapoyoController
 	{	
@@ -36,8 +37,87 @@
 
                                         require_once('../views/materialapoyo/materialapoyoSelect.php'); 
 
-                                    }
+									}
+		public function Insertar()
+								{
 
+									$fichapuntero=$_REQUEST['ficid'];
+
+									$datos= $this->materialapoyo;
+
+									$datos->publicador=$_REQUEST['publicador'];
+									$datos->titulo=$_REQUEST['titulo'];
+									$datos->descrp=$_REQUEST['descrp'];
+									$datos->fases=$_REQUEST['fases'];
+									$datos->ficid=$_REQUEST['ficid'];
+
+									date_default_timezone_set('America/Bogota');
+									$fecha  = date("Ymd_His");
+									
+									$name = $_FILES['archivo']['name'];     
+									$exts = explode('.',$name);             
+									$exts = end($exts);                     
+									$temp = $_FILES['archivo']['tmp_name']; 
+									$ruta = '../assets/materialapoyo/'.$fichapuntero.'/';
+									$ruta = $ruta.$fecha.".".$exts;
+
+									if(is_uploaded_file($temp)){
+										move_uploaded_file($temp,$ruta);										
+									}else{
+										echo "No se cargo la imagen";
+									}
+									
+									$idfase=$_REQUEST['fases'];
+																	
+									$this->materialapoyo->Insert($ruta,$datos);
+
+									require_once('../views/materialapoyo/materialapoyoSelect.php');
+
+
+								}
+		public function Actualizar()
+		{					
+									$fichapuntero=$_REQUEST['ficid'];
+									$datos= $this->materialapoyo;
+
+									$datos->id=$_REQUEST['map_id'];
+									$datos->publicador=$_REQUEST['publicador'];
+									$datos->titulo=$_REQUEST['titulo'];
+									$datos->descrp=$_REQUEST['descrp'];
+									$datos->fases=$_REQUEST['fases'];
+									$datos->ficid=$_REQUEST['ficid'];
+
+									$url = $_REQUEST['url'];
+									file_exists($url) ? unlink($url): "";		
+									
+																													
+
+									date_default_timezone_set('America/Bogota');
+									$fecha  = date("Ymd_His");
+								
+									$name = $_FILES['archivo']['name'];     
+									$exts = explode('.',$name);             
+									$exts = end($exts);                     
+									$temp = $_FILES['archivo']['tmp_name']; 
+									$ruta = '../assets/materialapoyo/'.$datos->ficid.'/';
+									$ruta = $ruta.$fecha.".".$exts;
+
+									if(is_uploaded_file($temp)){
+
+										move_uploaded_file($temp,$ruta);
+
+									}else{
+
+										echo "No se cargo la imagen";
+
+									}	
+									
+									$idfase=$_REQUEST['fases'];
+
+									$this->materialapoyo->Update($ruta,$datos);
+
+									require_once('../views/materialapoyo/materialapoyoSelect.php');
+			}	
 
 
 	}
