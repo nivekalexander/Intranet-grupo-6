@@ -249,6 +249,10 @@ textarea {
     display: inline-flex;
 }
 
+.container{
+    overflow-x: hidden;
+}
+
 #drow-fases {
     display: flex;
     align-items: center;
