@@ -146,6 +146,7 @@ function InsertRespuesta(comid){
                         
                         $.alert("Respuesta enviada");        
                         result.innerHTML = ajax.responseText;
+                        $("#respuestaSelect"+comid).collapse("show");
         
                     } else {
                         console.log("Ups, Me equivoque;");
@@ -163,4 +164,40 @@ function InsertRespuesta(comid){
     }else{
         $.alert("Escriba su nombre");        
     }          
+}
+
+function BorrarRespuesta(resid,comid){
+    $.confirm({
+        title: 'Confirmación!',
+        content: '¿Desea eliminar esta respuesta?',
+        buttons: {
+            confirmar: function() {
+                $.alert('Se ha eliminado correctamente');
+
+                var result = document.getElementById('tview');
+                var forid = document.formularioColl.forid.value;
+
+                const ajax = new ObjAjax();
+                ajax.open("POST", "main.php", true);
+                ajax.onreadystatechange = function() {
+                    if (ajax.readyState == 4) {
+                        if (ajax.status == 200) {
+
+                            result.innerHTML = ajax.responseText;  
+                            $("#respuestaSelect"+comid).collapse("show");                          
+
+                        } else {
+                            console.log("Ups, Me equivoque;");
+                        }
+                    }
+                };
+
+                ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                ajax.send("ctrl=comentario&acti=eliminar&resid=" + resid + "&id=" + forid);
+            },
+            cancelar: function() {
+                
+            }
+        }
+    });
 }

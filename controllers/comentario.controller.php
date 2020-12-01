@@ -35,8 +35,12 @@
 								}										
 
 		public function Eliminar()
-								{
-									$this->comentario->Delete($_REQUEST['comid']);
+								{	
+									if(isset($_REQUEST['resid'])){
+										$this->comentario->DeleteResp($_REQUEST['resid']);
+									}else{
+										$this->comentario->Delete($_REQUEST['comid']);
+									}										
 
 									require_once('../views/comentario/comentarioSelect.php');
 								}

@@ -103,6 +103,16 @@
 											catch(exception $e)		{ die ($e->getMessage()); 				 }
 			}
 
+	public function DeleteResp($id){
+									
+											try 					{	$sql="DELETE FROM tbl_respuesta WHERE res_id = ?";
+																		$this->pdo->prepare($sql)
+																				->execute(array($id));
+																	}
+
+											catch(exception $e)		{ die ($e->getMessage()); 				 }
+	}			
+
 	public function Update(Comentario $datos){
 									
 		try {	
