@@ -23,7 +23,7 @@
 
 			<?php foreach ( $this->anuncio->Select($fichapuntero) as $filas ): ?>
 
-					 	<?php  $grupal = "'".$filas->anu_id."','".$filas->anu_titulo."','".$filas->anu_descrp."','".$filas->anu_fecfn."','".$filas->anu_ficid."'"; ?>
+					 	<?php  $grupal = "'".$filas->anu_id."','".$filas->anu_titulo."','".$filas->anu_descrp."','".$filas->anu_fecfn."','".$filas->anu_ficcodigo."'"; ?>
 						
 
 				<div class="d-flex justify-content-center">

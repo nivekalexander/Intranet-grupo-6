@@ -123,26 +123,120 @@ function UpdateComentario(comid){
 
 function CleanCom() {
     document.formularioColl.reset();
-    $("form").removeClass('was-validated');
 }
 
-function CargarRespuestas(){
-    var result = document.getElementById('rview');    
+// SCRIPTS RESPUESTAS
 
-    const ajax = new ObjAjax();
-    ajax.open("POST", "main.php", true);
-    ajax.onreadystatechange = function() {
-        if (ajax.readyState == 4) {
-            if (ajax.status == 200) {
+function InsertRespuesta(comid){
+    var result = document.getElementById('tview');
 
-                result.innerHTML = ajax.responseText;                            
+    var respst = document.getElementById("rcomentario"+comid).value;
+    var perprt = document.getElementById("rnombre"+comid).value;
+    var forid = document.formularioColl.forid.value;
 
-            } else {
-                console.log("Ups, Me equivoque;");
+    if(!perprt == ""){
+        if(!respst == ""){
+            
+            const ajax = new ObjAjax();
+            ajax.open("POST", "main.php", true);
+            ajax.onreadystatechange = function() {
+                if (ajax.readyState == 4) {
+                    if (ajax.status == 200) {
+                        
+                        $.alert("Respuesta enviada");        
+                        result.innerHTML = ajax.responseText;
+                        $("#respuestaSelect"+comid).collapse("show");
+        
+                    } else {
+                        console.log("Ups, Me equivoque;");
+                    }
+                }
+            };
+        
+            ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            ajax.send("ctrl=comentario&acti=insertar&respst=" + respst + "&perprt=" + perprt + "&id=" + forid + "&comid=" + comid);    
+
+        
+        }else{
+            $.alert("Escriba su respuesta");        
+        }
+    }else{
+        $.alert("Escriba su nombre");        
+    }          
+}
+
+function BorrarRespuesta(resid,comid){
+    $.confirm({
+        title: 'Confirmación!',
+        content: '¿Desea eliminar esta respuesta?',
+        buttons: {
+            confirmar: function() {
+                $.alert('Se ha eliminado correctamente');
+
+                var result = document.getElementById('tview');
+                var forid = document.formularioColl.forid.value;
+
+                const ajax = new ObjAjax();
+                ajax.open("POST", "main.php", true);
+                ajax.onreadystatechange = function() {
+                    if (ajax.readyState == 4) {
+                        if (ajax.status == 200) {
+
+                            result.innerHTML = ajax.responseText;  
+                            $("#respuestaSelect"+comid).collapse("show");                          
+
+                        } else {
+                            console.log("Ups, Me equivoque;");
+                        }
+                    }
+                };
+
+                ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                ajax.send("ctrl=comentario&acti=eliminar&resid=" + resid + "&id=" + forid);
+            },
+            cancelar: function() {
+                
             }
         }
-    };
+    });
+}
 
-    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=respuesta");
+function EditarRespuesta(resid){    
+
+    var campoText = "#ercomentario"+resid;
+    var textRespt = "#mrcomentario"+resid;
+    var btnResput = "#btnresponder"+resid;
+    var btnEditar = "#imgeditar"+resid;
+                    
+    $(campoText).removeAttr("hidden");
+    $(textRespt).attr("style","display: none;");
+    $(btnEditar).attr("style","display: none;");
+    $(btnResput).removeAttr("hidden");    
+
+}
+
+function UpdateRespuesta(resid, comid){
+
+    var result = document.getElementById('tview');
+    var ercomentario = document.getElementById("ercomentario"+resid).value;
+    var forid = document.formularioColl.forid.value;
+
+    if(!ercomentario == ""){
+        const ajax = new ObjAjax();
+        ajax.open("POST", "main.php", true);
+        ajax.onreadystatechange = function() {
+            if (ajax.readyState == 4) {
+                if (ajax.status == 200) {
+
+                    result.innerHTML = ajax.responseText;     
+                    $("#respuestaSelect"+comid).collapse("show");                  
+
+                } else { console.log("Ups, Me equivoque;"); }
+            }
+        };
+        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        ajax.send("ctrl=comentario&acti=actualizar&respst="+ercomentario+"&resid="+resid+"&id="+forid);
+    }else{
+        $.alert("No puede actualizar su respuesta vacia");   
+    }
 }

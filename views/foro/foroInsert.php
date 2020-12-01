@@ -45,7 +45,7 @@
 
         <div class="modal-footer">
           <button type="button" id="cancel-for" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarForo();">Cerrar</button>
-          <button type="button" id="btnguardar" class="btn btn-primary btn-rounded" >Subir</button>
+          <button type="button" id="btnguardar" class="btn btn-primary btn-rounded" >Crear</button>
         </div>
 
       </form>  
@@ -64,7 +64,7 @@
             document.getElementById("btnguardar").addEventListener('click', function(event) {                  
                 if (form.checkValidity() === true) {                                  
                     var nombreBoton = document.getElementById("btnguardar").innerHTML;                   
-                    if (nombreBoton == "Subir"){                         
+                    if (nombreBoton == "Crear"){                         
                         InsertForo();
                         $('#foroModal').modal('hide');              
                     }

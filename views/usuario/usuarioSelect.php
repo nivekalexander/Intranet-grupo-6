@@ -6,9 +6,10 @@
 		<!-- Cabecera de la Tabla -->
 		<thead class="thead-dark">
 			<tr>
+				<th scope="col" >N° Identificaión</th>
 				<th scope="col" >Nombre</th>
 				<th scope="col">Apellido</th>
-				<th scope="col">Contraseña</th>
+				<th scope="col" hidden>Contraseña</th>
                 <th scope="col">Correo</th>
                 <th scope="col">Ficha</th>
 				<th scope="col">Rol</th>
@@ -26,12 +27,13 @@
 			
 				<?php foreach ($this->usuario->Select($rolpuntero) as $filas): ?>
 
-					<?php $grupal = "'".$filas->usu_id."','".$filas->usu_nombre."','".$filas->usu_aplldo."','".$filas->usu_passwd."','".$filas->usu_correo."','".$filas->usu_ficid."','".$filas->usu_rolid."','".$filas->usu_estid."','".$filas->usu_tipid."'";?>
-					<?php $eliminar = "'".$filas->usu_id."','".$filas->usu_rolid."'"; ?>
+					<?php $grupal = "'".$filas->usu_numdnt."','".$filas->usu_nombre."','".$filas->usu_aplldo."','".$filas->usu_passwd."','".$filas->usu_correo."','".$filas->usu_ficcodigo."','".$filas->usu_rolid."','".$filas->usu_estid."','".$filas->usu_tipid."'";?>
+					<?php $eliminar = "'".$filas->usu_numdnt."','".$filas->usu_rolid."'"; ?>
 					<tr>
+						<td scope="row"><?php echo $filas->usu_numdnt; ?></td>
 						<td scope="row"><?php echo $filas->usu_nombre; ?></td>
 						<td scope="row"><?php echo $filas->usu_aplldo; ?> </td>
-                        <td scope="row"><?php echo $filas->usu_passwd; ?></td>
+                        <td scope="row" hidden><?php echo $filas->usu_passwd; ?></td>
                         <td scope="row"><?php echo $filas->usu_correo;?></td>
                         <td scope="row"><?php echo $filas->fic_codigo;?></td>
                         <td scope="row"><?php echo $filas->rol_nombre;?></td>

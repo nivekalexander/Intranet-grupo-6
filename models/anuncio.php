@@ -16,8 +16,8 @@ class Anuncio
 									 	try  				 {
 									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_anuncio 
 																						  INNER JOIN tbl_usuario 
-																						  WHERE tbl_anuncio.anu_usuid = tbl_usuario.usu_id 
-																						  AND tbl_anuncio.anu_ficid = ? 
+																						  WHERE tbl_anuncio.anu_usunumdnt = tbl_usuario.usu_numdnt 
+																						  AND tbl_anuncio.anu_ficcodigo = ? 
 																						  ORDER BY tbl_anuncio.anu_id DESC");
 									 							$sql->execute(array($fichapuntero));
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
@@ -41,7 +41,7 @@ class Anuncio
 		public function Insert(Anuncio $data)
 									 {
 									 	try  				 {
-									 							$sql="INSERT INTO tbl_anuncio(`anu_titulo`, `anu_descrp`, `anu_fecfn`, `anu_ficid`, `anu_usuid`)
+									 							$sql="INSERT INTO tbl_anuncio(`anu_titulo`, `anu_descrp`, `anu_fecfn`, `anu_ficcodigo`, `anu_usunumdnt`)
 																					 VALUES(?,?,?,?,?)";
 																					 			 
 

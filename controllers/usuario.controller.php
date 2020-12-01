@@ -36,6 +36,7 @@
 
 									$datos= $this->usuario;
 
+									$datos->id          = $_REQUEST['id'];
 									$datos->nombre      = $_REQUEST['nombre'];
                                     $datos->apellido    = $_REQUEST['apellido'];
                                     $datos->contraseña  = $_REQUEST['contraseña'];
