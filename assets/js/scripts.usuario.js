@@ -58,6 +58,8 @@ function BorrarUsuario(id, rolid) {
 
 
 function InsertUsuario() {
+
+
     var result = document.getElementById('tview');
 
     var id = document.formulario.id.value;
@@ -120,7 +122,7 @@ function EditarUsuario(id, nombre, apellido, contraseña, correo, ficha, rol, es
     document.getElementById("btnguardar").innerHTML = "Actualizar";
     document.getElementById("titleusuario").innerHTML = "Actualizar usuario";
 
-
+    document.getElementById('id').setAttribute("disabled", "");
 
 }
 
@@ -174,6 +176,7 @@ function UpdateUsuario() {
 function CancelarUsuario() {
     document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titleusuario").innerHTML = "Crear usuario";
+    document.getElementById('id').removeAttribute("disabled");
 }
 
 

@@ -36,7 +36,8 @@ class Usuario
 									 {
 									 	try  				 {
 									 							$sql="INSERT INTO tbl_usuario(usu_numdnt,usu_nombre,usu_aplldo,usu_passwd,usu_correo,usu_ficcodigo,usu_rolid ,usu_estid,usu_tipid)
-									 										        VALUES(?,?,?,?,?,?,?,?,?)";
+																					 VALUES(?,?,?,?,?,?,?,?,?)";
+																	
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(

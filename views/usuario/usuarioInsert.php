@@ -17,7 +17,7 @@
 
 					<div>
 					<label for="nombre">Numero de documento</label><br>
-					<input class="form-control rounded" type="number" name="id" name="id" required>
+					<input class="form-control rounded" type="number" id="id" name="id" required>
 					<div class="invalid-feedback">Complete el campo.</div><br>
 					</div>
 
@@ -107,6 +107,7 @@
 								if (form.checkValidity() === true) {
 									var nombreBoton = document.getElementById("btnguardar").innerHTML;
 									if (nombreBoton == "Crear"){
+										document.getElementById('id').removeAttribute("disabled");
 										InsertUsuario();
 										$('#modalusuario').modal('hide');
 									}
