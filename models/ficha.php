@@ -36,7 +36,7 @@ class Ficha
 									 	try  				 {
 									 							$sql="INSERT INTO tbl_ficha (fic_codigo,fic_feccrn,fic_fecfn,fic_tijid,fic_modid,fic_tofid,fic_pfoid)
 									 										        VALUES(?,?,?,?,?,?,?);";
-									 							$this->pdo->prepare($sql)
+									 							if($this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
                                                                                                 $datos->fic_codigo,
@@ -47,7 +47,8 @@ class Ficha
                                                                                                 $datos->fic_tofid,
                                                                                                 $datos->fic_pfoid
 									 									  			 	   )
-									 									  			);
+																					   )){print('hola');}
+																					
 									 						 }
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
