@@ -23,7 +23,7 @@
 		public function Get($ficid)
 		{
 									try  				 {
-															$sql=$this->pdo->prepare("SELECT * FROM tbl_horario WHERE hor_ficid = ?");
+															$sql=$this->pdo->prepare("SELECT * FROM tbl_horario WHERE hor_ficcodigo = ?");
 															$sql->execute(array($ficid));
 															return $sql->fetch(PDO::FETCH_OBJ);
 															}
@@ -33,7 +33,7 @@
 		public function Insert(Horario $datos)
 									 { 
 									 	try  				 {
-									 							$sql="INSERT INTO tbl_horario(hor_url, hor_triini, hor_trifin, hor_trinum, hor_ficid) VALUES(?,?,?,?,?);";
+									 							$sql="INSERT INTO tbl_horario(hor_url, hor_triini, hor_trifin, hor_trinum, hor_ficcodigo) VALUES(?,?,?,?,?);";
 									 							$this->pdo->prepare($sql)
 																		   ->execute(array(
 																						   $datos->url,

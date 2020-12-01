@@ -20,12 +20,12 @@
                                                                                         JOIN tbl_materialapoyo_ficha 
                                                                                             ON tbl_materialapoyo_ficha.maf_mapid = tbl_materialapoyo.map_id
                                                                                         JOIN tbl_usuario 
-                                                                                            ON tbl_usuario.usu_id = tbl_materialapoyo.map_usuid 
+                                                                                            ON tbl_usuario.usu_numdnt = tbl_materialapoyo.map_usunumdnt 
                                                                                         JOIN tbl_ficha 
-                                                                                            ON tbl_materialapoyo_ficha.maf_ficid = tbl_ficha.fic_id
+                                                                                            ON tbl_materialapoyo_ficha.maf_ficcodigo = tbl_ficha.fic_codigo
                                                                                         JOIN tbl_fases
                                                                                             ON tbl_materialapoyo.map_fasid = tbl_fases.fas_id
-                                                                                        WHERE tbl_ficha.fic_id = ? AND tbl_fases.fas_id = ?");
+                                                                                        WHERE tbl_ficha.fic_codigo = ? AND tbl_fases.fas_id = ?");
                                                                 $sql->execute(array(
                                                                     
                                                                                     $fichapuntero,

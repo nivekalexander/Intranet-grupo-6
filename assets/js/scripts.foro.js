@@ -8,14 +8,14 @@ function ObjAjax() {
 }
 
 function InsertForo() {
-    
+
     var result = document.getElementById('tview');
 
     var titulo = document.formulario.titulo.value;
     var descrp = document.formulario.descrp.value;
     var fchfin = document.formulario.fchfin.value;
-    var fchini = document.formulario.fchini.value;    
-    var ficid  = document.formulario.idficha.value;
+    var fchini = document.formulario.fchini.value;
+    var ficid = document.formulario.idficha.value;
 
     const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
@@ -36,7 +36,7 @@ function InsertForo() {
 
 }
 
-function BorrarForo(id){
+function BorrarForo(id) {
     $.confirm({
         title: 'Confirmación!',
         content: '¿Esta seguro que desea eliminar este foro?',
@@ -53,7 +53,7 @@ function BorrarForo(id){
                     if (ajax.readyState == 4) {
                         if (ajax.status == 200) {
 
-                            result.innerHTML = ajax.responseText;                            
+                            result.innerHTML = ajax.responseText;
 
                         } else {
                             console.log("Ups, Me equivoque;");
@@ -71,28 +71,28 @@ function BorrarForo(id){
     });
 }
 
-function EditarForo(id,titulo,fchfin,fchini,descrp){
+function EditarForo(id, titulo, fchfin, fchini, descrp) {
     $.confirm({
         title: 'Confirmación!',
         content: '¿Desea editar este foro?',
         buttons: {
             confirmar: function() {
-                document.formulario.id.value      = id;
-                document.formulario.titulo.value  = titulo;
-                document.formulario.descrp.value  = descrp;
-                document.formulario.fchfin.value  = fchfin;
-                document.formulario.fchini.value  = fchini;       
-            
+                document.formulario.id.value = id;
+                document.formulario.titulo.value = titulo;
+                document.formulario.descrp.value = descrp;
+                document.formulario.fchfin.value = fchfin;
+                document.formulario.fchini.value = fchini;
+
                 document.getElementById("btnguardar").innerHTML = "Actualizar";
                 document.getElementById("ModalLabelForo").innerHTML = "Editar Foro";
-                $('#foroModal').modal('show');  
+                $('#foroModal').modal('show');
             },
             cancelar: function() {}
         }
-    });    
+    });
 }
 
-function UpdateForo(){
+function UpdateForo() {
     var result = document.getElementById('tview');
 
     var id = document.formulario.id.value;
@@ -100,7 +100,7 @@ function UpdateForo(){
     var descrp = document.formulario.descrp.value;
     var fchfin = document.formulario.fchfin.value;
     var fchini = document.formulario.fchini.value;
-    var ficid  = document.formulario.idficha.value;
+    var ficid = document.formulario.idficha.value;
 
     const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
@@ -116,13 +116,13 @@ function UpdateForo(){
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=foro&acti=actualizar&titulo="+titulo+"&descrp="+descrp+"&fchfin="+fchfin+"&fchini="+fchini+"&ficid="+ficid+"&id="+id);
+    ajax.send("ctrl=foro&acti=actualizar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&fchini=" + fchini + "&ficid=" + ficid + "&id=" + id);
 }
 
-function ParticiparForo(id,titulo,fchfin,fchini,descrp){
+function ParticiparForo(id, titulo, fchfin, fchini, descrp) {
 
     var result = document.getElementById("contenedorForo");
-    var ficid  = document.formulario.idficha.value;
+    var ficid = document.formulario.idficha.value;
 
     const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
@@ -130,20 +130,20 @@ function ParticiparForo(id,titulo,fchfin,fchini,descrp){
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
 
-                result.innerHTML = ajax.responseText;    
+                result.innerHTML = ajax.responseText;
 
             } else { console.log("Ups, Me equivoque;"); }
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=comentario&titulo="+titulo+"&descrp="+descrp+"&fchfin="+fchfin+"&fchini="+fchini+"&ficid="+ficid+"&id="+id);    
+    ajax.send("ctrl=comentario&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&fchini=" + fchini + "&ficid=" + ficid + "&id=" + id);
 
 
 
 }
 
-function CancelarForo(){
+function CancelarForo() {
 
-    document.getElementById("ModalLabelForo").innerHTML = "Crear Foro"; 
-    document.getElementById("btnguardar").innerHTML = "Subir";               
+    document.getElementById("ModalLabelForo").innerHTML = "Crear Foro";
+    document.getElementById("btnguardar").innerHTML = "Subir";
 }

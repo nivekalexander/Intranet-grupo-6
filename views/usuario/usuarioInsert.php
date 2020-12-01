@@ -15,7 +15,11 @@
 
 				<form name="formulario" id="formulario" class="needs-validation" >
 
-					<input type="text" name="id" hidden>
+					<div>
+					<label for="nombre">Numero de documento</label><br>
+					<input class="form-control rounded" type="number" name="id" name="id" required>
+					<div class="invalid-feedback">Complete el campo.</div><br>
+					</div>
 
 					<div>
 						<label for="nombre">Nombre</label><br>
@@ -46,7 +50,7 @@
 							<select class="form-control rounded" name="ficha" id="fich" required>
 								<?php
 									foreach ($this->ficha->Select() as $datos): 
-										echo '<option value="'.$datos->fic_id.'">'.$datos->fic_codigo.'</option>';
+										echo '<option value="'.$datos->fic_codigo.'">'.$datos->fic_codigo.'</option>';
 									endforeach;
 								?>
 							</select>

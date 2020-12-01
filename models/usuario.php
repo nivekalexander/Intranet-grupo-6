@@ -20,12 +20,12 @@ class Usuario
 																 INNER JOIN tbl_rol 
 																 INNER JOIN tbl_estado 
 																 INNER JOIN tbl_tipoid 
-																 WHERE tbl_usuario.usu_ficid = tbl_ficha.fic_id 
+																 WHERE tbl_usuario.usu_ficcodigo = tbl_ficha.fic_codigo
 																 AND tbl_usuario.usu_rolid = tbl_rol.rol_id 
 																 AND tbl_usuario.usu_estid = tbl_estado.est_id 
 																 AND tbl_usuario.usu_tipid = tbl_tipoid.tip_id
 																 AND tbl_usuario.usu_rolid = ?
-																 ORDER BY tbl_usuario.usu_id DESC");
+																 ORDER BY tbl_usuario.usu_numdnt DESC");
 																 $sql->execute(array($rol));
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
 									 						 }
@@ -35,11 +35,12 @@ class Usuario
 	public function Insert(Usuario $data)
 									 {
 									 	try  				 {
-									 							$sql="INSERT INTO tbl_usuario(usu_nombre,usu_aplldo,usu_passwd,usu_correo, usu_ficid,usu_rolid ,usu_estid,usu_tipid)
-									 										        VALUES(?,?,?,?,?,?,?,?)";
+									 							$sql="INSERT INTO tbl_usuario(usu_numdnt,usu_nombre,usu_aplldo,usu_passwd,usu_correo,usu_ficcodigo,usu_rolid ,usu_estid,usu_tipid)
+									 										        VALUES(?,?,?,?,?,?,?,?,?)";
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
+																								$data->id,
                                                                                                 $data->nombre,
                                                                                                 $data->apellido,
                                                                                                 $data->contraseña,
@@ -57,10 +58,11 @@ class Usuario
     public function Update(Usuario $data)
 									 {
 									 	try  				 {
-									 							$sql="UPDATE tbl_usuario SET usu_nombre = ?, usu_aplldo = ?, usu_passwd = ?, usu_correo = ?, usu_ficid = ?, usu_rolid = ?, usu_estid = ?, usu_tipid = ? WHERE usu_id = ?";
+									 							$sql="UPDATE tbl_usuario SET usu_numdnt = ?, usu_nombre = ?, usu_aplldo = ?, usu_passwd = ?, usu_correo = ?, usu_ficcodigo = ?, usu_rolid = ?, usu_estid = ?, usu_tipid = ? WHERE usu_numdnt = ?";
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
+																						        $data->id,
                                                                                                 $data->nombre,
                                                                                                 $data->apellido,
                                                                                                 $data->contraseña,
@@ -80,7 +82,7 @@ class Usuario
 	public function Delete($id)
 									 {
 									 	try  				 {
-									 							$sql="DELETE FROM tbl_usuario WHERE usu_id=?";
+									 							$sql="DELETE FROM tbl_usuario WHERE usu_numdnt=?";
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(

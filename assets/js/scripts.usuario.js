@@ -35,7 +35,7 @@ function BorrarUsuario(id, rolid) {
                                     }
                                 });
                             });
-                            
+
 
                         } else {
                             console.log("Ups, Me equivoque;");
@@ -60,7 +60,7 @@ function BorrarUsuario(id, rolid) {
 function InsertUsuario() {
     var result = document.getElementById('tview');
 
-
+    var id = document.formulario.id.value;
     var nombre = document.formulario.nombre.value;
     var apellido = document.formulario.apellido.value;
     var contraseña = document.formulario.contraseña.value;
@@ -96,7 +96,7 @@ function InsertUsuario() {
     };
 
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=insertar&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&ficha=" + ficha + "&rol=" + rol + "&estado=" + estado + "&identi=" + identi);
+    ajax.send("ctrl=usuario&acti=insertar&id=" + id + "&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&ficha=" + ficha + "&rol=" + rol + "&estado=" + estado + "&identi=" + identi);
 
 }
 
@@ -208,10 +208,10 @@ function ConfirmUsuario(id) {
 
 }
 
-function SeleccionarUsuario(){
+function SeleccionarUsuario() {
     var result = document.getElementById('tview');
-    
-    
+
+
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
     ajax.onreadystatechange = function() {

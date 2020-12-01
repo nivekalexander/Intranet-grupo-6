@@ -12,7 +12,7 @@
 
 		public function Select($fichapuntero){
 										try 					{	
-																	$sql=$this->pdo->prepare("SELECT * FROM tbl_foro WHERE for_ficid = ? ORDER BY for_id desc");
+																	$sql=$this->pdo->prepare("SELECT * FROM tbl_foro WHERE for_ficcodigo = ? ORDER BY for_id desc");
 																	$sql->execute(array($fichapuntero));
 																	return $sql->fetchALL(PDO::FETCH_OBJ);
 																}
@@ -24,7 +24,7 @@
 
 		public function Insert(Foro $data){
 								
-										try 					{	$sql = "INSERT INTO tbl_foro (for_titulo, for_fchfin, for_fchini, for_descrp, for_ficid) 
+										try 					{	$sql = "INSERT INTO tbl_foro (for_titulo, for_fchfin, for_fchini, for_descrp, for_ficcodigo) 
 																						  VALUES (?, ?, ?, ?, ?)";
 																	   $this->pdo->prepare($sql) 
 																				 ->execute(

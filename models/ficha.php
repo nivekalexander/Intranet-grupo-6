@@ -24,7 +24,7 @@ class Ficha
 																 tbl_ficha.fic_modid = tbl_modalidad.mod_id AND
 																 tbl_ficha.fic_tofid = tbl_tipooferta.tof_id AND
 																 tbl_ficha.fic_pfoid = tbl_Programaformacion.pfo_id
-																ORDER BY tbl_ficha.fic_id DESC");
+																ORDER BY tbl_ficha.fic_codigo DESC");
 									 							$sql->execute();
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
 									 						 }
