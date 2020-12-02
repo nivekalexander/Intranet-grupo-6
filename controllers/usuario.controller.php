@@ -84,6 +84,7 @@
 
  										require_once('../views/usuario/usuarioSelect.php');
 									}
+									
 		public function Seleccion()
 									{	
 										$datos = $this->usuario;

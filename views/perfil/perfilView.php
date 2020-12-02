@@ -5,10 +5,12 @@
         <div class="panel-foto rounded-circle">
             <img class="img-profile" src="https://www.flaticon.es/svg/static/icons/svg/599/599305.svg" alt="">
         </div>
-        <div class="container panel-datos rounded">
+        <div id="tview" class="container panel-datos rounded">
             <?php include('perfilForm.php');?>
             <?php include('perfilModal.php');?>
         </div>
+
+        
     </div>
 
 </div>

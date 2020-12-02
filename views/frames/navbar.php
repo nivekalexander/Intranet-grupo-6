@@ -1,4 +1,3 @@
-
 <body id="page-top">
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
@@ -56,7 +55,7 @@
                     <!-- Nav Item - User name -->
                     <li class="nav-item dropdown no-arrow navbar-fondo">
                       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="nom-usu"><h4 class="mr-2 d-none d-lg-inline">Marcela de Saris</h4></div>
+                        <div id="nombreperfilnav" class="nom-usu"><h4 class="mr-2 d-none d-lg-inline"><?php echo $Nombre=''.$_SESSION['name'].' '.$_SESSION['last'];?></h4></div>
                         <img class="img-profile " src="https://www.flaticon.es/svg/static/icons/svg/599/599305.svg">
                       </a>
                       <!-- Dropdown - User logout -->

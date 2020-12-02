@@ -47,7 +47,9 @@
 					elseif(isset($respuesta->User) and $respuesta->Login=="SI")
 					{
 								
-							$_SESSION['name'] = $objUser->
+							$_SESSION['name'] = $respuesta->Name;
+							$_SESSION['last'] = $respuesta->Lastname;
+							$_SESSION['pass'] = $respuesta->Passw;
 							$_SESSION['SUsu'] = $respuesta->User;
 							$_SESSION['SRol'] = $respuesta->Rol;
 							$_SESSION['SFic'] = $respuesta->Ficha;

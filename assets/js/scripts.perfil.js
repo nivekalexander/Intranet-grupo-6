@@ -1,54 +1,88 @@
+function ObjAjax() {
+    var xmlhttp = false;
+    try { xmlhttp = new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {
+        try { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); } catch (E) { xmlhttp = false; }
+    }
+    if (!xmlhttp && typeof XMLHttpRequest != 'undefined') { xmlhttp = new XMLHttpRequest(); }
+    return xmlhttp;
+}
 
 
-
-
-function ConfirmarPerfil(){
+function ConfirmarPerfil() {
 
     // Quitar modo lectura a los campos
     $('#nombre-perfil').removeAttr("readonly");
     $('#apellido-perfil').removeAttr('readonly');
     $('#contraseña-perfil').removeAttr('readonly');
-    $('#id-perfil').removeAttr('readonly');    
-    $('#correo-perfil').removeAttr('readonly');  
+    $('#id-perfil').removeAttr('readonly');
+    $('#correo-perfil').removeAttr('readonly');
 
     // Mostrar botón ver contraseña
-    $('#ver-pass').attr('style','display: initial;');
+    $('#ver-pass').attr('style', 'display: initial;');
 
     // Mostrar botón actualizar
-    $('#actualizar-perfil').removeAttr('hidden');  
+    $('#actualizar-perfil').removeAttr('hidden');
 
     // Ocultar botón editar
-    $('#editar-perfil').attr('hidden','true');  
-    
+    $('#editar-perfil').attr('hidden', 'true');
+
     // Ocultar ventana modal
     $('#confirmarDatos').modal('hide');
 }
 
-function ActualizarPerfil(){
+function ActualizarPerfil() {
 
     // Agregar modo lectura a los campos 
-    $('#nombre-perfil').attr('readonly','true');  
-    $('#apellido-perfil').attr('readonly','true');  
-    $('#contraseña-perfil').attr('readonly','true');  
-    $('#id-perfil').attr('readonly','true');  
-    $('#correo-perfil').attr('readonly','true');  
+    $('#nombre-perfil').attr('readonly', 'true');
+    $('#apellido-perfil').attr('readonly', 'true');
+    $('#contraseña-perfil').attr('readonly', 'true');
+    $('#id-perfil').attr('readonly', 'true');
+    $('#correo-perfil').attr('readonly', 'true');
 
     // Ocultar botón ver contraseña
-    $('#ver-pass').attr('style','display: none;');
+    $('#ver-pass').attr('style', 'display: none;');
 
     // Ocultar botón actualizar 
-    $('#actualizar-perfil').attr('hidden','true');  
+    $('#actualizar-perfil').attr('hidden', 'true');
 
     // Mostrar botón editar 
-    $('#editar-perfil').removeAttr('hidden');  
+    $('#editar-perfil').removeAttr('hidden');
 }
 
-function VisualizarPass(){    
-    
-    if($('#contraseña-perfil').attr('type')=='password'){
-        $('#contraseña-perfil').attr('type','text');
-    }else{
-        $('#contraseña-perfil').attr('type','password');
+function VisualizarPass() {
+
+    if ($('#contraseña-perfil').attr('type') == 'password') {
+        $('#contraseña-perfil').attr('type', 'text');
+    } else {
+        $('#contraseña-perfil').attr('type', 'password');
     }
-    
+
+}
+
+
+function ActualizarPerfil() {
+
+    var result = document.getElementById('tview');
+
+    var id = document.formulario.idperfil.value;
+
+    var nombre = document.formulario.nombreperfil.value;
+    var apellido = document.formulario.apellidoperfil.value;
+    var contraseña = document.formulario.contraseñaperfil.value;
+    var correo = document.formulario.correoperfil.value;
+
+    const ajax = new XMLHttpRequest();
+    ajax.open("POST", "main.php", true);
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4) {
+            if (ajax.status == 200) {
+                result.innerHTML = ajax.responseText;
+
+            } else { console.log("Ups, Me equivoque;"); }
+        }
+    };
+    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    ajax.send("ctrl=perfil&acti=actualizarperfil&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&id=" + id);
+
+    location.reload();
 }

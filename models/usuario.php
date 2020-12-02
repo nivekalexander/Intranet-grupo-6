@@ -32,6 +32,16 @@ class Usuario
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
+	public function SelectPerfil($id)
+							 {
+							 	try  				 {
+							 							$sql=$this->pdo->prepare("SELECT * FROM tbl_usuario WHERE usu_numdnt = ?");
+														 $sql->execute(array($id));
+							 							return $sql->fetchALL(PDO::FETCH_OBJ);
+							 						 }
+							 	catch (Exception $e) {	die($e->getMessage());			 }
+							 }
+
 	public function Insert(Usuario $data)
 									 {
 									 	try  				 {
@@ -134,6 +144,28 @@ class Usuario
 
 									catch (Exception $e) { die($e->getMessage());			}
 								}
+
+
+    public function UpdateUser(Usuario $data)
+									 {
+									 	try  				 {
+									 							$sql="UPDATE tbl_usuario SET usu_numdnt = ?, usu_nombre = ?, usu_aplldo = ?, usu_passwd = ?, usu_correo = ? WHERE usu_numdnt = ?";
+									 							$this->pdo->prepare($sql)
+									 									  ->execute(
+									 									  			 array(
+																						        $data->id,
+                                                                                                $data->nombre,
+                                                                                                $data->apellido,
+                                                                                                $data->contraseña,
+                                                                                                $data->correo,
+                                                                
+                                                                                                $data->id
+      
+									 									  			 	   )
+									 									  			);
+									 						 }
+									 	catch (Exception $e) {	die($e->getMessage());			 }
+									 }
 
 
 }

@@ -33,9 +33,7 @@
 					</div>
 
 					<div>
-						<label for="usuid">Id Usuario</label><br>
-						<input class="form-control rounded" type="text" name="usuid" id="usuid" required>
-						<div class="invalid-feedback">Complete el campo.</div><br>
+						<input class="form-control rounded" type="text" name="usuid" id="usuid" value="<?php echo $_SESSION['SIdu'];?>" hidden>
 					</div>
 
 					<div>					
