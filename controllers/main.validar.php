@@ -28,7 +28,7 @@
 							
 						echo "<script>
 								$.confirm({
-										   	title: 'CERRAR SESION !!!',
+										   	title: 'CERRAR SESION',
 										    content: 'Limite de Sessiones por Ficha Alcanzada.',
 										    autoClose: 'logoutUser|5000',
 										    buttons: {
@@ -47,7 +47,7 @@
 					elseif(isset($respuesta->User) and $respuesta->Login=="SI")
 					{
 								
-							$_SESSION['name'] = $objUser->
+							// $_SESSION['name'] = $objUser->
 							$_SESSION['SUsu'] = $respuesta->User;
 							$_SESSION['SRol'] = $respuesta->Rol;
 							$_SESSION['SFic'] = $respuesta->Ficha;
