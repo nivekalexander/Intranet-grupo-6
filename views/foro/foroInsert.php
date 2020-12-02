@@ -39,7 +39,7 @@
             <div class="invalid-feedback">Complete el campo.</div><br>
           </div> 
 
-          <input type="text" id="idficha" name="idficha" value="<?php echo $fichapuntero ?>" hidden>  
+          <input type="text" id="idficha" name="idficha" value="<?php echo $_SESSION['grupoficha']; ?>" hidden>  
                               
         </div>
 
