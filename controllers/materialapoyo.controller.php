@@ -56,7 +56,10 @@
 									
 									$name = $_FILES['archivo']['name'];     
 									$exts = explode('.',$name);             
-									$exts = end($exts);                     
+									$exts = end($exts);
+									
+									$datos->icono=$exts;
+									
 									$temp = $_FILES['archivo']['tmp_name']; 
 									$ruta = '../assets/fichas/'.$fichapuntero.'/';
 									$ruta = $ruta.$fecha.".".$exts;
@@ -97,7 +100,10 @@
 								
 									$name = $_FILES['archivo']['name'];     
 									$exts = explode('.',$name);             
-									$exts = end($exts);                     
+									$exts = end($exts);  
+									
+									$datos->icono=$exts;
+
 									$temp = $_FILES['archivo']['tmp_name']; 
 									$ruta = '../assets/fichas/'.$datos->ficid.'/';
 									$ruta = $ruta.$fecha.".".$exts;
