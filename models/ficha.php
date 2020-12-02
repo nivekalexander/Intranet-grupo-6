@@ -73,7 +73,7 @@ class Ficha
 
 									 									  			 	    $datos->fic_id
 									 									  			 	   )
-																 						)); mkdir("../assets/fichas/$datos->fic_codigo",0777);
+																 						)){ mkdir("../assets/fichas/$datos->fic_codigo",0777); }
 
 										 											}
 									 						 
