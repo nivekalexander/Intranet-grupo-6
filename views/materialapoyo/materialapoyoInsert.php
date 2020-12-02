@@ -51,7 +51,7 @@
 					</div>
 
 					<div>					
-						<input class="form-control rounded" type="text" name="fic_codigo" id="fic_codigomodal" value="<?php echo $fichapuntero; ?>" hidden>					
+						<input class="form-control rounded" type="text" name="fic_codigo" id="fic_codigomodal" value="<?php echo $_SESSION['grupoficha']; ?>" hidden>					
 					</div>
 					
 					<div class="modal-footer">
