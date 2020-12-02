@@ -36,6 +36,8 @@
 				   
 				  }
 
+				  echo $_SESSION['SIdu'];
+
 				$controller = strtolower($_REQUEST['ctrl']);
 				$accion = ucwords(strtolower(ISSET($_REQUEST['acti']) ? $_REQUEST['acti'] : 'Index'));
 

@@ -8,7 +8,7 @@ $(".ToggleOpti").on("click",function(){
 
   if(this.id=="logout")
   {
-      window.location.href = ('../controllers/main.cerrar.php');
+      window.location.href = ('./logout.php');
   }			
 });
 
