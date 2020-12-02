@@ -21,8 +21,7 @@
 								
 								<input class="form-control rounded" type="text"  name="nombre" id="nombre" value="<?php echo $filas->usu_nombre;?> <?php echo $filas->usu_aplldo;?>" hidden>
 								
-								<?php $iconos= array("pdf","doc","jpg","mp3","mp4","png","ppt","xls","zip","rar");
-
+								<?php $iconos= array("jpeg","pdf","docx","jpg","mp3","mp4","png","pptx","xlsx","zip","rar");
 									if(in_array( $filas->map_icono , $iconos)){
 								?>
 
