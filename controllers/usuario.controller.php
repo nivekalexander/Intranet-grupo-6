@@ -98,6 +98,15 @@
 									{	
 										require_once('../views/usuario/usuarioConfirm.php');
 									}
+		public function Login($user,$pass)
+									{
+										return $this->usuario->Login($user,$pass);
+									}
+
+		public function Logout($id)
+								{
+									$this->usuario->Logout($id);
+								}
 
 	}
 

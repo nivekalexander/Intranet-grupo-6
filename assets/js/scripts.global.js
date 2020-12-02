@@ -4,5 +4,11 @@ $(".modal").on('hidden.bs.modal', function () {
   }  
   document.formulario.reset();
 });
+$(".ToggleOpti").on("click",function(){
 
+  if(this.id=="logout")
+  {
+      window.location.href = ('../controllers/main.cerrar.php');
+  }			
+});
 

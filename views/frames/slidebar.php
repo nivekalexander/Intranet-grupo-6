@@ -1,10 +1,16 @@
 <?php
 
 error_reporting(E_ALL ^ E_NOTICE);
-$fichapuntero=$_REQUEST['fcpt'];
-$fichacodigo=$_REQUEST['fic_codigo'];
 
-if( null !==$fichapuntero){ ?>
+
+$fichapuntero=$_SESSION['slidebar'];
+
+
+
+
+
+
+if($fichapuntero!=0){ ?>
 <!-- Page Wrapper -->
 <div id="wrapper">
 
@@ -15,7 +21,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Grupos -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=grupos">
+      <a class="nav-link selection"  href="./main.php?ctrl=grupos&slidebar=0">
         <img src="../assets/img/img-slidebar/grupos.svg" class="slidebar-img" alt="new">
         <span>Grupos</span></a>
     </li>
@@ -25,7 +31,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Noticias -->
     <li class="nav-item active">
-      <a class="nav-link selection" href="main.php?ctrl=noticia&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
+      <a class="nav-link selection" href="main.php?ctrl=noticia">
         <img src="../assets/img/img-slidebar/periodico.svg" class="slidebar-img" alt="new">
         <span>Noticias</span></a>
     </li>
@@ -35,7 +41,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Anuncios -->
     <li class="nav-item active">
-      <a class="nav-link selection" href="./main.php?ctrl=anuncio&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
+      <a class="nav-link selection" href="./main.php?ctrl=anuncio">
 
         <img src="../assets/img/img-slidebar/anuncios.svg" class="slidebar-img" alt="new">
         <span>Anuncios</span></a>
@@ -47,7 +53,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Material de Apoyo -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=materialapoyo&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
+      <a class="nav-link selection"  href="./main.php?ctrl=materialapoyo">
         <img src="../assets/img/img-slidebar/materialapoyo.svg" class="slidebar-img" alt="new">
         <span>Material de apoyo</span></a>
     </li>
@@ -57,7 +63,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Foro -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=foro&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
+      <a class="nav-link selection"  href="./main.php?ctrl=foro">
         <img src="../assets/img/img-slidebar/foro.svg" class="slidebar-img" alt="new">
         <span>Foro</span></a>
     </li>
@@ -67,7 +73,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Horario -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=horario&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
+      <a class="nav-link selection"  href="./main.php?ctrl=horario">
         <img src="../assets/img/img-slidebar/horario.svg" class="slidebar-img" alt="new">
         <span>Horario</span></a>
     </li>
@@ -77,7 +83,7 @@ if( null !==$fichapuntero){ ?>
     </div>
     <!-- Nav Item - Usuarios -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=usuario&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
+      <a class="nav-link selection"  href="./main.php?ctrl=usuario">
         <img src="../assets/img/img-slidebar/usuarios.svg" class="slidebar-img" alt="new">
         <span>Usuarios</span></a>
     </li>
@@ -87,7 +93,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Ficha -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=ficha&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
+      <a class="nav-link selection"  href="./main.php?ctrl=ficha">
         <img src="../assets/img/img-slidebar/ficha.svg" class="slidebar-img" alt="new">
         <span>Ficha</span></a>
     </li>
@@ -98,7 +104,7 @@ if( null !==$fichapuntero){ ?>
 
     <!-- Nav Item - Programa de formación -->
     <li class="nav-item active">
-      <a class="nav-link selection"  href="./main.php?ctrl=programaformacion&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">
+      <a class="nav-link selection"  href="./main.php?ctrl=programaformacion">
         <img src="../assets/img/img-slidebar/programaformacion.svg" class="slidebar-img" alt="new">
         <span id="programa" class="programa2">Programa de formación</span></a>
     </li>
@@ -122,16 +128,16 @@ if( null !==$fichapuntero){ ?>
       <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Usuarios:</h6>
-          <a class="collapse-item"  href="./main.php?ctrl=tipoidentificacion&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">Tipo identificación</a>
-          <a class="collapse-item"  href="./main.php?ctrl=rol&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">Rol</a>
+          <a class="collapse-item"  href="./main.php?ctrl=tipoidentificacion">Tipo identificación</a>
+          <a class="collapse-item"  href="./main.php?ctrl=rol">Rol</a>
           <div class="collapse-divider"></div>
           <h6 class="collapse-header">General:</h6>
-          <a class="collapse-item" href="./main.php?ctrl=tipoprograma&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">Tipo de Programa</a>
-          <a class="collapse-item" href="./main.php?ctrl=tipooferta&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">Tipo Oferta</a>
-          <a class="collapse-item" href="./main.php?ctrl=tipojornada&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">Tipo Jornada</a>
-          <a class="collapse-item" href="./main.php?ctrl=fases&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">Fases</a>
-          <a class="collapse-item" href="./main.php?ctrl=modalidad&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">Modalidad</a>
-          <a class="collapse-item" href="./main.php?ctrl=estado&fcpt=<?php echo($fichapuntero);?>&fic_codigo=<?php echo($fichacodigo);?>">Estado</a>
+          <a class="collapse-item" href="./main.php?ctrl=tipoprograma">Tipo de Programa</a>
+          <a class="collapse-item" href="./main.php?ctrl=tipooferta">Tipo Oferta</a>
+          <a class="collapse-item" href="./main.php?ctrl=tipojornada">Tipo Jornada</a>
+          <a class="collapse-item" href="./main.php?ctrl=fases">Fases</a>
+          <a class="collapse-item" href="./main.php?ctrl=modalidad">Modalidad</a>
+          <a class="collapse-item" href="./main.php?ctrl=estado">Estado</a>
         </div>
       </div>
     </li>

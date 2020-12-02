@@ -30,18 +30,10 @@
 
                                 </div>
                                 <br>
-                                <form class="user">
+                                <form action="controllers/main.validar.php" method="POST" class="user">
                                     
+                                
                                     
-                                    <div class="form-group">
-                                    <select class="form-control " >
-                                    <option selected>Seleccione El Rol</option>
-                                    <option>Instructor</option>
-                                    <option>Aprendiz</option>
-                                    <option>Administrador</option>
-                                    </select>
-                                    </div>
-                                    <br>
                                     <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Usuario">
                                     </div>

@@ -230,3 +230,4 @@ function SeleccionarUsuario() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=usuario&acti=recargar");
 }
+

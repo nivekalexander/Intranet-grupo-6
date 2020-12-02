@@ -1,8 +1,14 @@
 
 <div class="row row-cols-1 row-cols-md-3">
+
+<?php $_SESSION['slidebar']=$_REQUEST['slidebar'];?>
+
     <?php foreach ( $this->grupos->Select() as $filas ): ?>
+
+      <form method="POST" action="main.php?ctrl=noticia">
+
       <div class="col mb-4 card-deck">  
-      <?php  $grupal = "'".$filas->fic_id."'"?>
+      
         <div class="card bg-light mb-3 ">
 
           <div class="card-header font-weight-bold">
@@ -22,10 +28,17 @@
           </div>
 
           <div class="card-footer">
-            <a class="float-right btn-rounded btn" href="main.php?ctrl=noticia&fcpt=<?php echo ($filas->fic_codigo);?>&fic_codigo=<?php echo($filas->fic_codigo);?>">Entrar</a>
-          </div>
+              <input type="text" name="fichapuntero" id="fichapuntero" value="<?php echo $filas->fic_codigo; ?>" hidden> 
+              <input type="text" name="slidebar" id="slidebar" value="1" hidden>
+              <button class="btn-rounded btn float-right" type="submit" >Entrar</button>
+            
+            </div>
 
         </div>
       </div>
+
+      </form>
+
     <?php endforeach; ?>
+
 </div> 

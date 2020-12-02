@@ -12,7 +12,7 @@
 
 		public function Index()
 								{
-								session_start();
+								
                                 require_once('../views/frames/header.php');
                                 require_once('../views/frames/navbar.php');
                                 require_once('../views/frames/slidebar.php');

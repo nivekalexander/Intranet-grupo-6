@@ -112,6 +112,28 @@ class Usuario
 														}
 								catch (Exception $e) {	die($e->getMessage());			 }
 								}
+								
+	public function Login($user,$pass)
+								{
+									try 				 { 
+															$sql=$this->pdo->prepare("CALL LOGIN(?,?)");
+															$sql->execute(array($user,$pass));
+															return $sql->fetch(PDO::FETCH_OBJ);
+															}
+
+									catch (Exception $e) { die($e->getMessage());			}
+								}
+
+
+	public function Logout($id)
+								{
+									try 				 { 
+															$sql=$this->pdo->prepare("DELETE FROM tbl_login WHERE log_usunumdnt = ?;");
+															$sql->execute(array($id));
+														 }
+
+									catch (Exception $e) { die($e->getMessage());			}
+								}
 
 
 }
