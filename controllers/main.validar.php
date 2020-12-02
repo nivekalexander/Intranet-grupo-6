@@ -35,7 +35,7 @@
 												        logoutUser: {
 														            text: 'Cerrando',
 														            action: function () {
-														               						window.location.href = ('main.cerrar.php');
+														               						window.location.href = ('../views/logout.php');
 														            					}
 												        			}
 										    		 }
