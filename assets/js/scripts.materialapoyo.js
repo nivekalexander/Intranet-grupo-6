@@ -6,9 +6,10 @@ function ObjAjax() {
     if (!xmlhttp && typeof XMLHttpRequest != 'undefined') { xmlhttp = new XMLHttpRequest(); }
     return xmlhttp;
 }
+
 function FasesMaterialApoyo(fase){
 
-    var fcpt=document.getElementById("fichapuntero").value;
+    
 
    
 
@@ -29,7 +30,7 @@ function FasesMaterialApoyo(fase){
                 };
 
                 ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                ajax.send("ctrl=materialapoyo&acti=faseconfirmar&fase="+fase+"&fcpt="+fcpt);
+                ajax.send("ctrl=materialapoyo&acti=faseconfirmar&fase="+fase);
 
 }
 
@@ -90,9 +91,10 @@ function InsertMaterialApoyo() {
     var titulo=document.getElementById("titulomodal").value;
     var descrp=document.getElementById("descrpmodal").value;
     var fases=document.getElementById("fasesmodal").value;
-    var ficid=document.getElementById("fic_codigomodal").value;
+    
+    console.log("asd "+fases);
 
-    var destino = "main.php?ctrl=materialapoyo&acti=insertar&publicador="+publicador+"&titulo="+titulo+"&descrp="+descrp+"&ficid="+ficid+"&fases="+fases;
+    var destino = "main.php?ctrl=materialapoyo&acti=insertar&publicador="+publicador+"&titulo="+titulo+"&descrp="+descrp+"&fases="+fases;
     $.ajax({
         url: destino,
         type: 'POST',
@@ -152,13 +154,13 @@ function UpdateMaterialApoyo() {
     map_titulo=document.getElementById("titulomodal").value;
     map_descrp=document.getElementById("descrpmodal").value;
     map_fasid=document.getElementById("fasesmodal").value;
-    ficid=document.getElementById("fic_codigomodal").value;
+    
     
     
     var paquete = new FormData();
     paquete.append('archivo',$('#file-archivo')[0].files[0]);
 
-    var destino = "main.php?ctrl=materialapoyo&acti=actualizar&url="+urlvieja+"&map_id="+map_id+"&publicador="+map_usunumdnt+"&titulo="+map_titulo+"&descrp="+map_descrp+"&fases="+map_fasid+"&ficid="+ficid; 
+    var destino = "main.php?ctrl=materialapoyo&acti=actualizar&url="+urlvieja+"&map_id="+map_id+"&publicador="+map_usunumdnt+"&titulo="+map_titulo+"&descrp="+map_descrp+"&fases="+map_fasid; 
     
     $.ajax({
         url: destino,
