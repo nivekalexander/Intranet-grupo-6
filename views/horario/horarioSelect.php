@@ -1,7 +1,7 @@
 <table>
     <tbody>
     <?php
-    $hor = $this->horario->Get($fichapuntero);   
+    $hor = $this->horario->Get($_SESSION['grupoficha']);   
 
     if($hor){                
         $grupal = "'".$hor->hor_id."','".$hor->hor_url."','".$hor->hor_triini."','".$hor->hor_trifin."','".$hor->hor_trinum."','".$hor->hor_ficcodigo."'";

@@ -47,22 +47,29 @@
                                 <div class="col-lg-12">
 
                                     <div class="p-6 center-login">
-                                    <div class="text-center">
+                                        <div class="text-center">
                                         
-                                    <img src="./assets/img/logo.svg" alt="logo.svg">
+                                            <img src="./assets/img/logo.svg" alt="logo.svg">
 
-                                    </div>
-                                    <br>
+                                        </div>
+                                    <br><br>
 
                                     <form action="./controllers/main.validar.php" method="POST" class="user">
-                                        
-                                    
-                                        
+
+                                       
+                                
                                         <div class="form-group">
                                         <input type="text" class="form-control form-control-user" id="usur" name="usur" aria-describedby="emailHelp" placeholder="Usuario" required>
-                                        </div>
+                                        </div><br>
                                         <div class="form-group">
                                         <input type="password" class="form-control form-control-user" id="pass" name="pass" placeholder="Contraseña" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                           <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Recuérdame</label>
+                                           </div>
                                         </div>
                                         
                                         
@@ -75,7 +82,7 @@
 
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html"> Necesitas ayuda?</a>
+                                        <a class="small" href="forgot-password.html"> ¿Necesitas ayuda?</a>
                                     </div>
                                     
                                     </div>

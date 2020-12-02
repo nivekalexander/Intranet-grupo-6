@@ -39,7 +39,7 @@
 					</div>
 
 					<div>					
-						<input class="form-control rounded" type="text" name="ficid" id="ficid" value="<?php echo $fichapuntero; ?>" hidden>					
+						<input class="form-control rounded" type="text" name="ficid" id="ficid" value="<?php echo $_SESSION['grupoficha']; ?>" hidden>					
 					</div>
 					
 					<div class="modal-footer">
