@@ -21,16 +21,16 @@
 								
 								<input class="form-control rounded" type="text"  name="nombre" id="nombre" value="<?php echo $filas->usu_nombre;?> <?php echo $filas->usu_aplldo;?>" hidden>
 								
-								<?php $iconos= array("pdf","doc","jpg","mp3","png","ppt","xls","zip","rar");
+								<?php $iconos= array("pdf","doc","jpg","mp3","mp4","png","ppt","xls","zip","rar");
 
 									if(in_array( $filas->map_icono , $iconos)){
 								?>
 
-										<img src="../assets/img/img-materialapoyo/<?php echo $filas->map_icono; ?>.png" alt="" style="width: 70px ; height: 70px;">
+										<img src="../assets/img/img-materialapoyo/<?php echo $filas->map_icono; ?>.svg" alt="" style="width: 70px ; height: 70px;">
 
 									<?php }else {?>
 
-										<img src="../assets/img/img-materialapoyo/unknow.svg" alt="" style="width: 70px ; height: 70px;">
+										<img src="../assets/img/img-materialapoyo/unknown.svg" alt="" style="width: 70px ; height: 70px;">
 
 									<?php }?>
 						
