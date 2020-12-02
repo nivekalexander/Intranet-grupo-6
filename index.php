@@ -59,10 +59,10 @@
                                     
                                         
                                         <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="usur" name="usur" aria-describedby="emailHelp" placeholder="Usuario">
+                                        <input type="text" class="form-control form-control-user" id="usur" name="usur" aria-describedby="emailHelp" placeholder="Usuario" required>
                                         </div>
                                         <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="pass" name="pass" placeholder="Contraseña">
+                                        <input type="password" class="form-control form-control-user" id="pass" name="pass" placeholder="Contraseña" required>
                                         </div>
                                         
                                         
