@@ -30,10 +30,7 @@
 
 
                                         $idfase=$_REQUEST['fase'];
-                                        $fichapuntero=$_REQUEST['fcpt'];
 
-
-                                        
 
                                         require_once('../views/materialapoyo/materialapoyoSelect.php'); 
 
@@ -41,7 +38,7 @@
 		public function Insertar()
 								{
 
-									$fichapuntero=$_REQUEST['ficid'];
+									
 
 									$datos= $this->materialapoyo;
 
@@ -49,7 +46,7 @@
 									$datos->titulo=$_REQUEST['titulo'];
 									$datos->descrp=$_REQUEST['descrp'];
 									$datos->fases=$_REQUEST['fases'];
-									$datos->ficid=$_REQUEST['ficid'];
+									$datos->ficid=$_SESSION['grupoficha'];
 
 									date_default_timezone_set('America/Bogota');
 									$fecha  = date("Ymd_His");
@@ -61,7 +58,7 @@
 									$datos->icono=$exts;
 									
 									$temp = $_FILES['archivo']['tmp_name']; 
-									$ruta = '../assets/fichas/'.$fichapuntero.'/';
+									$ruta = '../assets/fichas/'.$_SESSION['grupoficha'].'/';
 									$ruta = $ruta.$fecha.".".$exts;
 
 									if(is_uploaded_file($temp)){
@@ -80,7 +77,7 @@
 								}
 		public function Actualizar()
 		{					
-									$fichapuntero=$_REQUEST['ficid'];
+									
 									$datos= $this->materialapoyo;
 
 									$datos->id=$_REQUEST['map_id'];
@@ -88,7 +85,7 @@
 									$datos->titulo=$_REQUEST['titulo'];
 									$datos->descrp=$_REQUEST['descrp'];
 									$datos->fases=$_REQUEST['fases'];
-									$datos->ficid=$_REQUEST['ficid'];
+									$datos->ficid=$_SESSION['grupoficha'];
 
 									$url = $_REQUEST['url'];
 									file_exists($url) ? unlink($url): "";		
@@ -105,7 +102,7 @@
 									$datos->icono=$exts;
 
 									$temp = $_FILES['archivo']['tmp_name']; 
-									$ruta = '../assets/fichas/'.$datos->ficid.'/';
+									$ruta = '../assets/fichas/'.$_SESSION['grupoficha'].'/';
 									$ruta = $ruta.$fecha.".".$exts;
 
 									if(is_uploaded_file($temp)){
@@ -133,11 +130,11 @@
 
 				$map_archurl = $_REQUEST['map_archurl'];
 
-				file_exists($map_archurl) ? unlink($urmap_archurll): "";
+				file_exists($map_archurl) ? unlink($map_archurl): "";
 
 				$this->materialapoyo->Delect($map_id);
 
-				$fichapuntero=$_REQUEST['fcpt'];
+				
 
 				require_once('../views/materialapoyo/materialapoyoSelect.php');
 

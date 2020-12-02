@@ -5,7 +5,7 @@
 
 		<div class="container espaciado">
 				<a class="btn-rounded btn float-right" data-toggle="modal" data-target="#modalmaterialapoyo">Crear Material De Apoyo</a>
-			<h3 class="noti-tittle">Material De Apoyo <?php echo $fichacodigo?></h3>
+			<h3 class="noti-tittle">Material De Apoyo <?php echo $_SESSION['grupoficha']?></h3>
 		</div>
 		<div id="forms">
 				<?php  include('materialapoyoInsert.php'); ?>

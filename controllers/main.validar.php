@@ -28,7 +28,7 @@
 							
 						echo "<script>
 								$.confirm({
-										   	title: 'CERRAR SESION !!!',
+										   	title: 'CERRAR SESION',
 										    content: 'Limite de Sessiones por Ficha Alcanzada.',
 										    autoClose: 'logoutUser|5000',
 										    buttons: {

@@ -16,8 +16,8 @@
 						<input type="text" name="idmodal" id="idmodal" hidden>
 						
                     <div>
-						<label for="publicadormodal" >Publicador</label><br>
-						<input class="form-control rounded" type="text"  name="publicadormodal" id="publicadormodal" >
+						
+						<input class="form-control rounded" type="text"  value="<?php echo $_SESSION['SIdu'];?>" name="publicadormodal" id="publicadormodal" hidden>
 						
 					</div>
 
@@ -35,7 +35,8 @@
 					</div>
 					<div>
 					<label for="fasestitulo">Fase</label><br>
-					<select class="form-control rounded" name="fases" id="fasesmodal" required>
+					
+					<select class="form-control rounded" name="fasesmodal" id="fasesmodal" required>
 
 						<?php foreach ( $this->fases->Select() as $filas ): 
 							echo '<option value="'.$filas->fas_id.'">'.$filas->fas_nombre.'</option>';
@@ -50,9 +51,7 @@
 						<div class="invalid-feedback">Complete el campo.</div><br>
 					</div>
 
-					<div>					
-						<input class="form-control rounded" type="text" name="fic_codigo" id="fic_codigomodal" value="<?php echo $fichapuntero; ?>" hidden>					
-					</div>
+					
 					
 					<div class="modal-footer">
 					<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarMaterialApoyo();">Cerrar</button>

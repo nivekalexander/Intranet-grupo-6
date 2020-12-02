@@ -16,7 +16,11 @@
 		try{
 			if ( !ISSET($_REQUEST['ctrl']) ){
 
-				require_once("error404.php");
+				require_once("../controllers/$controller.controller.php");
+				$controller = ucwords($controller).'Controller';
+				$controller = new $controller;
+				$accion = ucwords(strtolower(ISSET($_REQUEST['acti']) ? $_REQUEST['acti'] : 'Index'));
+				call_user_func(array($controller,$accion));
 				
 			}else{
 

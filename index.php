@@ -7,8 +7,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     
     <link  rel="icon"   href="./assets/img/favicon.png" type="image/png" />
     <title>Intranet - MaxLearning</title>
@@ -112,6 +111,9 @@
     <script src="./assets/js/scripts-sidebarToggle.js"></script>
     <script src="./assets/js/scripts-global.js"></script>
     <script src="./assets/js/jquery-confirm.js"></script>
+
+    <!-- Validacion datos errados -->
+    <?php if(isset($_REQUEST['d'])){if($_REQUEST['d']==0){echo "<script>$.alert('Datos incorrectos, intente nuevamente');</script>"; }} ?>
 
     <!-- Page level plugins -->
     <script src="./assets/vendor/chart.js/Chart.min.js"></script>
