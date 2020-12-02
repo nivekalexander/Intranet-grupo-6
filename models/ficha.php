@@ -58,23 +58,22 @@ class Ficha
     public function Update(Ficha $datos)
 									 {
 									 	try  				 {
-									 							$sql="UPDATE tbl_ficha SET fic_codigo= ?, fic_feccrn= ?,fic_fecfn= ?,fic_tijid= ?,fic_modid= ?,fic_tofid= ?,fic_pfoid= ?
-                                                                  WHERE fic_codigo = ?";
-									 							if($this->pdo->prepare($sql)
-									 									  ->execute(
-									 									  			 array(
-                                                                                            $datos->fic_codigo,
-                                                                                            $datos->fic_feccrn,
-                                                                                            $datos->fic_fecfn,
-                                                                                            $datos->fic_tijid,
-                                                                                            $datos->fic_modid,
-                                                                                            $datos->fic_tofid,
-                                                                                            $datos->fic_pfoid,
-
-									 									  			 	    $datos->fic_id
-									 									  			 	   )
-																						); mkdir("../assets/fichas/$datos->fic_codigo",0777);
-
+									 							
+																$sql="UPDATE tbl_ficha SET fic_codigo= ?, fic_feccrn= ?,fic_fecfn= ?,fic_tijid= ?,fic_modid= ?,fic_tofid= ?,fic_pfoid= ?
+																	WHERE fic_codigo = ?";
+																if($this->pdo->prepare($sql)->execute(array(
+																							$datos->fic_codigo,
+																							$datos->fic_feccrn,
+																							$datos->fic_fecfn,
+																							$datos->fic_tijid,
+																							$datos->fic_modid,
+																							$datos->fic_tofid,
+																							$datos->fic_pfoid,
+																								$datos->fic_id
+																							))){
+																						
+																mkdir("../assets/fichas/".$datos->fic_codigo,0777);
+																							}
 																	    	
 									 						 }
 									 	catch (Exception $e) {	die($e->getMessage());			 }
