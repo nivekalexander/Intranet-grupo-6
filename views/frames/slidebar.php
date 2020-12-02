@@ -154,6 +154,10 @@ if($fichapuntero!=0){ ?>
   <!-- End of Sidebar -->
 <?php }else{?>
 
+
+
+
+
 <!-- Page Wrapper -->
 <div id="wrapper">
 
