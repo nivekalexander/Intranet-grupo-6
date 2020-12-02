@@ -67,6 +67,8 @@
 
 @media (min-width:768px){ .slidebar-img {
     margin-right: 20px;    
+} .programa2 {
+    font-size: 80% !important;
 }}
 
 .slidebar-img {
@@ -80,10 +82,6 @@
 
 .dropdown-text-color {
     color: #ffffff !important;
-}
-
-.programa2 {
-    font-size: 80% !important;
 }
 
 .center-login {

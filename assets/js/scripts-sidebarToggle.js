@@ -9,7 +9,6 @@
             $('.sidebar .collapse').collapse('hide');
         };
         $('.slidebar-img').toggleClass("slidebar-center");
-        alert("hi");
         $('#programa').toggleClass('programa2');
     });
 
