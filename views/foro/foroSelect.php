@@ -3,7 +3,7 @@
   <!--cuerpo de la tabla-->
   <tbody>
     
-    <?php foreach ($this->foro->Select($fichapuntero) as $filas): ?>
+    <?php foreach ($this->foro->Select($_SESSION['grupoficha']) as $filas): ?>
       <?php $grupal="'".$filas->for_id."','".$filas->for_titulo."','".$filas->for_fchfin."','".$filas->for_fchini."','".$filas->for_descrp."'"; ?>
 
         <div class="d-flex justify-content-center">

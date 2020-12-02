@@ -7,7 +7,7 @@
 				$cont  = 0;
 				$mayor = 0;
 
-				foreach ( $this->anuncio->Select($fichapuntero) as $filas ):
+				foreach ( $this->anuncio->Select($_SESSION['grupoficha']) as $filas ):
 
 						if($cont == 0){
 							$mayor = $filas->anu_id;
@@ -21,7 +21,7 @@
 
 				endforeach; ?>
 
-			<?php foreach ( $this->anuncio->Select($fichapuntero) as $filas ): ?>
+			<?php foreach ( $this->anuncio->Select($_SESSION['grupoficha']) as $filas ): ?>
 
 					 	<?php  $grupal = "'".$filas->anu_id."','".$filas->anu_titulo."','".$filas->anu_descrp."','".$filas->anu_fecfn."','".$filas->anu_ficcodigo."'"; ?>
 						
