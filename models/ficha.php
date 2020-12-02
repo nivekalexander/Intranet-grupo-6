@@ -60,7 +60,7 @@ class Ficha
 									 	try  				 {
 									 							$sql="UPDATE tbl_ficha SET fic_codigo= ?, fic_feccrn= ?,fic_fecfn= ?,fic_tijid= ?,fic_modid= ?,fic_tofid= ?,fic_pfoid= ?
                                                                   WHERE fic_codigo = ?";
-									 							$this->pdo->prepare($sql)
+									 							if($this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
                                                                                             $datos->fic_codigo,
