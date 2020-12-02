@@ -4,7 +4,7 @@
 	<tbody class="justify-content-center">
 			<?php foreach ( $this->materialapoyo->Select( $idfase,$fichapuntero) as $filas ): 
 				
-				$grupal = "'".$filas->map_id."','".$filas->map_titulo."','".$filas->map_descrp."','".$filas->map_archurl."','".$filas->map_fasid."','".$filas->map_usunumdnt."'";?>
+				$grupal = "'".$filas->map_id."','".$filas->map_titulo."','".$filas->map_descrp."','".$filas->map_archurl."','".$filas->map_fasid."','".$filas->map_usunumdnt."','".$filas->map_icono."'";?>
 						
 					
 				
@@ -20,8 +20,20 @@
 							<div >
 								
 								<input class="form-control rounded" type="text"  name="nombre" id="nombre" value="<?php echo $filas->usu_nombre;?> <?php echo $filas->usu_aplldo;?>" hidden>
+								
+								<?php $iconos= array("pdf","doc","jpg","mp3","png","ppt","xls","zip","rar");
 
-								<img src="../assets/img/img-materialapoyo/icon1.png" alt="" style="width: 70px ; height: 70px;" >
+									if(in_array( $filas->map_icono , $iconos)){
+								?>
+
+										<img src="../assets/img/img-materialapoyo/<?php echo $filas->map_icono; ?>.png" alt="" style="width: 70px ; height: 70px;">
+
+									<?php }else {?>
+
+										<img src="../assets/img/img-materialapoyo/unknow.svg" alt="" style="width: 70px ; height: 70px;">
+
+									<?php }?>
+						
 								<br><input class="form-control rounded" type="text"  name="titulo" id="titulo" value="<?php echo $filas->map_titulo; ?>" hidden>
 								
 								<h5 class="card-title"><?php echo $filas->map_titulo; ?></h5>

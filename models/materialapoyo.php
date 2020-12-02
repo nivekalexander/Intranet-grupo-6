@@ -70,15 +70,16 @@
         public function Insert($url,$datos)
                                     { 
                                         try  				 {
-                                                                $sql1="INSERT INTO tbl_materialapoyo(map_titulo,map_descrp,map_archurl,map_fasid,map_usunumdnt) 
-                                                                      VALUES(?,?,?,?,?);";
+                                                                $sql1="INSERT INTO tbl_materialapoyo(map_titulo,map_descrp,map_archurl,map_fasid,map_usunumdnt,map_icono) 
+                                                                      VALUES(?,?,?,?,?,?);";
                                                                 $this->pdo->prepare($sql1)
                                                                         ->execute(array(
                                                                                             $datos->titulo,
                                                                                             $datos->descrp,
                                                                                             $url,
                                                                                             $datos->fases,
-                                                                                            $datos->publicador
+                                                                                            $datos->publicador,
+                                                                                            $datos->icono
                                                                                             
                                                                                            
                                                                                         ));
@@ -118,7 +119,7 @@
         public function Update($url,$datos)
                                     {
                                         try  				 {
-                                                                $sql="UPDATE tbl_materialapoyo SET map_titulo=?,map_descrp=?,map_archurl=?,map_fasid=?,map_usunumdnt=?
+                                                                $sql="UPDATE tbl_materialapoyo SET map_titulo=?,map_descrp=?,map_archurl=?,map_fasid=?,map_usunumdnt=?,map_icono=?
                                                                 WHERE map_id=?";
                                                                 $this->pdo->prepare($sql)
                                                                         ->execute(array(
@@ -130,7 +131,7 @@
                                                                                         $url,
                                                                                         $datos->fases,
                                                                                         $datos->publicador,
-                                                                                        
+                                                                                        $datos->icono,
 
                                                                                         $datos->id,
                                                                                     ));
