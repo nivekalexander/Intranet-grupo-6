@@ -81,6 +81,7 @@ function ActualizarPerfil() {
             } else { console.log("Ups, Me equivoque;"); }
         }
     };
+
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=perfil&acti=actualizarperfil&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&id=" + id);
 
