@@ -91,7 +91,7 @@
         <div class="modal-body">Presiona "Salir" para cerrar tú sesion.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary btn-gris" type="button" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-warning ToggleOpti" id="logout"> Salir </button>
+          <button type="button" class="btn btn-rounded ToggleOpti" id="logout"> Salir </button>
           
         </div>
       </div>

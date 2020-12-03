@@ -3,7 +3,12 @@
 
 <?php $_SESSION['slidebar']=$_REQUEST['slidebar'];?>
 
-    <?php foreach ( $this->grupos->Select() as $filas ): ?>
+    <?php foreach ( $this->grupos->Select() as $filas ): 
+      
+      if($filas->fic_codigo != "000000"){
+
+      ?>
+
 
       <form method="POST" action="main.php?ctrl=noticia">
 
@@ -39,6 +44,8 @@
 
       </form>
 
-    <?php endforeach; ?>
+    <?php }
+  
+    endforeach; ?>
 
 </div> 
