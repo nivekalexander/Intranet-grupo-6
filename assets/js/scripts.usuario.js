@@ -185,6 +185,8 @@ function ConfirmUsuario(id) {
     document.getElementById('rol').value = id;
 
     if (id == 3) {
+
+        document.getElementById("NumDoc").innerHTML = "Numero de ficha";
         document.getElementById('id').removeAttribute("disabled");
         document.getElementById('id').removeAttribute("disabled");
         document.getElementById('id').setAttribute("disabled", "");

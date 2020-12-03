@@ -16,7 +16,7 @@
 				<form name="formulario" id="formulario" class="needs-validation" >
 
 					<div>
-					<label for="nombre">Numero de documento</label><br>
+					<label id="NumDoc" for="nombre">Numero de documento</label><br>
 					<input class="form-control rounded" type="number" id="id" name="id" required>
 					<div class="invalid-feedback">Complete el campo.</div><br>
 					</div>
