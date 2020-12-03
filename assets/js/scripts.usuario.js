@@ -234,8 +234,10 @@ function SeleccionarUsuario() {
 function VerPass(){
     if ($('#contraseña').attr('type') == 'password') {
         $('#contraseña').attr('type', 'text');
+        $('#vpss').attr('src','../assets/img/img-perfil/ojonegro.svg');
     } else {
         $('#contraseña').attr('type', 'password');
+        $('#vpss').attr('src','../assets/img/img-perfil/invisible.svg');
     }
 }
 

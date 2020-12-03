@@ -182,6 +182,12 @@
     cursor: pointer;
 }
 
+.ver-pass:hover{
+    
+    background-color: tomato;
+    
+}
+
 .footer-estilo {
     background-color: #01142D;
     z-index: -1;
