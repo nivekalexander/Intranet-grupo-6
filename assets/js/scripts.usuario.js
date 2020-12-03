@@ -185,9 +185,12 @@ function ConfirmUsuario(id) {
     document.getElementById('rol').value = id;
 
     if (id == 3) {
-        document.getElementById('id').removeAttribute("disabled");
-        document.getElementById('id').removeAttribute("disabled");
-        document.getElementById('id').setAttribute("disabled", "");
+
+        document.getElementById("NumDoc").innerHTML = "Numero de ficha";
+        document.getElementById("UsuName").innerHTML = "Abreviatura";
+        document.getElementById('divapellido').setAttribute("disabled", "");
+        document.getElementById('apellido').removeAttribute("required");
+
 
     }
 
@@ -239,9 +242,9 @@ function SeleccionarUsuario() {
 function VerPass() {
     if ($('#contraseña').attr('type') == 'password') {
         $('#contraseña').attr('type', 'text');
-        $('#vpss').attr('src','../assets/img/img-perfil/ojonegro.svg');
+        $('#vpss').attr('src', '../assets/img/img-perfil/ojonegro.svg');
     } else {
         $('#contraseña').attr('type', 'password');
-        $('#vpss').attr('src','../assets/img/img-perfil/invisible.svg');
+        $('#vpss').attr('src', '../assets/img/img-perfil/invisible.svg');
     }
 }
