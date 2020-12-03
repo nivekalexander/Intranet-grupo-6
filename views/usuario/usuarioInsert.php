@@ -15,6 +15,8 @@
 
 				<form name="formulario" id="formulario" class="needs-validation" >
 
+					<input class="form-control rounded" type="number" id="validationid" name="validationid" required>
+
 					<div class="form-group row">
 					<label id="NumDoc" for="nombre">Numero de documento</label>
 					<input class="form-control rounded" type="number" id="id" name="id" required>
@@ -27,7 +29,7 @@
 						<div class="invalid-feedback">Complete el campo.</div>
 					</div>
 
-					<div class="form-group row">
+					<div class="form-group row" id="divapellido">
 						<label id="Last" for="apellido">Apellido</label>
 						<input class="form-control rounded" name="apellido" id="apellido" required>
 						<div class="invalid-feedback">Complete el campo.</div>

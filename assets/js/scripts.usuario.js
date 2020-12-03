@@ -188,9 +188,9 @@ function ConfirmUsuario(id) {
 
         document.getElementById("NumDoc").innerHTML = "Numero de ficha";
         document.getElementById("UsuName").innerHTML = "Abreviatura";
-        document.getElementById('id').removeAttribute("disabled");
-        document.getElementById('id').removeAttribute("disabled");
-        document.getElementById('id').setAttribute("disabled", "");
+        document.getElementById('divapellido').setAttribute("disabled", "");
+        document.getElementById('apellido').removeAttribute("required");
+
 
     }
 
