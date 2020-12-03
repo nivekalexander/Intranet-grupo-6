@@ -44,8 +44,14 @@
     </div>
     <br><br>
     <center>
-        <input type="button" class="btn-rounded btn editar-perfil" id="editar-perfil" data-toggle="modal" data-target="#confirmarDatos" value="Editar">
-        <input type="button" class="btn-rounded btn editar-perfil" id="actualizar-perfil" value="Actualizar" onclick="ActualizarPerfil();" hidden>        
+
+        <?php if( $_SESSION['SRol'] != 3){?>    
+
+            <input type="button" class="btn-rounded btn editar-perfil" id="editar-perfil" data-toggle="modal" data-target="#confirmarDatos" value="Editar">
+            <input type="button" class="btn-rounded btn editar-perfil" id="actualizar-perfil" value="Actualizar" onclick="ActualizarPerfil();" hidden>        
+    
+        <?php }?>
+    
     </center>
 </form>
 

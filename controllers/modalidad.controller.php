@@ -14,7 +14,16 @@ class ModalidadController{
 									require_once('../views/frames/header.php');
 									require_once('../views/frames/navbar.php');
 									require_once('../views/frames/slidebar.php');
-									require_once('../views/modalidad/modalidadView.php');
+									if($_SESSION['SRol']==1){
+
+										require_once('../views/modalidad/modalidadView.php');
+	
+									}else{
+
+										require_once('../views/usuario/noticiaView.php');
+
+									}
+									
 									require_once('../views/frames/footer.php');
 
 

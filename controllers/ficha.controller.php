@@ -23,7 +23,7 @@
 		public function Index()
 								{
 
-									if($_SESSION['SRol']!=3){ 
+									
 
 										require_once('../views/frames/header.php');
 										
@@ -31,17 +31,21 @@
 										
 										require_once('../views/frames/slidebar.php');
 
-										require_once('../views/ficha/fichaView.php');
+										if($_SESSION['SRol']==1){
+
+											require_once('../views/ficha/fichaView.php');
+		
+										}else{
+		
+											require_once('../views/usuario/noticiaView.php');
+		
+										}
+										
 
 										require_once('../views/frames/firtsfooter.php');
 
 										require_once('../views/frames/footer.php');
-									}else{
-
-										
-
-
-									}
+									
 
 								}
 

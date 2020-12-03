@@ -3,14 +3,14 @@
 error_reporting(E_ALL ^ E_NOTICE);
 
 
-$fichapuntero=$_SESSION['slidebar'];
+
 
 
 
 
 if( $_SESSION['SRol']==1 || $_SESSION['SRol']==2){
 
-  if($fichapuntero!=0){ ?>
+  if($_SESSION['slidebar']!=0){ ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -161,7 +161,7 @@ if( $_SESSION['SRol']==1 || $_SESSION['SRol']==2){
 
   //if de roles 1 y 2
   
-  if($fichapuntero==0){?>
+  if($_SESSION['slidebar']==0){?>
 
     <?php if($_SESSION['SRol']==3 || $_SESSION['SRol']==2){?>
 
