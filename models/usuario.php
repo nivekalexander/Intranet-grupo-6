@@ -74,14 +74,14 @@ class Usuario
 										 }
 									 }
 
-    public function Update(Usuario $data)
+    public function Update(Usuario $data,$update)
 									 {
 									 	try  				 {
-									 							$sql="UPDATE tbl_usuario SET usu_numdnt = ?, usu_nombre = ?, usu_aplldo = ?, usu_passwd = ?, usu_correo = ?, usu_ficcodigo = ?, usu_rolid = ?, usu_estid = ?, usu_tipid = ? WHERE usu_numdnt = ?";
+									 							$sql="UPDATE tbl_usuario SET usu_numdnt = ?, usu_nombre = ?, usu_aplldo = ?, usu_passwd = ?, usu_correo = ?, usu_ficcodigo = ?, usu_rolid = ?, usu_estid = ?, usu_tipid = ? WHERE usu_numdnt = $update";
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
-																						        $data->id,
+																						
                                                                                                 $data->nombre,
                                                                                                 $data->apellido,
                                                                                                 $data->contraseña,
@@ -89,8 +89,8 @@ class Usuario
                                                                                                 $data->ficha,
                                                                                                 $data->rol,
                                                                                                 $data->estado,
-                                                                                                $data->identi,
-                                                                                                $data->id
+                                                                                                $data->identi
+                                                                                
       
 									 									  			 	   )
 									 									  			);

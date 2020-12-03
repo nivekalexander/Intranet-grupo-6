@@ -106,9 +106,9 @@ function InsertUsuario() {
 
 
 
-function EditarUsuario(id, nombre, apellido, contraseña, correo, ficha, rol, estado, identi) {
+function EditarUsuario(nombre, apellido, contraseña, correo, ficha, rol, estado, identi) {
 
-    document.formulario.id.value = id;
+    document.formulario.id.value = identi;
 
     document.formulario.nombre.value = nombre;
     document.formulario.apellido.value = apellido;
@@ -130,7 +130,6 @@ function UpdateUsuario() {
     var result = document.getElementById('tview');
 
     var id = document.formulario.id.value;
-
     var nombre = document.formulario.nombre.value;
     var apellido = document.formulario.apellido.value;
     var contraseña = document.formulario.contraseña.value;

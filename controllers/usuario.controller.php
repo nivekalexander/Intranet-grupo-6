@@ -94,11 +94,12 @@
                                         $datos->rol         = $_REQUEST['rol'];
                                         $datos->estado      = $_REQUEST['estado'];
                                         $datos->identi      = $_REQUEST['identi'];
-										$datos->id          = $_REQUEST['id'];
+										
+										$update  			= $_REQUEST['identi'];
 
-										$rolpuntero         = $_REQUEST['rol'];
+										$rolpuntero         = $_REQUEST['id'];
     
- 										$this->usuario->Update($datos);
+ 										$this->usuario->Update($datos,$update);
 
  										require_once('../views/usuario/usuarioSelect.php');
 									}
