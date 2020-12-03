@@ -15,7 +15,7 @@
 
 				<form name="formulario" id="formulario" class="needs-validation" >
 
-					<input class="form-control rounded" type="number" id="validationid" name="validationid" required>
+					<input class="form-control rounded" type="number" id="validationid" name="validationid" hidden>
 
 					<div class="form-group row">
 					<label id="NumDoc" for="nombre">Numero de documento</label>
@@ -49,7 +49,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="correo">Correo</label>
+						<label for="correo" id="correolabel">Correo</label>
 						<input class="form-control rounded" type="email" name="correo" id="correo" required>
 						<div class="invalid-feedback">Introduzca una dirección de correo valida.</div>
 					</div>

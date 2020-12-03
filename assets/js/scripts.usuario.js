@@ -188,8 +188,14 @@ function ConfirmUsuario(id) {
 
         document.getElementById("NumDoc").innerHTML = "Numero de ficha";
         document.getElementById("UsuName").innerHTML = "Abreviatura";
-        document.getElementById('divapellido').setAttribute("disabled", "");
+        document.getElementById('divapellido').setAttribute("hidden", "");
         document.getElementById('apellido').removeAttribute("required");
+        var rol = document.getElementById('rol').value;
+        document.getElementById('apellido').setAttribute("value", rol);
+        document.getElementById("correolabel").innerHTML = "Nombre de usuario";
+        document.getElementById('correo').setAttribute("type", "number");
+
+
 
 
     }
@@ -222,6 +228,14 @@ function ConfirmUsuario(id) {
 
 function SeleccionarUsuario() {
     var result = document.getElementById('tview');
+
+    document.getElementById("NumDoc").innerHTML = "Numero de documento";
+    document.getElementById("UsuName").innerHTML = "Nombre";
+    document.getElementById('divapellido').removeAttribute("hidden");
+    document.getElementById('apellido').setAttribute("value", "");
+    document.getElementById('apellido').setAttribute("required", "");
+    document.getElementById("correolabel").innerHTML = "Correo";
+    document.getElementById('correo').setAttribute("type", "email");
 
 
     const ajax = new XMLHttpRequest();
