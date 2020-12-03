@@ -106,10 +106,10 @@ function InsertUsuario() {
 
 
 
-function EditarUsuario(nombre, apellido, contraseña, correo, ficha, rol, estado, identi) {
+function EditarUsuario(id, nombre, apellido, contraseña, correo, ficha, rol, estado, identi) {
 
-    document.formulario.id.value = identi;
-
+    document.formulario.id.value = id;
+    document.formulario.validationid.value = id;
     document.formulario.nombre.value = nombre;
     document.formulario.apellido.value = apellido;
     document.formulario.contraseña.value = contraseña;
@@ -129,7 +129,9 @@ function UpdateUsuario() {
 
     var result = document.getElementById('tview');
 
+    var valid =  document.formulario.validationid.value;
     var id = document.formulario.id.value;
+
     var nombre = document.formulario.nombre.value;
     var apellido = document.formulario.apellido.value;
     var contraseña = document.formulario.contraseña.value;
@@ -163,7 +165,7 @@ function UpdateUsuario() {
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=actualizar&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&ficha=" + ficha + "&rol=" + rol + "&estado=" + estado + "&identi=" + identi + "&id=" + id);
+    ajax.send("ctrl=usuario&acti=actualizar&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&ficha=" + ficha + "&rol=" + rol + "&estado=" + estado + "&identi=" + identi + "&id=" + id + "&valid=" + valid);
 
     document.getElementById('rol').value = rol;
 
@@ -184,12 +186,9 @@ function ConfirmUsuario(id) {
     document.getElementById('rol').value = id;
 
     if (id == 3) {
-
-        document.getElementById("NumDoc").innerHTML = "Numero de ficha";
-        document.getElementById("UsuName").innerHTML = "Abreviatura";
-        document.getElementById('divapellido').setAttribute("disabled", "");
-        document.getElementById('apellido').removeAttribute("required");
-
+        document.getElementById('id').removeAttribute("disabled");
+        document.getElementById('id').removeAttribute("disabled");
+        document.getElementById('id').setAttribute("disabled", "");
 
     }
 
@@ -241,9 +240,9 @@ function SeleccionarUsuario() {
 function VerPass() {
     if ($('#contraseña').attr('type') == 'password') {
         $('#contraseña').attr('type', 'text');
-        $('#vpss').attr('src', '../assets/img/img-perfil/ojonegro.svg');
+        $('#vpss').attr('src','../assets/img/img-perfil/ojonegro.svg');
     } else {
         $('#contraseña').attr('type', 'password');
-        $('#vpss').attr('src', '../assets/img/img-perfil/invisible.svg');
+        $('#vpss').attr('src','../assets/img/img-perfil/invisible.svg');
     }
 }

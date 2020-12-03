@@ -81,7 +81,7 @@ class Usuario
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
-																						
+																						        $data->id,
                                                                                                 $data->nombre,
                                                                                                 $data->apellido,
                                                                                                 $data->contraseña,
@@ -90,7 +90,7 @@ class Usuario
                                                                                                 $data->rol,
                                                                                                 $data->estado,
                                                                                                 $data->identi
-                                                                                
+                                                                                               
       
 									 									  			 	   )
 									 									  			);

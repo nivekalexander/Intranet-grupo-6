@@ -94,10 +94,11 @@
                                         $datos->rol         = $_REQUEST['rol'];
                                         $datos->estado      = $_REQUEST['estado'];
                                         $datos->identi      = $_REQUEST['identi'];
-										
-										$update  			= $_REQUEST['identi'];
+										$datos->id          = $_REQUEST['id'];
 
-										$rolpuntero         = $_REQUEST['id'];
+										$update = $_REQUEST['valid'];
+
+										$rolpuntero         = $_REQUEST['rol'];
     
  										$this->usuario->Update($datos,$update);
 
