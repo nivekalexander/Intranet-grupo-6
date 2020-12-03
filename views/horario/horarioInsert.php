@@ -36,13 +36,13 @@
           <div>
             <label for="fchinicio">Fecha Inicio Trimestre</label><br>
               <input class="form-control rounded" type="date" name="fchinicio" id="fchinicio" required>
-            <div class="invalid-feedback">Complete el campo.</div><br>
+            <div class="invalid-feedback">Ingrese una Fecha</div><br>
           </div>
 
           <div>
             <label for="fchfin">Fecha Fin Trimestre</label><br>
               <input class="form-control rounded" type="date" name="fchfin" id="fchfin" required>
-            <div class="invalid-feedback">Complete el campo.</div><br>
+            <div class="invalid-feedback">Ingrese una Fecha</div><br>
           </div> 
 
           <input type="text" id="idficha" name="idficha" value="<?php echo $_SESSION['grupoficha']; ?>" hidden>  

@@ -16,28 +16,28 @@
 					<div>
 						<label for="version">Versión</label><br>
 						<input class="form-control rounded" type="text" name="version" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="invalid-feedback">Ingrese una Versión</div>
 						<div class="valid-feedback">¡Valido!</div><br>
 					</div>
 
                     <div>
 						<label for="duracion">Duración</label><br>
 						<input class="form-control rounded" type="text" name="duracion" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="invalid-feedback">Ingrese la Duracion del Programa</div>
 						<div class="valid-feedback">¡Valido!</div><br>
 					</div>
 
                     <div>
 						<label for="abreviacion">Abreviatura</label><br>
 						<input class="form-control rounded" type="text" name="abreviacion" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="invalid-feedback">Ingrese una Abrebiatura</div>
 						<div class="valid-feedback">¡Valido!</div><br>
 					</div>
 
                     <div>
-						<label for="nombre">nombre del programa</label><br>
+						<label for="nombre">Nombre del programa</label><br>
 						<input class="form-control rounded" type="text" name="nombre" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="invalid-feedback">Ingrese el Nombre del Programa</div>
 						<div class="valid-feedback">¡Valido!</div><br>
 					</div>
 
@@ -50,7 +50,7 @@
                             endforeach;
                             ?>
                         </select>
-						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="invalid-feedback">Seleccione un Campo</div>
 						<div class="valid-feedback">¡Valido!</div><br>
 					</div>
 
@@ -64,7 +64,7 @@
                             endforeach;
                             ?>
                         </select>
-						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="invalid-feedback">Seleccione un Campo</div>
 						<div class="valid-feedback">¡Valido!</div><br>
 					</div>
 

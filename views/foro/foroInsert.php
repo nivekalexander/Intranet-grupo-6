@@ -18,20 +18,20 @@
           <div>
             <label for="titulo">Titulo</label><br>
             <input class="form-control rounded" type="text" name="titulo" id="titulo" required></input>
-            <div class="invalid-feedback">Complete el campo.</div><br>
+            <div class="invalid-feedback">Ingrese un Título</div><br>
           </div>
 
           <div>
             <label for="descrp">Descripcion</label><br>
             <textarea class="form-control rounded" name="descrp" id="descrp" rows="3" required></textarea>
-            <div class="invalid-feedback">Complete el campo.</div><br>
+            <div class="invalid-feedback">Ingrese una Descripción</div><br>
           </div>
               
 
           <div>
             <label for="fchfin">Fecha Fin Foro</label><br>
             <input class="form-control rounded" type="date" name="fchfin" id="fchfin" required>
-            <div class="invalid-feedback">Complete el campo.</div><br>
+            <div class="invalid-feedback">Ingrese una Fecha</div><br>
           </div> 
 
           <input type="text" id="idficha" name="idficha" value="<?php echo $_SESSION['grupoficha']; ?>" hidden>  

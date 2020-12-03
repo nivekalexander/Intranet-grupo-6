@@ -18,7 +18,7 @@
 					<div>
 						<label for="nombre">Nombre Modalidad</label><br>
 						<input class="form-control rounded" type="text" name="nombre" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="invalid-feedback">Ingrese una Modalidad</div>
 						<div class="valid-feedback">¡Valido!</div>
 					</div>
 
