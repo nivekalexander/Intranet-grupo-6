@@ -4,7 +4,7 @@
   <tbody>
     
     <?php foreach ($this->foro->Select($_SESSION['grupoficha']) as $filas): ?>
-      <?php $grupal="'".$filas->for_id."','".$filas->for_titulo."','".$filas->for_fchfin."','".$filas->for_fchini."','".$filas->for_descrp."'"; ?>
+      <?php $grupal="'".$filas->for_id."','".$filas->for_titulo."','".$filas->for_fchfin."','".$filas->for_fchini."','".$filas->for_descrp."','".$filas->for_usunumdnt."'"; ?>
 
         <div class="d-flex justify-content-center">
           <div class="card bg-light mb-5 w-100 diseño-tarjeta">
@@ -24,12 +24,17 @@
                 <div class="float-right">
                   <button type="button" class="btn-rounded btn" onclick="ParticiparForo(<?php echo $grupal; ?>);"> Participar </button>
 
-                  <?php if($_SESSION['SRol']!=3){ ?>
+                  <?php if($_SESSION['SRol']!=3){ 
+                    
+                         if($_SESSION['SIdu'] == $filas->for_usunumdnt || $_SESSION['SRol']==1){ 
+                    ?>
 
-                    <button class="btn-rounded btn" data-toggle="modal" onclick="EditarForo(<?php echo $grupal; ?>);">Editar</button>
-                    <button type="button" class="btn-rounded btn" onclick="BorrarForo('<?php echo $filas->for_id;?>');"> Eliminar </button>
+                      <button class="btn-rounded btn" data-toggle="modal" onclick="EditarForo(<?php echo $grupal; ?>);">Editar</button>
+                      <button type="button" class="btn-rounded btn" onclick="BorrarForo('<?php echo $filas->for_id;?>');"> Eliminar </button>
                 
-                  <?php } ?>
+                  <?php }
+
+                    } ?>
                 
                 </div>
               </div>

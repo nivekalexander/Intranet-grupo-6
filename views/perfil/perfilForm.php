@@ -30,7 +30,7 @@
             <input type="password" class="form-control rounded-pill" id="contraseña-perfil" name="contraseñaperfil" value="<?php echo $_SESSION['pass']=$filas->usu_passwd; ?>" readonly>
             <div id="ver-pass" class="rounded-circle ver-pass input-group-prepend" style="display: none;">
                 <a id="visualizar-Pass" onclick="VisualizarPass();">
-                    <img height="37" width="37" src="../assets/img/img-perfil/visualizar.svg" alt="">
+                    <img id="vpss" height="37" width="37" src="../assets/img/img-perfil/invisible.svg" alt="">
                 </a>
             </div>
         </div>
@@ -44,8 +44,14 @@
     </div>
     <br><br>
     <center>
-        <input type="button" class="btn-rounded btn editar-perfil" id="editar-perfil" data-toggle="modal" data-target="#confirmarDatos" value="Editar">
-        <input type="button" class="btn-rounded btn editar-perfil" id="actualizar-perfil" value="Actualizar" onclick="ActualizarPerfil();" hidden>        
+
+        <?php if( $_SESSION['SRol'] != 3){?>    
+
+            <input type="button" class="btn-rounded btn editar-perfil" id="editar-perfil" data-toggle="modal" data-target="#confirmarDatos" value="Editar">
+            <input type="button" class="btn-rounded btn editar-perfil" id="actualizar-perfil" value="Actualizar" onclick="ActualizarPerfil();" hidden>        
+    
+        <?php }?>
+    
     </center>
 </form>
 

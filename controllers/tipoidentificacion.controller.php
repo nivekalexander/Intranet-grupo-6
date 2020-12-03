@@ -18,7 +18,16 @@
 									
 									require_once('../views/frames/slidebar.php');
 
-									require_once('../views/tipoIdentificacion/tipoIdentificacionView.php');
+									if($_SESSION['SRol']==1){
+
+										require_once('../views/tipoIdentificacion/tipoIdentificacionView.php');
+	
+									}else{
+
+										require_once('../views/usuario/noticiaView.php');
+
+									}
+								
 									
 									require_once('../views/frames/firtsfooter.php');
 

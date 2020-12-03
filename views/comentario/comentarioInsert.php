@@ -1,3 +1,4 @@
+
 <form id="formularioColl" name="formularioColl" autocomplete="off">
         <input type="text" id="comid" name="comid" hidden>
     <div class="form-group row">

@@ -23,8 +23,14 @@
                 ?>                
             </div>
             <div class="card-footer text-muted">
-                <button class="btn btn-rounded" onclick="BorrarHorario('<?php echo $hor->hor_id;?>' , '<?php echo $hor->hor_url; ?>');">Eliminar</button>
-                <input type="button" id="actualizar-horario" onclick="EditarHorario(<?php echo $grupal;?>);" hidden>
+
+                 <?php if($_SESSION['SRol']!=3){ ?>
+
+                    <button class="btn btn-rounded" onclick="BorrarHorario('<?php echo $hor->hor_id;?>' , '<?php echo $hor->hor_url; ?>');">Eliminar</button>
+                    <input type="button" id="actualizar-horario" onclick="EditarHorario(<?php echo $grupal;?>);" hidden>
+            
+                 <?php } ?>
+
             </div>
         </div>
     <?php

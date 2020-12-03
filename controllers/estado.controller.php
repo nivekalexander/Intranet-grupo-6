@@ -20,7 +20,17 @@
 									
 									require_once('../views/frames/slidebar.php');
 
+									if($_SESSION['SRol']==1){
+
+										
 									require_once('../views/estado/estadoView.php');
+	
+									}else{
+	
+										require_once('../views/usuario/noticiaView.php');
+	
+									}
+
 
 									require_once('../views/frames/firtsfooter.php');
 

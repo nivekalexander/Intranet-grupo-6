@@ -9,7 +9,7 @@
     <table>
     
     <tbody>
-        
+        <?php /*Apartado de Comentario */ ?>
         <?php foreach ($this->comentario->Select($_REQUEST['id']) as $filas): ?>
         <?php $grupal="'".$filas->com_id."','".$filas->com_perprt."','".$filas->com_respst."'"; 
               $idcom = $filas->com_id;
@@ -22,9 +22,17 @@
                         <h4><?php echo $filas->com_perprt;?></h4>
                     </div>
                     <div class="float-right">
+
+                    <?php if($_SESSION['SIdu'] == $filas->com_usunumdnt || $_SESSION['SRol']==1){ 
+                        
+                        ?>
+
                         <a class="deleteCom" onclick="BorrarComentario(<?php echo $idcom; ?>);">
                             <img src="../assets/img/img-foro/trash.svg" height="40" weidth="40" alt="X">
                         </a>
+
+                    <?php } ?>
+
                     </div>
                 </div>
                 
@@ -33,12 +41,17 @@
                     <textarea class="form-control" id="ecomentario<?php echo $idcom;?>" rows="3" name="ecomentario<?php echo $idcom;?>" hidden required><?php echo $filas->com_respst;?></textarea><br>
                     <div class="float-right">
 
-                        <?php if($_SESSION['SRol']!=3){ ?>
+                        <?php if($_SESSION['SIdu'] == $filas->com_usunumdnt || $_SESSION['SRol']==1){ 
+
+                            ?>
 
                             <button id="btncomentar<?php echo $idcom;?>" class="btn-rounded btn" onclick="EditarComentario(<?php echo $idcom;?>);"> Editar </button> 
+                            
+                        <?php } ?>    
+                            
                             <button type="button" class="btn-rounded btn" data-toggle="collapse" data-target="#respuestaInsert<?php echo $idcom;?>" aria-expanded="false" aria-controls="collapseExample"> Responder </button>
                        
-                        <?php } ?>
+                        
                     
                     
                     </div>
@@ -92,10 +105,18 @@
                                                 <?php echo $respuestas->res_perprt; ?>
                                             </div>                                            
                                             <div class="float-right">
-                                                <small><?php echo $respuestas->res_fchcrt; ?></small>                                                
+                                                <small><?php echo $respuestas->res_fchcrt; ?></small> 
+
+                                                <?php if($_SESSION['SIdu'] == $respuestas->res_usunumdnt || $_SESSION['SRol']==1){ 
+                                                    
+                                                    ?>
+
                                                 <a class="deleteRes" onclick="BorrarRespuesta('<?php echo $idresp; ?>','<?php echo $idcom; ?>');">
                                                     <img src="../assets/img/img-foro/trash.svg" height="30" weidth="30" alt="X">                                                
-                                                </a>                                                
+                                                </a>    
+
+                                                <?php } ?>
+
                                             </div>
                                         </div>
                                         <div class="card-body">
@@ -103,9 +124,17 @@
                                             <textarea class="form-control" id="ercomentario<?php echo $idresp;?>" rows="3" name="ercomentario" hidden><?php echo $respuestas->res_respst; ?></textarea>
                                             <br>
                                             <div class="float-right">
+
+                                            <?php if($_SESSION['SIdu'] == $respuestas->res_usunumdnt || $_SESSION['SRol']==1){ 
+                                                
+                                                ?>
+
                                                 <a id="imgeditar<?php echo $idresp; ?>" class="editRes" onclick="EditarRespuesta(<?php echo $idresp; ?>);">
                                                     <img src="../assets/img/img-foro/pen.png" height="30" weidth="30" alt="Editar">
                                                 </a>
+
+                                            <?php } ?>
+
                                                 <input class="btn btn-rounded" id="btnresponder<?php echo $idresp; ?>" onclick="UpdateRespuesta('<?php echo $idresp; ?>','<?php echo $idcom; ?>');" value="Actualizar" hidden>
                                             </div>
                                         </div>
@@ -127,7 +156,9 @@
             </div>
             
             </form>
-        <?php endforeach; ?>        
+        <?php endforeach; ?> 
+
+        <?php /*Apartado de Comentario Fin */ ?>       
     </tbody>
     <!-- pie de la tabla-->
     <tfoot>
