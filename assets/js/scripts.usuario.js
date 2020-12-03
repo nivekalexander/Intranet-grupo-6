@@ -177,7 +177,7 @@ function CancelarUsuario() {
     $(".alert").alert('close');
     document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titleusuario").innerHTML = "Crear usuario";
-    document.getElementById('id').removeAttribute("disabled");
+
 }
 
 
@@ -185,6 +185,12 @@ function ConfirmUsuario(id) {
 
     var result = document.getElementById('tview');
     document.getElementById('rol').value = id;
+
+    if (id == 3) {
+        document.getElementById('id').removeAttribute("disabled");
+        document.getElementById('id').removeAttribute("disabled");
+
+    }
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -231,11 +237,10 @@ function SeleccionarUsuario() {
     ajax.send("ctrl=usuario&acti=recargar");
 }
 
-function VerPass(){
+function VerPass() {
     if ($('#contraseña').attr('type') == 'password') {
         $('#contraseña').attr('type', 'text');
     } else {
         $('#contraseña').attr('type', 'password');
     }
 }
-

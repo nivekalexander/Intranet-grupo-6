@@ -114,7 +114,6 @@
 								if (form.checkValidity() === true) {
 									var nombreBoton = document.getElementById("btnguardar").innerHTML;
 									if (nombreBoton == "Crear"){
-										document.getElementById('id').removeAttribute("disabled");
 										InsertUsuario();
 										$('#modalusuario').modal('hide');
 									}
