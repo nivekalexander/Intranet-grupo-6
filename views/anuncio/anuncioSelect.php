@@ -41,8 +41,17 @@
 						<div class="card-body">
 							<h5 class="card-title">Titulo : <?php echo $filas->anu_titulo; ?></h5>
 							<p class="card-text"><?php echo $filas->anu_descrp;?></p>
-							<div class="float-right"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalanuncios" data-dismiss="modal" onclick="EditarAnuncio(<?php echo $grupal; ?>);">Editar</button>
-							<button type="button" class="btn-rounded btn" onclick="BorrarAnuncio(<?php echo $filas->anu_id;?>);"> Eliminar </button></div>
+							<div class="float-right">
+							
+								<?php if($_SESSION['SRol']!=3){?>
+
+									<button class="btn-rounded btn" data-toggle="modal" data-target="#modalanuncios" data-dismiss="modal" onclick="EditarAnuncio(<?php echo $grupal; ?>);">Editar</button>
+									<button type="button" class="btn-rounded btn" onclick="BorrarAnuncio(<?php echo $filas->anu_id;?>);"> Eliminar </button>
+								
+								<?php }?>
+
+							</div>	
+
 						</div>
 					</div>
 				</div>

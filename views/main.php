@@ -24,11 +24,22 @@
 				
 			}else{
 
+				//captura del grupo del usuario 
 				if(isset($_POST['fichapuntero'])){
 
 				 $_SESSION['grupoficha']=$_POST['fichapuntero'];
-				 
+				 //captura del grupo del usuario en el gruposSelect
+				 //Este solo sirve para admin e instructor
 				}
+
+				if(!ISSET($_POST['fichapuntero'])){
+
+					$_SESSION['grupoficha']=$_SESSION['SFic'];
+					//captura del grupo del usuario aprendiz
+				}
+
+				
+				//captura de opciones de menu
 				if(isset($_POST['slidebar'])){
 
 					 $_SESSION['slidebar']=$_POST['slidebar'];
@@ -38,7 +49,8 @@
 
 					$_SESSION['slidebar']=$_REQUEST['slidebar'];
 				   
-				  }				  
+				}				  
+				//fin captura de opciones de menu
 
 				$controller = strtolower($_REQUEST['ctrl']);
 				$accion = ucwords(strtolower(ISSET($_REQUEST['acti']) ? $_REQUEST['acti'] : 'Index'));
