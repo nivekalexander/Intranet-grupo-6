@@ -35,8 +35,15 @@
 
 					<div>
 						<label for="contraseña">Contraseña</label><br>
-						<input class="form-control rounded" type="text" name="contraseña" id="contraseña" required>
-						<div class="invalid-feedback">Complete el campo.</div><br>
+						<div class="input-group mb-2">						
+							<input class="form-control rounded" type="password" name="contraseña" id="contraseña" required>
+							<div id="ver-pass" class="rounded-circle ver-pass input-group-prepend">
+								<a id="visualizar-Pass" onclick="VerPass();">
+									<img height="37" width="37" src="https://www.flaticon.es/svg/static/icons/svg/40/40498.svg" alt="">
+								</a>
+							</div>
+							<div class="invalid-feedback">Complete el campo.</div><br>
+						</div>				
 					</div>
 
 					<div>
