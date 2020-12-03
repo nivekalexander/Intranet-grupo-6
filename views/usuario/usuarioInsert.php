@@ -15,26 +15,26 @@
 
 				<form name="formulario" id="formulario" class="needs-validation" >
 
-					<div>
-					<label id="NumDoc" for="nombre">Numero de documento</label><br>
+					<div class="form-group row">
+					<label id="NumDoc" for="nombre">Numero de documento</label>
 					<input class="form-control rounded" type="number" id="id" name="id" required>
-					<div class="invalid-feedback">Complete el campo.</div><br>
+					<div class="invalid-feedback">Complete el campo.</div>
 					</div>
 
-					<div>
-						<label for="nombre">Nombre</label><br>
+					<div class="form-group row">
+						<label id="UsuName" for="nombre">Nombre</label>
 						<input class="form-control rounded" type="text" name="nombre" id="nombre" required>
-						<div class="invalid-feedback">Complete el campo.</div><br>
+						<div class="invalid-feedback">Complete el campo.</div>
 					</div>
 
-					<div>
-						<label for="apellido">Apellido</label><br>
+					<div class="form-group row">
+						<label id="Last" for="apellido">Apellido</label>
 						<input class="form-control rounded" name="apellido" id="apellido" required>
-						<div class="invalid-feedback">Complete el campo.</div><br>
+						<div class="invalid-feedback">Complete el campo.</div>
 					</div>
 
-					<div>
-						<label for="contraseña">Contraseña</label><br>
+					<div class="form-group row">
+						<label for="contraseña">Contraseña</label>
 						<div class="input-group mb-2">						
 							<input class="form-control rounded" type="password" name="contraseña" id="contraseña" required>
 							<div id="ver-pass" class="rounded-circle ver-pass input-group-prepend">
@@ -42,18 +42,18 @@
 									<img id="vpss" class="vpss" height="37" width="37" src="../assets/img/img-perfil/invisible.svg" alt="">
 								</a>
 							</div>
-							<div class="invalid-feedback">Complete el campo.</div><br>
+							<div class="invalid-feedback">Complete el campo.</div>
 						</div>				
 					</div>
 
-					<div>
-						<label for="correo">Correo</label><br>
+					<div class="form-group row">
+						<label for="correo">Correo</label>
 						<input class="form-control rounded" type="email" name="correo" id="correo" required>
-						<div class="invalid-feedback">Introduzca una dirección de correo valida.</div><br>
+						<div class="invalid-feedback">Introduzca una dirección de correo valida.</div>
 					</div>
 
-					<div>
-						<label for="ficha">Ficha id</label><br>
+					<div class="form-group row">
+						<label for="ficha">Ficha id</label>
 							<select class="form-control rounded" name="ficha" id="fich" required>
 								<?php
 									foreach ($this->ficha->Select() as $datos): 
@@ -61,15 +61,15 @@
 									endforeach;
 								?>
 							</select>
-						<div class="invalid-feedback">Seleccione un Campo</div><br>
+						<div class="invalid-feedback">Seleccione un Campo</div>
 					</div>
 
 					<div>
 						<input class="form-control rounded" name="rol" id="rol" hidden>
 					</div>
 
-					<div>
-						<label for="estado">Estado</label><br>
+					<div class="form-group row">
+						<label for="estado">Estado</label>
 						<select class="form-control rounded" name="estado" id="estado" >
 								<?php
 									foreach ($this->estado->Select() as $datos): 
@@ -77,11 +77,11 @@
 									endforeach;
 								?>
 							</select>
-						<div class="invalid-feedback">Seleccione un Campo.</div><br>
+						<div class="invalid-feedback">Seleccione un Campo.</div>
 					</div>
 
-					<div>
-						<label for="identi">Tipo Identificaion</label><br>
+					<div class="form-group row">
+						<label for="identi">Tipo Identificaion</label>
 						<select class="form-control rounded" name="identi" id="identi" required>
 								<?php
 									foreach ($this->tipoidentificacion->Select() as $datos): 
@@ -89,11 +89,11 @@
 									endforeach;
 								?>
 							</select>
-						<div class="invalid-feedback">Seleccine un Campo.</div><br>
+						<div class="invalid-feedback">Seleccine un Campo.</div>
 					</div>
 
 				
-					<div class="modal-footer">
+					<div class="modal-footer form-group">
 					<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarUsuario();">Cerrar</button>
 					<button type="button" id="btnguardar" class="btn btn-primary btn-rounded">Crear</button>
 					</div>

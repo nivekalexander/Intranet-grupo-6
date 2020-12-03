@@ -187,6 +187,7 @@ function ConfirmUsuario(id) {
     if (id == 3) {
 
         document.getElementById("NumDoc").innerHTML = "Numero de ficha";
+        document.getElementById("UsuName").innerHTML = "Abreviatura";
         document.getElementById('id').removeAttribute("disabled");
         document.getElementById('id').removeAttribute("disabled");
         document.getElementById('id').setAttribute("disabled", "");
@@ -241,9 +242,9 @@ function SeleccionarUsuario() {
 function VerPass() {
     if ($('#contraseña').attr('type') == 'password') {
         $('#contraseña').attr('type', 'text');
-        $('#vpss').attr('src','../assets/img/img-perfil/ojonegro.svg');
+        $('#vpss').attr('src', '../assets/img/img-perfil/ojonegro.svg');
     } else {
         $('#contraseña').attr('type', 'password');
-        $('#vpss').attr('src','../assets/img/img-perfil/invisible.svg');
+        $('#vpss').attr('src', '../assets/img/img-perfil/invisible.svg');
     }
 }
