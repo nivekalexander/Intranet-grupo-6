@@ -109,7 +109,7 @@ function InsertUsuario() {
 function EditarUsuario(id, nombre, apellido, contraseña, correo, ficha, rol, estado, identi) {
 
     document.formulario.id.value = id;
-
+    document.formulario.validationid.value = id;
     document.formulario.nombre.value = nombre;
     document.formulario.apellido.value = apellido;
     document.formulario.contraseña.value = contraseña;
@@ -129,6 +129,7 @@ function UpdateUsuario() {
 
     var result = document.getElementById('tview');
 
+    var valid = document.formulario.validationid.value;
     var id = document.formulario.id.value;
 
     var nombre = document.formulario.nombre.value;
@@ -164,7 +165,7 @@ function UpdateUsuario() {
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=actualizar&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&ficha=" + ficha + "&rol=" + rol + "&estado=" + estado + "&identi=" + identi + "&id=" + id);
+    ajax.send("ctrl=usuario&acti=actualizar&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&ficha=" + ficha + "&rol=" + rol + "&estado=" + estado + "&identi=" + identi + "&id=" + id + "&valid=" + valid);
 
     document.getElementById('rol').value = rol;
 
@@ -194,9 +195,6 @@ function ConfirmUsuario(id) {
         document.getElementById('apellido').setAttribute("value", rol);
         document.getElementById("correolabel").innerHTML = "Nombre de usuario";
         document.getElementById('correo').setAttribute("type", "number");
-
-
-
 
     }
 
