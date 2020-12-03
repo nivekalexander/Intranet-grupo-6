@@ -25,13 +25,13 @@
 
 					<div class="form-group row">
 						<label id="UsuName" for="nombre">Nombre</label>
-						<input class="form-control rounded" type="text" name="nombre" id="nombre" required>
+						<input class="form-control rounded" type="text" name="nombre" id="nombre" onkeypress="return soloLetras(event)" required>
 						<div class="invalid-feedback">Complete el campo.</div>
 					</div>
 
 					<div class="form-group row" id="divapellido">
 						<label id="Last" for="apellido">Apellido</label>
-						<input class="form-control rounded" name="apellido" id="apellido" required>
+						<input class="form-control rounded" name="apellido" id="apellido" onkeypress="return soloLetras(event)" required>
 						<div class="invalid-feedback">Complete el campo.</div>
 					</div>
 
