@@ -47,19 +47,28 @@ class Ficha
                                                                                                 $datos->fic_tofid,
                                                                                                 $datos->fic_pfoid
 									 									  			 	   )
-																					   )){mkdir("../assets/fichas/$datos->fic_codigo",0777);
-																						
+																					   )){
+																						   if(!file_exists("../assets/fichas/$datos->fic_codigo")){
+																						   mkdir("../assets/fichas/$datos->fic_codigo",0777);
+																							}else{}
 																					   }			
 																					
 									 						 }
-									 	catch (Exception $e) {	die($e->getMessage());			 }
+										 catch (PDOException $e){$fichaExist = $e->getCode();
+																	
+																		if($fichaExist == 23000){
+																			return "La ficha ya existe";
+																		}else{
+																			die($e->getMessage());
+																		}
+																}
 									 }
 
-    public function Update(Ficha $datos)
+    public function Update(Ficha $datos, $update)
 									 {
 									 	try  				 {
 									 							$sql="UPDATE tbl_ficha SET fic_codigo= ?, fic_feccrn= ?,fic_fecfn= ?,fic_tijid= ?,fic_modid= ?,fic_tofid= ?,fic_pfoid= ?
-                                                                  WHERE fic_codigo = ?";
+                                                                  WHERE fic_codigo = $update";
 									 							if($this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
@@ -69,11 +78,10 @@ class Ficha
                                                                                             $datos->fic_tijid,
                                                                                             $datos->fic_modid,
                                                                                             $datos->fic_tofid,
-                                                                                            $datos->fic_pfoid,
-
-									 									  			 	    $datos->fic_id
+                                                                                            $datos->fic_pfoid
+									 									  			 	   
 									 									  			 	   )
-																 						)){ mkdir("../assets/fichas/$datos->fic_codigo",0777); }
+																 						)){ rename("../assets/fichas/$update","../assets/fichas/$datos->fic_codigo"); }
 
 										 											}
 									 						 
@@ -84,17 +92,33 @@ class Ficha
 									 {
 									 	try  				 {
 									 							$sql="DELETE FROM tbl_ficha WHERE fic_codigo=?";
-									 							$this->pdo->prepare($sql)
+									 							if($this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
 									 									  			 	    $fic_id
 									 									  			 	  )
-									 									  			);
+									 									  			)){
+																						if (! is_dir("../assets/fichas/$fic_id")) { 
+																							 throw new InvalidArgumentException("$fic_id must be a directory"); 
+																						} 
+																						if (substr("../assets/fichas/$fic_id", strlen("../assets/fichas/$fic_id") - 1, 1) != '/') { 
+																							 $fic_id .= '/'; 
+																						} 
+																						$files = glob("../assets/fichas/$fic_id" . '*', GLOB_MARK); 
+																							foreach ($files as $file) { 
+																								 if (is_dir($file)) { 
+																									  self::deleteDir($file); 
+																										 } else { 
+																						unlink($file); 
+																						 } 
+																						} 
+																						rmdir("../assets/fichas/$fic_id"); 
+																					   }
 									 						 }
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-
+									 
 
 }
 

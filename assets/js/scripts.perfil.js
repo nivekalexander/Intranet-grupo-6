@@ -50,11 +50,13 @@ function ActualizarPerfil() {
 }
 
 function VisualizarPass() {
-
+        
     if ($('#contraseña-perfil').attr('type') == 'password') {
         $('#contraseña-perfil').attr('type', 'text');
+        $('#vpss').attr('src','../assets/img/img-perfil/ojonegro.svg');
     } else {
         $('#contraseña-perfil').attr('type', 'password');
+        $('#vpss').attr('src','../assets/img/img-perfil/invisible.svg');
     }
 
 }

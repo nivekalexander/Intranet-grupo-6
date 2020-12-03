@@ -35,8 +35,15 @@
 
 					<div>
 						<label for="contraseña">Contraseña</label><br>
-						<input class="form-control rounded" type="text" name="contraseña" id="contraseña" required>
-						<div class="invalid-feedback">Complete el campo.</div><br>
+						<div class="input-group mb-2">						
+							<input class="form-control rounded" type="password" name="contraseña" id="contraseña" required>
+							<div id="ver-pass" class="rounded-circle ver-pass input-group-prepend">
+								<a id="visualizar-Pass" onclick="VerPass();">
+									<img id="vpss" class="vpss" height="37" width="37" src="../assets/img/img-perfil/invisible.svg" alt="">
+								</a>
+							</div>
+							<div class="invalid-feedback">Complete el campo.</div><br>
+						</div>				
 					</div>
 
 					<div>
@@ -107,7 +114,6 @@
 								if (form.checkValidity() === true) {
 									var nombreBoton = document.getElementById("btnguardar").innerHTML;
 									if (nombreBoton == "Crear"){
-										document.getElementById('id').removeAttribute("disabled");
 										InsertUsuario();
 										$('#modalusuario').modal('hide');
 									}
