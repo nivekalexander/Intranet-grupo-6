@@ -24,16 +24,17 @@
 
 		public function Insert(Foro $data){
 								
-										try 					{	$sql = "INSERT INTO tbl_foro (for_titulo, for_fchfin, for_fchini, for_descrp, for_ficcodigo) 
+										try 					{	$sql = "INSERT INTO tbl_foro (for_titulo, for_fchfin, for_descrp, for_ficcodigo,for_usunumdnt) 
 																						  VALUES (?, ?, ?, ?, ?)";
 																	   $this->pdo->prepare($sql) 
 																				 ->execute(
 																							array(
 																								$data->for_titulo,
 																								$data->for_fchfin,
-																								$data->for_fchini,
+																								
 																								$data->for_descrp,
-																								$data->for_ficid
+																								$data->for_ficid,
+																								$data->for_usunumdnt
 																							)
 																						);
 																		
@@ -56,13 +57,13 @@
 									
 		try {	
 			$sql = "UPDATE tbl_foro 
-					SET for_titulo=?, for_descrp=?, for_fchini=?, for_fchfin=?
+					SET for_titulo=?, for_descrp=?, for_fchfin=?
 					WHERE for_id=?";
 			$this->pdo->prepare($sql)->execute(
 												array(
 													$datos->for_titulo,
 													$datos->for_descrp,
-													$datos->for_fchini,																										
+																																							
 													$datos->for_fchfin,
 													$datos->for_id													
 												)

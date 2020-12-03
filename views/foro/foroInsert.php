@@ -26,12 +26,7 @@
             <textarea class="form-control rounded" name="descrp" id="descrp" rows="3" required></textarea>
             <div class="invalid-feedback">Complete el campo.</div><br>
           </div>
-                
-          <div>
-            <label for="fchini">Fecha Inicio Foro</label><br>
-            <input class="form-control rounded" type="date" name="fchini" id="fchini" required>
-            <div class="invalid-feedback">Complete el campo.</div><br>
-          </div>
+              
 
           <div>
             <label for="fchfin">Fecha Fin Foro</label><br>
@@ -40,7 +35,8 @@
           </div> 
 
           <input type="text" id="idficha" name="idficha" value="<?php echo $_SESSION['grupoficha']; ?>" hidden>  
-                              
+          <input type="text" id="idusuario" name="idusuario" value="<?php echo $_SESSION['SIdu']; ?>" hidden> <!--recibe el id del usuario-->                   
+        
         </div>
 
         <div class="modal-footer">

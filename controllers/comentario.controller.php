@@ -12,7 +12,7 @@
 
 		public function Index()
 								{	
-                                    $fichapuntero  	= $_REQUEST['ficid'];
+                                    
 									require_once('../views/comentario/comentarioView.php');
 								}
 
@@ -22,7 +22,7 @@
 
 									$datos->respst 	= $_REQUEST['respst'];
 									$datos->perprt 	= $_REQUEST['perprt'];
-
+									$datos->usunumdnt 	= $_SESSION['SIdu'] ;
 									if(isset($_REQUEST['comid'])){
 										$datos->comid	= $_REQUEST['comid'];
 										$this->comentario->InsertResp($datos);
