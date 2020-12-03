@@ -122,8 +122,6 @@ function EditarUsuario(id, nombre, apellido, contraseña, correo, ficha, rol, es
     document.getElementById("btnguardar").innerHTML = "Actualizar";
     document.getElementById("titleusuario").innerHTML = "Actualizar usuario";
 
-    document.getElementById('id').setAttribute("disabled", "");
-
 }
 
 
@@ -189,6 +187,7 @@ function ConfirmUsuario(id) {
     if (id == 3) {
         document.getElementById('id').removeAttribute("disabled");
         document.getElementById('id').removeAttribute("disabled");
+        document.getElementById('id').setAttribute("disabled", "");
 
     }
 
