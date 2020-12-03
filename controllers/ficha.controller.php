@@ -52,9 +52,9 @@
                                     $datos->fic_tofid 	= $_REQUEST['fic_tofid'];
                                     $datos->fic_pfoid 	= $_REQUEST['fic_pfoid'];
 
-									$datos->fic_id 		= $_REQUEST['fic_id'];
+									$update = $_REQUEST['fic_id'];
 
-									$this->ficha->Update($datos);
+									$this->ficha->Update($datos,$update);
 									require_once('../views/ficha/fichaSelect.php');
 
 								}
@@ -72,8 +72,8 @@
                                     $datos->fic_tofid 	= $_REQUEST['fic_tofid'];
                                     $datos->fic_pfoid 	= $_REQUEST['fic_pfoid'];
 
-									$this->ficha->Insert($datos);
-
+									$respuesta = $this->ficha->Insert($datos);
+									
 									require_once('../views/ficha/fichaSelect.php');
 								}
 

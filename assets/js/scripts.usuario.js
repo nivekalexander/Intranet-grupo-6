@@ -122,8 +122,6 @@ function EditarUsuario(id, nombre, apellido, contraseña, correo, ficha, rol, es
     document.getElementById("btnguardar").innerHTML = "Actualizar";
     document.getElementById("titleusuario").innerHTML = "Actualizar usuario";
 
-    document.getElementById('id').setAttribute("disabled", "");
-
 }
 
 
@@ -177,7 +175,7 @@ function CancelarUsuario() {
     $(".alert").alert('close');
     document.getElementById("btnguardar").innerHTML = "Crear";
     document.getElementById("titleusuario").innerHTML = "Crear usuario";
-    document.getElementById('id').removeAttribute("disabled");
+
 }
 
 
@@ -185,6 +183,13 @@ function ConfirmUsuario(id) {
 
     var result = document.getElementById('tview');
     document.getElementById('rol').value = id;
+
+    if (id == 3) {
+        document.getElementById('id').removeAttribute("disabled");
+        document.getElementById('id').removeAttribute("disabled");
+        document.getElementById('id').setAttribute("disabled", "");
+
+    }
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -231,7 +236,7 @@ function SeleccionarUsuario() {
     ajax.send("ctrl=usuario&acti=recargar");
 }
 
-function VerPass(){
+function VerPass() {
     if ($('#contraseña').attr('type') == 'password') {
         $('#contraseña').attr('type', 'text');
         $('#vpss').attr('src','../assets/img/img-perfil/ojonegro.svg');
@@ -240,4 +245,3 @@ function VerPass(){
         $('#vpss').attr('src','../assets/img/img-perfil/invisible.svg');
     }
 }
-
