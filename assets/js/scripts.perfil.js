@@ -8,7 +8,7 @@ function ObjAjax() {
 }
 
 
-function ConfirmarPerfil() {
+function MostrarPerfil() {
 
     // Quitar modo lectura a los campos
     $('#nombre-perfil').removeAttr("readonly");
@@ -59,6 +59,30 @@ function VisualizarPass() {
 
 }
 
+function ConfirmarPerfil() {
+
+    var contras = document.formconfirmpass.contraseña.value;
+    var confirm = document.formconfirmpass.confirm.value;
+
+    if (contras != confirm) {
+
+        $.alert({
+            title: 'ERROR',
+            content: 'Contraseña incorrecta',
+            theme: 'modern',
+
+            buttons: {
+                Ok: function() {
+                    location.reload();
+                }
+            }
+        });
+
+    } else {
+        MostrarPerfil();
+    }
+}
+
 
 function ActualizarPerfil() {
 
@@ -85,5 +109,24 @@ function ActualizarPerfil() {
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ctrl=perfil&acti=actualizarperfil&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&id=" + id);
 
-    location.reload();
 }
+
+window.onload = function UpdateSusses() {
+
+    $("#actualizar-perfil").on("click", function() {
+
+        $.alert({
+            title: 'Actualización exitosa',
+            content: 'Se han actualizado en los datos correctamente',
+            theme: 'modern',
+
+            buttons: {
+                Ok: function() {
+                    location.reload();
+                }
+            }
+        });
+    });
+
+
+};

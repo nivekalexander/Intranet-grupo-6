@@ -6,7 +6,7 @@
     <div class="form-group row">
         <label for="id-perfil" class="col-sm-4 col-form-label">Identificación</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control rounded-pill" id="id-perfil" name="idperfil" value="<?php echo $filas->usu_numdnt; ?>" readonly>
+            <input type="text" class="form-control rounded-pill" id="id-perfil" name="idperfil" value="<?php echo  $_SESSION['SIdu']=$filas->usu_numdnt; ?>" readonly> 
         </div>  	
     </div>
     <!-- Nombre -->
@@ -27,10 +27,10 @@
     <div class="form-group row">
         <label for="contraseña-perfil" class="col-sm-4 col-form-label">Contraseña</label>        
         <div class="col-sm-8 input-group mb-2">            
-            <input type="password" class="form-control rounded-pill" id="contraseña-perfil" name="contraseñaperfil" value="<?php echo $filas->usu_passwd; ?>" readonly>
+            <input type="password" class="form-control rounded-pill" id="contraseña-perfil" name="contraseñaperfil" value="<?php echo $_SESSION['pass']=$filas->usu_passwd; ?>" readonly>
             <div id="ver-pass" class="rounded-circle ver-pass input-group-prepend" style="display: none;">
                 <a id="visualizar-Pass" onclick="VisualizarPass();">
-                    <img height="37" width="37" src="https://www.flaticon.es/svg/static/icons/svg/40/40498.svg" alt="">
+                    <img height="37" width="37" src="../assets/img/img-perfil/visualizar.svg" alt="">
                 </a>
             </div>
         </div>
@@ -39,7 +39,7 @@
     <div class="form-group row">
         <label for="correo-perfil" class="col-sm-4 col-form-label">Correo</label>
         <div class="col-sm-8">
-            <input type="email" class="form-control rounded-pill" id="correo-perfil" name="correoperfil" value="<?php echo $filas->usu_correo; ?>" readonly>
+            <input type="email" class="form-control rounded-pill" id="correo-perfil" name="correoperfil" value="<?php echo $_SESSION['SUsu']=$filas->usu_correo; ?>" readonly>
         </div>
     </div>
     <br><br>
@@ -50,3 +50,5 @@
 </form>
 
 <?php endforeach; ?>
+
+
