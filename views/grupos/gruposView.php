@@ -2,7 +2,7 @@
 <div class="container">
 	<div id="main">
 			<div class="container espaciado">
-    		    <h3 class="noti-tittle">Bienvenido Instructor Marcela de Saris</h3>
+    		    <h3 class="noti-tittle">Bienvenido Administrador <?php echo $Nombre=''.$_SESSION['name'].' '.$_SESSION['last'];?></h3>
 			</div>					
 			
             <h3 class="noti-tittle">Grupos</h3><br>

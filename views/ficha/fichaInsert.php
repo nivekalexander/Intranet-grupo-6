@@ -19,19 +19,19 @@
 						<input class="form-control rounded" type="number" name="fic_codigo" required>
 						<div class="invalid-feedback">Campo Obligatorio</div>
 						<div class="valid-feedback">¡Valido!</div>
-                    </div>
+                    </div><br>
                     <div>
 						<label for="fic_feccrn" >Fecha Creacion</label>
 						<input class="form-control rounded" type="date" name="fic_feccrn" required>
 						<div class="invalid-feedback">Campo Obligatorio</div>
 						<div class="valid-feedback">¡Valido!</div>
-                    </div>
+                    </div><br>
                     <div>
 						<label for="fic_fecfn" >Fecha fin</label>
 						<input class="form-control rounded" type="date" name="fic_fecfn" required>
 						<div class="invalid-feedback">Campo Obligatorio</div>
 						<div class="valid-feedback">¡Valido!</div>
-                    </div>
+                    </div><br>
 					<div>
                         <label for="fic_tijid">Tipo Jornada</label><br>
 						<select class="form-control rounded" type="text" name="fic_tijid" id="fic_tijid" required>
