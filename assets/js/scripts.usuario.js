@@ -231,3 +231,11 @@ function SeleccionarUsuario() {
     ajax.send("ctrl=usuario&acti=recargar");
 }
 
+function VerPass(){
+    if ($('#contraseña').attr('type') == 'password') {
+        $('#contraseña').attr('type', 'text');
+    } else {
+        $('#contraseña').attr('type', 'password');
+    }
+}
+

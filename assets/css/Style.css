@@ -57,7 +57,9 @@
     cursor: pointer;
 }
 
-.deleteCom, .deleteRes, .editRes {
+.deleteCom,
+.deleteRes,
+.editRes {
     cursor: pointer;
 }
 
@@ -65,14 +67,17 @@
     background-color: #ffffff5b !important;
 }
 
-@media (min-width:768px){ .slidebar-img {
-    margin-right: 20px;    
-} .programa2 {
-    font-size: 80% !important;
-}}
+@media (min-width:768px) {
+    .slidebar-img {
+        margin-right: 20px;
+    }
+    .programa2 {
+        font-size: 80% !important;
+    }
+}
 
 .slidebar-img {
-    width: 14%;   
+    width: 14%;
 }
 
 .slidebar-center {
@@ -170,10 +175,11 @@
 .ver-pass {
     height: 37px;
     width: 37px;
-    background-color: #F2994B;
+    background-color: #89d6f744;
     margin-right: auto;
     margin-left: auto;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .footer-estilo {
@@ -249,7 +255,7 @@ textarea {
     display: inline-flex;
 }
 
-.container{
+.container {
     overflow-x: hidden;
 }
 

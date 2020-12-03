@@ -31,6 +31,7 @@
 				 //captura del grupo del usuario en el gruposSelect
 				 //Este solo sirve para admin e instructor
 				}
+
 				if(!ISSET($_POST['fichapuntero'])){
 
 					$_SESSION['grupoficha']=$_SESSION['SFic'];
