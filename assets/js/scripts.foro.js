@@ -14,8 +14,9 @@ function InsertForo() {
     var titulo = document.formulario.titulo.value;
     var descrp = document.formulario.descrp.value;
     var fchfin = document.formulario.fchfin.value;
-    var fchini = document.formulario.fchini.value;
+    
     var ficid = document.formulario.idficha.value;
+    var idusu = document.formulario.idusuario.value;
 
     const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
@@ -32,7 +33,7 @@ function InsertForo() {
     };
 
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=foro&acti=insertar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&fhcini=" + fchini + "&ficid=" + ficid);
+    ajax.send("ctrl=foro&acti=insertar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&ficid=" + ficid +"&idusu="+idusu);
 
 }
 
@@ -71,17 +72,19 @@ function BorrarForo(id) {
     });
 }
 
-function EditarForo(id, titulo, fchfin, fchini, descrp) {
+function EditarForo(id, titulo, fchfin, fchini, descrp,idusu) {
     $.confirm({
         title: 'Confirmación!',
         content: '¿Desea editar este foro?',
         buttons: {
             confirmar: function() {
+
+                document.formulario.id.value = id;
                 document.formulario.id.value = id;
                 document.formulario.titulo.value = titulo;
                 document.formulario.descrp.value = descrp;
                 document.formulario.fchfin.value = fchfin;
-                document.formulario.fchini.value = fchini;
+                document.formulario.idusuario.value = idusu;
 
                 document.getElementById("btnguardar").innerHTML = "Actualizar";
                 document.getElementById("ModalLabelForo").innerHTML = "Editar Foro";
@@ -93,14 +96,16 @@ function EditarForo(id, titulo, fchfin, fchini, descrp) {
 }
 
 function UpdateForo() {
+
     var result = document.getElementById('tview');
 
     var id = document.formulario.id.value;
     var titulo = document.formulario.titulo.value;
     var descrp = document.formulario.descrp.value;
     var fchfin = document.formulario.fchfin.value;
-    var fchini = document.formulario.fchini.value;
+    
     var ficid = document.formulario.idficha.value;
+    var idusu = document.formulario.idusuario.value;
 
     const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
@@ -116,10 +121,10 @@ function UpdateForo() {
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=foro&acti=actualizar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&fchini=" + fchini + "&ficid=" + ficid + "&id=" + id);
+    ajax.send("ctrl=foro&acti=actualizar&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&ficid=" + ficid + "&id=" + id,"&idusu="+idusu);
 }
 
-function ParticiparForo(id, titulo, fchfin, fchini, descrp) {
+function ParticiparForo(id, titulo, fchfin, fchini, descrp,idusu) {
 
     var result = document.getElementById("contenedorForo");
     var ficid = document.formulario.idficha.value;
@@ -136,7 +141,7 @@ function ParticiparForo(id, titulo, fchfin, fchini, descrp) {
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=comentario&titulo=" + titulo + "&descrp=" + descrp + "&fchfin=" + fchfin + "&fchini=" + fchini + "&ficid=" + ficid + "&id=" + id);
+    ajax.send("ctrl=comentario&titulo=" + titulo + "&descrp=" + descrp +"&fchini="+fchini+ "&fchfin=" + fchfin + "&ficid=" + ficid + "&id=" + id+"&idusu="+idusu);
 
 
 

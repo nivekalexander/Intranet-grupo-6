@@ -1,7 +1,7 @@
  <!--funcionalidad-->  
 
     <div class="container espaciado" id="main">
-      <a class="btn-rounded btn float-right" href="./main.php?ctrl=foro&fcpt=<?php echo($fichapuntero);?>">Volver</a>
+      <a class="btn-rounded btn float-right" href="./main.php?ctrl=foro">Volver</a>
       <h3 class="noti-tittle">Foro: <?php echo $_REQUEST['titulo']; ?>
     </div>
 
@@ -16,6 +16,8 @@
                 Fecha fin:    <?php echo $_REQUEST['fchfin'];?>
             </div>
             </div>
+
+            <input type="text" value="" hidden>
         
             <div class="card-body">            
             <p class="card-text"><?php echo $_REQUEST['descrp'];?></p>
@@ -25,9 +27,11 @@
             </div>
             <div class="collapse" id="comentarioInsert">
               <div class="card card-body bg-light border border-secondary">
+                
                 <div class="formsComentario">
                   <?php include_once("comentarioInsert.php");?> 
                 </div>
+
               </div>
             </div>            
         </div>

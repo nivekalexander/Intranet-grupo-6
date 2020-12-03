@@ -58,13 +58,14 @@
 		public function Insert(Comentario $data){
 								
 			try{	
-				$sql = "INSERT INTO tbl_comentario (com_respst, com_perprt, com_forid) 
-				        VALUES (?, ?, ?)";
+				$sql = "INSERT INTO tbl_comentario (com_respst, com_perprt, com_forid,com_usunumdnt) 
+				        VALUES (?, ?, ? ,?)";
 				$this->pdo->prepare($sql)->execute(
 													array(
 														$data->respst,
 														$data->perprt,
-														$data->forid
+														$data->forid,
+														$data->usunumdnt
 													)
 												);
 																		
@@ -77,13 +78,14 @@
 		public function InsertResp(Comentario $data){
 								
 			try{	
-				$sql = "INSERT INTO tbl_respuesta (res_respst, res_perprt, res_comid) 
-				        VALUES (?, ?, ?)";
+				$sql = "INSERT INTO tbl_respuesta (res_respst, res_perprt, res_comid,res_usunumdnt) 
+				        VALUES (?, ?, ?, ?)";
 				$this->pdo->prepare($sql)->execute(
 													array(
 														$data->respst,
 														$data->perprt,
-														$data->comid
+														$data->comid,
+														$data->usunumdnt
 													)
 												);
 																		
