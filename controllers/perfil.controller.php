@@ -34,9 +34,9 @@ class PerfilController
 										// $rolpuntero         = $_REQUEST['rol'];
     
  										$this->usuario->UpdateUser($datos);
-                                         require_once('../views/frames/navbar.php');
-                                         require_once('../views/perfil/perfilForm.php');
                                         
+                                         require_once('../views/perfil/perfilForm.php');
+                                         
 									}
 }
 ?>
