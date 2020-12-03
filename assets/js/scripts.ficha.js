@@ -96,9 +96,9 @@ function InsertarFicha() {
 
 
 
-function EditarFicha( fic_codigo, fic_feccrn, fic_fecfn, fic_tijid, fic_modid, fic_tofid, fic_pfoid) {
+function EditarFicha(fic_codigo, fic_feccrn, fic_fecfn, fic_tijid, fic_modid, fic_tofid, fic_pfoid) {
 
-
+    document.formulario.fic_id.value = fic_codigo;
     document.formulario.fic_codigo.value = fic_codigo;
     document.formulario.fic_feccrn.value = fic_feccrn;
     document.formulario.fic_fecfn.value = fic_fecfn;
@@ -115,7 +115,7 @@ function UpdateFicha() {
 
     var result = document.getElementById('tview');
 
-    var fic_id = document.formulario.fic_codigo.value;
+    var fic_id = document.formulario.fic_id.value;
     var fic_codigo = document.formulario.fic_codigo.value;
     var fic_feccrn = document.formulario.fic_feccrn.value;
     var fic_fecfn = document.formulario.fic_fecfn.value;
@@ -164,3 +164,24 @@ function CancelarFicha() {
     document.getElementById("btnguardar").innerHTML = "Crear";
 
 }
+
+window.onload = function ErrorSql(compa) {
+    var vacio = ' ';
+
+    if(compa < vacio){
+        $.alert({
+            title: 'Algo fallo',
+            content: 'Se han actualizado en los datos correctamente',
+            theme: 'modern',
+
+            buttons: {
+                Ok: function() {
+                    location.reload();
+                }
+            }
+        });
+    }else{
+    }
+    
+
+};

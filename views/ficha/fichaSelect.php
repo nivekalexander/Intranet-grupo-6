@@ -1,3 +1,11 @@
+<?php 
+if(isset($respuesta)){
+	echo "<div class='alert alert-danger' role='alert'>
+			El usuario ya existe
+		  </div>";
+}
+?>
+
 <div class="table-responsive">
 	<table id="tableficha" class="table table-striped">
 	<!-- Cabecera de la Tabla -->
