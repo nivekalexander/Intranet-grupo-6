@@ -23,8 +23,14 @@
                 <p class="card-text"><?php echo $filas->for_descrp;?></p>
                 <div class="float-right">
                   <button type="button" class="btn-rounded btn" onclick="ParticiparForo(<?php echo $grupal; ?>);"> Participar </button>
-                  <button class="btn-rounded btn" data-toggle="modal" onclick="EditarForo(<?php echo $grupal; ?>);">Editar</button>
-                  <button type="button" class="btn-rounded btn" onclick="BorrarForo('<?php echo $filas->for_id;?>');"> Eliminar </button>
+
+                  <?php if($_SESSION['SRol']!=3){ ?>
+
+                    <button class="btn-rounded btn" data-toggle="modal" onclick="EditarForo(<?php echo $grupal; ?>);">Editar</button>
+                    <button type="button" class="btn-rounded btn" onclick="BorrarForo('<?php echo $filas->for_id;?>');"> Eliminar </button>
+                
+                  <?php } ?>
+                
                 </div>
               </div>
           </div>

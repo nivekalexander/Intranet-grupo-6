@@ -4,8 +4,15 @@
 
 
 		<div class="container espaciado">
+
+				<?php if($_SESSION['SRol']!=3){?>
+
 				<a class="btn-rounded btn float-right" data-toggle="modal" data-target="#modalmaterialapoyo">Crear Material De Apoyo</a>
+
+				<?php }?>
+
 			<h3 class="noti-tittle">Material De Apoyo <?php echo $_SESSION['grupoficha']?></h3>
+
 		</div>
 		<div id="forms">
 				<?php  include('materialapoyoInsert.php'); ?>
@@ -22,7 +29,7 @@
 				
 				<div id="drow-fases-nombres" class="collapse btn-group table-responsive " role="group" aria-label="Basic example">
 					
-						<input class="dropdown-item" type="text" id="fichapuntero" value="<?php echo $_REQUEST['fcpt'];?>" hidden>
+						<input class="dropdown-item" type="text" id="fichapuntero" value="<?php echo $_SESSION['grupoficha']; /*no estoy seguro si sea bueno borrar esta linea xD*/?>" hidden>
 						
 						<?php foreach ( $this->fases->Select() as $filas ): ?>
 							

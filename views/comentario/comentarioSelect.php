@@ -32,8 +32,15 @@
                     <p class="card-text" id="mcomentario<?php echo $idcom;?>"><?php echo $filas->com_respst;?></p>
                     <textarea class="form-control" id="ecomentario<?php echo $idcom;?>" rows="3" name="ecomentario<?php echo $idcom;?>" hidden required><?php echo $filas->com_respst;?></textarea><br>
                     <div class="float-right">
-                        <button id="btncomentar<?php echo $idcom;?>" class="btn-rounded btn" onclick="EditarComentario(<?php echo $idcom;?>);"> Editar </button> 
-                        <button type="button" class="btn-rounded btn" data-toggle="collapse" data-target="#respuestaInsert<?php echo $idcom;?>" aria-expanded="false" aria-controls="collapseExample"> Responder </button>
+
+                        <?php if($_SESSION['SRol']!=3){ ?>
+
+                            <button id="btncomentar<?php echo $idcom;?>" class="btn-rounded btn" onclick="EditarComentario(<?php echo $idcom;?>);"> Editar </button> 
+                            <button type="button" class="btn-rounded btn" data-toggle="collapse" data-target="#respuestaInsert<?php echo $idcom;?>" aria-expanded="false" aria-controls="collapseExample"> Responder </button>
+                       
+                        <?php } ?>
+                    
+                    
                     </div>
                     <div class="float-left">                        
                        <button type="button" class="btn btn-gris" data-toggle="collapse" data-target="#respuestaSelect<?php echo $idcom;?>" aria-expanded="false" aria-controls="collapseExample" > Ver respuestas: <?php echo $filas->respuestas;?> </button>

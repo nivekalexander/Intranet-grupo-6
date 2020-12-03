@@ -50,8 +50,13 @@
 						</div>
 					</button>
 					<div class="dropdown-menu drop-opcionbtn">
+
+					<?php if($_SESSION['SRol']!=3){?>
+
 						<button type="button" class="  opcionbtn"  onclick="EditarMaterialApoyo(<?php echo $grupal; ?>);">Editar</button><br>
 						<button type="button" class=" opcionbtn" onclick="BorrarMaterialApoyo('<?php echo $filas->map_id; ?>' , '<?php echo $filas->map_archurl; ?>' , '<?php echo $_SESSION['grupoficha']; ?>' , '<?php echo $idfase; ?>');">Eliminar</button><br>
+					<?php }?>
+
 						<button type="button" class=" opcionbtn"  onclick="javascript:window.open('<?php echo $filas->map_archurl; ?>', '_blank')" >Descargar</button><br>
 						
 					</div>
