@@ -227,7 +227,7 @@ class Usuario
 																						        $data->id,
                                                                                                 $data->nombre,
                                                                                                 $data->apellido,
-                                                                                                $data->contraseña,
+                                                                                            md5($data->contraseña),
                                                                                                 $data->correo,
                                                                 
                                                                                                 $data->id
