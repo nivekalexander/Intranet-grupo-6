@@ -160,8 +160,8 @@
 						</div>
 						<div class="modal-footer">
 
-							<button type="button" class="btn btn-secondary" data-dismiss="modal"onclick="AgregarCancelar()" >Cancelar</button>
-							<button type="button" id="btnguardar" class="btn btn-primary btn-rounded" onclick="AgregarFichaConfirmar()">Agregar Ficha</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="AgregarCancelar()" >Cancelar</button>
+							<button type="button" id="btnguardar2" class="btn btn-primary btn-rounded" onclick="AgregarFichaConfirmar()">Agregar Ficha</button>
 
 						</div>
 					</form>	
@@ -171,40 +171,7 @@
   </div>
 
 
-<!-- Modal 3 fichas 2-->
-<div class="modal fade" id="modalfichasUSU" tabindex="-1" aria-labelledby="Label" aria-hidden="true">
-  <div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="modalfichaLabel2">Eliminar Ficha</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="EliminarCancelar()">
-				<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<div class="container">
-					<form  name="modalfichasAll" id="modalfichasAll" >
-						<div class="form-group row">
-							<label for="ficha">Identificacion De Usuario</label>
-							<input class="form-control rounded" type="number" id="usuariofichaeliminar" readonly>
-						</div>
-						<div class="form-group row">
-							<label for="ficha">Ingrese La Ficha A Eliminar</label>
-							<input class="form-control rounded" type="number" id="fichaeliminar" required>
-							
-						</div>
-						<div class="modal-footer">
 
-							<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="EliminarCancelar()">Cancelar</button>
-							<button type="button" id="btnguardar" class="btn btn-primary btn-rounded" onclick="EliminarFichaConfirmar()">Eliminar Ficha</button>
-
-						</div>
-					</form>
-				</div>	
-			</div>
-		</div>
-  </div>
-</div>
 
 
 

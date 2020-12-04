@@ -119,7 +119,7 @@
 									}
 		public function Login($user,$pass)
 									{
-										return $this->usuario->Login($user,$pass);
+										return $this->usuario->Login($user,md5($pass));
 									}
 
 		public function Logout($id)
