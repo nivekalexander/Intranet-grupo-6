@@ -161,7 +161,7 @@
 						<div class="modal-footer">
 
 							<button type="button" class="btn btn-secondary" data-dismiss="modal"onclick="AgregarCancelar()" >Cancelar</button>
-							<button type="button" id="btnguardar" class="btn btn-primary btn-rounded" onclick="AgregarFichaConfirmar()">Agregar Ficha</button>
+							<button type="button" id="btnguardar" class="btn btn-primary btn-rounded" data-dismiss="modal" onclick="AgregarFichaConfirmar()">Agregar Ficha</button>
 
 						</div>
 					</form>	
@@ -182,26 +182,22 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<div class="container">
-					<form  name="modalfichasAll" id="modalfichasAll" >
-						<div class="form-group row">
-							<label for="ficha">Identificacion De Usuario</label>
-							<input class="form-control rounded" type="number" id="usuariofichaeliminar" readonly>
-						</div>
-						<div class="form-group row">
-							<label for="ficha">Ingrese La Ficha A Eliminar</label>
-							<input class="form-control rounded" type="number" id="fichaeliminar" required>
-							
-						</div>
-						<div class="modal-footer">
+				<form  name="modalfichasAll" id="modalfichasAll" class="needs-validation" >
+					<div class="form-group row">
+						<label for="ficha">Ficha id</label>
+						<input class="form-control rounded" type="number" id="usuariofichaeliminar" hidden readonly>
+						<input class="form-control rounded" type="number" id="fichaeliminar" readonly>
+						<div class="invalid-feedback">Elija una ficha</div>
+					</div>
+					<div class="modal-footer">
 
-							<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="EliminarCancelar()">Cancelar</button>
-							<button type="button" id="btnguardar" class="btn btn-primary btn-rounded" onclick="EliminarFichaConfirmar()">Eliminar Ficha</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="EliminarCancelar()">Cancelar</button>
+						<button type="button" id="btnguardar" class="btn btn-primary btn-rounded">Eliminar Ficha</button>
 
-						</div>
-					</form>
-				</div>	
+					</div>
+				</form>	
 			</div>
+		
 		</div>
   </div>
 </div>

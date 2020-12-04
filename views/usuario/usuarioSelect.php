@@ -5,6 +5,9 @@ if(isset($respuesta)){
 		  </div>";
 }
 ?>
+
+<?php $_SESSION['rolpuntero']=$rolpuntero; ?>
+
 <div><a class="btn-rounded btn float-right " data-toggle="modal" data-target="#modalusuario" onclick="ConfirmUsuario(<?php echo $rolpuntero; ?>);">Crear Usuario</a></div>
 <button class="btn-rounded btn redirigir" onclick="SeleccionarUsuario();">Volver</button><br><br>
 
@@ -62,8 +65,8 @@ if(isset($respuesta)){
 						<td scope="row"><?php echo $filas->tip_idntfc;?></td>
 						<td scope="row" hidden><?php echo $filas->usu_rolid;?></td>
                         
-						<td scope="row"><button  class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasAll" data-dismiss="modal" onclick="AgregarFicha(<?php echo $filas->usu_numdnt;?>)">Agregar Ficha</button></td>
-						<td scope="row"><button  class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasUSU" data-dismiss="modal" onclick="EliminarFicha(<?php echo $filas->usu_numdnt;?>)">Eliminar Ficha</button></td>
+						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasAll" data-dismiss="modal" onclick="AgregarFicha(<?php echo $filas->usu_numdnt;?>)">Agregar Ficha</button></td>
+						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasUSU" data-dismiss="modal" onclick="EliminarFicha(<?php echo $filas->usu_numdnt;?>)">Eliminar Ficha</button></td>
 						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalusuario" data-dismiss="modal" onclick="EditarUsuario(<?php echo $grupal;?>,<?php echo $datos->usf_id;?>)">Editar</button></td>
 						<td scope="row"><button class="btn-rounded btn" onclick="BorrarUsuario(<?php echo $eliminar ?>,<?php echo $datos->usf_id;?>);">Eliminar</button></td>
 					
