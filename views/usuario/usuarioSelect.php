@@ -16,7 +16,7 @@ if(isset($respuesta)){
 		<!-- Cabecera de la Tabla -->
 		<thead class="thead-dark">
 			<tr>
-				<th scope="col" >N° Identificaión</th>
+				<th scope="col" ><?php echo $_SESSION['rolpuntero'] != 3 ? 'N° Identificaión?':'N° Identificador de ficha'; ?></th>
 				<th scope="col" >Nombre</th>
 				<th scope="col">Apellido</th>
 				<th scope="col" hidden>Contraseña</th>
@@ -45,7 +45,7 @@ if(isset($respuesta)){
 						<td scope="row"><?php echo $filas->usu_numdnt; ?></td>
 						<td scope="row"><?php echo $filas->usu_nombre; ?></td>
 						<td scope="row"><?php echo $filas->usu_aplldo; ?> </td>
-                        <td scope="row" hidden><?php echo md5($filas->usu_passwd); ?></td>
+                        <td scope="row" hidden><?php echo $filas->usu_passwd; ?></td>
                         <td scope="row"><?php echo $filas->usu_correo;?></td>
                         <td scope="row">
 						
@@ -65,8 +65,8 @@ if(isset($respuesta)){
 						<td scope="row"><?php echo $filas->tip_idntfc;?></td>
 						<td scope="row" hidden><?php echo $filas->usu_rolid;?></td>
                         
-						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasAll" data-dismiss="modal" onclick="AgregarFicha(<?php echo $filas->usu_numdnt;?>)">Agregar Ficha</button></td>
-						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasUSU" data-dismiss="modal" onclick="EliminarFicha(<?php echo $filas->usu_numdnt;?>)">Eliminar Ficha</button></td>
+						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasAll" onclick="AgregarFicha(<?php echo $filas->usu_numdnt;?>)">Agregar Ficha</button></td>
+						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasUSU" onclick="EliminarFicha(<?php echo $filas->usu_numdnt;?>)">Eliminar Ficha</button></td>
 						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalusuario" data-dismiss="modal" onclick="EditarUsuario(<?php echo $grupal;?>,<?php echo $datos->usf_id;?>)">Editar</button></td>
 						<td scope="row"><button class="btn-rounded btn" onclick="BorrarUsuario(<?php echo $eliminar ?>,<?php echo $datos->usf_id;?>);">Eliminar</button></td>
 					
@@ -76,5 +76,43 @@ if(isset($respuesta)){
 		</tbody>
 	</table>
 </div>
+
+
+<!-- Modal 3 fichas 2-->
+<div class="modal fade" id="modalfichasUSU" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="modalfichasUSULabel" aria-hidden="true">
+  	<div class="modal-dialog">
+    	<div class="modal-content">
+      		<div class="modal-header">
+				<h5 class="modal-title" id="modalfichasUSULabel">Eliminar Ficha</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="EliminarCancelar()">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			
+			<div class="modal-body">
+				<div class="container">
+					<form  name="modalfichasUSU" id="modalfichasUSU" >
+						<div class="form-group row">
+							<label for="ficha">Identificacion De Usuario</label>
+							<input class="form-control rounded" type="number" id="usuariofichaeliminar" readonly>
+						</div>
+						<div class="form-group row">
+							<label for="ficha">Ingrese La Ficha A Eliminar</label>
+							<input class="form-control rounded" type="number" id="fichaeliminar" required>
+							
+						</div>
+						<div class="modal-footer">
+
+							<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="EliminarCancelar()">Cancelar</button>
+							<button type="button" id="btnguardar3" class="btn btn-primary btn-rounded" data-dismiss="modal" onclick="EliminarFichaConfirmar()">Eliminar Ficha</button>
+
+						</div>
+					</form>
+				</div>	
+			</div>
+		</div>
+  </div>
+</div>
+
 
 

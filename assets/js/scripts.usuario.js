@@ -296,11 +296,6 @@ function ConfirmUsuario(id) {
         document.getElementById('correo').setAttribute("type", "text");
 
 
-        // $(".IF").attr("hidden");
-        // $(".DF").attr("hidden");
-        // $(".IF2").attr("hidden");
-        // $(".DF2").attr("hidden");
-
     }
 
     const ajax = new XMLHttpRequest();
