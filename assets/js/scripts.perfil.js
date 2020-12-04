@@ -50,13 +50,13 @@ function ActualizarPerfil() {
 }
 
 function VisualizarPass() {
-        
+
     if ($('#contraseña-perfil').attr('type') == 'password') {
         $('#contraseña-perfil').attr('type', 'text');
-        $('#vpss').attr('src','../assets/img/img-perfil/ojonegro.svg');
+        $('#vpss').attr('src', '../assets/img/img-perfil/ojonegro.svg');
     } else {
         $('#contraseña-perfil').attr('type', 'password');
-        $('#vpss').attr('src','../assets/img/img-perfil/invisible.svg');
+        $('#vpss').attr('src', '../assets/img/img-perfil/invisible.svg');
     }
 
 }
@@ -66,7 +66,11 @@ function ConfirmarPerfil() {
     var contras = document.formconfirmpass.contraseña.value;
     var confirm = document.formconfirmpass.confirm.value;
 
-    if (contras != confirm) {
+    var passhash = CryptoJS.MD5(contras).toString();
+
+    alert(passhash);
+
+    if (passhash != confirm) {
 
         $.alert({
             title: 'ERROR',
