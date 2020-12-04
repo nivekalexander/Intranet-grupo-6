@@ -88,7 +88,7 @@ if(isset($respuesta)){
 			
 			<div class="modal-body">
 				<div class="container">
-					<form  name="modalfichasUSU" id="modalfichasUSU" >
+					<form  >
 						<div class="form-group row">
 							<label for="ficha">Identificacion De Usuario</label>
 							<input class="form-control rounded" type="number" id="usuariofichaeliminar" readonly>
