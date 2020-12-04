@@ -22,7 +22,7 @@
         if ($(window).width() < 480 && !$(".sidebar").hasClass("toggled")) {
             $("body").addClass("sidebar-toggled");
             $(".sidebar").addClass("toggled");
-            ('.sidebar .collapse').collapse('hide');
+            $('.sidebar .collapse').collapse('hide');
         };
     });
 

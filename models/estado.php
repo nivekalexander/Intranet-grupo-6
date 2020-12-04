@@ -15,7 +15,7 @@ class Estado
 	public function Select()
 									 {
 									 	try  				 {
-									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_estado ORDER BY est_id DESC");
+									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_estado ORDER BY est_id");
 									 							$sql->execute();
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
 									 						 }

@@ -29,7 +29,7 @@
 						<div class="invalid-feedback">Ingrese un Nombre</div>
 					</div>
 
-					<div class="form-group row" id="divapellido">
+					<div class="form-group row">
 						<label id="Last" for="apellido">Apellido</label>
 						<input class="form-control rounded" name="apellido" id="apellido" onkeypress="return soloLetras(event)" required>
 						<div class="invalid-feedback">Ingrese un Apellido</div>
@@ -87,9 +87,40 @@
 						<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarUsuario();">Cerrar</button>
 						<button type="button" id="btnguardar" class="btn btn-primary btn-rounded">Crear</button>
 					</div>
-
 				</form>
+				<script>
 
+					(function() {
+						'use strict';
+						window.addEventListener('load', function() {
+							// Fetch all the forms we want to apply custom Bootstrap validation styles to
+							var forms = document.getElementsByClassName('needs-validation');
+							// Loop over them and prevent submission
+							var validation = Array.prototype.filter.call(forms, function(form) {
+								document.getElementById("btnguardar").addEventListener('click', function(event) {
+								if (form.checkValidity() === true) {
+									var nombreBoton = document.getElementById("btnguardar").innerHTML;
+									if (nombreBoton == "Crear"){
+										InsertUsuario();
+										$('#modalusuario').modal('hide');
+									}
+									if (nombreBoton == "Actualizar"){
+										UpdateUsuario();
+										$('#modalusuario').modal('hide');
+									}
+								
+								}
+								if (form.checkValidity() === false) {
+									event.preventDefault();
+									event.stopPropagation();
+								}
+								form.classList.add('was-validated');
+								}, false);
+							});
+						}, false);
+					})();
+
+				</script>
 		    </div>
 		</div>   
 	</div>
@@ -111,7 +142,7 @@
 
 				<div class="container"> 
 
-					<form  name="modalfichasAll" id="modalfichasAll" class="needs-validation" >
+					<form  name="modalfichasAll" id="modalfichasAll" >
 						<div class="form-group row">
 							
 							<label for="usuariofichaagregar">Identificacion De Usuario</label>
@@ -125,7 +156,7 @@
 									endforeach;
 								?>
 							</select>
-							<div class="invalid-feedback">Elija una ficha</div>
+						
 						</div>
 						<div class="modal-footer">
 
@@ -136,10 +167,9 @@
 					</form>	
 				</div>
 			</div>
-		
 		</div>
   </div>
-</div>
+
 
 <!-- Modal 3 fichas 2-->
 <div class="modal fade" id="modalfichasUSU" tabindex="-1" aria-labelledby="Label" aria-hidden="true">
@@ -153,7 +183,7 @@
 			</div>
 			<div class="modal-body">
 				<div class="container">
-					<form  name="modalfichasAll" id="modalfichasAll" class="needs-validation" >
+					<form  name="modalfichasAll" id="modalfichasAll" >
 						<div class="form-group row">
 							<label for="ficha">Identificacion De Usuario</label>
 							<input class="form-control rounded" type="number" id="usuariofichaeliminar" readonly>
@@ -161,7 +191,7 @@
 						<div class="form-group row">
 							<label for="ficha">Ingrese La Ficha A Eliminar</label>
 							<input class="form-control rounded" type="number" id="fichaeliminar" required>
-							<div class="invalid-feedback">Elija una ficha</div>
+							
 						</div>
 						<div class="modal-footer">
 
@@ -172,50 +202,10 @@
 					</form>
 				</div>	
 			</div>
-		
 		</div>
   </div>
 </div>
 
-			
-								
-				
-<script>
-
-
-(function() {
-	'use strict';
-	window.addEventListener('load', function() {
-		// Fetch all the forms we want to apply custom Bootstrap validation styles to
-		var forms = document.getElementsByClassName('needs-validation');
-		// Loop over them and prevent submission
-		var validation = Array.prototype.filter.call(forms, function(form) {
-			document.getElementById("btnguardar").addEventListener('click', function(event) {
-			if (form.checkValidity() === true) {
-				var nombreBoton = document.getElementById("btnguardar").innerHTML;
-				if (nombreBoton == "Crear"){
-					InsertUsuario();
-					$('#modalusuario').modal('hide');
-				}
-				if (nombreBoton == "Actualizar"){
-					UpdateUsuario();
-					$('#modalusuario').modal('hide');
-				}
-
-				
-				
-			}
-			if (form.checkValidity() === false) {
-				event.preventDefault();
-				event.stopPropagation();
-			}
-			form.classList.add('was-validated');
-			}, false);
-		});
-	}, false);
-})();
-
-</script>
 
 
 

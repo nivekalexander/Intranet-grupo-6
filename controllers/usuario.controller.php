@@ -59,7 +59,6 @@
                                     $datos->apellido    = $_REQUEST['apellido'];
                                     $datos->contraseña  = $_REQUEST['contraseña'];
                                     $datos->correo      = $_REQUEST['correo'];
-                                    $datos->ficha       = $_REQUEST['ficha'];
                                     $datos->rol         = $_REQUEST['rol'];
                                     $datos->estado      = $_REQUEST['estado'];
 									$datos->identi      = $_REQUEST['identi'];
@@ -90,7 +89,6 @@
                                         $datos->apellido    = $_REQUEST['apellido'];
                                         $datos->contraseña  = $_REQUEST['contraseña'];
                                         $datos->correo      = $_REQUEST['correo'];
-                                        $datos->ficha       = $_REQUEST['ficha'];
                                         $datos->rol         = $_REQUEST['rol'];
                                         $datos->estado      = $_REQUEST['estado'];
                                         $datos->identi      = $_REQUEST['identi'];

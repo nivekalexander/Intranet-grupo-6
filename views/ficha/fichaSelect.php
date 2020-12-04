@@ -1,7 +1,7 @@
 <?php 
 if(isset($respuesta)){
 	echo "<div class='alert alert-danger' role='alert'>
-			El usuario ya existe
+			La ficha ya existe
 		  </div>";
 }
 ?>

@@ -8,7 +8,7 @@ function ObjAjax() {
 }
 
 
-function BorrarUsuario(id, rolid,idfichausuario) {
+function BorrarUsuario(id, rolid, idfichausuario) {
     $.confirm({
         title: 'Confirmación!',
         content: '¿Esta seguro que desea eliminar este usuario?',
@@ -58,7 +58,7 @@ function BorrarUsuario(id, rolid,idfichausuario) {
 
 
 function InsertUsuario() {
-    
+
 
     var result = document.getElementById('tview');
 
@@ -67,7 +67,7 @@ function InsertUsuario() {
     var apellido = document.formulario.apellido.value;
     var contraseña = document.formulario.contraseña.value;
     var correo = document.formulario.correo.value;
-    
+
     var rol = document.getElementById('rol').value;
     var estado = document.getElementById('estado').value;
     var identi = document.getElementById('identi').value;
@@ -114,7 +114,7 @@ function EditarUsuario(id, nombre, apellido, contraseña, correo, rol, estado, i
     document.formulario.apellido.value = apellido;
     document.formulario.contraseña.value = contraseña;
     document.formulario.correo.value = correo;
-    
+
     document.getElementById('rol').value = rol;
     document.getElementById('estado').value = estado;
     document.getElementById('identi').value = identi;
@@ -136,7 +136,7 @@ function UpdateUsuario() {
     var apellido = document.formulario.apellido.value;
     var contraseña = document.formulario.contraseña.value;
     var correo = document.formulario.correo.value;
-    
+
     var rol = document.getElementById('rol').value;
     var estado = document.getElementById('estado').value;
     var identi = document.getElementById('identi').value;
@@ -181,26 +181,25 @@ function CancelarUsuario() {
 
 
 //codigo para agregar una ficha//
-function AgregarFicha(idusu)
-                    {
+function AgregarFicha(idusu) {
 
-                        document.getElementById("usuariofichaagregar").value=idusu;
-                        
+    document.getElementById("usuariofichaagregar").value = idusu;
 
-                    }   
-function AgregarCancelar()
-                    {
 
-                        document.getElementById("usuariofichaagregar").value="";
+}
 
-                    }  
+function AgregarCancelar() {
 
-function AgregarFichaConfirmar(){
+    document.getElementById("usuariofichaagregar").value = "";
+
+}
+
+function AgregarFichaConfirmar() {
 
     var result = document.getElementById('tview');
 
-    var idusu=document.getElementById("usuariofichaagregar").value;
-    var ficha=document.getElementById("fichaagregar").value;
+    var idusu = document.getElementById("usuariofichaagregar").value;
+    var ficha = document.getElementById("fichaagregar").value;
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -224,31 +223,34 @@ function AgregarFichaConfirmar(){
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=agregarficha&ficha="+ficha+"&idusu="+idusu);
+    ajax.send("ctrl=usuario&acti=agregarficha&ficha=" + ficha + "&idusu=" + idusu);
 
 
 }
-function EliminarFicha(usu_numdnt){
 
-    
-    document.getElementById("usuariofichaeliminar").value=usu_numdnt;
-    
-    
+function EliminarFicha(usu_numdnt) {
 
-}
-function EliminarCancelar(){
 
-    document.getElementById("fichaeliminar").value="";
-    document.getElementById("fichaeliminar").value="";
-    
+    document.getElementById("usuariofichaeliminar").value = usu_numdnt;
+
+
 
 }
-function EliminarFichaConfirmar(){
+
+function EliminarCancelar() {
+
+    document.getElementById("fichaeliminar").value = "";
+    document.getElementById("fichaeliminar").value = "";
+
+
+}
+
+function EliminarFichaConfirmar() {
 
     var result = document.getElementById('tview');
-    
-    var idusu=document.getElementById("usuariofichaeliminar").value;
-    var ficha=document.getElementById("fichaeliminar").value;
+
+    var idusu = document.getElementById("usuariofichaeliminar").value;
+    var ficha = document.getElementById("fichaeliminar").value;
 
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
@@ -272,7 +274,7 @@ function EliminarFichaConfirmar(){
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=eliminarficha&ficha=" + ficha+"&idusu="+idusu);
+    ajax.send("ctrl=usuario&acti=eliminarficha&ficha=" + ficha + "&idusu=" + idusu);
 
 }
 
@@ -286,14 +288,17 @@ function ConfirmUsuario(id) {
 
     if (id == 3) {
 
-        document.getElementById("NumDoc").innerHTML = "Numero de ficha";
-        document.getElementById("UsuName").innerHTML = "Abreviatura";
-        document.getElementById('divapellido').setAttribute("hidden", "");
-        document.getElementById('apellido').removeAttribute("required");
-        var rol = document.getElementById('rol').value;
-        document.getElementById('apellido').setAttribute("value", rol);
-        document.getElementById("correolabel").innerHTML = "Nombre de usuario";
-        document.getElementById('correo').setAttribute("type", "number");
+        document.getElementById('NumDoc').innerHTML = "Numero de ficha";
+        document.getElementById('UsuName').innerHTML = "Nombre Abreviatura";
+        document.getElementById('Last').innerHTML = "Numero ficha";
+        document.getElementById('correolabel').innerHTML = "Nombre de usuario";
+        document.getElementById('correo').setAttribute("type", "text");
+
+
+        // $(".IF").attr("hidden");
+        // $(".DF").attr("hidden");
+        // $(".IF2").attr("hidden");
+        // $(".DF2").attr("hidden");
 
     }
 
@@ -328,9 +333,7 @@ function SeleccionarUsuario() {
 
     document.getElementById("NumDoc").innerHTML = "Numero de documento";
     document.getElementById("UsuName").innerHTML = "Nombre";
-    document.getElementById('divapellido').removeAttribute("hidden");
-    document.getElementById('apellido').setAttribute("value", "");
-    document.getElementById('apellido').setAttribute("required", "");
+    document.getElementById('Last').innerHTML = "Apellido";
     document.getElementById("correolabel").innerHTML = "Correo";
     document.getElementById('correo').setAttribute("type", "email");
 
