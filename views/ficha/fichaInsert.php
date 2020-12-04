@@ -17,19 +17,19 @@
 					<div>
 						<label for="fic_codigo" >Codigo</label>
 						<input class="form-control rounded" type="number" name="fic_codigo" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="invalid-feedback">Ingrese un Codigo</div>
 						<div class="valid-feedback">¡Valido!</div>
                     </div><br>
                     <div>
 						<label for="fic_feccrn" >Fecha Creacion</label>
 						<input class="form-control rounded" type="date" name="fic_feccrn" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="invalid-feedback">Ingrese una Fecha</div>
 						<div class="valid-feedback">¡Valido!</div>
                     </div><br>
                     <div>
 						<label for="fic_fecfn" >Fecha fin</label>
 						<input class="form-control rounded" type="date" name="fic_fecfn" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="invalid-feedback">Ingrese una Fecha</div>
 						<div class="valid-feedback">¡Valido!</div>
                     </div><br>
 					<div>

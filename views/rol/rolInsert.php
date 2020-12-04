@@ -18,7 +18,7 @@
 						<div>
             				<label for="nombre">Nombre Rol</label><br>
             				<input class="form-control rounded" type="text" name="nombre" required>
-							<div class="invalid-feedback">Campo Obligatorio</div>
+							<div class="invalid-feedback">Ingrese el Rol</div>
 							<div class="valid-feedback">¡Valido!</div>
 					    </div>
 

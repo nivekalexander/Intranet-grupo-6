@@ -25,13 +25,13 @@
 						<label for="titulomodal">Titulo</label><br>
 						<input class="form-control rounded" type="text" name="titulomodal" id="titulomodal" required>
 
-						<div class="invalid-feedback">Complete el campo.</div><br>
+						<div class="invalid-feedback">Ingrese un Título</div><br>
 					</div>
                     
 					<div>
 						<label for="descrpmodal">Descripcion</label><br>
 						<textarea class="form-control rounded" name="descrpmodal" id="descrpmodal" rows="3" required></textarea>
-						<div class="invalid-feedback">Complete el campo.</div><br>
+						<div class="invalid-feedback">Ingrese una Descripción</div><br>
 					</div>
 					<div>
 					<label for="fasestitulo">Fase</label><br>
@@ -48,7 +48,7 @@
 					<div><br>
 						<label for="file-archivo">Material De Apoyo</label><br>
 						<input type="file" id="file-archivo" lang="es" required>
-						<div class="invalid-feedback">Complete el campo.</div><br>
+						<div class="invalid-feedback">No se ha Ingresado un Archivo</div><br>
 					</div>
 
 					

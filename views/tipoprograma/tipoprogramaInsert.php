@@ -16,9 +16,9 @@
             			<input type="text" name="id" hidden>
 
 						<div>
-            				<label for="nombre">Nombre tipo de programa</label><br>
+            				<label for="nombre">Nombre tipo de Programa</label><br>
             				<input class="form-control rounded" type="text" name="nombre" required>
-							<div class="invalid-feedback">Campo Obligatorio</div>
+							<div class="invalid-feedback">Ingrese el Nombre del Programa</div>
 							<div class="valid-feedback">¡Valido!</div>
 					    </div>
 

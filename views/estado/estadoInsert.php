@@ -17,7 +17,7 @@
 					<div>
 						<label for="nombre" >Nombre Estado</label>
 						<input class="form-control rounded" type="text" name="nombre" required>
-						<div class="invalid-feedback">Campo Obligatorio</div>
+						<div class="invalid-feedback">Este Campo es Obligatorio</div>
 						<div class="valid-feedback">¡Valido!</div>
 					</div>
 					
