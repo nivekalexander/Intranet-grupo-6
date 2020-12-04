@@ -16,9 +16,9 @@ if(isset($respuesta)){
 		<!-- Cabecera de la Tabla -->
 		<thead class="thead-dark">
 			<tr>
-				<th scope="col" ><?php echo $_SESSION['rolpuntero'] != 3 ? 'N° Identificaión?':'N° Identificador de ficha'; ?></th>
-				<th scope="col" >Nombre</th>
-				<th scope="col">Apellido</th>
+				<th scope="col" ><?php echo $_SESSION['rolpuntero'] != 3 ? 'N° Identificaión':'N° Identificador de ficha'; ?></th>
+				<th scope="col" ><?php echo $_SESSION['rolpuntero'] != 3 ? 'Nombre':'Nombre Abreviatura'; ?></th>
+				<th scope="col"><?php echo $_SESSION['rolpuntero'] != 3 ? 'Apellido':'Numero ficha'; ?></th></th>
 				<th scope="col" hidden>Contraseña</th>
                 <th scope="col">Correo</th>
                 <th scope="col">Ficha</th>
