@@ -1,3 +1,5 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
 <script src="../assets/js/scripts.perfil.js"></script>
 <div class="container espaciado">
     <h3 class="noti-tittle">Perfil</h3>
