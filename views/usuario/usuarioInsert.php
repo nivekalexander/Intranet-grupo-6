@@ -20,19 +20,19 @@
 					<div class="form-group row">
 					<label id="NumDoc" for="nombre">Numero de documento</label>
 					<input class="form-control rounded" type="number" id="id" name="id" required>
-					<div class="invalid-feedback">Ingrese un Número de Documento</div>
+					<div class="invalid-feedback" id="errorid">Ingrese un Número de Documento</div>
 					</div>
 
 					<div class="form-group row">
 						<label id="UsuName" for="nombre">Nombre</label>
 						<input class="form-control rounded" type="text" name="nombre" id="nombre" onkeypress="return soloLetras(event)" required>
-						<div class="invalid-feedback">Ingrese un Nombre</div>
+						<div class="invalid-feedback" id="errorname">Ingrese un Nombre</div>
 					</div>
 
 					<div class="form-group row">
 						<label id="Last" for="apellido">Apellido</label>
 						<input class="form-control rounded" name="apellido" id="apellido" onkeypress="return soloLetras(event)" required>
-						<div class="invalid-feedback">Ingrese un Apellido</div>
+						<div class="invalid-feedback" id="errorlast">Ingrese un Apellido</div>
 					</div>
 
 					<div class="form-group row">
@@ -44,14 +44,14 @@
 									<img id="vpss" class="vpss" height="37" width="37" src="../assets/img/img-perfil/invisible.svg" alt="">
 								</a>
 							</div>
-							<div class="invalid-feedback">Ingrese una Contraseña</div>
+							<div class="invalid-feedback" id="errorpass">Ingrese una Contraseña</div>
 						</div>				
 					</div>
 
 					<div class="form-group row">
 						<label for="correo" id="correolabel">Correo</label>
 						<input class="form-control rounded" type="email" name="correo" id="correo" required>
-						<div class="invalid-feedback">Introduzca una Dirección de Correo Valida.</div>
+						<div class="invalid-feedback" id="erroremail">Introduzca una Dirección de Correo Valida.</div>
 					</div>
 
 					<div>
@@ -67,10 +67,10 @@
 									endforeach;
 								?>
 							</select>
-						<div class="invalid-feedback">Seleccione un Campo.</div>
+						<div class="invalid-feedback" id="errorestado">Seleccione un Campo.</div>
 					</div>
 
-					<div class="form-group row">
+					<div class="form-group row" id="divtipid">
 						<label for="identi">Tipo Identificaion</label>
 						<select class="form-control rounded" name="identi" id="identi" required>
 								<?php
@@ -81,8 +81,6 @@
 							</select>
 						<div class="invalid-feedback">Seleccine un Campo.</div>
 					</div>
-
-				
 					<div class="modal-footer form-group">
 						<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarUsuario();">Cerrar</button>
 						<button type="button" id="btnguardar" class="btn btn-primary btn-rounded">Crear</button>
@@ -143,11 +141,13 @@
 				<div class="container"> 
 
 					<form  name="modalfichasAll" id="modalfichasAll" >
+						
 						<div class="form-group row">
-							
 							<label for="usuariofichaagregar">Identificacion De Usuario</label>
 							<input class="form-control rounded" type="text" id="usuariofichaagregar"  readonly>
+						</div>
 
+						<div class="form-group row">
 							<label for="ficha">Ficha id</label>
 							<select class="form-control rounded" name="fichaagregar" id="fichaagregar" required>
 								<?php
@@ -156,12 +156,11 @@
 									endforeach;
 								?>
 							</select>
-						
 						</div>
 						<div class="modal-footer">
 
-							<button type="button" class="btn btn-secondary" data-dismiss="modal"onclick="AgregarCancelar()" >Cancelar</button>
-							<button type="button" id="btnguardar" class="btn btn-primary btn-rounded" data-dismiss="modal" onclick="AgregarFichaConfirmar()">Agregar Ficha</button>
+							<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal"onclick="AgregarCancelar()" >Cancelar</button>
+							<button type="button" id="btnguardar" class="btn btn-rounded" data-dismiss="modal" onclick="AgregarFichaConfirmar()">Agregar Ficha</button>
 
 						</div>
 					</form>	
