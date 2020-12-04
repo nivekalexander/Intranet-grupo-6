@@ -68,8 +68,6 @@ function ConfirmarPerfil() {
 
     var passhash = CryptoJS.MD5(contras).toString();
 
-    alert(passhash);
-
     if (passhash != confirm) {
 
         $.alert({
