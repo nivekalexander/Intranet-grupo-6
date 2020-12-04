@@ -13,24 +13,97 @@ class Usuario
 									 }
 
 	public function Select($rol)
-									 {
-									 	try  				 {
-									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_usuario 
-																 INNER JOIN tbl_ficha 
-																 INNER JOIN tbl_rol 
-																 INNER JOIN tbl_estado 
-																 INNER JOIN tbl_tipoid 
-																 WHERE tbl_usuario.usu_ficcodigo = tbl_ficha.fic_codigo
-																 AND tbl_usuario.usu_rolid = tbl_rol.rol_id 
-																 AND tbl_usuario.usu_estid = tbl_estado.est_id 
-																 AND tbl_usuario.usu_tipid = tbl_tipoid.tip_id
-																 AND tbl_usuario.usu_rolid = ?
-																 ORDER BY tbl_usuario.usu_numdnt DESC");
-																 $sql->execute(array($rol));
-									 							return $sql->fetchALL(PDO::FETCH_OBJ);
-									 						 }
+								{
+								try  				 {
+														$sql=$this->pdo->prepare("SELECT * FROM tbl_usuario 
+															
+															INNER JOIN tbl_rol 
+															INNER JOIN tbl_estado 
+															INNER JOIN tbl_tipoid 
+															WHERE tbl_usuario.usu_rolid = tbl_rol.rol_id 
+															AND tbl_usuario.usu_estid = tbl_estado.est_id 
+															AND tbl_usuario.usu_tipid = tbl_tipoid.tip_id
+															AND tbl_usuario.usu_rolid = ?
+															ORDER BY tbl_usuario.usu_numdnt DESC");
+															$sql->execute(array($rol));
+														return $sql->fetchALL(PDO::FETCH_OBJ);
+														}
+								catch (Exception $e) {	die($e->getMessage());			 }
+								}
+
+//codigos para la ficha  pertenecientes al usuario
+
+
+
+	public function SelectFichaUsu	($idusuario)
+								{
+								try  				 {
+														$sql=$this->pdo->prepare("SELECT * FROM tbl_usuario_ficha
+															WHERE usf_usunumdnt=?
+															ORDER BY usf_id DESC");
+															$sql->execute(array($idusuario));
+														return $sql->fetchALL(PDO::FETCH_OBJ);
+														}
+								catch (Exception $e) {	die($e->getMessage());			 }
+								}	
+
+	public function SelectFichaAll	()
+	{
+								try  				 {
+														$sql=$this->pdo->prepare("SELECT fic_codigo FROM tbl_ficha
+															ORDER BY fic_codigo DESC");
+															$sql->execute();
+														return $sql->fetchALL(PDO::FETCH_OBJ);
+														}
+								catch (Exception $e) {	die($e->getMessage());			 }
+	}	
+
+	public function DelectFicha($idficha,$idusu)
+								{
+								try  				 {
+														$sql="DELETE FROM tbl_usuario_ficha 
+														WHERE usf_usunumdnt=? AND usf_ficcodigo=? ";
+														$this->pdo->prepare($sql)
+																	->execute(
+																				array(
+																					
+																					$idusu,
+																					$idficha
+																					
+
+																					)
+																			);
+														}
+								catch (Exception $e) {	die($e->getMessage());			 }
+								}
+	public function AddFicha($idficha,$idusu)
+								{
+
+								try {
+
+																	   
+																 $sql="INSERT INTO tbl_usuario_ficha (usf_usunumdnt,usf_ficcodigo) 
+																 	   VALUES (?, ?)";
+									 							$this->pdo->prepare($sql)
+									 									  ->execute(
+									 									  			 array(
+																							
+																						$idusu,
+																						$idficha
+																						
+                                                                                               
+									 									  			 	   )
+									 									  			);
+									 	}
 									 	catch (Exception $e) {	die($e->getMessage());			 }
-									 }
+								
+								}
+	
+
+
+
+//fin de codigos para la ficha  pertenecientes al usuario
+
 
 	public function SelectPerfil($id)
 							 {

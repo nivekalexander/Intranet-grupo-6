@@ -8,7 +8,7 @@ function ObjAjax() {
 }
 
 
-function BorrarUsuario(id, rolid) {
+function BorrarUsuario(id, rolid,idfichausuario) {
     $.confirm({
         title: 'Confirmación!',
         content: '¿Esta seguro que desea eliminar este usuario?',
@@ -58,7 +58,7 @@ function BorrarUsuario(id, rolid) {
 
 
 function InsertUsuario() {
-
+    
 
     var result = document.getElementById('tview');
 
@@ -67,7 +67,7 @@ function InsertUsuario() {
     var apellido = document.formulario.apellido.value;
     var contraseña = document.formulario.contraseña.value;
     var correo = document.formulario.correo.value;
-    var ficha = document.getElementById('fich').value;
+    
     var rol = document.getElementById('rol').value;
     var estado = document.getElementById('estado').value;
     var identi = document.getElementById('identi').value;
@@ -98,7 +98,7 @@ function InsertUsuario() {
     };
 
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=insertar&id=" + id + "&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&ficha=" + ficha + "&rol=" + rol + "&estado=" + estado + "&identi=" + identi);
+    ajax.send("ctrl=usuario&acti=insertar&id=" + id + "&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&rol=" + rol + "&estado=" + estado + "&identi=" + identi);
 
 }
 
@@ -106,7 +106,7 @@ function InsertUsuario() {
 
 
 
-function EditarUsuario(id, nombre, apellido, contraseña, correo, ficha, rol, estado, identi) {
+function EditarUsuario(id, nombre, apellido, contraseña, correo, rol, estado, identi) {
 
     document.formulario.id.value = id;
     document.formulario.validationid.value = id;
@@ -114,7 +114,7 @@ function EditarUsuario(id, nombre, apellido, contraseña, correo, ficha, rol, es
     document.formulario.apellido.value = apellido;
     document.formulario.contraseña.value = contraseña;
     document.formulario.correo.value = correo;
-    document.getElementById('fich').value = ficha;
+    
     document.getElementById('rol').value = rol;
     document.getElementById('estado').value = estado;
     document.getElementById('identi').value = identi;
@@ -136,7 +136,7 @@ function UpdateUsuario() {
     var apellido = document.formulario.apellido.value;
     var contraseña = document.formulario.contraseña.value;
     var correo = document.formulario.correo.value;
-    var ficha = document.getElementById('fich').value;
+    
     var rol = document.getElementById('rol').value;
     var estado = document.getElementById('estado').value;
     var identi = document.getElementById('identi').value;
@@ -165,7 +165,7 @@ function UpdateUsuario() {
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=actualizar&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&ficha=" + ficha + "&rol=" + rol + "&estado=" + estado + "&identi=" + identi + "&id=" + id + "&valid=" + valid);
+    ajax.send("ctrl=usuario&acti=actualizar&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&rol=" + rol + "&estado=" + estado + "&identi=" + identi + "&id=" + id + "&valid=" + valid);
 
     document.getElementById('rol').value = rol;
 
@@ -178,6 +178,105 @@ function CancelarUsuario() {
     document.getElementById("titleusuario").innerHTML = "Crear usuario";
 
 }
+
+
+//codigo para agregar una ficha//
+function AgregarFicha(idusu)
+                    {
+
+                        document.getElementById("usuariofichaagregar").value=idusu;
+                        
+
+                    }   
+function AgregarCancelar()
+                    {
+
+                        document.getElementById("usuariofichaagregar").value="";
+
+                    }  
+
+function AgregarFichaConfirmar(){
+
+    var result = document.getElementById('tview');
+
+    var idusu=document.getElementById("usuariofichaagregar").value;
+    var ficha=document.getElementById("fichaagregar").value;
+
+    const ajax = new XMLHttpRequest();
+    ajax.open("POST", "main.php", true);
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4) {
+            if (ajax.status == 200) {
+                result.innerHTML = ajax.responseText;
+                $(document).ready(function() {
+                    $('#tableusuario').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: ['copy', 'excel', 'pdf', 'csv'],
+                        "language": {
+                            "url": "../assets/datatables/Spanish.json"
+                        }
+                    });
+                });
+                document.getElementById("btnguardar").innerHTML = "Crear";
+
+
+            } else { console.log("Ups, Me equivoque;"); }
+        }
+    };
+    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    ajax.send("ctrl=usuario&acti=agregarficha&ficha="+ficha+"&idusu="+idusu);
+
+
+}
+function EliminarFicha(usu_numdnt){
+
+    
+    document.getElementById("usuariofichaeliminar").value=usu_numdnt;
+    
+    
+
+}
+function EliminarCancelar(){
+
+    document.getElementById("fichaeliminar").value="";
+    document.getElementById("fichaeliminar").value="";
+    
+
+}
+function EliminarFichaConfirmar(){
+
+    var result = document.getElementById('tview');
+    
+    var idusu=document.getElementById("usuariofichaeliminar").value;
+    var ficha=document.getElementById("fichaeliminar").value;
+
+    const ajax = new XMLHttpRequest();
+    ajax.open("POST", "main.php", true);
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4) {
+            if (ajax.status == 200) {
+                result.innerHTML = ajax.responseText;
+                $(document).ready(function() {
+                    $('#tableusuario').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: ['copy', 'excel', 'pdf', 'csv'],
+                        "language": {
+                            "url": "../assets/datatables/Spanish.json"
+                        }
+                    });
+                });
+                document.getElementById("btnguardar").innerHTML = "Crear";
+
+
+            } else { console.log("Ups, Me equivoque;"); }
+        }
+    };
+    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    ajax.send("ctrl=usuario&acti=eliminarficha&ficha=" + ficha+"&idusu="+idusu);
+
+}
+
+//Fin codigo para agregar una ficha//
 
 
 function ConfirmUsuario(id) {

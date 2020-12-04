@@ -22,6 +22,8 @@ if(isset($respuesta)){
 				<th scope="col">Rol</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Tipo Identificaión</th>
+				<th scope="col">Agregar Ficha</th>
+				<th scope="col">Eliminar Ficha</th>
                 <th scope="col">Editar</th>
 				<th scope="col">Eliminar</th>
 				<th scope="col" hidden></th>
@@ -34,7 +36,7 @@ if(isset($respuesta)){
 			
 				<?php foreach ($this->usuario->Select($rolpuntero) as $filas): ?>
 
-					<?php $grupal = "'".$filas->usu_numdnt."','".$filas->usu_nombre."','".$filas->usu_aplldo."','".$filas->usu_passwd."','".$filas->usu_correo."','".$filas->usu_ficcodigo."','".$filas->usu_rolid."','".$filas->usu_estid."','".$filas->usu_tipid."'";?>
+					<?php $grupal = "'".$filas->usu_numdnt."','".$filas->usu_nombre."','".$filas->usu_aplldo."','".$filas->usu_passwd."','".$filas->usu_correo."','".$filas->usu_rolid."','".$filas->usu_estid."','".$filas->usu_tipid."'";?>
 					<?php $eliminar = "'".$filas->usu_numdnt."','".$filas->usu_rolid."'"; ?>
 					<tr>
 						<td scope="row"><?php echo $filas->usu_numdnt; ?></td>
@@ -42,14 +44,29 @@ if(isset($respuesta)){
 						<td scope="row"><?php echo $filas->usu_aplldo; ?> </td>
                         <td scope="row" hidden><?php echo $filas->usu_passwd; ?></td>
                         <td scope="row"><?php echo $filas->usu_correo;?></td>
-                        <td scope="row"><?php echo $filas->fic_codigo;?></td>
+                        <td scope="row">
+						
+							<select class="rounded">
+						        <?php
+									$_SESSION['usuariociclo']=$filas->usf_ficcodigo;
+									foreach ($this->usuario->SelectFichaUsu($filas->usu_numdnt) as $datos): 
+										echo '<option value="'.$datos->usf_id .'">'.$datos->usf_ficcodigo.'</option>';
+									
+									endforeach;
+								?>
+							</select>
+							
+						</td>
                         <td scope="row"><?php echo $filas->rol_nombre;?></td>
                         <td scope="row"><?php echo $filas->est_nombre;?></td>
 						<td scope="row"><?php echo $filas->tip_idntfc;?></td>
 						<td scope="row" hidden><?php echo $filas->usu_rolid;?></td>
                         
-						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalusuario" data-dismiss="modal" onclick="EditarUsuario(<?php echo $grupal;?>)">Editar</button></td>
-						<td scope="row"><button class="btn-rounded btn" onclick="BorrarUsuario(<?php echo $eliminar ?>);">Eliminar</button></td>
+						<td scope="row"><button  class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasAll" data-dismiss="modal" onclick="AgregarFicha(<?php echo $filas->usu_numdnt;?>)">Agregar Ficha</button></td>
+						<td scope="row"><button  class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasUSU" data-dismiss="modal" onclick="EliminarFicha(<?php echo $filas->usu_numdnt;?>)">Eliminar Ficha</button></td>
+						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalusuario" data-dismiss="modal" onclick="EditarUsuario(<?php echo $grupal;?>,<?php echo $datos->usf_id;?>)">Editar</button></td>
+						<td scope="row"><button class="btn-rounded btn" onclick="BorrarUsuario(<?php echo $eliminar ?>,<?php echo $datos->usf_id;?>);">Eliminar</button></td>
+					
 					</tr>
 
 				<?php endforeach;?>

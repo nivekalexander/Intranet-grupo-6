@@ -34,7 +34,7 @@
 
 				if($_SESSION['SRol']==3){
 
-					echo 123;
+					
 					$_SESSION['grupoficha']=$_SESSION['SFic'];
 					//captura del grupo del usuario aprendiz
 				}

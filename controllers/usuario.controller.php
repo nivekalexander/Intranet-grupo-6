@@ -128,6 +128,25 @@
 								{
 									$this->usuario->Logout($id);
 								}
+								
+		public function Eliminarficha()
+									{
+									
+										$this->usuario->DelectFicha($_REQUEST['ficha'],$_REQUEST['idusu']);
+										require_once('../views/usuario/usuarioSelect.php');
+										
+									}
+		public function Agregarficha()
+									{
+									
+										$this->usuario->AddFicha($_REQUEST['ficha'],$_REQUEST['idusu']);
+										require_once('../views/usuario/usuarioSelect.php');
+										
+									}
+
+
+
+
 
 	}
 
