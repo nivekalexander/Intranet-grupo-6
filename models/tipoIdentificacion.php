@@ -14,7 +14,7 @@ class Tipoidentificacion
 		public function Select()
 									 {
 									 	try  				 {
-									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_tipoid ORDER BY tip_id DESC");
+									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_tipoid ORDER BY tip_id");
 									 							$sql->execute();
 									 							return $sql->fetchALL(PDO::FETCH_OBJ);
 									 						 }
