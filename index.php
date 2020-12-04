@@ -80,8 +80,7 @@
                                     </form>
 
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html"> ¿Necesitas ayuda?</a>
+                                        <div class="text-center">
                                     </div>
                                     
                                     </div>

@@ -56,7 +56,7 @@
                     <li class="nav-item dropdown no-arrow navbar-fondo">
                       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div id="nombreperfilnav" class="nom-usu"><h4 class="mr-2 d-none d-lg-inline"><?php echo $Nombre=''.$_SESSION['name'].' '.$_SESSION['last'];?></h4></div>
-                        <img class="img-profile " src="https://www.flaticon.es/svg/static/icons/svg/599/599305.svg">
+                        <img class="img-profile " src="../assets/img/img-perfil/user.svg">
                       </a>
                       <!-- Dropdown - User logout -->
                       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in navbar-fondo" aria-labelledby="userDropdown">
