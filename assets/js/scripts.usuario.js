@@ -112,7 +112,7 @@ function EditarUsuario(id, nombre, apellido, contraseña, correo, rol, estado, i
     document.formulario.validationid.value = id;
     document.formulario.nombre.value = nombre;
     document.formulario.apellido.value = apellido;
-    document.formulario.contraseña.value = contraseña;
+    document.formulario.contraseña.value = "";
     document.formulario.correo.value = correo;
 
     document.getElementById('rol').value = rol;
@@ -288,9 +288,10 @@ function ConfirmUsuario(id) {
 
     if (id == 3) {
 
-        document.getElementById('NumDoc').innerHTML = "Numero de ficha";
+        document.getElementById('NumDoc').innerHTML = "Numero identificador de ficha";
         document.getElementById('UsuName').innerHTML = "Nombre Abreviatura";
         document.getElementById('Last').innerHTML = "Numero ficha";
+        document.getElementById('apellido').removeAttribute("onkeypress");
         document.getElementById('correolabel').innerHTML = "Nombre de usuario";
         document.getElementById('correo').setAttribute("type", "text");
 
@@ -334,6 +335,7 @@ function SeleccionarUsuario() {
     document.getElementById("NumDoc").innerHTML = "Numero de documento";
     document.getElementById("UsuName").innerHTML = "Nombre";
     document.getElementById('Last').innerHTML = "Apellido";
+    document.getElementById('apellido').setAttribute("onkeypress", "return soloLetras(event)");
     document.getElementById("correolabel").innerHTML = "Correo";
     document.getElementById('correo').setAttribute("type", "email");
 
