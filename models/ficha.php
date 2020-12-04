@@ -102,7 +102,7 @@ class Ficha
 																							 throw new InvalidArgumentException("$fic_id must be a directory"); 
 																						} 
 																						if (substr("../assets/fichas/$fic_id", strlen("../assets/fichas/$fic_id") - 1, 1) != '/') { 
-																							// "../assets/fichas/$fic_id" .= '/'; 
+																							// "../assets/fichas/$fic_id" . = '/'; 
 																						} 
 																						$files = glob("../assets/fichas/$fic_id" . '*', GLOB_MARK); 
 																							foreach ($files as $file) { 

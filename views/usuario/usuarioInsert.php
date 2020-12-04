@@ -160,8 +160,8 @@
 						</div>
 						<div class="modal-footer">
 
-							<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="AgregarCancelar()" >Cancelar</button>
-							<button type="button" id="btnguardar2" class="btn btn-primary btn-rounded" onclick="AgregarFichaConfirmar()">Agregar Ficha</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal"onclick="AgregarCancelar()" >Cancelar</button>
+							<button type="button" id="btnguardar" class="btn btn-primary btn-rounded" data-dismiss="modal" onclick="AgregarFichaConfirmar()">Agregar Ficha</button>
 
 						</div>
 					</form>	
@@ -169,7 +169,6 @@
 			</div>
 		</div>
   </div>
-
 
 
 
