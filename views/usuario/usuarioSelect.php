@@ -42,7 +42,7 @@ if(isset($respuesta)){
 						<td scope="row"><?php echo $filas->usu_numdnt; ?></td>
 						<td scope="row"><?php echo $filas->usu_nombre; ?></td>
 						<td scope="row"><?php echo $filas->usu_aplldo; ?> </td>
-                        <td scope="row" hidden><?php echo md5($filas->usu_passwd); ?></td>
+                        <td scope="row" hidden><?php echo $filas->usu_passwd; ?></td>
                         <td scope="row"><?php echo $filas->usu_correo;?></td>
                         <td scope="row">
 						
