@@ -22,8 +22,8 @@ if(isset($respuesta)){
 				<th scope="col">Rol</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Tipo Identificaión</th>
-				<th class="IF" scope="col">Agregar Ficha</th>
-				<th class="DF" scope="col">Eliminar Ficha</th>
+				<th scope="col">Agregar Ficha</th>
+				<th scope="col">Eliminar Ficha</th>
                 <th scope="col">Editar</th>
 				<th scope="col">Eliminar</th>
 				<th scope="col" hidden></th>
