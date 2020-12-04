@@ -20,11 +20,11 @@ if(isset($respuesta)){
 				<th scope="col" ><?php echo $_SESSION['rolpuntero'] != 3 ? 'Nombre':'Nombre Abreviatura'; ?></th>
 				<th scope="col"><?php echo $_SESSION['rolpuntero'] != 3 ? 'Apellido':'Numero ficha'; ?></th></th>
 				<th scope="col" hidden>Contraseña</th>
-                <th scope="col">Correo</th>
+                <th scope="col"><?php echo $_SESSION['rolpuntero'] != 3 ? 'Correo':'Nombre de usuario'; ?></th></th></th>
                 <th scope="col">Ficha</th>
 				<th scope="col">Rol</th>
                 <th scope="col">Estado</th>
-                <th scope="col">Tipo Identificaión</th>
+                <th scope="col" <?php echo $_SESSION['rolpuntero'] != 3 ? '':'hidden'; ?>>Tipo Identificaión</th>
 				<th scope="col">Agregar Ficha</th>
 				<th scope="col">Eliminar Ficha</th>
                 <th scope="col">Editar</th>
@@ -62,7 +62,7 @@ if(isset($respuesta)){
 						</td>
                         <td scope="row"><?php echo $filas->rol_nombre;?></td>
                         <td scope="row"><?php echo $filas->est_nombre;?></td>
-						<td scope="row"><?php echo $filas->tip_idntfc;?></td>
+						<td scope="row" <?php echo $_SESSION['rolpuntero'] != 3 ? '':'hidden'; ?>><?php echo $filas->tip_idntfc;?></td>
 						<td scope="row" hidden><?php echo $filas->usu_rolid;?></td>
                         
 						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasAll" onclick="AgregarFicha(<?php echo $filas->usu_numdnt;?>)">Agregar Ficha</button></td>
@@ -98,13 +98,12 @@ if(isset($respuesta)){
 						</div>
 						<div class="form-group row">
 							<label for="ficha">Ingrese La Ficha A Eliminar</label>
-							<input class="form-control rounded" type="number" id="fichaeliminar" required>
-							
+							<input class="form-control rounded" type="number" id="fichaeliminar" required>	
 						</div>
 						<div class="modal-footer">
 
-							<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="EliminarCancelar()">Cancelar</button>
-							<button type="button" id="btnguardar3" class="btn btn-primary btn-rounded" data-dismiss="modal" onclick="EliminarFichaConfirmar()">Eliminar Ficha</button>
+							<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="EliminarCancelar()">Cancelar</button>
+							<button type="button" id="btnguardar3" class="btn btn-rounded" data-dismiss="modal" onclick="EliminarFichaConfirmar()">Eliminar Ficha</button>
 
 						</div>
 					</form>
