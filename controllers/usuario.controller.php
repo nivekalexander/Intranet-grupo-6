@@ -130,12 +130,16 @@
 		public function Eliminarficha()
 									{
 									
+										$rolpuntero=$_SESSION['rolpuntero'];
+
 										$this->usuario->DelectFicha($_REQUEST['ficha'],$_REQUEST['idusu']);
 										require_once('../views/usuario/usuarioSelect.php');
 										
 									}
 		public function Agregarficha()
 									{
+
+										$rolpuntero=$_SESSION['rolpuntero'];
 									
 										$this->usuario->AddFicha($_REQUEST['ficha'],$_REQUEST['idusu']);
 										require_once('../views/usuario/usuarioSelect.php');
