@@ -50,6 +50,7 @@
 							$_SESSION['name'] = $respuesta->Name;
 							$_SESSION['last'] = $respuesta->Lastname;
 							$_SESSION['pass'] = $respuesta->Passw;
+							
 							$_SESSION['SUsu'] = $respuesta->User;
 							$_SESSION['SRol'] = $respuesta->Rol;
 							$_SESSION['SFic'] = $respuesta->Ficha;
