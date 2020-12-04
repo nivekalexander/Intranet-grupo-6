@@ -62,8 +62,8 @@ if(isset($respuesta)){
 						<td scope="row"><?php echo $filas->tip_idntfc;?></td>
 						<td scope="row" hidden><?php echo $filas->usu_rolid;?></td>
                         
-						<td scope="row"><button  class="btn-rounded btn IF2 " data-toggle="modal" data-target="#modalfichasAll" data-dismiss="modal" onclick="AgregarFicha(<?php echo $filas->usu_numdnt;?>)">Agregar Ficha</button></td>
-						<td scope="row"><button  class="btn-rounded btn DF2" data-toggle="modal" data-target="#modalfichasUSU" data-dismiss="modal" onclick="EliminarFicha(<?php echo $filas->usu_numdnt;?>)">Eliminar Ficha</button></td>
+						<td scope="row"><button  class="btn-rounded btn IF2 " data-toggle="modal" data-target="#modalfichasAll" onclick="AgregarFicha(<?php echo $filas->usu_numdnt;?>)">Agregar Ficha</button></td>
+						<td scope="row"><button  class="btn-rounded btn DF2" data-toggle="modal" data-target="#modalfichasUSU"  onclick="EliminarFicha(<?php echo $filas->usu_numdnt;?>)">Eliminar Ficha</button></td>
 						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalusuario" data-dismiss="modal" onclick="EditarUsuario(<?php echo $grupal;?>,<?php echo $datos->usf_id;?>)">Editar</button></td>
 						<td scope="row"><button class="btn-rounded btn" onclick="BorrarUsuario(<?php echo $eliminar ?>,<?php echo $datos->usf_id;?>);">Eliminar</button></td>
 					
@@ -73,5 +73,7 @@ if(isset($respuesta)){
 		</tbody>
 	</table>
 </div>
+
+
 
 
