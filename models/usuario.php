@@ -202,7 +202,7 @@ class Usuario
 															return $sql->fetch(PDO::FETCH_OBJ);
 															}
 
-									catch (Exception $e) { die($e->getMessage());			}
+									catch (Exception $e) { echo "<h1>CAMILO ME LA SUCKPA</h1>"; die($e->getMessage());			}
 								}
 
 
