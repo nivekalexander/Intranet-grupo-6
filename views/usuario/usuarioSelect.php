@@ -52,20 +52,18 @@ if(isset($respuesta)){
 							<select class="rounded">
 						        <?php
 									$_SESSION['usuariociclo']=$filas->usf_ficcodigo;
-									foreach ($this->usuario->SelectFichaUsu($filas->usu_numdnt) as $datos): 
+									foreach ($this->usuario->SelectFichaUsu($filas->usu_numdnt) as $datos): 										
 										echo '<option value="'.$datos->usf_id .'">'.$datos->usf_ficcodigo.'</option>';
-									
 									endforeach;
 								?>
 							</select>
-							
 						</td>
                         <td scope="row"><?php echo $filas->rol_nombre;?></td>
                         <td scope="row"><?php echo $filas->est_nombre;?></td>
 						<td scope="row"><?php echo $filas->tip_idntfc;?></td>
 						<td scope="row" hidden><?php echo $filas->usu_rolid;?></td>
                         
-						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasAll" onclick="AgregarFicha(<?php echo $filas->usu_numdnt;?>)">Agregar Ficha</button></td>
+						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasAll" onclick="AgregarFicha(<?php echo $filas->usu_numdnt; ?>)">Agregar Ficha</button></td>
 						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalfichasUSU" onclick="EliminarFicha(<?php echo $filas->usu_numdnt;?>)">Eliminar Ficha</button></td>
 						<td scope="row"><button class="btn-rounded btn" data-toggle="modal" data-target="#modalusuario" data-dismiss="modal" onclick="EditarUsuario(<?php echo $grupal;?>,<?php echo $datos->usf_id;?>)">Editar</button></td>
 						<td scope="row"><button class="btn-rounded btn" onclick="BorrarUsuario(<?php echo $eliminar ?>,<?php echo $datos->usf_id;?>);">Eliminar</button></td>

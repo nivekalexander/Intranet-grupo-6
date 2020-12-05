@@ -147,28 +147,29 @@
 							
 							<label for="usuariofichaagregar">Identificacion De Usuario</label>
 							<input class="form-control rounded" type="text" id="usuariofichaagregar"  readonly>
+							<div id="cccusuariofichaagregar" style="display: none;"></div>
 
 							<label for="ficha">Ficha id</label>
 							<select class="form-control rounded" name="fichaagregar" id="fichaagregar" required>
-								<?php
-									foreach ($this->usuario->SelectFichaAll() as $datos): 
+								<?php $idss;
+
+									foreach ($this->usuario->SelectFichaAll() as $datos): 	
 										echo '<option value="'.$datos->fic_codigo.'">'.$datos->fic_codigo.'</option>';
 									endforeach;
 								?>
 							</select>
 						
 						</div>
-						<div class="modal-footer">
-
-							<button type="button" class="btn btn-secondary" data-dismiss="modal"onclick="AgregarCancelar()" >Cancelar</button>
-							<button type="button" id="btnguardar" class="btn btn-primary btn-rounded" data-dismiss="modal" onclick="AgregarFichaConfirmar()">Agregar Ficha</button>
-
+						<div class="modal-footer">						
+							<button type="button" class="btn btn-gris" data-dismiss="modal" onclick="AgregarCancelar()" >Cancelar</button>
+							<button type="button" id="btnguardar2" class="btn btn-primary btn-rounded" onclick="AgregarFichaConfirmar()">Agregar Ficha</button>
 						</div>
 					</form>	
 				</div>
 			</div>
 		</div>
   </div>
+
 
 
 
