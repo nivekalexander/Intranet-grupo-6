@@ -6,7 +6,7 @@
 		if($material){
 			foreach ( $material as $filas ): 
 				
-				$grupal = "'".$filas->map_id."','".$filas->map_titulo."','".$filas->map_descrp."','".$filas->map_archurl."','".$filas->map_fasid."','".$filas->map_usunumdnt."','".$filas->map_icono."'";?>
+				$grupal = "'".$filas->map_id."','".$filas->map_titulo."','".preg_replace("/[\r\n|\n|\r]+/", " ", $filas->map_descrp)."','".$filas->map_archurl."','".$filas->map_fasid."','".$filas->map_usunumdnt."','".$filas->map_icono."'";?>
 						
 					
 				
