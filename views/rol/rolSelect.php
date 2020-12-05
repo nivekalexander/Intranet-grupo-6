@@ -1,6 +1,5 @@
 <div class="table-responsive">
 	<table  class="table table-striped">
-		<!-- Cabecera de la Tabla --><?php echo $_SESSION['grupoficha'];?>
 		<thead class="thead-dark">
 			<tr>
 				<th scope="col" hidden>id 			</th>

@@ -41,8 +41,8 @@
 					</div>
 					
 					<div class="modal-footer">
-					<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarAnuncio();">Cerrar</button>
-					<button type="button" id="btnguardar" class="btn btn-primary btn-rounded">Crear</button>
+					<button type="button" class="btn btn-gris" data-dismiss="modal" onclick="CancelarAnuncio();">Cerrar</button>
+					<button type="button" id="btnguardar" class="btn btn-rounded">Crear</button>
 					</div>
 					
 				</form>

@@ -82,8 +82,8 @@
 						<div class="invalid-feedback">Seleccine un Campo.</div>
 					</div>
 					<div class="modal-footer form-group">
-						<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarUsuario();">Cerrar</button>
-						<button type="button" id="btnguardar" class="btn btn-primary btn-rounded">Crear</button>
+						<button type="button" class="btn btn-gris" data-dismiss="modal" onclick="CancelarUsuario();">Cerrar</button>
+						<button type="button" id="btnguardar" class="btn btn-rounded">Crear</button>
 					</div>
 				</form>
 				<script>
@@ -159,7 +159,7 @@
 						</div>
 						<div class="modal-footer">
 
-							<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal"onclick="AgregarCancelar()" >Cancelar</button>
+							<button type="button" class="btn btn-gris" data-dismiss="modal"onclick="AgregarCancelar()" >Cancelar</button>
 							<button type="button" id="btnguardar" class="btn btn-rounded" data-dismiss="modal" onclick="AgregarFichaConfirmar()">Agregar Ficha</button>
 
 						</div>
