@@ -2,9 +2,11 @@
 <table class="table-responsive ">
 
 	<tbody class="justify-content-center">
-			<?php foreach ( $this->materialapoyo->Select( $idfase,$_SESSION['grupoficha']) as $filas ): 
+			<?php $material = $this->materialapoyo->Select( $idfase,$_SESSION['grupoficha']);
+		if($material){
+			foreach ( $material as $filas ): 
 				
-				$grupal = "'".$filas->map_id."','".$filas->map_titulo."','".$filas->map_descrp."','".$filas->map_archurl."','".$filas->map_fasid."','".$filas->map_usunumdnt."','".$filas->map_icono."'";?>
+				$grupal = "'".$filas->map_id."','".$filas->map_titulo."','".preg_replace("/[\r\n|\n|\r]+/", " ", $filas->map_descrp)."','".$filas->map_archurl."','".$filas->map_fasid."','".$filas->map_usunumdnt."','".$filas->map_icono."'";?>
 						
 					
 				
@@ -63,7 +65,10 @@
 					
 				</div>		
 							
-			<?php endforeach; ?>
+			<?php endforeach; 
+		}else{
+			echo "<center>No hay material disponible para esta fase</center>";
+		 } ?>
 	</tbody>
 </table>
 </div>

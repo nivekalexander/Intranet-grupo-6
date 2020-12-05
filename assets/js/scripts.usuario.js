@@ -180,8 +180,7 @@ function CancelarUsuario() {
 //codigo para agregar una ficha//
 function AgregarFicha(idusu) {
 
-    document.getElementById("usuariofichaagregar").value = idusu;
-
+    document.getElementById("usuariofichaagregar").value = idusu;  
 
 }
 

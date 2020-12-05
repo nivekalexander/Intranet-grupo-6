@@ -150,8 +150,9 @@
 						<div class="form-group row">
 							<label for="ficha">Ficha id</label>
 							<select class="form-control rounded" name="fichaagregar" id="fichaagregar" required>
-								<?php
-									foreach ($this->usuario->SelectFichaAll() as $datos): 
+								<?php $idss;
+
+									foreach ($this->usuario->SelectFichaAll() as $datos): 	
 										echo '<option value="'.$datos->fic_codigo.'">'.$datos->fic_codigo.'</option>';
 									endforeach;
 								?>
@@ -168,6 +169,7 @@
 			</div>
 		</div>
   </div>
+
 
 
 
