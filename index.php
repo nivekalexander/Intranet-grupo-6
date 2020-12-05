@@ -112,7 +112,7 @@
     <script src="./assets/js/jquery-confirm.js"></script>
 
     <!-- Validacion datos errados o limite de sesiones -->
-    <?php if(isset($_REQUEST['d'])){if($_REQUEST['d']==0){echo "<script>$.alert('Datos incorrectos, intente nuevamente');</script>"; }elseif($_REQUEST['d']==6){echo "<script>
+    <?php if(isset($_REQUEST['d'])){if($_REQUEST['d']==0){echo "<script>$.alert('Usuario y/o Contraseñas incorrectos');</script>"; }elseif($_REQUEST['d']==6){echo "<script>
 								$.confirm({
 										   	title: 'CERRANDO SESION',
 										    content: 'Limite de sesiones por ficha alcanzada.',
