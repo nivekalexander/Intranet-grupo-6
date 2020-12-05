@@ -12,7 +12,12 @@
 
 		public function Select($fichapuntero){
 										try 					{	
-																	$sql=$this->pdo->prepare("SELECT * FROM tbl_foro WHERE for_ficcodigo = ? ORDER BY for_id desc");
+																	$sql=$this->pdo->prepare("SELECT f.*, usu_nombre, usu_aplldo
+																							FROM tbl_foro f
+																							INNER JOIN tbl_usuario u
+																								ON f.for_usunumdnt = u.usu_numdnt
+																							WHERE for_ficcodigo = ?
+																							ORDER BY for_id desc");
 																	$sql->execute(array($fichapuntero));
 																	return $sql->fetchALL(PDO::FETCH_OBJ);
 																}

@@ -15,6 +15,10 @@
                   <a name="imagenPost"><img src="../assets/img/img-slidebar/foro.svg" width="40" height="40"></a>
                 </div>                
                 <div class="float-left">
+                  Publicador: <br>
+                  <?php echo $filas->usu_nombre." ".$filas->usu_aplldo;?>
+                </div>
+                <div class="float-right">
                   Fecha inicio: <?php echo $filas->for_fchini;?><br>
                   Fecha fin:    <?php echo $filas->for_fchfin;?>
                 </div>
