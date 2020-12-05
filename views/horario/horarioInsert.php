@@ -50,8 +50,8 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" id="cancel-hor" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarHorario();">Cerrar</button>
-          <button type="button" id="btnguardar" class="btn btn-primary btn-rounded" >Subir</button>
+          <button type="button" id="cancel-hor" class="btn btn-gris" data-dismiss="modal" onclick="CancelarHorario();">Cerrar</button>
+          <button type="button" id="btnguardar" class="btn btn-rounded" >Subir</button>
         </div>
 
       </form>  

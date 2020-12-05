@@ -69,7 +69,7 @@
 					</div>
 
 					<div class="modal-footer">
-							<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarProgramaFormacion();">Cancelar</button>
+							<button type="button" class="btn btn-gris" data-dismiss="modal" onclick="CancelarProgramaFormacion();">Cancelar</button>
 							<button type="button" id="btnguardar" class="btn-rounded btn">Crear</button>
 					</div>	
 

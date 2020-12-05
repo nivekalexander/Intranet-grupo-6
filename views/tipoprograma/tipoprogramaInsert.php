@@ -23,7 +23,7 @@
 					    </div>
 
 						<div class="modal-footer">
-								<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarTipoPrograma();">Cerrar</button>
+								<button type="button" class="btn btn-gris" data-dismiss="modal" onclick="CancelarTipoPrograma();">Cerrar</button>
 								<button type="button" class="btn-rounded btn" id="btnguardar">Crear</button>
 						</div>
             				
