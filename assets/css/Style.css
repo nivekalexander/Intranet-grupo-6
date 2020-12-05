@@ -330,3 +330,10 @@ textarea {
 .contenidomaterial .btn {
     color: black !important;
 }
+
+.btn-default{
+    background-color: #F2994B !important;
+    border-radius: 50rem !important;
+    color: #ffffff !important;
+    overflow: hidden;
+}
