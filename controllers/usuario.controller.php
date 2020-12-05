@@ -132,7 +132,7 @@
 									
 										$rolpuntero=$_SESSION['rolpuntero'];
 
-										$this->usuario->DelectFicha($_REQUEST['ficha'],$_REQUEST['idusu']);
+										$this->usuario->DelectFicha($_REQUEST['usfid']);
 										require_once('../views/usuario/usuarioSelect.php');
 										
 									}
@@ -145,6 +145,10 @@
 										require_once('../views/usuario/usuarioSelect.php');
 										
 									}
+
+		public function Selectficha(){
+										require_once('../views/usuario/usuarioModal.php');
+		}
 
 
 

@@ -58,21 +58,27 @@ class Usuario
 								catch (Exception $e) {	die($e->getMessage());			 }
 	}	
 
-	public function DelectFicha($idficha,$idusu)
+	public function SelectFichaNoUsu($idusuario)
+	{
+								try  				 {
+														$sql=$this->pdo->prepare("SELECT fic_codigo
+																			FROM tbl_ficha
+																			WHERE fic_codigo NOT IN (SELECT usf_ficcodigo
+																							FROM tbl_usuario_ficha
+																							WHERE usf_usunumdnt = ?)");
+															$sql->execute(array($idusuario));
+														return $sql->fetchALL(PDO::FETCH_OBJ);
+														}
+								catch (Exception $e) {	die($e->getMessage());			 }
+	}
+
+	public function DelectFicha($usfid)
 								{
 								try  				 {
 														$sql="DELETE FROM tbl_usuario_ficha 
-														WHERE usf_usunumdnt=? AND usf_ficcodigo=? ";
+														WHERE usf_id=?";
 														$this->pdo->prepare($sql)
-																	->execute(
-																				array(
-																					
-																					$idusu,
-																					$idficha
-																					
-
-																					)
-																			);
+																	->execute(array($usfid));
 														}
 								catch (Exception $e) {	die($e->getMessage());			 }
 								}
