@@ -5,13 +5,17 @@
 	// Ctr = Controllador --> Nombre Modulo
 	// Acc = Accion       --> Metodo a Realizar o Ejecutar
 	require_once('../models/database.php');
+
+	
 	$controller = 'noticia';
 
 
 
 	if (isset($_SESSION['SUsu']) And isset($_SESSION['SRol']) And isset($_SESSION['SLog']))
 	{
-		
+		if($_SESSION['SRol']==2){
+			$controller = 'grupos';
+		}
 
 		try{
 			if ( !ISSET($_REQUEST['ctrl']) ){

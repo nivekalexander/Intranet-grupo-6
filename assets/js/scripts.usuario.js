@@ -293,7 +293,13 @@ function ConfirmUsuario(id) {
         document.getElementById('apellido').removeAttribute("onkeypress");
         document.getElementById('correolabel').innerHTML = "Nombre de usuario";
         document.getElementById('correo').setAttribute("type", "text");
-
+        document.getElementById('divtipid').setAttribute("hidden", "");
+        document.getElementById("errorid").innerHTML = "Ingrese un Número identificador de ficha";
+        document.getElementById("errorname").innerHTML = "Ingrese un Nombre Abreviatura";
+        document.getElementById("errorlast").innerHTML = "Ingrese un Numero ficha";
+        document.getElementById("errorpass").innerHTML = "Ingrese una Contraseña";
+        document.getElementById("erroremail").innerHTML = "Introduzca un Nombre de usuario.";
+        document.getElementById("errorestado").innerHTML = "Seleccione un Campo.";
 
     }
 
@@ -332,6 +338,14 @@ function SeleccionarUsuario() {
     document.getElementById('apellido').setAttribute("onkeypress", "return soloLetras(event)");
     document.getElementById("correolabel").innerHTML = "Correo";
     document.getElementById('correo').setAttribute("type", "email");
+    document.getElementById('divtipid').removeAttribute("hidden");
+    document.getElementById("errorid").innerHTML = "Ingrese un Número de Documento";
+    document.getElementById("errorname").innerHTML = "Ingrese un Nombre";
+    document.getElementById("errorlast").innerHTML = "Ingrese un Apellido";
+    document.getElementById("errorpass").innerHTML = "Ingrese una Contraseña";
+    document.getElementById("erroremail").innerHTML = "Introduzca una Dirección de Correo Valida.";
+    document.getElementById("errorestado").innerHTML = "Seleccione un Campo.";
+
 
 
     const ajax = new XMLHttpRequest();

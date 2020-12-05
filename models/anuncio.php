@@ -25,17 +25,25 @@ class Anuncio
 									 	catch (Exception $e) {	die($e->getMessage());			 }
 									 }
 
-		
-		/*public function NameUsu()
-		{
-			try  				 {
-									$sql=$this->pdo->prepare("SELECT tbl_usuario.usu_nombre, tbl_usuario.usu_aplldo FROM tbl_usuario INNER JOIN tbl_anuncio WHERE  tbl_anuncio.anu_id=tbl_usuario.usu_id ORDER BY tbl_anuncio.anu_id DESC");
-									$sql->execute();
-									return $sql->fetchALL(PDO::FETCH_OBJ);
-								 }
-			catch (Exception $e) {	die($e->getMessage());			 }
-		}
-		*/							 
+		public function SelectInstructor($fichapuntero,$idusuario)
+									 {
+									 	try  				 {
+									 							$sql=$this->pdo->prepare("SELECT * FROM tbl_anuncio 
+																						  INNER JOIN tbl_usuario 
+																						  WHERE tbl_anuncio.anu_usunumdnt = tbl_usuario.usu_numdnt 
+																						  AND tbl_anuncio.anu_ficcodigo = ? 
+																						  AND  tbl_anuncio.anu_usunumdnt = ? 
+																						  ORDER BY tbl_anuncio.anu_id DESC");
+									 							$sql->execute(
+																	 			array(
+																					 $fichapuntero
+																					 ,$idusuario
+																					)
+																			 );
+									 							return $sql->fetchALL(PDO::FETCH_OBJ);
+									 						 }
+									 	catch (Exception $e) {	die($e->getMessage());			 }
+									 }						 
 
 
 		public function Insert(Anuncio $data)
