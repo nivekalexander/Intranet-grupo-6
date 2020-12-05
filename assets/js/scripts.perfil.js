@@ -10,11 +10,15 @@ function ObjAjax() {
 
 function MostrarPerfil() {
 
+    var rol = document.formulario.rolperfilasd.value;
+
     // Quitar modo lectura a los campos
     $('#nombre-perfil').removeAttr("readonly");
     $('#apellido-perfil').removeAttr('readonly');
     $('#contraseña-perfil').removeAttr('readonly');
-    $('#id-perfil').removeAttr('readonly');
+    if (rol == 1) {
+        $('#id-perfil').removeAttr('readonly');
+    }
     $('#correo-perfil').removeAttr('readonly');
 
     // Mostrar botón ver contraseña
@@ -22,6 +26,7 @@ function MostrarPerfil() {
 
     // Mostrar botón actualizar
     $('#actualizar-perfil').removeAttr('hidden');
+    $('#actualizarpass').removeAttr('hidden');
 
     // Ocultar botón editar
     $('#editar-perfil').attr('hidden', 'true');
@@ -77,7 +82,8 @@ function ConfirmarPerfil() {
 
             buttons: {
                 Ok: function() {
-                    location.reload();
+                    $('#confirmarDatos').modal('hide');
+                    $('#contraseña').val("");
                 }
             }
         });
@@ -93,10 +99,8 @@ function ActualizarPerfil() {
     var result = document.getElementById('tview');
 
     var id = document.formulario.idperfil.value;
-
     var nombre = document.formulario.nombreperfil.value;
     var apellido = document.formulario.apellidoperfil.value;
-    var contraseña = document.formulario.contraseñaperfil.value;
     var correo = document.formulario.correoperfil.value;
 
     const ajax = new XMLHttpRequest();
@@ -111,7 +115,61 @@ function ActualizarPerfil() {
     };
 
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=perfil&acti=actualizarperfil&nombre=" + nombre + "&apellido=" + apellido + "&contraseña=" + contraseña + "&correo=" + correo + "&id=" + id);
+    ajax.send("ctrl=perfil&acti=actualizarperfil&nombre=" + nombre + "&apellido=" + apellido + "&correo=" + correo + "&id=" + id);
+
+}
+
+function CambiarContraseñaP() {
+
+    var id = document.formulario.idperfil.value;
+    var contraseña = document.formcambiarpass.nuevacontraseña.value;
+    var contraseña2 = document.formcambiarpass.confirmarcontraseña.value;
+
+    if (contraseña != contraseña2) {
+
+        $.alert({
+            title: 'ERROR',
+            content: 'Las Contraseñas no coinciden',
+            theme: 'modern',
+
+            buttons: {
+                Ok: function() {
+                    $('#contraseña-perfil').val("");
+                }
+            }
+        });
+
+    } else {
+
+        var result = document.getElementById('tview');
+
+        const ajax = new XMLHttpRequest();
+        ajax.open("POST", "main.php", true);
+        ajax.onreadystatechange = function() {
+            if (ajax.readyState == 4) {
+                if (ajax.status == 200) {
+                    result.innerHTML = ajax.responseText;
+
+                } else { console.log("Ups, Me equivoque;"); }
+            }
+        };
+
+        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        ajax.send("ctrl=perfil&acti=ActualizarContraP&contraseña=" + contraseña + "&id=" + id);
+
+        $.alert({
+            title: 'CAMBIO EXITOSO',
+            content: 'la contraseña se a cambiado correctamente',
+            theme: 'modern',
+
+            buttons: {
+                Vale: function() {
+                    location.reload();
+                }
+            }
+        });
+
+    }
 
 }
 

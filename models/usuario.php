@@ -220,18 +220,32 @@ class Usuario
     public function UpdateUser(Usuario $data)
 									 {
 									 	try  				 {
-									 							$sql="UPDATE tbl_usuario SET usu_numdnt = ?, usu_nombre = ?, usu_aplldo = ?, usu_passwd = ?, usu_correo = ? WHERE usu_numdnt = ?";
+									 							$sql="UPDATE tbl_usuario SET usu_numdnt = ?, usu_nombre = ?, usu_aplldo = ?, usu_correo = ? WHERE usu_numdnt = ?";
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
 																						        $data->id,
                                                                                                 $data->nombre,
                                                                                                 $data->apellido,
-                                                                                            md5($data->contraseña),
                                                                                                 $data->correo,
                                                                 
                                                                                                 $data->id
       
+									 									  			 	   )
+									 									  			);
+									 						 }
+									 	catch (Exception $e) {	die($e->getMessage());			 }
+									 }
+
+ 	public function UpdatePassPerfil(Usuario $data)
+									 {
+									 	try  				 {
+									 							$sql="UPDATE tbl_usuario SET usu_passwd = ?  WHERE usu_numdnt = ?";
+									 							$this->pdo->prepare($sql)
+									 									  ->execute(
+									 									  			 array(
+																							md5($data->contraseña),
+																								$data->id
 									 									  			 	   )
 									 									  			);
 									 						 }
