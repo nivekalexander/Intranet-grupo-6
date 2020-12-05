@@ -28,8 +28,6 @@ function BorrarUsuario(id, rolid, idfichausuario) {
 
                             $(document).ready(function() {
                                 $('#tableusuario').DataTable({
-                                    dom: 'Bfrtip',
-                                    buttons: ['copy', 'excel', 'pdf', 'csv'],
                                     "language": {
                                         "url": "../assets/datatables/Spanish.json"
                                     }
@@ -81,10 +79,9 @@ function InsertUsuario() {
             if (ajax.status == 200) {
 
                 result.innerHTML = ajax.responseText;
+
                 $(document).ready(function() {
                     $('#tableusuario').DataTable({
-                        dom: 'Bfrtip',
-                        buttons: ['copy', 'excel', 'pdf', 'csv'],
                         "language": {
                             "url": "../assets/datatables/Spanish.json"
                         }
@@ -149,15 +146,15 @@ function UpdateUsuario() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
+
                 $(document).ready(function() {
                     $('#tableusuario').DataTable({
-                        dom: 'Bfrtip',
-                        buttons: ['copy', 'excel', 'pdf', 'csv'],
                         "language": {
                             "url": "../assets/datatables/Spanish.json"
                         }
                     });
                 });
+
                 document.getElementById("btnguardar").innerHTML = "Crear";
 
 
@@ -207,15 +204,15 @@ function AgregarFichaConfirmar() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
+
                 $(document).ready(function() {
                     $('#tableusuario').DataTable({
-                        dom: 'Bfrtip',
-                        buttons: ['copy', 'excel', 'pdf', 'csv'],
                         "language": {
                             "url": "../assets/datatables/Spanish.json"
                         }
                     });
                 });
+
                 document.getElementById("btnguardar").innerHTML = "Crear";
 
 
@@ -258,15 +255,15 @@ function EliminarFichaConfirmar() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
+
                 $(document).ready(function() {
                     $('#tableusuario').DataTable({
-                        dom: 'Bfrtip',
-                        buttons: ['copy', 'excel', 'pdf', 'csv'],
                         "language": {
                             "url": "../assets/datatables/Spanish.json"
                         }
                     });
                 });
+
                 document.getElementById("btnguardar").innerHTML = "Crear";
 
 
@@ -313,8 +310,6 @@ function ConfirmUsuario(id) {
 
                 $(document).ready(function() {
                     $('#tableusuario').DataTable({
-                        dom: 'Bfrtip',
-                        buttons: ['copy', 'excel', 'pdf', 'csv'],
                         "language": {
                             "url": "../assets/datatables/Spanish.json"
                         }
