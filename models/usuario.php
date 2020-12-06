@@ -58,21 +58,27 @@ class Usuario
 								catch (Exception $e) {	die($e->getMessage());			 }
 	}	
 
-	public function DelectFicha($idficha,$idusu)
+	public function SelectFichaNoUsu($idusuario)
+	{
+								try  				 {
+														$sql=$this->pdo->prepare("SELECT fic_codigo
+																			FROM tbl_ficha
+																			WHERE fic_codigo NOT IN (SELECT usf_ficcodigo
+																							FROM tbl_usuario_ficha
+																							WHERE usf_usunumdnt = ?)");
+															$sql->execute(array($idusuario));
+														return $sql->fetchALL(PDO::FETCH_OBJ);
+														}
+								catch (Exception $e) {	die($e->getMessage());			 }
+	}
+
+	public function DelectFicha($usfid)
 								{
 								try  				 {
 														$sql="DELETE FROM tbl_usuario_ficha 
-														WHERE usf_usunumdnt=? AND usf_ficcodigo=? ";
+														WHERE usf_id=?";
 														$this->pdo->prepare($sql)
-																	->execute(
-																				array(
-																					
-																					$idusu,
-																					$idficha
-																					
-
-																					)
-																			);
+																	->execute(array($usfid));
 														}
 								catch (Exception $e) {	die($e->getMessage());			 }
 								}
@@ -202,7 +208,7 @@ class Usuario
 															return $sql->fetch(PDO::FETCH_OBJ);
 															}
 
-									catch (Exception $e) { die($e->getMessage());			}
+									catch (Exception $e) { }
 								}
 
 
@@ -220,18 +226,32 @@ class Usuario
     public function UpdateUser(Usuario $data)
 									 {
 									 	try  				 {
-									 							$sql="UPDATE tbl_usuario SET usu_numdnt = ?, usu_nombre = ?, usu_aplldo = ?, usu_passwd = ?, usu_correo = ? WHERE usu_numdnt = ?";
+									 							$sql="UPDATE tbl_usuario SET usu_numdnt = ?, usu_nombre = ?, usu_aplldo = ?, usu_correo = ? WHERE usu_numdnt = ?";
 									 							$this->pdo->prepare($sql)
 									 									  ->execute(
 									 									  			 array(
 																						        $data->id,
                                                                                                 $data->nombre,
                                                                                                 $data->apellido,
-                                                                                            md5($data->contraseña),
                                                                                                 $data->correo,
                                                                 
                                                                                                 $data->id
       
+									 									  			 	   )
+									 									  			);
+									 						 }
+									 	catch (Exception $e) {	die($e->getMessage());			 }
+									 }
+
+ 	public function UpdatePassPerfil(Usuario $data)
+									 {
+									 	try  				 {
+									 							$sql="UPDATE tbl_usuario SET usu_passwd = ?  WHERE usu_numdnt = ?";
+									 							$this->pdo->prepare($sql)
+									 									  ->execute(
+									 									  			 array(
+																							md5($data->contraseña),
+																								$data->id
 									 									  			 	   )
 									 									  			);
 									 						 }

@@ -18,7 +18,7 @@ function BorrarUsuario(id, rolid, idfichausuario) {
 
                 var result = document.getElementById('tview');
 
-                const ajax = new XMLHttpRequest();
+                const ajax = new ObjAjax();
                 ajax.open("POST", "main.php", true);
                 ajax.onreadystatechange = function() {
                     if (ajax.readyState == 4) {
@@ -28,8 +28,6 @@ function BorrarUsuario(id, rolid, idfichausuario) {
 
                             $(document).ready(function() {
                                 $('#tableusuario').DataTable({
-                                    dom: 'Bfrtip',
-                                    buttons: ['copy', 'excel', 'pdf', 'csv'],
                                     "language": {
                                         "url": "../assets/datatables/Spanish.json"
                                     }
@@ -74,17 +72,16 @@ function InsertUsuario() {
 
 
 
-    const ajax = new XMLHttpRequest();
+    const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
     ajax.onreadystatechange = function() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
 
                 result.innerHTML = ajax.responseText;
+
                 $(document).ready(function() {
                     $('#tableusuario').DataTable({
-                        dom: 'Bfrtip',
-                        buttons: ['copy', 'excel', 'pdf', 'csv'],
                         "language": {
                             "url": "../assets/datatables/Spanish.json"
                         }
@@ -143,21 +140,21 @@ function UpdateUsuario() {
 
 
 
-    const ajax = new XMLHttpRequest();
+    const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
     ajax.onreadystatechange = function() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 result.innerHTML = ajax.responseText;
+
                 $(document).ready(function() {
                     $('#tableusuario').DataTable({
-                        dom: 'Bfrtip',
-                        buttons: ['copy', 'excel', 'pdf', 'csv'],
                         "language": {
                             "url": "../assets/datatables/Spanish.json"
                         }
                     });
                 });
+
                 document.getElementById("btnguardar").innerHTML = "Crear";
 
 
@@ -182,8 +179,25 @@ function CancelarUsuario() {
 
 //codigo para agregar una ficha//
 function AgregarFicha(idusu) {
+    
+    var result = document.getElementById('umodal');
 
-    document.getElementById("usuariofichaagregar").value = idusu;
+    const ajax = new ObjAjax();
+    ajax.open("POST", "main.php", true);
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4) {
+            if (ajax.status == 200) {
+
+                result.innerHTML = ajax.responseText;
+                $("#modalfichasAll").modal("show");
+                document.getElementById("usuariofichaagregar").value = idusu;                  
+
+
+            } else { console.log("Ups, Me equivoque;"); }
+        }
+    };
+    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    ajax.send("ctrl=usuario&acti=selectficha&idss=" + idusu);
 
 
 }
@@ -201,39 +215,56 @@ function AgregarFichaConfirmar() {
     var idusu = document.getElementById("usuariofichaagregar").value;
     var ficha = document.getElementById("fichaagregar").value;
 
-    const ajax = new XMLHttpRequest();
+    if(ficha != 0){
+        const ajax = new ObjAjax();
+        ajax.open("POST", "main.php", true);
+        ajax.onreadystatechange = function() {
+            if (ajax.readyState == 4) {
+                if (ajax.status == 200) {
+                    result.innerHTML = ajax.responseText;
+
+                    $(document).ready(function() {
+                        $('#tableusuario').DataTable({
+                            "language": {
+                                "url": "../assets/datatables/Spanish.json"
+                            }
+                        });
+                    });
+
+                    document.getElementById("btnguardar").innerHTML = "Crear";
+
+
+                } else { console.log("Ups, Me equivoque;"); }
+            }
+        };
+        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        ajax.send("ctrl=usuario&acti=agregarficha&ficha=" + ficha + "&idusu=" + idusu);
+    }else{
+        $.alert("Sin fichas disponibles");
+    }
+
+
+}
+
+function EliminarFicha(usu_numdnt) {    
+
+    var result = document.getElementById('umodal');
+
+    const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
     ajax.onreadystatechange = function() {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
-                result.innerHTML = ajax.responseText;
-                $(document).ready(function() {
-                    $('#tableusuario').DataTable({
-                        dom: 'Bfrtip',
-                        buttons: ['copy', 'excel', 'pdf', 'csv'],
-                        "language": {
-                            "url": "../assets/datatables/Spanish.json"
-                        }
-                    });
-                });
-                document.getElementById("btnguardar").innerHTML = "Crear";
 
+                result.innerHTML = ajax.responseText;                
+                document.getElementById("usuariofichaeliminar").value = usu_numdnt;
+                $("#modalfichasUSU").modal("show");
 
             } else { console.log("Ups, Me equivoque;"); }
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=agregarficha&ficha=" + ficha + "&idusu=" + idusu);
-
-
-}
-
-function EliminarFicha(usu_numdnt) {
-
-
-    document.getElementById("usuariofichaeliminar").value = usu_numdnt;
-
-
+    ajax.send("ctrl=usuario&acti=selectficha&idss=" + usu_numdnt);
 
 }
 
@@ -249,32 +280,34 @@ function EliminarFichaConfirmar() {
 
     var result = document.getElementById('tview');
 
-    var idusu = document.getElementById("usuariofichaeliminar").value;
-    var ficha = document.getElementById("fichaeliminar").value;
+    // var idusu   = document.getElementById("usuariofichaeliminar").value;
+    var usfid = document.getElementById("fichaeliminar").value;
 
-    const ajax = new XMLHttpRequest();
-    ajax.open("POST", "main.php", true);
-    ajax.onreadystatechange = function() {
-        if (ajax.readyState == 4) {
-            if (ajax.status == 200) {
-                result.innerHTML = ajax.responseText;
-                $(document).ready(function() {
-                    $('#tableusuario').DataTable({
-                        dom: 'Bfrtip',
-                        buttons: ['copy', 'excel', 'pdf', 'csv'],
-                        "language": {
-                            "url": "../assets/datatables/Spanish.json"
-                        }
+    if(usfid != 0){
+
+        const ajax = new ObjAjax();
+        ajax.open("POST", "main.php", true);
+        ajax.onreadystatechange = function() {
+            if (ajax.readyState == 4) {
+                if (ajax.status == 200) {
+                    result.innerHTML = ajax.responseText;
+
+                    $(document).ready(function() {
+                        $('#tableusuario').DataTable({
+                            "language": {
+                                "url": "../assets/datatables/Spanish.json"
+                            }
+                        });
                     });
-                });
-                document.getElementById("btnguardar").innerHTML = "Crear";
 
-
-            } else { console.log("Ups, Me equivoque;"); }
-        }
-    };
-    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=usuario&acti=eliminarficha&ficha=" + ficha + "&idusu=" + idusu);
+                } else { console.log("Ups, Me equivoque;"); }
+            }
+        };
+        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        ajax.send("ctrl=usuario&acti=eliminarficha&usfid=" + usfid);
+    }else{
+        $.alert("Sin fichas asignadas");
+    }
 
 }
 
@@ -304,7 +337,7 @@ function ConfirmUsuario(id) {
 
     }
 
-    const ajax = new XMLHttpRequest();
+    const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
     ajax.onreadystatechange = function() {
         if (ajax.readyState == 4) {
@@ -313,8 +346,6 @@ function ConfirmUsuario(id) {
 
                 $(document).ready(function() {
                     $('#tableusuario').DataTable({
-                        dom: 'Bfrtip',
-                        buttons: ['copy', 'excel', 'pdf', 'csv'],
                         "language": {
                             "url": "../assets/datatables/Spanish.json"
                         }
@@ -349,7 +380,7 @@ function SeleccionarUsuario() {
 
 
 
-    const ajax = new XMLHttpRequest();
+    const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
     ajax.onreadystatechange = function() {
         if (ajax.readyState == 4) {

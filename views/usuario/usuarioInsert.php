@@ -82,8 +82,8 @@
 						<div class="invalid-feedback">Seleccine un Campo.</div>
 					</div>
 					<div class="modal-footer form-group">
-						<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal" onclick="CancelarUsuario();">Cerrar</button>
-						<button type="button" id="btnguardar" class="btn btn-primary btn-rounded">Crear</button>
+						<button type="button" class="btn btn-gris" data-dismiss="modal" onclick="CancelarUsuario();">Cerrar</button>
+						<button type="button" id="btnguardar" class="btn btn-rounded">Crear</button>
 					</div>
 				</form>
 				<script>
@@ -126,48 +126,8 @@
 
 
 
-<!-- Modal 2 fichas 1-->
-<div class="modal fade" id="modalfichasAll" tabindex="-1" aria-labelledby="Label" aria-hidden="true">
-  <div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="modalfichaLabel1">Agregar Ficha</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="AgregarCancelar()">
-				<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
 
-				<div class="container"> 
 
-					<form  name="modalfichasAll" id="modalfichasAll" >
-						
-						<div class="form-group row">
-							<label for="usuariofichaagregar">Identificacion De Usuario</label>
-							<input class="form-control rounded" type="text" id="usuariofichaagregar"  readonly>
-						</div>
-
-						<div class="form-group row">
-							<label for="ficha">Ficha id</label>
-							<select class="form-control rounded" name="fichaagregar" id="fichaagregar" required>
-								<?php
-									foreach ($this->usuario->SelectFichaAll() as $datos): 
-										echo '<option value="'.$datos->fic_codigo.'">'.$datos->fic_codigo.'</option>';
-									endforeach;
-								?>
-							</select>
-						</div>
-						<div class="modal-footer">
-
-							<button type="button" class="btn btn-secondary btn-gris" data-dismiss="modal"onclick="AgregarCancelar()" >Cancelar</button>
-							<button type="button" id="btnguardar" class="btn btn-rounded" data-dismiss="modal" onclick="AgregarFichaConfirmar()">Agregar Ficha</button>
-
-						</div>
-					</form>	
-				</div>
-			</div>
-		</div>
-  </div>
 
 
 

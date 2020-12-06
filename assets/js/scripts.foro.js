@@ -128,6 +128,7 @@ function ParticiparForo(id, titulo, fchfin, fchini, descrp,idusu) {
 
     var result = document.getElementById("contenedorForo");
     var ficid = document.formulario.idficha.value;
+    var descrip = document.getElementById("descrpFor"+id).innerHTML;
 
     const ajax = new ObjAjax();
     ajax.open("POST", "main.php", true);
@@ -141,7 +142,7 @@ function ParticiparForo(id, titulo, fchfin, fchini, descrp,idusu) {
         }
     };
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=comentario&titulo=" + titulo + "&descrp=" + descrp +"&fchini="+fchini+ "&fchfin=" + fchfin + "&ficid=" + ficid + "&id=" + id+"&idusu="+idusu);
+    ajax.send("ctrl=comentario&titulo=" + titulo + "&descrp=" + descrip +"&fchini="+fchini+ "&fchfin=" + fchfin + "&ficid=" + ficid + "&id=" + id+"&idusu="+idusu);
 
 
 

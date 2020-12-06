@@ -27,7 +27,7 @@
 	
 									}else{
 
-										require_once('../views/usuario/noticiaView.php');
+										echo "<script> window.location.replace('../views/main.php');</script>";
 
 									}
 									

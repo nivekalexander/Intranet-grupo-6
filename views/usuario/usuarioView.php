@@ -3,7 +3,7 @@
         <div id="main">
         			<div class="container espaciado">
             		    <h3 class="noti-tittle">Usuarios</h3>
-					</div>
+					</div>				
 					
         		<div id="forms">
         				<?php include('usuarioInsert.php');?>
@@ -11,7 +11,11 @@
 				
 				<div id="tview">
         				<?php include('usuarioConfirm.php');?>
-				</div>
+				</div>	
+
+				<div id="umodal">
+					<!-- Dejar vacio, aqui se incluira el archivo de usuarioModal con el AJAX -->
+				</div>			
 				
         </div>
 </div>

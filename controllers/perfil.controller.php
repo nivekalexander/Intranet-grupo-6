@@ -27,13 +27,26 @@ class PerfilController
                                         
                                         $datos->nombre      = $_REQUEST['nombre'];
                                         $datos->apellido    = $_REQUEST['apellido'];
-                                        $datos->contraseña  = $_REQUEST['contraseña'];
                                         $datos->correo      = $_REQUEST['correo'];
-										$datos->id          = $_REQUEST['id'];
-
-										// $rolpuntero         = $_REQUEST['rol'];
+                                        $datos->id          = $_REQUEST['id'];
+                                        
     
  										$this->usuario->UpdateUser($datos);
+                                        
+                                         require_once('../views/perfil/perfilForm.php');
+                                         
+                                    }
+    
+public function ActualizarContraP()
+									{
+                                        $datos = $this->usuario;
+
+                                        $datos->contraseña   = $_REQUEST['contraseña'];
+                                        $datos->id           = $_REQUEST['id'];
+
+                                        print($datos->contraseña);
+    
+ 										$this->usuario->UpdatePassPerfil($datos);
                                         
                                          require_once('../views/perfil/perfilForm.php');
                                          

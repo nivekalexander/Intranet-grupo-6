@@ -84,14 +84,10 @@
 
     $(document).ready(function() {
         $('#tableusuario').DataTable({
-            dom: 'Bfrtip',
-            buttons: ['copy', 'excel', 'pdf', 'csv'],
             "language": {
                 "url": "../assets/datatables/Spanish.json"
             }
         });
     });
-
-
 
 })(jQuery); // End of use strict

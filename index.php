@@ -111,8 +111,22 @@
     <script src="./assets/js/scripts-global.js"></script>
     <script src="./assets/js/jquery-confirm.js"></script>
 
-    <!-- Validacion datos errados -->
-    <?php if(isset($_REQUEST['d'])){if($_REQUEST['d']==0){echo "<script>$.alert('Datos incorrectos, intente nuevamente');</script>"; }} ?>
+    <!-- Validacion datos errados o limite de sesiones -->
+    <?php if(isset($_REQUEST['d'])){if($_REQUEST['d']==0){echo "<script>$.alert('Usuario y/o Contraseñas incorrectos');</script>"; }elseif($_REQUEST['d']==6){echo "<script>
+								$.confirm({
+										   	title: 'CERRANDO SESION',
+										    content: 'Limite de sesiones por ficha alcanzada.',
+										    autoClose: 'logoutUser|10000',
+										    buttons: {
+												        logoutUser: {
+														            text: 'Cerrando',
+														            action: function () {
+														               						window.location.href = ('./views/logout.php');
+														            					}
+												        			}
+										    		 }
+										});
+						      </script>";}} ?>
 
     <!-- Page level plugins -->
     <script src="./assets/vendor/chart.js/Chart.min.js"></script>

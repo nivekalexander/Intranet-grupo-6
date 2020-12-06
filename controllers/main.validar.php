@@ -26,21 +26,24 @@
 					if (isset($respuesta->User) and $respuesta->Login=="NO")
 					{
 							
-						echo "<script>
-								$.confirm({
-										   	title: 'CERRAR SESION',
-										    content: 'Limite de Sessiones por Ficha Alcanzada.',
-										    autoClose: 'logoutUser|5000',
-										    buttons: {
-												        logoutUser: {
-														            text: 'Cerrando',
-														            action: function () {
-														               						window.location.href = ('../views/logout.php');
-														            					}
-												        			}
-										    		 }
-										});
-						      </script>";
+						header("Location: ../index.php?d=6");
+						exit();
+
+						// echo "<script>
+						// 		$.confirm({
+						// 				   	title: 'CERRAR SESION',
+						// 				    content: 'Limite de Sessiones por Ficha Alcanzada.',
+						// 				    autoClose: 'logoutUser|5000',
+						// 				    buttons: {
+						// 						        logoutUser: {
+						// 								            text: 'Cerrando',
+						// 								            action: function () {
+						// 								               						window.location.href = ('../views/logout.php');
+						// 								            					}
+						// 						        			}
+						// 				    		 }
+						// 				});
+						//       </script>";
 
 
 					}
