@@ -84,7 +84,7 @@
 									$this->materialapoyo->Insert($ruta,$datos);
 								}else{
 
-									echo "Limite Excedido";
+									echo "Fallo la subida del archivo";
 
 								}  
 									

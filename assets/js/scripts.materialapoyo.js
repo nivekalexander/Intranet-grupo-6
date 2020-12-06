@@ -84,8 +84,9 @@ function InsertMaterialApoyo() {
    
     var paquete = new FormData();
 
-    
-    paquete.append('archivo', $('#file-archivo')[0].files[0]);
+    if( $('#file-archivo')[0].files[0].size < 41943040){
+        
+        paquete.append('archivo', $('#file-archivo')[0].files[0]);
     
     
 
@@ -98,7 +99,7 @@ function InsertMaterialApoyo() {
     var descrp=document.getElementById("descrpmodal").value;
     var fases=document.getElementById("fasesmodal").value;
     
-    console.log("asd "+fases);
+    
 
     var destino = "main.php?ctrl=materialapoyo&acti=insertar&publicador="+publicador+"&titulo="+titulo+"&descrp="+descrp+"&fases="+fases;
     $.ajax({
@@ -116,6 +117,12 @@ function InsertMaterialApoyo() {
         }
     });
      
+}else{
+
+    $.alert("EL limite De 40MB Fue Excedido");
+
+}
+
 }
 
 var urlvieja;
