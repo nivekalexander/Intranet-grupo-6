@@ -81,9 +81,15 @@ function BorrarMaterialApoyo(map_id,map_archurl,fcpt,idfase) {
 function InsertMaterialApoyo() {
 
     
-
+   
     var paquete = new FormData();
+
+    
     paquete.append('archivo', $('#file-archivo')[0].files[0]);
+    
+    
+
+    
 
     
 

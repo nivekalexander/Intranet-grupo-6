@@ -1,3 +1,4 @@
+
 <div >
 <table class="table-responsive ">
 
@@ -6,7 +7,7 @@
 				
 				$grupal = "'".$filas->map_id."','".$filas->map_titulo."','".$filas->map_descrp."','".$filas->map_archurl."','".$filas->map_fasid."','".$filas->map_usunumdnt."','".$filas->map_icono."'";?>
 						
-					
+						
 				
 
 				<div style="padding:0;" class="btn-group contenidomaterial">

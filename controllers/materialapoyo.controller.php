@@ -48,10 +48,14 @@
 									$datos->fases=$_REQUEST['fases'];
 									$datos->ficid=$_SESSION['grupoficha'];
 
+									
+
 									date_default_timezone_set('America/Bogota');
 									$fecha  = date("Ymd_His");
 									
-									$name = $_FILES['archivo']['name'];     
+									if(($name = $_FILES['archivo']['name'])!=null){
+
+									 
 									$exts = explode('.',$name);             
 									$exts = end($exts);
 									
@@ -62,15 +66,30 @@
 									$ruta = $ruta.$fecha.".".$exts;
 
 									if(is_uploaded_file($temp)){
-										move_uploaded_file($temp,$ruta);										
+
+										if(move_uploaded_file($temp,$ruta)){
+
+											
+
+										}else{
+											
+										}
+
 									}else{
 										echo "No se cargo la imagen";
 									}
 									
-									$idfase=$_REQUEST['fases'];
+								
 																	
 									$this->materialapoyo->Insert($ruta,$datos);
+								}else{
 
+									echo "Limite Excedido";
+
+								}  
+									
+									
+									$idfase=$_REQUEST['fases'];
 									require_once('../views/materialapoyo/materialapoyoSelect.php');
 
 
