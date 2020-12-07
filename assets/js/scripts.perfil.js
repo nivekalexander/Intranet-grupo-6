@@ -169,7 +169,21 @@ function CambiarContraseñaP() {
     var contraseña = document.formcambiarpass.nuevacontraseña.value;
     var contraseña2 = document.formcambiarpass.confirmarcontraseña.value;
 
-    if (contraseña != contraseña2) {
+    if (contraseña.length == 0 || contraseña.length == 0) {
+
+        $.alert({
+            title: 'ERROR',
+            content: 'No pueden haber campos vacios',
+            theme: 'modern',
+
+            buttons: {
+                Ok: function() {
+                    $('#contraseña-perfil').val("");
+                }
+            }
+        });
+
+    } else if (contraseña != contraseña2) {
 
         $.alert({
             title: 'ERROR',
