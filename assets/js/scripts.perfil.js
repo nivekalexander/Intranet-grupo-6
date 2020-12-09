@@ -103,19 +103,63 @@ function ActualizarPerfil() {
     var apellido = document.formulario.apellidoperfil.value;
     var correo = document.formulario.correoperfil.value;
 
-    const ajax = new XMLHttpRequest();
-    ajax.open("POST", "main.php", true);
-    ajax.onreadystatechange = function() {
-        if (ajax.readyState == 4) {
-            if (ajax.status == 200) {
-                result.innerHTML = ajax.responseText;
+    var idhidden = document.formulario.NumIdhidden.value;
+    var nombrehidden = document.formulario.Namehidden.value;
+    var apellidohidden = document.formulario.Lasthidden.value;
+    var correohidden = document.formulario.Emailhidden.value;
 
-            } else { console.log("Ups, Me equivoque;"); }
-        }
-    };
+    if (id === idhidden && nombre === nombrehidden && apellido === apellidohidden && correo === correohidden) {
 
-    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("ctrl=perfil&acti=actualizarperfil&nombre=" + nombre + "&apellido=" + apellido + "&correo=" + correo + "&id=" + id);
+        $.alert({
+            title: 'ERROR',
+            content: 'Debe realizar algun cambio para poder actualizar',
+            theme: 'modern',
+
+            buttons: {
+                Ok: function() {}
+            }
+        });
+
+    } else if (id.length == 0 || nombre.length == 0 || apellido.length == 0 || correo.length == 0) {
+
+        $.alert({
+            title: 'ERROR',
+            content: 'Todos los campos deben estar diligenciados',
+            theme: 'modern',
+
+            buttons: {
+                Ok: function() {}
+            }
+        });
+
+    } else {
+
+        const ajax = new XMLHttpRequest();
+        ajax.open("POST", "main.php", true);
+        ajax.onreadystatechange = function() {
+            if (ajax.readyState == 4) {
+                if (ajax.status == 200) {
+                    result.innerHTML = ajax.responseText;
+
+                } else { console.log("Ups, Me equivoque;"); }
+            }
+        };
+
+        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        ajax.send("ctrl=perfil&acti=actualizarperfil&nombre=" + nombre + "&apellido=" + apellido + "&correo=" + correo + "&id=" + id);
+
+        $.alert({
+            title: 'Actualización exitosa',
+            content: 'Se han actualizado en los datos correctamente',
+            theme: 'modern',
+            buttons: {
+                Ok: function() {
+                    location.reload();
+                }
+            }
+        });
+
+    }
 
 }
 
@@ -125,7 +169,21 @@ function CambiarContraseñaP() {
     var contraseña = document.formcambiarpass.nuevacontraseña.value;
     var contraseña2 = document.formcambiarpass.confirmarcontraseña.value;
 
-    if (contraseña != contraseña2) {
+    if (contraseña.length == 0 || contraseña.length == 0) {
+
+        $.alert({
+            title: 'ERROR',
+            content: 'No pueden haber campos vacios',
+            theme: 'modern',
+
+            buttons: {
+                Ok: function() {
+                    $('#contraseña-perfil').val("");
+                }
+            }
+        });
+
+    } else if (contraseña != contraseña2) {
 
         $.alert({
             title: 'ERROR',
@@ -172,23 +230,3 @@ function CambiarContraseñaP() {
     }
 
 }
-
-window.onload = function UpdateSusses() {
-
-    $("#actualizar-perfil").on("click", function() {
-
-        $.alert({
-            title: 'Actualización exitosa',
-            content: 'Se han actualizado en los datos correctamente',
-            theme: 'modern',
-
-            buttons: {
-                Ok: function() {
-                    location.reload();
-                }
-            }
-        });
-    });
-
-
-};

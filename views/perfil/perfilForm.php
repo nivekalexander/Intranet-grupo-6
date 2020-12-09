@@ -5,6 +5,13 @@
 
     <input type="text" id="rolperfilasd" value="<?php echo  $_SESSION['SRol']?>" hidden>
 
+    <!-- campos para validaciones -->
+
+    <input type="text" id="NumIdhidden" name="NumIdhidden" value="<?php echo  $_SESSION['SIdu']=$filas->usu_numdnt; ?>" hidden>
+    <input type="text" id="Namehidden" name="Namehidden" value="<?php echo $_SESSION['name']=$filas->usu_nombre; ?>" hidden>
+    <input type="text" id="Lasthidden" name="Lasthidden" value="<?php echo $_SESSION['last']=$filas->usu_aplldo;?>" hidden>
+    <input type="text" id="Emailhidden" name="Emailhidden" value="<?php echo $_SESSION['SUsu']=$filas->usu_correo; ?>" hidden>
+
     <!-- Identificación -->
     <div class="form-group row">
         <label for="id-perfil" class="col-sm-4 col-form-label">Identificación</label>
