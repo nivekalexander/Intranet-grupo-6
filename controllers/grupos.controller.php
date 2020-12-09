@@ -1,5 +1,6 @@
 <?php  
 	require_once('../models/grupos.php');
+	require_once('../models/programaformacion.php');
 
 	class GruposController{
 
@@ -8,6 +9,8 @@
 		function __Construct() 
 								{
 									$this->grupos=new Grupos();
+									$this->programaformacion=new ProgramaFormacion();
+
 								}
 
 		public function Index()
@@ -30,5 +33,14 @@
                                 require_once('../views/frames/footer.php');
                                 }
                                 
-                            }
+							
+	public function Buscar(){
+		error_reporting(E_ALL ^ E_NOTICE);
+
+		$idbuscar=$_REQUEST['id'];
+
+		require_once('../views/grupos/gruposSelect.php');
+
+	}
+	}
  ?>

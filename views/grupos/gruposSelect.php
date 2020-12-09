@@ -6,7 +6,7 @@
     <?php 
     
       if($_SESSION['SRol']!=1){
-        foreach ( $this->grupos->Select($_SESSION['SIdu']) as $filas ): 
+        foreach ( $this->grupos->Select($_SESSION['SIdu'],$idbuscar) as $filas ): 
         
         
       
@@ -53,7 +53,7 @@
     
     endforeach; } 
     else{
-      foreach ( $this->grupos->SelectAdmin() as $filas ): 
+      foreach ( $this->grupos->SelectAdmin($idbuscar) as $filas ): 
       
       
     
