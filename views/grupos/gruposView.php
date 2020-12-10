@@ -8,7 +8,7 @@
 			
 
 			</div>	
-			<div class="pb-5">
+			<div class="justify-content-rigth">
 
 				<h5 class="">Elija Un Programa De Formación:</h5>
 				
@@ -24,7 +24,8 @@
 					endforeach;?>
 
 				</select>
-				<button type="button" class=" btn-rounded btn " onclick="BuscarPrograma();">Buscar</button>
+
+				<button id="botonbuscargrupos" type="button" class=" btn-rounded btn " onclick="BuscarPrograma();">Buscar</button>
 				
 
 				
@@ -32,7 +33,7 @@
 			</div>				
 			
             <h3 class="noti-tittle">Grupos</h3><br>
-			
+
 			<div id="tview">
 					<h5>Porfavor Elejir Un Programa</h5>
             </div>		

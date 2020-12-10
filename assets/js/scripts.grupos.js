@@ -23,7 +23,6 @@ function BuscarPrograma(){
 
     var materialapoyo=document.getElementById("materialapoyobuscar").value;
 
-
     
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "main.php", true);
