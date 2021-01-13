@@ -18,6 +18,7 @@
 		}
 
 		try{
+			
 			if ( !ISSET($_REQUEST['ctrl']) ){
 
 				require_once("../controllers/$controller.controller.php");
