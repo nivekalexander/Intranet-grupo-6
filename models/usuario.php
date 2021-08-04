@@ -200,17 +200,89 @@ class Usuario
 								catch (Exception $e) {	die($e->getMessage());			 }
 								}
 								
-	public function Login($user,$pass)
-								{
-									try 				 { 
-															$sql=$this->pdo->prepare("CALL LOGIN(?,?)");
-															$sql->execute(array($user,$pass));
-															return $sql->fetch(PDO::FETCH_OBJ);
-															}
 
-									catch (Exception $e) { }
+	public function Login($user,$pass)
+	{
+		try 				 { 
+								
+								$datos= new Usuario;
+
+								$sql=$this->pdo->prepare("SELECT 
+								tbl_usuario.usu_correo , tbl_usuario.usu_rolid , 
+								tbl_usuario_ficha.usf_ficcodigo , tbl_usuario.usu_numdnt,
+								tbl_ficha.fic_codigo , tbl_usuario.usu_nombre , 
+								tbl_usuario.usu_aplldo , tbl_usuario.usu_passwd 
+								FROM tbl_usuario_ficha 
+								INNER JOIN tbl_ficha on tbl_ficha.fic_codigo = tbl_usuario_ficha.usf_ficcodigo
+								INNER JOIN tbl_usuario 
+								WHERE tbl_usuario_ficha.usf_usunumdnt = tbl_usuario.usu_numdnt 
+								AND tbl_usuario_ficha.usf_ficcodigo = tbl_ficha.fic_codigo 
+								AND tbl_usuario.usu_correo=?
+								AND tbl_usuario.usu_passwd=? LIMIT 1;");
+
+								$sql->execute(array(
+									$user,
+									$pass
+								));
+
+								$result =$sql->fetch(PDO::FETCH_ASSOC);
+
+								$datos->Name=$result['usu_nombre'];
+								$datos->Lastname=$result['usu_aplldo'];
+								$datos->Passw=$result['usu_passwd'];
+								$datos->User=$result['usu_correo'];
+								$datos->Rol=(int)$result['usu_rolid'];
+								$datos->Ficha=$result['usf_ficcodigo'];
+								$datos->idFicha=$result['fic_codigo'];
+								$datos->Idusu=$result['usu_numdnt'];
+
+								$datos->Login=$result['usu_nombre'];
+								
+								
+								//contar cantidad de secciones 
+
+								
+
+								$sql2=$this->pdo->prepare("SELECT COUNT(log_id) 
+								FROM tbl_login 
+								WHERE log_usfficcodigo=?"); 	
+								$sql2->execute(array($datos->idFicha));
+								$result2 =$sql2->fetch(PDO::FETCH_ASSOC);
+								$contSe= (int)$result2["COUNT(log_id)"];
+								
+								if ($datos->Rol == 3 ) {
+				
+									if ($contSe>-1 && $contSe<6) {
+										
+										$sql3=$this->pdo->prepare("INSERT INTO tbl_login 
+										(log_usunumdnt,log_usfficcodigo) 
+										values (?,?);"); 	
+										$sql3->execute(array($datos->Idusu,$datos->idFicha));
+										
+										$datos->Login="SI";
+										
+									}else{
+										$datos->Login="NO";
+									}
+								}else{
+
+									$sql3=$this->pdo->prepare("INSERT INTO tbl_login 
+									(log_usunumdnt,log_usfficcodigo) 
+									values (?,?);"); 	
+									$sql3->execute(array($datos->Idusu,$datos->idFicha));
+									
+									$datos->Login="SI";
+								}
+								
+								
+								
+								
+								return $datos;
+								
 								}
 
+		catch (Exception $e) { }
+	}
 
 	public function Logout($id)
 								{

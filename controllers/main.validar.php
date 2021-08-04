@@ -23,11 +23,13 @@
 					$objUser=new UsuarioController();
 					$respuesta=$objUser->Login($user,$pass);
 					
+					
+					
 					if (isset($respuesta->User) and $respuesta->Login=="NO")
 					{
 							
 						header("Location: ../index.php?d=6");
-						exit();
+						
 
 						// echo "<script>
 						// 		$.confirm({
@@ -66,6 +68,7 @@
 					else
 					{
 						echo "NO SE PUEDE POR CREDENCIALES ERRADAS";
+						 
 						header("Location: ./main.cerrar.php");
 						exit();
 					}
