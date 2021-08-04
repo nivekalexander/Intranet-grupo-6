@@ -211,6 +211,17 @@ class Usuario
 									catch (Exception $e) { }
 								}
 
+	public function Login2($user,$pass)
+								{
+									try 				 { 
+															$sql=$this->pdo->prepare("CALL LOGIN(?,?)");
+															$sql->execute(array($user,$pass));
+															return $sql->fetch(PDO::FETCH_OBJ);
+															}
+
+									catch (Exception $e) { }
+								}								
+
 
 	public function Logout($id)
 								{

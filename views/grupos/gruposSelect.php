@@ -1,7 +1,9 @@
 
 <div class="row row-cols-1 row-cols-md-3">
 
-<?php $_SESSION['slidebar']=$_REQUEST['slidebar'];?>
+<?php 
+error_reporting(0);
+$_SESSION['slidebar']=$_REQUEST['slidebar'];?>
 
     <?php 
     
