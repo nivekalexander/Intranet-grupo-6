@@ -19,8 +19,8 @@
     opacity: 10;
 }
 
-.navbar-logo {
-    margin-left: 10px;
+.navbar-logo img{
+    width: 100%;
 }
 
 .boton-login {
