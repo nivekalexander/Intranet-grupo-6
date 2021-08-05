@@ -20,7 +20,7 @@
 
 									if($_SESSION['SRol']==1){
 
-										require_once('../views/tipoIdentificacion/tipoIdentificacionView.php');
+										require_once('../views/tipoidentificacion/tipoidentificacionView.php');
 	
 									}else{
 
@@ -44,7 +44,7 @@
 
 									$this->tipoIdentificacion->Insert($data);
 
-									require_once('../views/tipoIdentificacion/tipoIdentificacionSelect.php');
+									require_once('../views/tipoidentificacion/tipoidentificacionSelect.php');
 								}
         public function Actualizar()
             {
@@ -56,7 +56,7 @@
 
                 $this->tipoIdentificacion->Update($data);
 
-                require_once('../views/tipoIdentificacion/tipoIdentificacionSelect.php');
+                require_once('../views/tipoidentificacion/tipoidentificacionSelect.php');
 
 
             }
@@ -65,7 +65,7 @@
         {
 
             $this->tipoIdentificacion->Delete($_REQUEST['id']);
-            require_once('../views/tipoIdentificacion/tipoIdentificacionSelect.php');
+            require_once('../views/tipoidentificacion/tipoidentificacionSelect.php');
 
         } 
             
