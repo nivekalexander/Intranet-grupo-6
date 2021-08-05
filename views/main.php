@@ -1,5 +1,5 @@
 <?php
-
+	ob_start();
 	session_start();
 	// Controladores en Forma SINGULAR *ASI LAS TABLAS ESTEN EN PLURAL*
 	// Ctr = Controllador --> Nombre Modulo

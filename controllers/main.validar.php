@@ -1,5 +1,5 @@
 <?php
-
+	ob_start();
 	session_start();
 	require_once('../models/database.php');
 	require_once('./usuario.controller.php');
